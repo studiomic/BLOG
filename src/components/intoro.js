@@ -1,12 +1,13 @@
 import React from 'react'
 
 import Container from './container'
-import * as styles from '../styles/footer.module.scss'
+import * as styles from '../styles/introduction.module.scss'
 // import * as styles from './footer.module.css'
 
-const Footer = () => (
-  <Container as="footer">
-    <div className={styles.container}>
+const Introduction = () => (
+  <Container as="section">
+    <div className={styles.intoro}>
+      
       <div className={styles.logoLink}>
         <span className={styles.logo} />
         <span>Built with <a href="https://contentful.com/">Contentful</a> and{' '}</span>
@@ -18,4 +19,4 @@ const Footer = () => (
   </Container>
 )
 
-export default Footer
+export default Introduction

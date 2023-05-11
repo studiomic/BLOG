@@ -4,8 +4,8 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Contentful Starter",
-    description: "Official Contentful Gatsby Starter",
+    title: "Web Design & Web developer - Stylo de Cerise",
+    description: "Gatsby+Contentful WebデザイナーノBLOG",
   },
   plugins: [
     "gatsby-transformer-sharp",
@@ -21,5 +21,27 @@ module.exports = {
         host: process.env.CONTENTFUL_HOST
       },
     },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              aliases: {
+                js: 'javascript',
+                sh: 'bash',
+              },
+              // 行番号の表示・非表示
+              showLineNumbers: false,
+              // true にするとインラインコードをハイライトしない
+              noInlineHighlight: false,
+            },
+          }
+        ]
+      }
+    }
   ],
 };

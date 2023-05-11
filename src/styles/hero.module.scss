@@ -4,10 +4,10 @@
   margin: 0 auto;
   max-width: var(--size-max-width);
   min-height: 200px;
-  padding: 0 0 var(--size-gutter);
+  padding: 0 0 var(--size-gutter) 0;
   position: relative;
+  // border: 1px solid cyan;
 }
-
 .image {
   /*
     Ensure golden ratio for the hero size while limiting it to some extend to
@@ -25,6 +25,7 @@
   width: 85%;
   padding: var(--space-2xl) var(--size-gutter) 0;
   position: absolute;
+  // border: 1px solid pink;
 }
 
 .title {
@@ -33,6 +34,7 @@
   font-weight: var(--extrabold);
   line-height: var(--solid);
   margin: 0 0 var(--space-xl);
+  // border: 1px solid cyan;
 }
 
 .content {
@@ -49,9 +51,10 @@
 
 @media (min-width: 768px) {
   .hero {
-    padding-top: var(--size-gutter);
-  }
+    // padding-top: var(--size-gutter);
+    padding: var(--size-gutter) var(--space-3xl) var(--size-gutter) 0;
 
+  }
   .details {
     max-width: 44rem;
     padding: var(--space-3xl) var(--size-gutter) 0;
@@ -61,9 +64,8 @@
 @media (min-width: 1024px) {
   .image {
     margin-left: auto;
-    width: 85%;
+    width: 90%;
   }
-
   .details {
     left: var(--size-gutter);
     padding: var(--space-3xl) var(--size-gutter) 0 0;

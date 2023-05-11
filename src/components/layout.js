@@ -1,7 +1,9 @@
 import React from 'react'
 
-import './variables.css'
-import './global.css'
+import '../styles/variables.scss'
+import '../styles/global.scss'
+import '../styles/prismjs/prism-tomorrowNight.css'
+
 import Seo from './seo'
 import Navigation from './navigation'
 import Footer from './footer'
