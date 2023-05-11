@@ -1,13 +1,5 @@
 :root {
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --text-color: #ddd;
-      --background: var(--black);
-    }
-  }
-  
-
 
   /* primitives */
   /* font-family */
@@ -85,10 +77,13 @@
   --size-max-width: 80rem;
 
 
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text-color: #ddd;
+      --background: var(--black);
+    }
+  }
 }
-
-
-
 
 @media (min-width: 480px) {
   :root {

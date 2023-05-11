@@ -1,22 +1,15 @@
 import React from 'react'
 
-import Container from './container'
+// import Container from './container'
 import * as styles from '../styles/introduction.module.scss'
-// import * as styles from './footer.module.css'
 
 const Introduction = () => (
-  <Container as="section">
-    <div className={styles.intoro}>
-      
-      <div className={styles.logoLink}>
-        <span className={styles.logo} />
-        <span>Built with <a href="https://contentful.com/">Contentful</a> and{' '}</span>
-        <span><a href="https://gatsbyjs.com">Gatsby</a> &middot;{' '}</span>
-        <span><a href="https://github.com/contentful/starter-gatsby-blog">Source</a></span>
-      </div>
-        © {new Date().getFullYear()} Studio Mic.
-    </div>
-  </Container>
+  <div className={styles.intoro}>
+    <article>
+      <h1 className={styles.title}>No life without designs 20th</h1>
+      <p>Design Deeply</p>
+    </article>
+  </div>
 )
 
 export default Introduction

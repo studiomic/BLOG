@@ -1,4 +1,109 @@
+:root {
+--font-min:游明朝, "Yu Mincho", YuMincho, sans-serif;
+}
 
 .intoro {
-	background: url(../asset/img/logo-wt.png);
+	background: url(../asset/img/mk-s-wKS46KBpolg-unsplash.jpg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	width: 100%;
+	height: 40dvh;
+	margin: var(--space-3xl) 0;
+	padding: var(--space-2xl) var(--space-3xl);
+	color: var(--white);
+	display: flex;
+	align-items: flex-end;
+	font-feature-settings: "palt";
+	p {
+		font-size: var(--text-5xl);
+		font-weight: var(--body);
+		margin: initial;
+		text-align: center;
+		text-align: right;
+	border: 1px solid salmon;
+	
+	}
+}
+
+.title {
+	font-size: var(--text-title);
+	font-weight: var(--body);
+	line-height: var(--solid);
+	text-transform: uppercase;
+	margin: 0;
+	border: 1px solid salmon;
+}
+
+
+// .article-style {
+// 	width: var(--size-max-width);
+// 	margin: 0 var(--space-2xl);
+
+// 	background: #ddd;
+// 	// gap: var(--space-3xl);
+// 	border: 1px solid salmon;
+// 	height: 100vh;
+// //   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+
+// }
+
+.article-style {
+	display: grid;
+	font-size: var(--text-prose);
+	gap: var(--space-xl);
+	letter-spacing: var(--text-prose-tracking);
+	line-height: var(--loose);
+	padding: var(--size-gutter) var(--size-gutter) calc(var(--size-gutter) * 1.2);
+	height: 100vh;
+	border:1px solid green;
+}
+.desc {
+	grid-area: desc;
+	writing-mode: vertical-rl;
+	text-orientation: upright;
+	font-family: var(--font-min);
+	height: 500px;
+	max-height: 90dvh;
+	overflow-x: scroll;
+	// margin-bottom: var(--space-3xl);
+	border:1px solid tomato;
+	h1 {
+		font-size: var(--text-title);
+	}
+	p {
+		padding-bottom: var(--space-2xl);
+		padding-bottom: 0;
+		margin-top: calc(var(--space-2xl)*2.5) ;
+	}
+}
+
+.profile {
+	border:1px solid tomato;
+}
+
+.about {
+	font-family: var(--font-min);
+
+}
+
+
+
+
+@media (min-width: 1024px) {
+	.article-style {
+		width: calc(85% - var(--size-gutter));
+		display: block;
+		margin: 0 auto;
+	}
+}
+
+
+// padding: initial;
+// padding: 0;
+
+
+main {
+	border: 1px solid salmon;
 }
