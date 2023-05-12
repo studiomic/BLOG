@@ -5,52 +5,90 @@ import Layout from '../components/layout'
 // import Hero from '../components/hero'
 
 import Intoro from '../components/intoro'
+import Hero from '../components/hero'
+
 import * as styles from '../styles/introduction.module.scss'
+import IMG from "../asset/img/sakana.png"
 
 export default function contact() {
 	return (
 		<Layout>
 			<Seo title="About" />
 			<Intoro />
-			<article className={styles.articleStyle}>
+			<article className={styles.article}>
 				<section className={styles.desc}>
 					<h1>まくら、<br/>　さくら持ってこい!</h1>
 					<p>
-						あのあまりに有名な「さくら」さんより二年ほど前に名づけられた昭和産のウェブ屋。<br />
+						あのあまりに有名な「さくら」さんより二年ほど前に名づけられた昔日の人、ウェブ屋。<br />
 						前世紀末に、カラー画面のパーソナルコンピューターがどうしても欲しいと新宿の「さくらや」さんで購入したものの、当時のマシンは万単位のソフトウェアを購入しないと遊び続けることができず、それではキリがないので「ホームページでもつくるか！」と足を踏み入れたのがきっかけ。
 					</p>
 				</section>
 				<section className={styles.profile}>
-					<dl>
-						<dt>SAKURA IIZUKA</dt>
-						<dl>1967年3月10日生</dl>
-						<dl>魚座・A型・Female</dl>
-					</dl>
+					<article>
+						<img src={IMG} alt="" />
+						<dl>
+							<dt>SAKURA IIZUKA</dt>
+							<dd>1967年3月10日生</dd>
+							<dd>魚座・A型・Female</dd>
+						</dl>
+					</article>
 				</section>
 				<section className={styles.about}>
 					<p>
-						Webデザインの仕事は、笑ってしまうほど経験年数はものを云いません。<br />
-						携わった数よりも学び方や関わり方の深さ、経験値だけがイキる世界なので、好きで、貪欲でないと、もたないらしいです。<br />
-						その意味ではサイクルの目まぐるしいこの業界で長くやってきた、この昔日の人は、どれだけ好きなんだ・・と評価していただくか、あるいは（これしか出来ることがなかったのね）とこっそり理解していただくのが妥当です。
+						最近は React のフレームワークの一つである Gatsby.js にハマりにハマっています。とにかく楽しい！<br />
+						そして、速いは正義。<br />
+						そらもぅ武田の騎馬隊かっ というほど速いので、<ruby>疾<rt>はや</rt>きこと風の如く</ruby>です。
 					</p>
 					<p>
-						私は設計がいちばん好きなので、ヒヤリングの「聴く耳」がもっとも大切な根幹部分かなと思っています。
+						最初に知ったときは、（ Gatsby・・・て、え? あのギャツビー?! ）と少し驚きましたよね。あんな破滅的なラストを迎える主人公の名を? と。
 					</p>
-
-
+					<p>
+						でも使うほどに実感するのでした。<br />
+						The Great Gatsby！
+						彼につく枕詞「ザ・グレート」の方をこそ指した命名かと。
+					</p>
+					<hr />
+					<p>
+						邦題の「華麗なるギャツビー」の方が私的には好きなんですが、村上春樹さんは翻訳家なのもあって意訳の「華麗なる」が許しがたいらしく・・・なるほど英語に精通していると、やはりギャツビーは東方仗助の云う「グレートだぜ」がふさわしいんだろうな、きっと。<br />と想う今日この頃のジョジョラーです。
+					</p>
+					<hr />
+					<p>
+						閑話休題。<br />そんなわけで、このブログ「Style de Cerise」は、ヘッドレスCMS : Contentfulが提供している <a href="https://www.gatsbyjs.com/starters/contentful/starter-gatsby-blog/" target='_blank'>starter-gatsby-blog</a> と静的ジェネレーター : Gatsbyでつくりました。<br />
+					</p>
+					<p>
+						自社製なだけに、Contentfulとの連携はものすごくスムーズでした。<br />
+						テーマとしては僅かに改変しましたが、快速への敬意からフッターContentfulのロゴを残しています。<br />
+						modification というより単なるアレンジですね。
+					</p>
+					<p>
+						つくることが目的となっているようなスペースなので、ブログ更新は寡なめ予定ですが、長く使えると良いなーと考えてます。
+					</p>
 				</section>
 			</article>
-			
+			<Hero title="HISTRY" />
+
+			<p>
+Gatsby-Themaも、Contentfulが提供している :  <a href="https://www.gatsbyjs.com/starters/contentful/starter-gatsby-blog/" target='_blank'>starter-gatsby-blog</a>
 
 
+History
+
+React製・静的ジェネレーター
 
 
-				<p>1967年3月10日生</p>
-				<p>スタジオミックは、Webサイト制作を生業とする Sakurai（億）のブログサイトです。
-Web屋として長らく20年越しでフリーランス暮らし
-主に日々のつれづれや趣味をかねたWordPressのカスタマイズ、ブログテーマに関する話題が多く、次いでMacとDIYに傾きがちです。
-中野区の鍋屋横丁と表参道、新宿三丁目によく出没します。</p>
+</p>
 
+を理解していると、
+
+プログラム言語の名でパスカルを美しいと感じて以来の感動かも。
+
+
+Webデザインの仕事は、笑ってしまうほど経験年数はものを云いません。<br />
+携わった数よりも学び方や関わり方の深さ、経験値だけがイキる世界なので、好きで、貪欲でないと、もたないらしいです。<br />
+その意味ではサイクルの目まぐるしいこの業界で長くやってきた、この昔日の人は、どれだけ好きなんだ・・と評価していただくか、あるいは（これしか出来ることがなかったのね）とこっそり理解していただくのが妥当です。
+<p>
+私は設計がいちばん好きなので、ヒヤリングの「聴く耳」がもっとも大切な根幹部分かなと思っています。
+</p>
 		</Layout>
 	)
 }
