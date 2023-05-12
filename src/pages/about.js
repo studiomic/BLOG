@@ -7,10 +7,10 @@ import Layout from '../components/layout'
 import Intoro from '../components/intoro'
 import Hero from '../components/hero'
 
-import * as styles from '../styles/introduction.module.scss'
+import * as styles from '../styles/about.module.scss'
 import IMG from "../asset/img/sakana.png"
 
-export default function contact() {
+export default function about() {
 	return (
 		<Layout>
 			<Seo title="About" />
@@ -65,11 +65,11 @@ export default function contact() {
 					</p>
 				</section>
 			</article>
+
+
 			<Hero title="HISTRY" />
 
 			<p>
-Gatsby-Themaも、Contentfulが提供している :  <a href="https://www.gatsbyjs.com/starters/contentful/starter-gatsby-blog/" target='_blank'>starter-gatsby-blog</a>
-
 
 History
 

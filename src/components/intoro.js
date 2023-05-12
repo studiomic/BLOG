@@ -1,7 +1,7 @@
 import React from 'react'
 
 // import Container from './container'
-import * as styles from '../styles/introduction.module.scss'
+import * as styles from '../styles/about.module.scss'
 
 const Introduction = () => (
   <div className={styles.intoro}>
