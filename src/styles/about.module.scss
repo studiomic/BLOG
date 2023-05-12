@@ -2,32 +2,16 @@
 --font-min: 游明朝, "Yu Mincho", YuMincho, serif;
 }
 
-.intoro {
-	background: url(../asset/img/mk-s-wKS46KBpolg-unsplash.jpg);
-	background-size: cover;
-	background-position: center;
-	background-attachment: fixed;
+.wave {
+	margin-top: calc((45dvh - 200px) * -1);
+	display: block;
 	width: 100%;
-	height: 40dvh;
-	margin: var(--space-3xl) 0;
-	padding: var(--space-2xl) var(--space-3xl);
-	color: var(--white);
-	display: flex;
-	align-items: flex-end;
-	p {
-		font-size: var(--text-5xl);
-		font-weight: var(--body);
-		margin: initial;
-		text-align: center;
-	}
-}
-
-.title {
-	font-size: var(--text-title);
-	font-weight: var(--body);
-	line-height: var(--solid);
-	text-transform: uppercase;
-	margin: 0;
+	height: 200px;
+	background: url(../asset/svg/wave.svg)no-repeat;
+	background-size: cover;
+	position: relative;
+	transform: scale(-1, -1);
+	// border: 1px solid cyan;
 }
 
 .article {
@@ -40,7 +24,8 @@
 	grid-template-areas:
     "desc"
 	"profile"
-    "about";
+    "about"
+	"history";
 }
 
 .desc {
@@ -94,6 +79,25 @@
 	border:1px solid tomato;
 }
 
+.history {
+	grid-area: history;
+	h2 {
+		letter-spacing: -0.012em;
+		font-size: var(--text-title);
+		font-weight: var(--extrabold);
+		line-height: var(--solid);
+		margin: 0 0 var(--space-xl);
+		padding: var(--space-2xl) var(--size-gutter);
+		
+	}
+
+	border:1px solid cyan;
+
+
+}
+
+
+
 hr {
 	border: 0;
 	height: 2em;
@@ -118,7 +122,8 @@ hr {
 		margin: 0 auto;
 		grid-template-areas:
 		"desc profile"
-		"about about";
+		"about about"
+		"history history";
 	}
 }
 @media (min-width: 1200px) {

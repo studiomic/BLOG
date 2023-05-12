@@ -1,0 +1,38 @@
+.intoro {
+	background: url(../asset/img/mk-s-wKS46KBpolg-unsplash.jpg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	width: 100%;
+	height: 45dvh;
+	margin: var(--space-2xl) 0;
+	position: relative;
+	// padding: var(--space-2xl) var(--space-3xl);
+	padding: calc(var(--space-3xl) * 3)  var(--space-3xl) 0;
+	// color: var(--white);
+	display: flex;
+	// align-items: flex-end;
+	p {
+		// position: absolute;
+		// width: 100%;
+		top:25vh;
+		font-size: var(--text-5xl);
+		line-height: var(---default);
+		font-weight: var(--body);
+		margin: initial;
+		text-align: center;
+		// border: 1px solid tomato;
+	}
+}
+.title {
+	// position: absolute;
+	// width: 100%;
+
+	// top: 20vh;
+	font-size: var(--text-title);
+	font-weight: var(--body);
+	line-height: var(--solid);
+	text-transform: uppercase;
+	margin: 0;
+	// border: 1px solid tomato;
+}

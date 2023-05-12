@@ -5,8 +5,7 @@ import Layout from '../components/layout'
 // import Hero from '../components/hero'
 
 import Intoro from '../components/intoro'
-import Hero from '../components/hero'
-
+// import Hero from '../components/hero'
 import * as styles from '../styles/about.module.scss'
 import IMG from "../asset/img/sakana.png"
 
@@ -15,6 +14,7 @@ export default function about() {
 		<Layout>
 			<Seo title="About" />
 			<Intoro />
+			<div className={styles.wave}></div>
 			<article className={styles.article}>
 				<section className={styles.desc}>
 					<h1>まくら、<br/>　さくら持ってこい!</h1>
@@ -64,20 +64,10 @@ export default function about() {
 						つくることが目的となっているようなスペースなので、ブログ更新は寡なめ予定ですが、長く使えると良いなーと考えてます。
 					</p>
 				</section>
-			</article>
+				<section className={styles.history}>
+			<h2>HISTRY</h2>
 
-
-			<Hero title="HISTRY" />
-
-			<p>
-
-History
-
-React製・静的ジェネレーター
-
-
-</p>
-
+<p>
 を理解していると、
 
 プログラム言語の名でパスカルを美しいと感じて以来の感動かも。
@@ -86,9 +76,14 @@ React製・静的ジェネレーター
 Webデザインの仕事は、笑ってしまうほど経験年数はものを云いません。<br />
 携わった数よりも学び方や関わり方の深さ、経験値だけがイキる世界なので、好きで、貪欲でないと、もたないらしいです。<br />
 その意味ではサイクルの目まぐるしいこの業界で長くやってきた、この昔日の人は、どれだけ好きなんだ・・と評価していただくか、あるいは（これしか出来ることがなかったのね）とこっそり理解していただくのが妥当です。
-<p>
 私は設計がいちばん好きなので、ヒヤリングの「聴く耳」がもっとも大切な根幹部分かなと思っています。
 </p>
+
+				</section>
+
+			</article>
+
+
 		</Layout>
 	)
 }
