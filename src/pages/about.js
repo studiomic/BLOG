@@ -2,10 +2,9 @@ import React from 'react'
 
 import Seo from '../components/seo'
 import Layout from '../components/layout'
-import { StaticImage } from 'gatsby-plugin-image'
+// import { StaticImage } from 'gatsby-plugin-image'
 import Intoro from '../components/intoro'
 import * as styles from '../styles/about.module.scss'
-import * as heros from '../styles/intro-static.module.scss'
 import IMG from "../asset/img/sakana.png"
 
 export default function about() {
@@ -48,7 +47,7 @@ export default function about() {
 					</p>
 					<hr />
 					<p>
-						邦題の「華麗なるギャツビー」の方が私的には好きなんですが、村上春樹さんは翻訳家なのもあって意訳の「華麗なる」が許しがたいらしく・・・なるほど英語に精通していると、やはりギャツビーは東方仗助の云う「グレートだぜ」がふさわしいんだろうな、きっと。<br />と想う今日この頃のジョジョラーです。
+						邦題の「華麗なるギャツビー」の方が私的には馴染み深いものの、村上春樹さんは翻訳家なのもあって意訳の「華麗なる」が許しがたいらしく・・・なるほど英語に精通していると、やはりギャツビーは東方仗助の云う「グレートだぜ」がふさわしいんだろうな、きっと。<br />と想う今日この頃のジョジョラーです。
 					</p>
 					<hr />
 					<p>
@@ -87,6 +86,8 @@ export default function about() {
 						ある教育者からの発注で「どこにもないものを創ってください」とだけ要望されたデザインをきっかけに、設計者として善きブレイク・ポイントをいただきました。<br />
 						それ以降は既存のフレームワークからも離れ、固定観念からも放たれ、自由に考える空恐ろしい責任とともに、シンプルな構造と「ライク・ア・リクルートスーツ」ではないチャーミングな実装を心がけています。
 					</p>
+
+
 				</section>
 			</article>
 		</Layout>

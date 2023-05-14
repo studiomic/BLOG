@@ -32,6 +32,7 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          'gatsby-remark-prismjs-title',
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
@@ -41,12 +42,22 @@ module.exports = {
                 js: 'javascript',
                 sh: 'bash',
               },
-              // 行番号の表示・非表示
-              showLineNumbers: false,
-              // true にするとインラインコードをハイライトしない
+              showLineNumbers: true,
               noInlineHighlight: false,
+              languageExtensions: [
+                {
+                  language: 'superscript',
+                  extend: 'javascript',
+                  definition: { superscript_types: /(SuperType)/ },
+                  insertBefore: {
+                    function: { superscript_keywords: /(superif|superelse)/ },
+                  },
+                },
+              ],
+              prompt: { user: 'root', host: 'localhost', global: false },
+              escapeEntities: {},
             },
-          }
+          },
         ]
       }
     }

@@ -4,8 +4,8 @@ import get from 'lodash/get'
 
 import Seo from '../components/seo'
 import Layout from '../components/layout'
-import Hero from '../components/hero'
-import Herotype from '../components/hero-type'
+// import Hero from '../components/hero'
+// import Herotype from '../components/hero-type'
 import ArticlePreview from '../components/article-preview'
 import { StaticImage } from 'gatsby-plugin-image'
 import * as styles from '../styles/hero.module.scss'
@@ -32,12 +32,9 @@ class BlogIndex extends React.Component {
           <div className={styles.details}>
             <h1 className={styles.title}>BLOG</h1>
             <div className={styles.content}>
-              StaticImage
             </div>
             </div>
         </div>
-        
-
         <ArticlePreview posts={posts} />
       </Layout>
     )
