@@ -4,6 +4,9 @@ import { renderRichText } from 'gatsby-source-contentful/rich-text'
 
 import * as styles from '../styles/hero.module.scss'
 // import * as styles from './hero.module.css'
+// image={author.heroImage.gatsbyImage}
+
+
 
 const Hero = ({ image, title, content }) => (
   <div className={styles.hero}>

@@ -5,7 +5,15 @@ import get from 'lodash/get'
 import Seo from '../components/seo'
 import Layout from '../components/layout'
 import Hero from '../components/hero'
+import Herotype from '../components/hero-type'
 import ArticlePreview from '../components/article-preview'
+import { StaticImage } from 'gatsby-plugin-image'
+import * as styles from '../styles/hero.module.scss'
+// import IMG from "../asset/img/logo-wt.png"
+
+{/* <img src={IMG} alt="" /> */}
+// const image = '../asset/img/robynne-hu-HOrhCnQsxnQ-unsplash.jpg';
+
 
 class BlogIndex extends React.Component {
   render() {
@@ -14,7 +22,22 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location}>
         <Seo title="Blog" />
-        <Hero title="BLOG" />
+        <div className={styles.hero}>
+          <StaticImage className={styles.image}
+          src="../asset/img/mitchell-hollander-X3s_v34l40s-unsplash.jpg"
+          alt="Hero-image"
+          placeholder="BLURRED"
+          quality="40"
+          />
+          <div className={styles.details}>
+            <h1 className={styles.title}>BLOG</h1>
+            <div className={styles.content}>
+              StaticImage
+            </div>
+            </div>
+        </div>
+        
+
         <ArticlePreview posts={posts} />
       </Layout>
     )
@@ -29,7 +52,7 @@ export const pageQuery = graphql`
       nodes {
         title
         slug
-        publishDate(formatString: "MMMM Do, YYYY")
+        publishDate(formatString: "YYYY/MM/DD")
         tags
         heroImage {
           gatsbyImage(

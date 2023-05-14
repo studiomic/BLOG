@@ -2,18 +2,28 @@ import React from 'react'
 
 import Seo from '../components/seo'
 import Layout from '../components/layout'
-// import Hero from '../components/hero'
-
+import { StaticImage } from 'gatsby-plugin-image'
 import Intoro from '../components/intoro'
-// import Hero from '../components/hero'
 import * as styles from '../styles/about.module.scss'
+import * as heros from '../styles/intro-static.module.scss'
 import IMG from "../asset/img/sakana.png"
-import IMG2 from "../asset/svg/caret-down-svgrepo-com.svg"
 
 export default function about() {
 	return (
 		<Layout>
 			<Seo title="About" />
+			<StaticImage className={heros.hero}
+			src="../asset/img/mk-s-wKS46KBpolg-unsplash.jpg"
+			alt="Hero-image"
+			placeholder="BLURRED"
+			quality="40"
+			/>
+
+
+
+
+
+
 			<Intoro />
 			<div className={styles.wave}></div>
 			<article className={styles.article}>

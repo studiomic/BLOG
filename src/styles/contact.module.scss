@@ -1,0 +1,18 @@
+.article {
+	// display: grid;
+	font-size: var(--text-prose);
+	letter-spacing: var(--text-prose-tracking);
+	line-height: var(--loose);
+	border:1px solid pink;
+
+	margin-top: var(--space-3xl);
+	border-top: 1px solid #ddd;
+	padding: var(--space-3xl) var(--space-2xl);
+	// grid-template-areas:
+    // "desc"
+	// "profile"
+    // "about"
+	// "service"
+	// "design";
+}
+

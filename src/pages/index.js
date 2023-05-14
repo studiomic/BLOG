@@ -4,6 +4,7 @@ import get from 'lodash/get'
 
 import Layout from '../components/layout'
 import Hero from '../components/hero'
+import HeroType from '../components/hero-type'
 // import Intoro from '../components/intoro'
 import ArticlePreview from '../components/article-preview'
 
@@ -33,7 +34,7 @@ export const pageQuery = graphql`
       nodes {
         title
         slug
-        publishDate(formatString: "MMMM Do, YYYY")
+        publishDate(formatString: "YYYY/MM/DD")
         tags
         heroImage {
           gatsbyImage(

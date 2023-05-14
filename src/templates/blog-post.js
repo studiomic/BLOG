@@ -29,11 +29,11 @@ class BlogPostTemplate extends React.Component {
         [BLOCKS.EMBEDDED_ASSET]: (node) => {
         const { gatsbyImage, description } = node.data.target
         return (
-           <GatsbyImage
+          <GatsbyImage
               image={getImage(gatsbyImage)}
               alt={description}
-           />
-         )
+            />
+          )
         },
       },
     };
@@ -52,7 +52,7 @@ class BlogPostTemplate extends React.Component {
         />
         <div className={styles.container}>
           <span className={styles.meta}>
-            {post.author?.name} &middot;{' '}
+            {/* {post.author?.name} &middot;{' '} */}
             <time dateTime={post.rawDate}>{post.publishDate}</time> –{' '}
             {timeToRead} minute read
           </span>
@@ -102,7 +102,7 @@ export const pageQuery = graphql`
       author {
         name
       }
-      publishDate(formatString: "MMMM Do, YYYY")
+      publishDate(formatString: "YYYY/MM/DD")
       rawDate: publishDate
       heroImage {
         gatsbyImage(layout: FULL_WIDTH, placeholder: BLURRED, width: 1280)
