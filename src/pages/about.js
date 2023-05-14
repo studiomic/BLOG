@@ -12,18 +12,6 @@ export default function about() {
 	return (
 		<Layout>
 			<Seo title="About" />
-			<StaticImage className={heros.hero}
-			src="../asset/img/mk-s-wKS46KBpolg-unsplash.jpg"
-			alt="Hero-image"
-			placeholder="BLURRED"
-			quality="40"
-			/>
-
-
-
-
-
-
 			<Intoro />
 			<div className={styles.wave}></div>
 			<article className={styles.article}>
@@ -48,7 +36,7 @@ export default function about() {
 					<p>
 						最近は React のフレームワークの一つである Gatsby.js にハマりにハマっています。とにかく楽しい！<br />
 						そして、速いは正義。<br />
-						そらもぅ武田の騎馬隊かっ というほど速いので、<ruby>疾<rt>はや</rt>きこと風の如く</ruby>です。
+						そらもぅ武田の騎馬隊かっ というほど、<ruby>疾<rt>はや</rt>きこと風の如く</ruby>です。
 					</p>
 					<p>
 						最初に知ったときは、（ Gatsby・・・て、え? あのギャツビー?! ）と少し驚きました。あんな破滅的なラストを迎える主人公の名を? と。
@@ -92,7 +80,7 @@ export default function about() {
 					</p>
 					<p>
 						私は設計がいちばん好きなので、ヒヤリングの「聴く耳」がもっとも大切な根幹部分かなと思っています。<br />
-						Webサイトは、企業や個人のアイデンティティーを第三者に向けて「客観的に」表現する場なので、その人も知らなかったその人の魅力、本質を映し出す良き媒体でありたいと常に感じます。
+						Webサイトは、企業や個人のアイデンティティーを第三者に向けて「客観的に」表現する場なので、その人も知らなかったその人の魅力、本質を映し出す良き媒体でありたいと常に考えています。
 					</p>
 					<hr />
 					<p>

@@ -62,6 +62,8 @@
   /* text */
   /* color */
   --text-color: var(--black);
+  // --text-color: #ddd;
+  // --background: #000;
   /* size */
   --text-lead: var(--text-lg);
   --text-prose: var(--text-md);
@@ -75,12 +77,12 @@
   --size-max-width: 80rem;
 
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --text-color: #ddd;
-      --background: var(--black);
-    }
-  }
+  // @media (prefers-color-scheme: dark) {
+  //   body {
+  //     --text-color: #ddd;
+  //     --background: var(--black);
+  //   }
+  // }
 }
 
 @media (min-width: 480px) {

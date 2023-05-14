@@ -3,9 +3,11 @@
 }
 
 .wave {
-	margin-top: calc((45dvh - 200px) * -1);
+	// margin-top: calc((45dvh - 200px) * -1);
+	// margin-top: -45dvh;
+	margin-top: -200px;
 	display: block;
-	width: 100%;
+	// width: 100vw;
 	height: 200px;
 	background: url(../asset/svg/wave.svg)no-repeat;
 	background-size: cover;
@@ -16,9 +18,12 @@
 
 .article {
 	display: grid;
+	background: var(--background);
 	font-size: var(--text-prose);
 	letter-spacing: var(--text-prose-tracking);
 	line-height: var(--loose);
+	background: var(--background);
+	// background: #000;
 	// border:1px solid pink;
 	grid-template-areas:
     "desc"
@@ -103,10 +108,6 @@
 
 }
 
-
-
-
-
 hr {
 	border: 0;
 	height: 2em;
@@ -133,18 +134,17 @@ hr {
 		"service service"
 		"design design";
 	}
-	.wave {
-		// display: none;
-		margin-top: calc((45dvh - 200px) * -1);
-		display: block;
-		width: 100%;
-		height: 200px;
-		background: url(../asset/svg/wave.svg)no-repeat;
-		background-size: cover;
-		position: relative;
-		transform: scale(-1, -1);
-		// border: 1px solid cyan;
-	}
+	// .wave {
+	// 	margin-top: calc((45dvh - 200px) * -1);
+	// 	display: block;
+	// 	width: 100%;
+	// 	height: 200px;
+	// 	background: url(../asset/svg/wave.svg)no-repeat;
+	// 	background-size: cover;
+	// 	position: relative;
+	// 	transform: scale(-1, -1);
+	// 	// border: 1px solid cyan;
+	// }
 	h1 {
 		margin-top: calc(var(--space-3xl) * -1);
 	}
@@ -155,15 +155,11 @@ hr {
 			}
 		}
 	}
-	
-
-
-
 }
+
 @media (min-width: 1200px) {
 	.article {
 		width: calc(85% - var(--size-gutter));
-		
 	}
 }
 
@@ -172,5 +168,4 @@ hr {
 // background: cyan;
 // border:1px solid #000;
 // border:1px solid green;
-// border: 1px solid salmon;
 // border: 1px solid salmon;
