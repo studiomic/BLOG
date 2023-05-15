@@ -1,3 +1,5 @@
+@use "prism-okaidia.scss";
+
 @font-face {
   font-family: 'Inter var';
   font-weight: 100 900;
@@ -68,7 +70,7 @@ tt,
 code,
 kbd {
   // background: var(--black-fade-5);
-  background: var(--black);
+  // background: var(--black);
   padding-bottom: 0.2em;
   padding-top: 0.2em;
 }
@@ -83,12 +85,9 @@ kbd {
 tt,
 code {
   // background-color: var(--black-fade-5);
-  background: var(--text-color);
-  color: var(--background);
-  // border-radius: var(--radius-sm);
-  // font-weight: var(--medium);
-  // padding: 0.2em 0;
-  // border: 1px solid cyan;
+  border-radius: var(--radius-sm);
+  font-weight: var(--medium);
+  padding: 0.2em 0;
 }
 
 code:before,
@@ -96,15 +95,35 @@ code:after,
 tt:before,
 tt:after {
   content: ' ';
-  // letter-spacing: -1em;
-  letter-spacing: -0.2em;
+  letter-spacing: -1em;
+  // letter-spacing: -0.2em;
 }
 
 pre,
 code {
   font-family: var(--font-monospace);
+  background: var(--black);
+  color: var(--background);
+  border-radius: 4px;
+}
+pre {
+  padding: var(--space-xl);
 }
 
+// .mecode {
+//   background: #000;
+// }
+
+
+
+
+
+  // --space-sm: 4px;
+  // --space-md: 8px;
+  // --space-lg: 16px;
+  // --space-xl: 20px;
+  // --space-2xl: 24px;
+  // --space-3xl: 48px;
 //main {
 	// container-type: inline-size;
 //

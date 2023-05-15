@@ -5,14 +5,18 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
  * Based on https://github.com/chriskempson/tomorrow-theme
  * @author Rose Pritchard
  */
+ // pre,
+ // code {
 
-/* code[class*="language-"],
-pre[class*="language-"] { */
-pre,
-code {
+
+pre,code,	
+code[class*="language-"],
+pre[class*="language-"] {
 	color: #ccc;
+	color: cyan;
 	background: none;
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	// font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-family: monospace;
 	font-size: 1em;
 	text-align: left;
 	white-space: pre;
@@ -33,15 +37,18 @@ code {
 }
 
 /* Code blocks */
+pre,
 pre[class*="language-"] {
 	padding: 1em;
 	margin: .5em 0;
 	overflow: auto;
 }
 
+pre,code
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
 	background: #2d2d2d;
+	background: #cc99cd;
 }
 
 /* Inline code */
@@ -57,10 +64,14 @@ pre[class*="language-"] {
 .token.doctype,
 .token.cdata {
 	color: #999;
+	color: tomato;
+
 }
 
 .token.punctuation {
 	color: #ccc;
+	color: tomato;
+
 }
 
 .token.tag,

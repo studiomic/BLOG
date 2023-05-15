@@ -27,39 +27,6 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
         host: process.env.CONTENTFUL_HOST
       },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          'gatsby-remark-prismjs-title',
-          {
-            resolve: `gatsby-remark-prismjs`,
-            options: {
-              classPrefix: "language-",
-              inlineCodeMarker: null,
-              aliases: {
-                js: 'javascript',
-                sh: 'bash',
-              },
-              showLineNumbers: true,
-              noInlineHighlight: false,
-              languageExtensions: [
-                {
-                  language: 'superscript',
-                  extend: 'javascript',
-                  definition: { superscript_types: /(SuperType)/ },
-                  insertBefore: {
-                    function: { superscript_keywords: /(superif|superelse)/ },
-                  },
-                },
-              ],
-              prompt: { user: 'root', host: 'localhost', global: false },
-              escapeEntities: {},
-            },
-          },
-        ]
-      }
     }
   ],
 };

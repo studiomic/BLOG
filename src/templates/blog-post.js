@@ -4,6 +4,15 @@ import get from 'lodash/get'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
 import { BLOCKS } from '@contentful/rich-text-types'
+// import { BLOCKS, MARKS } from '@contentful/rich-text-types'
+
+// import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { monokaiSublime } from "react-syntax-highlighter/dist/cjs/styles/hljs";
+
+
+
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import readingTime from 'reading-time'
 
@@ -35,8 +44,42 @@ class BlogPostTemplate extends React.Component {
             />
           )
         },
+        [BLOCKS.PARAGRAPH]: (node, children) => {
+          if (
+            node.content.length === 1 &&
+            node.content[0].marks.find((x) => x.type === "code")
+          ) {
+            return <pre>{children}</pre>;
+            // return <SyntaxHighlighter language="htmlbars" style={okaidia}>{children}</SyntaxHighlighter>
+            // <SyntaxHighlighter language={language} style={okaidia}>{value}</SyntaxHighlighter>
+            
+          }
+          return <p>{children}</p>;
+        },
       },
     };
+
+// コードブロックのシンタックスハイライト
+function code(text) {
+  text.shift(); // コードブロックのfalseを削除
+  const language = text.shift(); // コードブロックの1行目の言語指定をClassに利用後削除
+  text.shift(); // コードブロックの1行目の改行を削除
+
+  const value = text.reduce((acc, cur) => {
+    if (typeof cur !== "string" && cur.type === "br") {
+      return acc + "\n";
+    }
+    return acc + cur;
+  }, "");
+
+  return (
+    <SyntaxHighlighter language={language} style={okaidia}>
+      {value}
+    </SyntaxHighlighter>
+  );
+}
+
+
 
     return (
       <Layout location={this.props.location}>
