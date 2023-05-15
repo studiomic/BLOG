@@ -100,6 +100,41 @@ hr {
 	padding: 0;
 }
 
+// .gatsby-code-button {
+// 	position: absolute;
+// 	background: cyan;
+// 	top: -17px ;
+// 	right: 10px;
+// 	z-index: 100;
+// 	&::after {
+// 		display: none !important;
+// 	}
+// 	svg {
+// 		filter: invert(98%) sepia(5%) saturate(983%) hue-rotate(178deg)
+// 			brightness(95%) contrast(99%);
+// 		opacity: 0.9;
+// 	}
+// }
+.gatsby-code-button-container {
+	touch-action: none;
+	display: flex;
+	justify-content: flex-end;
+	position: relative;
+	top: 28px;
+	right: 3px;
+	z-index: 100;
+	pointer-events: none;
+}
+
+.gatsby-code-button-icon {
+	display: block;
+	width: 14px;
+	height: 14px;
+	fill: gray;
+}
+
+
+
 @media (min-width: 768px) {
 	.container {
 		max-width: var(--size-max-width);

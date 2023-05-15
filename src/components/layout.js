@@ -2,7 +2,7 @@ import React from 'react'
 
 import '../styles/variables.scss'
 import '../styles/global.scss'
-import '../styles/prismjs/prism-tomorrowNight.css'
+// import '../styles/prismjs/prism-tomorrowNight.css'
 
 import Seo from './seo'
 import Navigation from './navigation'

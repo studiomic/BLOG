@@ -5,21 +5,10 @@ import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
 // import { BLOCKS } from '@contentful/rich-text-types'
 import { BLOCKS, MARKS } from '@contentful/rich-text-types'
-// import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { okaidia } from "react-syntax-highlighter/dist/cjs/styles/prism"; 
-
-
-// import { okaidia } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-// import { okaidia } from '../styles/prismjs/prism-okaidia.css';
-// import SyntaxHighlighter from 'react-syntax-highlighter';
-import { monokaiSublime } from "react-syntax-highlighter/dist/cjs/styles/hljs";
-
-
-
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import readingTime from 'reading-time'
-
 import Seo from '../components/seo'
 import Layout from '../components/layout'
 import Hero from '../components/hero'
@@ -53,7 +42,7 @@ class BlogPostTemplate extends React.Component {
             node.content.length === 1 &&
             node.content[0].marks.find((x) => x.type === "code")
           ) {
-            return <div>{children}</div>;
+            return <div><pre>{children}</pre></div>;
           }
           return <p>{children}</p>;
         },
@@ -67,10 +56,25 @@ class BlogPostTemplate extends React.Component {
       },
     };
 
+    // コードブロックのシンタックスハイライト
+    function code(text) {
+      text.shift(); //不必要な部分を取り除く
+      const language = text.shift(); //言語指定部分の削除
+      text.shift(); ////不必要な部分を取り除く
 
+      const value = text.reduce((acc, cur) => {
+        if (typeof cur !== "string" && cur.type === "br") {
+          return acc + "\n";
+        }
+        return acc + cur;
+      }, "");
 
-
-
+      return (
+        <SyntaxHighlighter language={language} style={okaidia}>
+          {value}
+        </SyntaxHighlighter>
+      );
+    }
 
     return (
       <Layout location={this.props.location}>
