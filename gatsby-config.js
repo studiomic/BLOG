@@ -19,7 +19,16 @@ module.exports = {
       },
     },
     "gatsby-plugin-image",
-    "gatsby-plugin-dark-mode",
+    {
+      resolve: 'gatsby-plugin-use-dark-mode',
+      options: {
+        classNameDark: 'dark-mode',
+        classNameLight: 'light-mode',
+        classNameBlack: 'black-mode',
+        storageKey: 'darkMode',
+        minify: true,
+      },
+    },
     "gatsby-plugin-sass",
     {
       resolve: "gatsby-source-contentful",
