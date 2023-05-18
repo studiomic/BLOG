@@ -19,6 +19,7 @@ module.exports = {
       },
     },
     "gatsby-plugin-image",
+    "gatsby-plugin-dark-mode",
     "gatsby-plugin-sass",
     {
       resolve: "gatsby-source-contentful",
@@ -27,6 +28,6 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
         host: process.env.CONTENTFUL_HOST
       },
-    }
+    },
   ],
 };

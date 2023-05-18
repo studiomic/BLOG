@@ -5,9 +5,12 @@
   align-items: center;
   margin: 0 auto;
   padding: 0 var(--size-gutter);
+  border: 1px solid pink;
+
 }
 
 .navigation {
+  border: 1px solid cyan;
   display: flex;
   list-style: none;
   margin: 0;
@@ -32,7 +35,7 @@
 }
 
 .logoLink {
-  // border-left: 1px solid var(--black);
+  border: 1px solid var(--black);
   img {
     height: calc(var(--space-3xl)*3);
     object-fit: contain;
@@ -42,6 +45,10 @@
       filter: invert(40%);
     }
   }
+}
+
+.switcher {
+  border: 1px solid var(--black);
 }
 
 
