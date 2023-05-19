@@ -1,67 +1,6 @@
 :root {
 --font-min: 游明朝, "Yu Mincho", YuMincho, serif;
-
-.dark-mode {
-	.wave {
-		display: none;
-	}
-
 }
-
-
-
-}
-
-.wave {
-	margin-top: -200px;
-	display: block;
-	height: 200px;
-	background: url(../asset/svg/wave.svg)no-repeat;
-	background-size: cover;
-	transform: scale(-1, -1);
-}
-// border: 1px solid cyan;
-// filter: invert(100%);
-// .wave {
-// 	background: url(../asset/svg/wave.svg)no-repeat;
-// 	border: 1px solid pink;
-
-// }
-
-// .waved {
-// 	background: url(../asset/svg/wave-dark.svg)no-repeat;
-// 	background-size: cover;
-// 	border: 1px solid cyan;
-
-// }
-
-	.dark-mode {
-		.wave {
-			display: none;
-		}
-	}
-
-	.light-mode {
-		.waved {
-			display: none;
-		}
-	}
-
-
-
-
-// .dark-mode {
-// 	.wave {
-// 		background: url(../asset/svg/wave-dark.svg)no-repeat;
-// 	}
-// }
-// body.light-mode.wave {
-// 		background: url(../asset/svg/wave.svg)no-repeat;
-	
-// }
-
-
-
 
 .article {
 	display: grid;
@@ -69,7 +8,8 @@
 	font-size: var(--text-prose);
 	letter-spacing: var(--text-prose-tracking);
 	line-height: var(--loose);
-	background: var(--background);
+	// background: var(--background);
+	// background: pink;
 	// background: #000;
 	// border:1px solid pink;
 	grid-template-areas:
@@ -122,12 +62,6 @@
 	}
 }
 
-
-
-
-
-
-
 .about {
 	grid-area: about;
 	margin-top: var(--space-3xl);
@@ -144,8 +78,8 @@
 	p {
 		font-family: var(--font-min);
 	}
-	
 }
+
 .design {
 	grid-area: design;
 	padding: var(--space-lg) var(--space-2xl) ;
@@ -204,3 +138,27 @@ hr {
 // border:1px solid #000;
 // border:1px solid green;
 // border: 1px solid salmon;
+
+
+// .wave {
+// 	margin-top: -200px;
+// 	display: block;
+// 	height: 200px;
+// 	background: url(../asset/svg/wave.svg)no-repeat;
+// 	background-size: cover;
+// 	transform: scale(-1, -1);
+// }
+// border: 1px solid cyan;
+// filter: invert(100%);
+// .wave {
+// 	background: url(../asset/svg/wave.svg)no-repeat;
+// 	border: 1px solid pink;
+
+// }
+
+// .waved {
+// 	background: url(../asset/svg/wave-dark.svg)no-repeat;
+// 	background-size: cover;
+// 	border: 1px solid cyan;
+
+// }
