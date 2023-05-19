@@ -15,7 +15,8 @@ export default function about() {
 		<Layout>
 			<Seo title="About" />
 			<Intoro />
-			<div className={styles.wave}></div>
+			<div class="wave"></div>
+			{/* <div className={styles.wave}></div> */}
 			<article className={styles.article}>
 				<section className={styles.desc}>
 					<h1>まくら、<br/>　さくら持ってこい!</h1>

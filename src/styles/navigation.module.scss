@@ -37,7 +37,7 @@
   img {
     height: calc(var(--space-3xl)* 2.4);
     // border: 1px solid var(--black);
-    // object-fit: contain;
+    object-fit: contain;
   }
   &:hover {
     img {

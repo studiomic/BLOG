@@ -1,5 +1,5 @@
 import React from 'react';
-// import Toggle from './Toggle';
+import Toggle from './Toggle';
 import useDarkMode from 'use-dark-mode';
 // import * as mode from '../styles/darkmord.module.scss'
 
@@ -13,10 +13,11 @@ const DarkModeToggle = () => {
 	return (
 		<div className="dark-mode-toggle">
 			<button type="button" onClick={darkMode.disable}>
-				<span><img src={IMG} alt="" />Light</span>
+				<span><img src={IMG} alt="" /></span>
 			</button>
+			<Toggle checked={darkMode.value} onChange={darkMode.toggle} />
 			<button type="button" onClick={darkMode.enable}>
-				<span><img src={IMG2} alt="" />Dark</span>
+				<span><img src={IMG2} alt="" /></span>
 			</button>
 		</div>
 	);
