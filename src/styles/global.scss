@@ -27,18 +27,25 @@ html * {
 :root {
   --background: var(--white);
   --text-color: var(--black);
+  --about-bg: var(../asset/svg/wave-dark.svg);
+
   body.dark-mode {
-    // --background: #323339;
-    --background: #292a2d;
-    --background: #282828;
+    // --background: #282828;
+    // --background: #292a2d;
+    --background: #323339;
     --text-color: #ddd;
+    .picts img {
+      filter: invert(100%);
+    }
+    
     .dark-mode-toggle {
+      span {
+        color: var(--white);
+      }
       button:nth-of-type(2) {
         display: none;
       }
     }
-    // --text-color: var(--white);
-    // --background: var(--black);
   }
   body.light-mode {
     --background: var(--white);
@@ -50,6 +57,10 @@ html * {
     }
   }
 }
+
+
+
+
 
 body {
   background: var(--background);
@@ -78,6 +89,26 @@ body {
     }
   }
 }
+
+.dark-mode-toggle {
+  // color: white;
+  img {
+    display: inline-block;
+		// margin-right: 0.5rem;
+		// width: 20px;
+		// width: 40px;
+		height: 24px;
+	}
+	button {
+    background: initial;
+		border: initial;
+    span {
+      color: var(--text-color);
+    }
+	}
+}
+
+
 
 // body.black-mode {
 //   background-color: var(--black);

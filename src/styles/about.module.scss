@@ -1,20 +1,67 @@
 :root {
 --font-min: 游明朝, "Yu Mincho", YuMincho, serif;
+
+.dark-mode {
+	.wave {
+		display: none;
+	}
+
+}
+
+
+
 }
 
 .wave {
-	// margin-top: calc((45dvh - 200px) * -1);
-	// margin-top: -45dvh;
 	margin-top: -200px;
 	display: block;
-	// width: 100vw;
 	height: 200px;
 	background: url(../asset/svg/wave.svg)no-repeat;
 	background-size: cover;
-	position: relative;
 	transform: scale(-1, -1);
 	// border: 1px solid cyan;
+    // filter: invert(100%);
 }
+// .wave {
+// 	background: url(../asset/svg/wave.svg)no-repeat;
+// 	border: 1px solid pink;
+
+// }
+
+// .waved {
+// 	background: url(../asset/svg/wave-dark.svg)no-repeat;
+// 	background-size: cover;
+// 	border: 1px solid cyan;
+
+// }
+
+	.dark-mode {
+		.wave {
+			display: none;
+		}
+	}
+
+	.light-mode {
+		.waved {
+			display: none;
+		}
+	}
+
+
+
+
+// .dark-mode {
+// 	.wave {
+// 		background: url(../asset/svg/wave-dark.svg)no-repeat;
+// 	}
+// }
+// body.light-mode.wave {
+// 		background: url(../asset/svg/wave.svg)no-repeat;
+	
+// }
+
+
+
 
 .article {
 	display: grid;
@@ -77,9 +124,9 @@
 
 
 
-.about,.service,.design {
-	// border:1px solid tomato;
-}
+
+
+
 
 .about {
 	grid-area: about;

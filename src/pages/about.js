@@ -6,6 +6,9 @@ import Layout from '../components/layout'
 import Intoro from '../components/intoro'
 import * as styles from '../styles/about.module.scss'
 import IMG from "../asset/img/sakana.png"
+// import IMG2 from "../asset/svg/wave.svg"
+// import IMG3 from "../asset/svg/wave-dark.svg"
+
 
 export default function about() {
 	return (
@@ -22,7 +25,7 @@ export default function about() {
 					</p>
 				</section>
 				<section className={styles.profile}>
-					<article>
+					<article class="picts">
 						<img src={IMG} alt="" />
 						<dl>
 							<dt>SAKURA IIZUKA</dt>
