@@ -78,7 +78,7 @@ export default function about() {
 						その他 ： サイト運用・保守、コンサルティング、名刺デザイン
 					</p>
 					<p className={styles.info}>
-						連絡先 ： <span>wabwork(@)studiomic.net</span><span><a href="https://www.instagram.com/cerisierpurr/" target="_blank" className={styles.sns}><img src={SNS} alt="" /></a></span><br />
+						連絡先 ： <span>wabwork(@)studiomic.net</span><span class="picts"><a href="https://www.instagram.com/cerisierpurr/" target="_blank" className={styles.sns}><img src={SNS} alt="" /></a></span><br />
 						お問い合わせ、記事についてのご意見・ご質問があればご連絡ください。
 					</p>
 				</section>

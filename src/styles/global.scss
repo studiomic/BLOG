@@ -34,7 +34,22 @@ html * {
     --background: var(--white);
     --text-color: var(--black);
   }
+  @media (prefers-color-scheme: dark) {
+      --background: var(--black);
+      --text-color: var(--white);
+  }
 }
+
+// :root {
+// 	--text-color: #333;
+// 	--background: #fff;
+// 	@media (prefers-color-scheme: dark) {
+// 		:root {
+// 			--text-color: #ddd;
+// 			--background: #000;
+// 		}
+// 	}
+// }
 
 .wave {
   // border: 1px solid tomato;
