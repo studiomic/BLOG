@@ -6,8 +6,8 @@ import Layout from '../components/layout'
 import Intoro from '../components/intoro'
 import * as styles from '../styles/about.module.scss'
 import IMG from "../asset/img/sakana.png"
+import SNS from "../asset/svg/iconmonstr-instagram-11.svg"
 // import IMG2 from "../asset/svg/wave.svg"
-// import IMG3 from "../asset/svg/wave-dark.svg"
 
 
 export default function about() {
@@ -15,8 +15,9 @@ export default function about() {
 		<Layout>
 			<Seo title="About" />
 			<Intoro />
-			<div class="wave"></div>
-			{/* <div className={styles.wave}></div> */}
+			<div class="wave">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path d="M0,64L80,85.3C160,107,320,149,480,144C640,139,800,85,960,58.7C1120,32,1280,32,1360,32L1440,32L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"/></svg>
+			</div>
 			<article className={styles.article}>
 				<section className={styles.desc}>
 					<h1>まくら、<br/>　さくら持ってこい!</h1>
@@ -33,6 +34,9 @@ export default function about() {
 							<dd>1967年3月10日生</dd>
 							<dd>魚座・A型・Female</dd>
 						</dl>
+						<p>
+							<a href="https://www.instagram.com/cerisierpurr/" target="_blank" className={styles.sns}><img src={SNS} alt="" /></a>
+						</p>
 					</article>
 				</section>
 				<section className={styles.about}>
@@ -72,6 +76,10 @@ export default function about() {
 						WEBサイト制作 ： 企画・設計・制作、ヘッドレスCMSへの移行、 コーディング<br />
 						WordPress ： Full Site Editing ブロックテーマへのリニューアル、カスタマイズ、オリジナルテーマ制作<br />
 						その他 ： サイト運用・保守、コンサルティング、名刺デザイン
+					</p>
+					<p className={styles.info}>
+						連絡先 ： <span>wabwork(@)studiomic.net</span><span><a href="https://www.instagram.com/cerisierpurr/" target="_blank" className={styles.sns}><img src={SNS} alt="" /></a></span><br />
+						お問い合わせ、記事についてのご意見・ご質問があればご連絡ください。
 					</p>
 				</section>
 				<section className={styles.design}>
