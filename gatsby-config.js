@@ -24,7 +24,6 @@ module.exports = {
       options: {
         classNameDark: 'dark-mode',
         classNameLight: 'light-mode',
-        classNameBlack: 'black-mode',
         storageKey: 'darkMode',
         minify: true,
       },
