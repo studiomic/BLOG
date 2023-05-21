@@ -34,30 +34,26 @@ html * {
     --background: var(--white);
     --text-color: var(--black);
   }
-  @media (prefers-color-scheme: dark) {
-      --background: #323339;
-      --text-color: #ddd;
-      nav {
-        img {
-          filter: invert(100%);
-        }
-        button:last-child { 
-          svg {
-            fill: var(--primary);
-          }
-        }
-        svg {
-          // fill: var(--text-color);
-          fill: var(--secondary);
-        }
-      }
-      .picts img {
-        filter: invert(100%);
-      }
-
-
-
-  }
+  // @media (prefers-color-scheme: dark) {
+  //     --background: #323339;
+  //     --text-color: #ddd;
+  //     nav {
+  //       img {
+  //         filter: invert(100%);
+  //       }
+  //       button:last-child { 
+  //         svg {
+  //           fill: var(--primary);
+  //         }
+  //       }
+  //       svg {
+  //         fill: var(--secondary);
+  //       }
+  //     }
+  //     .picts img {
+  //       filter: invert(100%);
+  //     }
+  // }
 }
 
 // :root {
