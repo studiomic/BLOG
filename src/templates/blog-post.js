@@ -42,7 +42,7 @@ class BlogPostTemplate extends React.Component {
             node.content.length === 1 &&
             node.content[0].marks.find((x) => x.type === "code")
           ) {
-            return <div><pre>{children}</pre></div>;
+            return <div>{children}</div>;
           }
           return <p>{children}</p>;
         },
