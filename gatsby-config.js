@@ -19,7 +19,6 @@ module.exports = {
       },
     },
     "gatsby-plugin-image",
-    "gatsby-plugin-use-dark-mode",
     "gatsby-plugin-sass",
     {
       resolve: "gatsby-source-contentful",
