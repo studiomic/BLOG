@@ -5,7 +5,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: "Web Design & Web developer - Stylo de Cerise",
-    description: "Gatsby+Contentful WebデザイナーノBLOG",
+    description: "Gatsby + Contentful Web Designer BLOG",
   },
   plugins: [
     "gatsby-transformer-sharp",
