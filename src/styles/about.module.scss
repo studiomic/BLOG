@@ -4,7 +4,7 @@
 
 .article {
 	display: grid;
-	background: var(--background);
+	// background: var(--background);
 	font-size: var(--text-prose);
 	letter-spacing: var(--text-prose-tracking);
 	line-height: var(--loose);
@@ -172,7 +172,6 @@ hr {
 // 	background-size: cover;
 // 	transform: scale(-1, -1);
 // border: 1px solid cyan;
-// filter: invert(100%);
 // .wave {
 // 	background: url(../asset/svg/wave.svg)no-repeat;
 // 	border: 1px solid pink;
