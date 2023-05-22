@@ -58,9 +58,9 @@ class BlogPostTemplate extends React.Component {
 
     // コードブロックのシンタックスハイライト
     function code(text) {
-      text.shift(); //不必要な部分を取り除く
-      const language = text.shift(); //言語指定部分の削除
-      text.shift(); ////不必要な部分を取り除く
+      text.shift(); // コードブロックのfalseを削除
+      const language = text.shift(); // コードブロックの1行目の言語指定をClassに利用後削除
+      text.shift(); // コードブロックの1行目の改行を削除
 
       const value = text.reduce((acc, cur) => {
         if (typeof cur !== "string" && cur.type === "br") {
