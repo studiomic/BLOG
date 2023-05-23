@@ -9,28 +9,25 @@ import * as styles from '../styles/hero.module.scss'
 // import IMG from "../asset/img/mitchell-hollander-X3s_v34l40s-unsplash.jpg"
 //<img src={IMG} alt="" />
 // const image = '../asset/img/robynne-hu-HOrhCnQsxnQ-unsplash.jpg';
-
+{/* <StaticImage className={styles.image} */}
 
 class BlogIndex extends React.Component {
   render() {
     const posts = get(this, 'props.data.allContentfulBlogPost.nodes')
-
     return (
       <Layout location={this.props.location}>
         <Seo title="Blog" />
         <div className={styles.hero}>
           <StaticImage className={styles.image}
-          src="../asset/img/mitchell-unsplash.jpg"
+          src="../asset/img/mitchell-unsplash.png"
           alt="Hero-image"
           placeholder="BLURRED"
           quality="40"
           />
-
           <div className={styles.details}>
             <h1 className={styles.title}>BLOG</h1>
-            <div className={styles.content}>
-            </div>
-            </div>
+            {/* <div className={styles.content}></div> */}
+          </div>
         </div>
         <ArticlePreview posts={posts} />
       </Layout>

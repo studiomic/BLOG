@@ -67,7 +67,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // })
   const tags= await graphql(`
   query {
-    allContentfulArticlePost {
+    allContentfulBlogPost {
       edges {
         node {
           tags
