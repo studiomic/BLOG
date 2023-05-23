@@ -73,12 +73,10 @@ query($tag: String) {
 		totalCount
 		edges {
 			node {
-				fields {
-					slug
-				}
-				frontmatter {
-					title
-				}
+				
+				slug
+				title
+				
 			}
 		}
 	}

@@ -5,6 +5,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   // Define a template for blog post
   const blogPost = path.resolve('./src/templates/blog-post.js')
+  // const tagTemplate = path.resolve('./src/templates/tags.js')
 
   const result = await graphql(
     `
@@ -13,6 +14,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           nodes {
             title
             slug
+            tags
           }
         }
       }
@@ -50,4 +52,46 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       })
     })
   }
+  // Extract tag data from query
+  // const tags = result.allContentfulBlogPost.nodes.tags
+
+  // Make tag pages
+  // tags.forEach(tag => {
+  //   createPage({
+  //     path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+  //     component: tagTemplate,
+  //     context: {
+  //       tag: tag.fieldValue,
+  //     },
+  //   })
+  // })
+  const tags= await graphql(`
+  query {
+    allContentfulArticlePost {
+      edges {
+        node {
+          tags
+        }
+      }
+    }
+  }
+`)
+
+tags.data.allContentfulBlogPost.edges.forEach(edge=> {
+  let slugifiedTag= edges.node.tag.toLowerCase().replace("/^\s+$/g", "-");
+
+    createPage({
+      path: `/tag/${slugifiedTag}`,
+      component: path.resolve('./src/templates/tags.js'), // tagComponent
+      context: {
+        slug: edge.node.slug,
+        tagName: edges.node.tag
+      },
+    })
+  })
+
+
 }
+
+
+
