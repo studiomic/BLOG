@@ -4,7 +4,8 @@ import { GatsbyImage } from 'gatsby-plugin-image'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import Container from './container'
 import Tags from './tags'
-// import IDTags from './tags-id'
+// import Tags from './tags2'
+// import Tagsmeta from '../../zhtml/tags-meta'
 
 import * as styles from '../styles/article-preview.module.scss'
 // import * as styles from './article-preview.module.css'
@@ -29,9 +30,6 @@ const ArticlePreview = ({ posts }) => {
               <div className={styles.meta}>
                 <small className="meta">{post.publishDate}</small>
                 <Tags tags={post.tags} />
-
-                {/* <IDTags tags={post.metadata.tags} /> */}
-
               </div>
             </li>
           )
@@ -42,3 +40,17 @@ const ArticlePreview = ({ posts }) => {
 }
 
 export default ArticlePreview
+
+
+// {/* <Taglink tags={post.metadata.tags} /> */}
+
+//               {/* {tags.map((post) => {
+//                 $num = {post.metadata.tags.name}
+//                               if ($num > 0) {}
+
+//               } */}
+// {/* <Tagsmeta tags={post.metadata.tags} /> */}
+
+// {/* 
+// <br />
+// {post.metadata.tags[0].name} */}

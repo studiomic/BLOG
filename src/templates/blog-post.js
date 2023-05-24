@@ -13,9 +13,12 @@ import Seo from '../components/seo'
 import Layout from '../components/layout'
 import Hero from '../components/hero'
 import Tags from '../components/tags'
+
+// import Taglink from '../components/tags-id'
 // import Tags from '../components/tags2'
 
 import * as styles from '../styles/blog-post.module.scss'
+import * as tagstyles from '../styles/tags.module.scss'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -58,26 +61,6 @@ class BlogPostTemplate extends React.Component {
       },
     };
 
-    // コードブロックのシンタックスハイライト
-    function code(text) {
-      text.shift(); // コードブロックのfalseを削除
-      const language = text.shift(); // コードブロックの1行目の言語指定をClassに利用後削除
-      text.shift(); // コードブロックの1行目の改行を削除
-
-      const value = text.reduce((acc, cur) => {
-        if (typeof cur !== "string" && cur.type === "br") {
-          return acc + "\n";
-        }
-        return acc + cur;
-      }, "");
-
-      return (
-        <SyntaxHighlighter language={language} style={okaidia}>
-          {value}
-        </SyntaxHighlighter>
-      );
-    }
-
     return (
       <Layout location={this.props.location}>
         <Seo
@@ -101,17 +84,14 @@ class BlogPostTemplate extends React.Component {
               {post.body?.raw && renderRichText(post.body, options)}
             </div>
 
-
-            {/* {post.metadata.tags} */}
-
-{/* 
-<p>
-{post.metadata.tags[0].name}<br />
-{post.metadata.tags[1].name}<br />
-{post.metadata.tags[2].name}<br />
-{post.metadata.tags[3].name}<br />
-</p> */}
-
+<small className={tagstyles.tags}>
+{post.metadata.tags.map(tag => (
+  <Link className={tagstyles.link} to={`/tags/${tag.contentful_id}/`}>
+    <div key={tag} className={tagstyles.tag}>{tag.name}</div>
+    </Link>
+  ))}
+</small>   
+<hr />
 
 
 
