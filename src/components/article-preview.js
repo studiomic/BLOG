@@ -2,9 +2,10 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
-
 import Container from './container'
 import Tags from './tags'
+// import IDTags from './tags-id'
+
 import * as styles from '../styles/article-preview.module.scss'
 // import * as styles from './article-preview.module.css'
 
@@ -28,6 +29,9 @@ const ArticlePreview = ({ posts }) => {
               <div className={styles.meta}>
                 <small className="meta">{post.publishDate}</small>
                 <Tags tags={post.tags} />
+
+                {/* <IDTags tags={post.metadata.tags} /> */}
+
               </div>
             </li>
           )

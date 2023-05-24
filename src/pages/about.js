@@ -35,7 +35,7 @@ export default function about() {
 							<dd>魚座・A型・Female</dd>
 						</dl>
 						<p>
-							<a href="https://www.instagram.com/cerisierpurr/" target="_blank" className={styles.sns}><img src={SNS} alt="" /></a>
+							<a href="https://www.instagram.com/cerisierpurr/" rel="noopener" target="_blank" className={styles.sns}><img src={SNS} alt="instagram" /></a>
 						</p>
 					</article>
 				</section>
@@ -59,7 +59,7 @@ export default function about() {
 					</p>
 					<hr />
 					<p>
-						閑話休題。<br />そんなわけで、このブログ「Style de Cerise」は、ヘッドレスCMS : Contentfulが提供している <a href="https://www.gatsbyjs.com/starters/contentful/starter-gatsby-blog/" target='_blank'>starter-gatsby-blog</a> と静的ジェネレーター : Gatsbyでつくりました。<br />
+						閑話休題。<br />そんなわけで、このブログ「Style de Cerise」は、ヘッドレスCMS : Contentfulが提供している <a href="https://www.gatsbyjs.com/starters/contentful/starter-gatsby-blog/" rel="noopener" target='_blank'>starter-gatsby-blog</a> と静的ジェネレーター : Gatsbyでつくりました。<br />
 					</p>
 					<p>
 						自社製なだけに、Contentfulとの連携はものすごくスムーズでした。<br />
@@ -78,7 +78,7 @@ export default function about() {
 						その他 ： サイト運用・保守、コンサルティング、名刺デザイン
 					</p>
 					<p className={styles.info}>
-						連絡先 ： <span>wabwork(@)studiomic.net</span><span class="picts"><a href="https://www.instagram.com/cerisierpurr/" target="_blank" className={styles.sns}><img src={SNS} alt="" /></a></span><br />
+						連絡先 ： <span>wabwork(@)studiomic.net</span><span class="picts"><a href="https://www.instagram.com/cerisierpurr/" rel="noopener" target="_blank" className={styles.sns}><img src={SNS} alt="instagram" /></a></span><br />
 						お問い合わせ、記事についてのご意見・ご質問があればご連絡ください。
 					</p>
 				</section>
@@ -98,8 +98,6 @@ export default function about() {
 						ある教育者からの発注で「どこにもないものを創ってください」とだけ要望されたデザインをきっかけに、設計者として善きブレイク・ポイントをいただきました。<br />
 						それ以降は既存のフレームワークからも離れ、固定観念からも放たれ、自由に考える空恐ろしい責任とともに、シンプルな構造と「ライク・ア・リクルートスーツ」ではないチャーミングな実装を心がけています。
 					</p>
-
-
 				</section>
 			</article>
 		</Layout>

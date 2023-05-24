@@ -3,33 +3,37 @@ import { Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import * as styles from '../styles/tags.module.scss'
 
-// const Tag = ({ tag }) => (
+// const Tags = ({ tag }) => (
 //   <Link className={styles.link} to={`/tags/${kebabCase(tag)}/`}>
 //     <li className={styles.tag}>{tag}</li>
 //   </Link>
 // );
-const Tags = ({ tags }) =>
-  tags?.length > 0 && (
-    <small className={styles.tags}>
-      {tags.map((tag) => (
-        <div key={tag} className={styles.tag}>
-          <Link className={styles.link} to={`/tags/${kebabCase(tag)}/`}>
-            {tag}
-          </Link>
-        </div>
-      ))}
-    </small>
-  )
+
+
+const animals = post.metadata.tags;
+
+const Example = () => {
+  const list = animals.map((animal) => <li key={animal}>{animal}</li>);
+  return (
+    <>
+      <h3>配列</h3>
+      <ul>{list}</ul>
+    </>
+  );
+};
+
+export default Example;
+
 
   // const IDTags = ({ tags }) =>
   //   tags?.length > 0 && (
   //     {tags.map((tag) => (
+  //       <div key={tag} className={styles.tag}>
   //       <Link className={styles.link} to={`/tags/{tag.contentful_id}/`}>
-  //         {tag.name}
-  //       </Link>
-  //       )
-  //     )}
-      
+  //       {tag.name}
+  //     </Link>
+  //       </div>
+  //     ))}
   //   )
 
 
@@ -57,4 +61,4 @@ const Tags = ({ tags }) =>
 //     </small>
 //   )
 
-export default Tags
+// export default Tags

@@ -13,6 +13,8 @@ import Seo from '../components/seo'
 import Layout from '../components/layout'
 import Hero from '../components/hero'
 import Tags from '../components/tags'
+// import Tags from '../components/tags2'
+
 import * as styles from '../styles/blog-post.module.scss'
 
 class BlogPostTemplate extends React.Component {
@@ -98,6 +100,21 @@ class BlogPostTemplate extends React.Component {
             <div className={styles.body}>
               {post.body?.raw && renderRichText(post.body, options)}
             </div>
+
+
+            {/* {post.metadata.tags} */}
+
+{/* 
+<p>
+{post.metadata.tags[0].name}<br />
+{post.metadata.tags[1].name}<br />
+{post.metadata.tags[2].name}<br />
+{post.metadata.tags[3].name}<br />
+</p> */}
+
+
+
+
             <Tags tags={post.tags} />
             {(previous || next) && (
               <nav>
@@ -150,11 +167,16 @@ export const pageQuery = graphql`
       }
       body {
         raw
-        
       }
       tags
       description {
         raw
+      }
+      metadata {
+        tags {
+          contentful_id
+          name
+        }
       }
     }
     previous: contentfulBlogPost(slug: { eq: $previousPostSlug }) {
