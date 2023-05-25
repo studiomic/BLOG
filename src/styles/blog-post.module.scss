@@ -20,9 +20,11 @@ hr {
 
 
 .meta {
-	font-family: var(--font-serif);
+	// font-family: var(--font-serif);
 	font-size: var(--text-lg);
 	font-style: italic;
+	// text-decoration: underline;
+	// border-top: 1px solid;
 	margin: 0 auto 1em;
 	max-width: var(--size-max-width);
 	padding-bottom: var(--size-gutter);
@@ -50,8 +52,8 @@ hr {
 	padding: var(--space-3xl) 0;
 	a {
 		border-bottom:initial;
-		background-color: var(--secondary);
-		background-color: var(--primary);
+		// background-color: var(--secondary);
+		// background-color: var(--primary);
 		background-color: var(--text-color);
 		color: var(--background);
 		border-radius: var(--radius-sm);
@@ -100,21 +102,7 @@ hr {
 	padding: 0;
 }
 
-// .gatsby-code-button {
-// 	position: absolute;
-// 	background: cyan;
-// 	top: -17px ;
-// 	right: 10px;
-// 	z-index: 100;
-// 	&::after {
-// 		display: none !important;
-// 	}
-// 	svg {
-// 		filter: invert(98%) sepia(5%) saturate(983%) hue-rotate(178deg)
-// 			brightness(95%) contrast(99%);
-// 		opacity: 0.9;
-// 	}
-// }
+
 .gatsby-code-button-container {
 	touch-action: none;
 	display: flex;
@@ -164,3 +152,18 @@ hr {
 
 
 
+// .gatsby-code-button {
+// 	position: absolute;
+// 	background: cyan;
+// 	top: -17px ;
+// 	right: 10px;
+// 	z-index: 100;
+// 	&::after {
+// 		display: none !important;
+// 	}
+// 	svg {
+// 		filter: invert(98%) sepia(5%) saturate(983%) hue-rotate(178deg)
+// 			brightness(95%) contrast(99%);
+// 		opacity: 0.9;
+// 	}
+// }

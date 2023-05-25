@@ -12,7 +12,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           nodes {
             title
             slug
-            tags
             metadata {
               tags {
                 contentful_id
@@ -34,12 +33,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const posts = result.data.allContentfulBlogPost.nodes
+  const articlesByTag = {}
 
   if (posts.length > 0) {
     posts.forEach((post, index) => {
       const previousPostSlug = index === 0 ? null : posts[index - 1].slug
       const nextPostSlug =
         index === posts.length - 1 ? null : posts[index + 1].slug
+
+
+
+
 
       createPage({
         path: `/blog/${post.slug}/`,
@@ -53,49 +57,32 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   }
 
-
-
-
-
-
 }
 //exports.createPages
 
-{/* <ul>
-  {node.category.map(cat => (
-    <li className={cat.categorySlug} key={cat.id}>{cat.category}</li>
-  ))}
-</ul> */}
+    // posts.metadata.tags.forEach((tag) => {
+    //   if (tag.contentful_id in articlesByTag) {
+    //     articlesByTag[tag.contentful_id].contents.push(edge.nodes)
+    //   } else {
+    //     articlesByTag[tag.contentful_id] = {
+    //       name: tag.name,
+    //       contents: [edge.nodes]
+    //     }
+    //   }
+    // })
+
+  // Object.keys(articlesByTag).forEach((tagId) => {
+  //   createPage({
+  //     path: `/tags/${tagId}`,
+  //     component: path.resolve("./src/templates/tag-index.js"),
+  //     context: {
+  //       name: articlesByTag[tagId].name,
+  //       contents: articlesByTag[tagId].contents,
+  //     }
+  //   })
+  // })
 
 
-        // if (posttags.length > 0) {
-        //   posttags.forEach(() => {
-        //     const tagId = posts.metadata.tags.contentful_id
-        //     // const tagVars = posts.metadata.tags.name
-        //     createPage({
-        //       path: `/tags/${posts.metadata.tags.contentful_id}/`,
-        //       component: blogPost,
-        //       context: {
-        //         slug: tagId,
-        //         previousPostSlug,
-        //         nextPostSlug,
-        //       },
-        //     })
-        //   })
-        // }
 
-        // const posttags = result.data.allContentfulBlogPost.nodes.metadata.tags
 
-        // // const posttags = result.data.allContentfulBlogPost.nodes.metadata.tags
-        // posttags.forEach(posttag => {
-        //   createPage({
-        //     path: `/tags/${posttag.contentful_id}/`,
-        //     component: blogPost,
-        //     context: {
-        //       tag: posttag.name,
-        //     },
-        //   })
-        // })
-      
-      
-
+// filter: { tags: { elemMatch: { slug: { eq: $slug } } } }

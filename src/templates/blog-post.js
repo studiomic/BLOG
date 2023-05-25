@@ -12,11 +12,7 @@ import readingTime from 'reading-time'
 import Seo from '../components/seo'
 import Layout from '../components/layout'
 import Hero from '../components/hero'
-import Tags from '../components/tags'
-
-// import Taglink from '../components/tags-id'
-// import Tags from '../components/tags2'
-
+// import Tags from '../components/tags'
 import * as styles from '../styles/blog-post.module.scss'
 import * as tagstyles from '../styles/tags.module.scss'
 
@@ -83,19 +79,15 @@ class BlogPostTemplate extends React.Component {
             <div className={styles.body}>
               {post.body?.raw && renderRichText(post.body, options)}
             </div>
+            <hr />
+            <small className={tagstyles.tags}>
+            {post.metadata.tags.map(tag => (
+                <div key={tag} className={tagstyles.tag}>
+                  <Link to={`/tags/${tag.contentful_id}/`}>{tag.name}</Link>
+                </div>
+              ))}
+            </small>
 
-<small className={tagstyles.tags}>
-{post.metadata.tags.map(tag => (
-  <Link className={tagstyles.link} to={`/tags/${tag.contentful_id}/`}>
-    <div key={tag} className={tagstyles.tag}>{tag.name}</div>
-    </Link>
-  ))}
-</small>   
-<hr />
-
-
-
-            <Tags tags={post.tags} />
             {(previous || next) && (
               <nav>
                 <ul className={styles.articleNavigation}>
@@ -148,7 +140,6 @@ export const pageQuery = graphql`
       body {
         raw
       }
-      tags
       description {
         raw
       }

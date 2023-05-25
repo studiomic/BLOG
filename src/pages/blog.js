@@ -4,11 +4,8 @@ import get from 'lodash/get'
 import Seo from '../components/seo'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
-import { StaticImage } from 'gatsby-plugin-image'
 import * as styles from '../styles/hero.module.scss'
-// import IMG from "../asset/img/mitchell-hollander-X3s_v34l40s-unsplash.jpg"
-//<img src={IMG} alt="" />
-// const image = '../asset/img/robynne-hu-HOrhCnQsxnQ-unsplash.jpg';
+import { StaticImage } from 'gatsby-plugin-image'
 // {/* <StaticImage className={styles.image} */}
 
 class BlogIndex extends React.Component {

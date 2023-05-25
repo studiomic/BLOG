@@ -1,10 +1,10 @@
 .container {
   display: flex;
   justify-content: space-between;
-  // max-width: var(--size-max-width);
   align-items: center;
   margin: 0 auto;
   padding: var(--space-xl) var(--size-gutter) 0;
+  // max-width: var(--size-max-width);
   // border: 1px solid pink;
 }
 

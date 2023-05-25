@@ -3,12 +3,10 @@ import { Link } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import Container from './container'
-import Tags from './tags'
-// import Tags from './tags2'
-// import Tagsmeta from '../../zhtml/tags-meta'
-
+// import Tags from './tags'
 import * as styles from '../styles/article-preview.module.scss'
-// import * as styles from './article-preview.module.css'
+import * as tagstyles from '../styles/tags.module.scss'
+
 
 const ArticlePreview = ({ posts }) => {
   if (!posts) return null
@@ -28,8 +26,14 @@ const ArticlePreview = ({ posts }) => {
                 {post.description?.raw && renderRichText(post.description)}
               </div>
               <div className={styles.meta}>
-                <small className="meta">{post.publishDate}</small>
-                <Tags tags={post.tags} />
+                <small>{post.publishDate}</small>
+                <small className={tagstyles.tags}>
+                {post.metadata.tags.map(tag => (
+                    <div key={tag} className={tagstyles.tag}>
+                      {tag.name}
+                    </div>
+                  ))}
+                </small>
               </div>
             </li>
           )
@@ -41,16 +45,3 @@ const ArticlePreview = ({ posts }) => {
 
 export default ArticlePreview
 
-
-// {/* <Taglink tags={post.metadata.tags} /> */}
-
-//               {/* {tags.map((post) => {
-//                 $num = {post.metadata.tags.name}
-//                               if ($num > 0) {}
-
-//               } */}
-// {/* <Tagsmeta tags={post.metadata.tags} /> */}
-
-// {/* 
-// <br />
-// {post.metadata.tags[0].name} */}
