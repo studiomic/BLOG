@@ -3,7 +3,6 @@ import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
-// import { BLOCKS } from '@contentful/rich-text-types'
 import { BLOCKS, MARKS } from '@contentful/rich-text-types'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { okaidia } from 'react-syntax-highlighter/dist/cjs/styles/prism';
@@ -71,7 +70,6 @@ class BlogPostTemplate extends React.Component {
         />
         <div className={styles.container}>
           <span className={styles.meta}>
-            {/* {post.author?.name} &middot;{' '} */}
             <time dateTime={post.rawDate}>{post.publishDate}</time> –{' '}
             {timeToRead} minute read
           </span>
@@ -80,15 +78,7 @@ class BlogPostTemplate extends React.Component {
               {post.body?.raw && renderRichText(post.body, options)}
             </div>
             <hr />
-            <small className={tagstyles.tags}>
             <Tags tags={post.tags} />
-            {post.metadata.tags.map(tag => (
-                <div key={tag} className={tagstyles.tag}>
-                  <Link to={`/tags/${tag.contentful_id}/`}>{tag.name}</Link>
-                </div>
-              ))}
-            </small>
-
             {(previous || next) && (
               <nav>
                 <ul className={styles.articleNavigation}>
