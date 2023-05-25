@@ -12,7 +12,7 @@ import readingTime from 'reading-time'
 import Seo from '../components/seo'
 import Layout from '../components/layout'
 import Hero from '../components/hero'
-// import Tags from '../components/tags'
+import Tags from '../components/tags'
 import * as styles from '../styles/blog-post.module.scss'
 import * as tagstyles from '../styles/tags.module.scss'
 
@@ -81,6 +81,7 @@ class BlogPostTemplate extends React.Component {
             </div>
             <hr />
             <small className={tagstyles.tags}>
+            <Tags tags={post.tags} />
             {post.metadata.tags.map(tag => (
                 <div key={tag} className={tagstyles.tag}>
                   <Link to={`/tags/${tag.contentful_id}/`}>{tag.name}</Link>
@@ -140,6 +141,7 @@ export const pageQuery = graphql`
       body {
         raw
       }
+      tags
       description {
         raw
       }

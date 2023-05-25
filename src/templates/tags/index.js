@@ -1,14 +1,11 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
-import Seo from '../components/seo'
-import Layout from '../components/layout'
-import ArticlePreview from '../components/article-preview'
+import Seo from '../../components/seo'
+import Layout from '../../components/layout'
+import ArticlePreview from '../../components/article-preview'
 import { StaticImage } from 'gatsby-plugin-image'
-import * as styles from '../styles/hero.module.scss'
-// import IMG from "../asset/img/mitchell-hollander-X3s_v34l40s-unsplash.jpg"
-//<img src={IMG} alt="" />
-// const image = '../asset/img/robynne-hu-HOrhCnQsxnQ-unsplash.jpg';
+import * as styles from '../../styles/hero.module.scss'
 // {/* <StaticImage className={styles.image} */}
 
 class TagIndex extends React.Component {
@@ -19,7 +16,7 @@ render() {
 		<Seo title="Blog" />
 		<div className={styles.hero}>
 		<StaticImage className={styles.image}
-		src="../asset/img/mitchell-unsplash.png"
+		src="../../asset/img/mitchell-unsplash.png"
 		alt="Hero-image"
 		placeholder="BLURRED"
 		quality="40"
