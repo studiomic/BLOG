@@ -5,7 +5,11 @@ import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
 import { BLOCKS, MARKS } from '@contentful/rich-text-types'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { okaidia } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+// import { okaidia } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+// import { nord } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+
+
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import readingTime from 'reading-time'
 import Seo from '../components/seo'
@@ -49,7 +53,7 @@ class BlogPostTemplate extends React.Component {
       },
       renderMark: {
         [MARKS.CODE]: text => (
-          <SyntaxHighlighter language="javascript" style={okaidia} showLineNumbers>
+          <SyntaxHighlighter language="jsx" style={dracula} showLineNumbers>
             {text}
           </SyntaxHighlighter>
         ),
