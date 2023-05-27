@@ -4,7 +4,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
   // Define a template for blog post
   const blogPost = path.resolve('./src/templates/blog-post.js')
-  // const tagIndex = path.resolve('./src/templates/tags-index.js')
+  const tagIndex = path.resolve('./src/templates/tags-index.js')
   const result = await graphql(
     `
       {
@@ -68,6 +68,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       })
     })
   }
+   // タグページの生成
+  Object.keys(articlesByTag).forEach((tagId) => {
+    createPage({
+      path: `/tags/${tagId}`,
+      component: tagIndex,
+      context: {
+        name: articlesByTag[tagId].name,
+        contents: articlesByTag[tagId].contents,
+      }
+    })
+  })
 }
 //exports.createPages
 
