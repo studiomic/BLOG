@@ -17,6 +17,7 @@
     "gatsby-plugin-react-helmet": "^6.5.0",
     "gatsby-plugin-sharp": "^5.5.0",
     "gatsby-remark-code-buttons": "^2.0.7",
+    "gatsby-remark-embed-snippet": "^8.10.0",
     "gatsby-remark-prismjs": "^7.9.0",
     "gatsby-source-contentful": "^8.5.0",
     "gatsby-source-filesystem": "^5.9.0",

@@ -1,11 +1,11 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
-import Seo from '../../components/seo'
-import Layout from '../../components/layout'
-import ArticlePreview from '../../components/article-preview'
+import Seo from '../components/seo'
+import Layout from '../components/layout'
+import ArticlePreview from '../components/article-preview'
 import { StaticImage } from 'gatsby-plugin-image'
-import * as styles from '../../styles/hero.module.scss'
+import * as styles from '../styles/hero.module.scss'
 // {/* <StaticImage className={styles.image} */}
 
 class TagIndex extends React.Component {

@@ -8,16 +8,14 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 // import { okaidia } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 // import { nord } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-
-
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import readingTime from 'reading-time'
-import Seo from '../components/seo'
 import Layout from '../components/layout'
+import Seo from '../components/seo'
 import Hero from '../components/hero'
 import Tags from '../components/tags'
 import * as styles from '../styles/blog-post.module.scss'
-import * as tagstyles from '../styles/tags.module.scss'
+// import * as tagstyles from '../styles/tags.module.scss'
 
 class BlogPostTemplate extends React.Component {
   render() {

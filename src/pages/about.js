@@ -1,7 +1,6 @@
 import React from 'react'
-
-import Seo from '../components/seo'
 import Layout from '../components/layout'
+import Seo from '../components/seo'
 // import { StaticImage } from 'gatsby-plugin-image'
 import Intoro from '../components/intoro'
 import * as styles from '../styles/about.module.scss'
