@@ -8,57 +8,98 @@ import { StaticImage } from 'gatsby-plugin-image'
 import * as styles from '../styles/hero.module.scss'
 // {/* <StaticImage className={styles.image} */}
 
-class TagIndex extends React.Component {
-render() {
-	const posts = get(this, 'props.data.allContentfulBlogPost.nodes')
-	return (
-	<Layout location={this.props.location}>
-		<Seo title="Blog" />
-		<div className={styles.hero}>
-		<StaticImage className={styles.image}
-		src="../../asset/img/mitchell-unsplash.png"
-		alt="Hero-image"
-		placeholder="BLURRED"
-		quality="40"
-		/>
-		<div className={styles.details}>
-			<h1 className={styles.title}>TAG</h1>
-		</div>
-		</div>
-		<ArticlePreview posts={posts} />
-	</Layout>
-	)
-}
-}
 
+// const ArticlePreview = ({ posts }) => {
+class TagIndex extends React.Component {
+	render() {
+		const posts = get(this, 'props.data.allContentfulBlogPost.nodes')
+		return (
+		<Layout location={this.props.location}>
+			<Seo title="Blog" />
+			<div className={styles.hero}>
+			<StaticImage className={styles.image}
+			src="../../asset/img/mitchell-unsplash.png"
+			alt="Hero-image"
+			placeholder="BLURRED"
+			quality="40"
+			/>
+			<div className={styles.details}>
+				<h1 className={styles.title}>TAGS</h1>
+				{/* {tag.name} */}
+			</div>
+			</div>
+			<ArticlePreview posts={posts} />
+		</Layout>
+		)
+	}
+}
 export default TagIndex
 
 export const pageQuery = graphql`
-query BlogIndexQuery {
-	allContentfulBlogPost(sort: { publishDate: DESC }) {
-	nodes {
-		title
-		slug
-		publishDate(formatString: "YYYY/MM/DD")
-		tags
-		metadata {
+query TagIndexQuery ($slug: String!){
+	allContentfulBlogPost(
+		sort: { publishDate: DESC }
+		filter: {metadata: {tags: {elemMatch: {contentful_id: {eq: $slug }}}}}
+	){
+		nodes {
+			title
+			slug
+			publishDate(formatString: "YYYY/MM/DD")
+			tags
+			metadata {
 			tags {
 				contentful_id
 				name
 			}
+			}
+			heroImage {
+			gatsbyImage(
+				layout: FULL_WIDTH
+				placeholder: BLURRED
+				width: 424
+				height: 212
+			)
+			}
+			description {
+			raw
+			}
 		}
-		heroImage {
-		gatsbyImage(
-			layout: FULL_WIDTH
-			placeholder: BLURRED
-			width: 424
-			height: 212
-		)
-		}
-		description {
-		raw
-		}
-	}
 	}
 }
 `
+
+
+// context: {
+	// 	slug: post.slug,
+	// 	previousPostSlug,
+	// 	nextPostSlug,
+	// 	article: post,
+	//   },
+	// context: {
+		// 	slug: tag.contentful_id,
+		// 	name: tag.name,
+		//   },data.allContentfulTag.nodes{tagid}
+		
+// const tagid = pageContext.post.body.contentful_id;
+
+// const tagid = pageContext
+// # group(field: {metadata: {tags: {contentful_id: SELECT}}}) {
+// 	# 	fieldValue
+// # allContentfulTag {
+// 	# 	nodes {
+// 	# 		contentful_id
+// 	# 		name
+// 	# 	}
+// 	# }
+// # 	next: contentfulBlogPost(slug: { eq: $nextPostSlug }) {
+// # 	slug
+// # 	title
+// # 	}
+// # }($tagId: Int!, $tagName: Int!)
+
+// const tag = get(this, 'props.data.allContentfulTag.nodes')
+		// const tagName = get(this, 'props.pageContext.tagName')
+		// const {tagName} = pageContext.tagName
+		// const tagid = get(this, 'props.data.allContentfulTag.nodes')
+		// const posts = pageContext.post;
+		// const body = pageContext.post.body.childMarkdownRemark.html;

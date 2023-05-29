@@ -21,6 +21,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
           }
         }
+        allContentfulTag {
+          nodes {
+            contentful_id
+            name
+          }
+        }
       }
     `
   )
@@ -34,16 +40,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const posts = result.data.allContentfulBlogPost.nodes
-  const articlesByTag = {}
-  // const tags = posts.metadata.tags
+  const tags = result.data.allContentfulTag.nodes
   
   if (posts.length > 0) {
     posts.forEach((post, index) => {
       const previousPostSlug = index === 0 ? null : posts[index - 1].slug
       const nextPostSlug =
       index === posts.length - 1 ? null : posts[index + 1].slug
-      
-      const Tags = posts[index].metadata.tags
 
       createPage({
         path: `/blog/${post.slug}/`,
@@ -52,36 +55,41 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           slug: post.slug,
           previousPostSlug,
           nextPostSlug,
+          article: post,
         },
-      })
-
-      // タグに紐付く記事のオブジェクトを作成
-      Tags.forEach((tag) => {
-      if (tag.contentful_id in articlesByTag) {
-        articlesByTag[tag.contentful_id].contents.push(Tags)
-      } else {
-        articlesByTag[tag.contentful_id] = {
-        name: tag.name,
-        contents: [Tags]
-        }		
-      }
       })
     })
   }
-   // タグページの生成
-  Object.keys(articlesByTag).forEach((tagId) => {
+  
+  tags.forEach((tag) => {
     createPage({
-      path: `/tags/${tagId}`,
+      path: `tags/${tag.contentful_id}/`,
       component: tagIndex,
       context: {
-        name: articlesByTag[tagId].name,
-        contents: articlesByTag[tagId].contents,
-      }
+        slug: tag.contentful_id,
+        name: tag.name,
+      },
     })
   })
+
 }
 //exports.createPages
 
+
+// const articlesByTag = {}
+// const Tags = posts[index].metadata.tags
+
+ // タグページの生成
+  // Object.keys(articlesByTag).forEach((tagId) => {
+  //   createPage({
+  //     path: `/tags/${tagId}`,
+  //     component: tagIndex,
+  //     context: {
+  //       name: articlesByTag[tagId].name,
+  //       contents: articlesByTag[tagId].contents,
+  //     }
+  //   })
+  // })
 
   // result.data.allContentfulBlogPost.nodes.metadata.tags.forEach(edge => {
   //   createPage({
@@ -100,3 +108,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   //   },
   // })
 // filter: { tags: { elemMatch: { slug: { eq: $slug } } } }
+// filter: { tags: { elemMatch: { slug: { in: $slug } } } }
+
+
+    // タグに紐付く記事のオブジェクトを作成
+      // Tags.forEach((tag) => {
+      //   post.metadata.tags.forEach((tag) => {
+      // if (tag.contentful_id in articlesByTag) {
+      //   articlesByTag[tag.contentful_id].contents.push(post)
+      // } else {
+      //   articlesByTag[tag.contentful_id] = {
+      //   name: tag.name,
+      //   contents: [post]
+      //   }		
+      // }
+      // })
