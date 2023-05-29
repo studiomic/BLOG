@@ -13,9 +13,9 @@ import readingTime from 'reading-time'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import Hero from '../components/hero'
-import Tags from '../components/tags'
+// import Tags from '../components/tags'
 import * as styles from '../styles/blog-post.module.scss'
-// import * as tagstyles from '../styles/tags.module.scss'
+import * as tagstyles from '../styles/tags.module.scss'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -80,7 +80,14 @@ class BlogPostTemplate extends React.Component {
               {post.body?.raw && renderRichText(post.body, options)}
             </div>
             <hr />
-            <Tags tags={post.tags} />
+            <small className={tagstyles.tags}>
+            {post.metadata.tags.map(tag => (
+                <div key={tag} className={tagstyles.tag}>
+                  <Link to={`/tags/${tag.contentful_id}/`}>{tag.name}</Link>
+                </div>
+              ))}
+            </small>
+
             {(previous || next) && (
               <nav>
                 <ul className={styles.articleNavigation}>
@@ -111,7 +118,6 @@ class BlogPostTemplate extends React.Component {
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  
   query BlogPostBySlug(
     $slug: String!
     $previousPostSlug: String

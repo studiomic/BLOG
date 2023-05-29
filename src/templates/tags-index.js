@@ -6,10 +6,7 @@ import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 import { StaticImage } from 'gatsby-plugin-image'
 import * as styles from '../styles/hero.module.scss'
-// {/* <StaticImage className={styles.image} */}
 
-
-// const ArticlePreview = ({ posts }) => {
 class TagIndex extends React.Component {
 	render() {
 		const posts = get(this, 'props.data.allContentfulBlogPost.nodes')

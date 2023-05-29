@@ -5,8 +5,8 @@ const Tags = ({ tags }) =>
   tags?.length > 0 && (
   <small className={tagstyles.tags}>
     {tags.map(tag => (
-      <div key={tag} className={tagstyles.tag}>
-        {tag}
+      <div key={tag.contentful_id} className={tagstyles.tag}>
+        {tag.name}
       </div>
     ))}
   </small>
