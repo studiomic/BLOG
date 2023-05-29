@@ -5,9 +5,6 @@ import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import Container from './container'
 import Tags from './tags'
 import * as styles from '../styles/article-preview.module.scss'
-import * as tagstyles from '../styles/tags.module.scss'
-
-
 
 const ArticlePreview = ({ posts }) => {
   if (!posts) return null
@@ -29,17 +26,6 @@ const ArticlePreview = ({ posts }) => {
               <div className={styles.meta}>
                 <small>{post.publishDate}</small>
                 <Tags tags={post.metadata.tags} />
-
-                {/* <small className={tagstyles.tags}>
-                {post.metadata.tags.map(tag => (
-                <div key={tag} className={tagstyles.tag}>
-                  {tag.name}
-                </div>
-              ))}
-            </small> */}
-
-
-                
               </div>
             </li>
           )
