@@ -83,7 +83,7 @@ class BlogPostTemplate extends React.Component {
             <small className={tagstyles.tags}>
             {post.metadata.tags.map(tag => (
                 <div key={tag} className={tagstyles.tag}>
-                  <Link to={`/tags/${tag.contentful_id}/`}>{tag.name}</Link>
+                  <Link to={`/tags/${tag.contentful_id}`}>{tag.name}</Link>
                 </div>
               ))}
             </small>

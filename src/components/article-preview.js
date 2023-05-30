@@ -3,8 +3,10 @@ import { Link } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import Container from './container'
-import Tags from './tags'
+// import Tags from './tags'
 import * as styles from '../styles/article-preview.module.scss'
+import * as tagstyles from '../styles/tags.module.scss'
+
 
 const ArticlePreview = ({ posts }) => {
   if (!posts) return null
@@ -25,7 +27,13 @@ const ArticlePreview = ({ posts }) => {
               </div>
               <div className={styles.meta}>
                 <small>{post.publishDate}</small>
-                <Tags tags={post.metadata.tags} />
+                {/* <small className={tagstyles.tags}>
+                  {post.metadata.tags.map(tag => (
+                      <div key={tag} className={tagstyles.tag}>
+                        <Link to={`/tags/${tag.contentful_id}`}>{tag.name}</Link>
+                      </div>
+                    ))}
+                </small> */}
               </div>
             </li>
           )

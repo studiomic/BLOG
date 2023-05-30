@@ -14,7 +14,7 @@ const Tags = ({ tags }) =>
 export default Tags
 
 // {/* <Link className={styles.link} to={`/tags/${kebabCase(tag)}/`}>
-// </Link> */}
+// </Link> */}<Tags tags={post.metadata.tags} />
 
 
 

@@ -40,7 +40,6 @@ export const pageQuery = graphql`
         title
         slug
         publishDate(formatString: "YYYY/MM/DD")
-        tags
         metadata {
           tags {
             contentful_id
