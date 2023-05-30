@@ -59,19 +59,19 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         },
       })
     })
-  }
   
-  tags.forEach((tag) => {
-    createPage({
-      path: `tags/${tag.contentful_id}/`,
-      component: tagIndex,
-      context: {
-        slug: tag.contentful_id,
-        name: tag.name,
-      },
+  
+    tags.forEach((tag) => {
+      createPage({
+        path: `tags/${tag.contentful_id}/`,
+        component: tagIndex,
+        context: {
+          slug: tag.contentful_id,
+          name: tag.name,
+        },
+      })
     })
-  })
-
+  }
 }
 //exports.createPages
 

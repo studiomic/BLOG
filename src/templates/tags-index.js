@@ -7,9 +7,25 @@ import ArticlePreview from '../components/article-preview'
 import { StaticImage } from 'gatsby-plugin-image'
 import * as styles from '../styles/hero.module.scss'
 
+
+// const { tag } = pageContext
+
+// export type PageContext = {
+// 	author: SiteSiteMetadataAuthors
+// }
+
+
+// export default ({ data, pageContext }) => {
+// 	const { tag } = pageContext
+// 	return ()
+// }
+
+
 class TagIndex extends React.Component {
 	render() {
 		const posts = get(this, 'props.data.allContentfulBlogPost.nodes')
+		const tagname = get(this, 'props.pageContext')
+		
 		return (
 		<Layout location={this.props.location}>
 			<Seo title="Blog" />
@@ -21,8 +37,7 @@ class TagIndex extends React.Component {
 			quality="40"
 			/>
 			<div className={styles.details}>
-				<h1 className={styles.title}>TAGS</h1>
-				{/* {tag.name} */}
+				<h1 className={styles.title}>TAGS : {tagname.name}</h1>
 			</div>
 			</div>
 			<ArticlePreview posts={posts} />
@@ -31,7 +46,6 @@ class TagIndex extends React.Component {
 	}
 }
 export default TagIndex
-
 export const pageQuery = graphql`
 query TagIndexQuery ($slug: String!){
 	allContentfulBlogPost(
@@ -42,20 +56,19 @@ query TagIndexQuery ($slug: String!){
 			title
 			slug
 			publishDate(formatString: "YYYY/MM/DD")
-			tags
 			metadata {
-			tags {
-				contentful_id
-				name
-			}
+				tags {
+					contentful_id
+					name
+				}
 			}
 			heroImage {
-			gatsbyImage(
-				layout: FULL_WIDTH
-				placeholder: BLURRED
-				width: 424
-				height: 212
-			)
+				gatsbyImage(
+					layout: FULL_WIDTH
+					placeholder: BLURRED
+					width: 424
+					height: 212
+				)
 			}
 			description {
 			raw
@@ -64,39 +77,3 @@ query TagIndexQuery ($slug: String!){
 	}
 }
 `
-
-
-// context: {
-	// 	slug: post.slug,
-	// 	previousPostSlug,
-	// 	nextPostSlug,
-	// 	article: post,
-	//   },
-	// context: {
-		// 	slug: tag.contentful_id,
-		// 	name: tag.name,
-		//   },data.allContentfulTag.nodes{tagid}
-		
-// const tagid = pageContext.post.body.contentful_id;
-
-// const tagid = pageContext
-// # group(field: {metadata: {tags: {contentful_id: SELECT}}}) {
-// 	# 	fieldValue
-// # allContentfulTag {
-// 	# 	nodes {
-// 	# 		contentful_id
-// 	# 		name
-// 	# 	}
-// 	# }
-// # 	next: contentfulBlogPost(slug: { eq: $nextPostSlug }) {
-// # 	slug
-// # 	title
-// # 	}
-// # }($tagId: Int!, $tagName: Int!)
-
-// const tag = get(this, 'props.data.allContentfulTag.nodes')
-		// const tagName = get(this, 'props.pageContext.tagName')
-		// const {tagName} = pageContext.tagName
-		// const tagid = get(this, 'props.data.allContentfulTag.nodes')
-		// const posts = pageContext.post;
-		// const body = pageContext.post.body.childMarkdownRemark.html;

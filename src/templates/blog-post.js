@@ -140,7 +140,6 @@ export const pageQuery = graphql`
       body {
         raw
       }
-      tags
       description {
         raw
       }
