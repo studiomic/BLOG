@@ -12,7 +12,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           nodes {
             title
             slug
-            tags
             metadata {
               tags {
                 contentful_id
