@@ -7,20 +7,6 @@ import ArticlePreview from '../components/article-preview'
 import { StaticImage } from 'gatsby-plugin-image'
 import * as styles from '../styles/hero.module.scss'
 
-
-// const { tag } = pageContext
-
-// export type PageContext = {
-// 	author: SiteSiteMetadataAuthors
-// }
-
-
-// export default ({ data, pageContext }) => {
-// 	const { tag } = pageContext
-// 	return ()
-// }
-
-
 class TagIndex extends React.Component {
 	render() {
 		const posts = get(this, 'props.data.allContentfulBlogPost.nodes')

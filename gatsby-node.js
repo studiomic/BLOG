@@ -12,7 +12,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           nodes {
             title
             slug
-            tags
             metadata {
               tags {
                 contentful_id
@@ -74,52 +73,3 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 }
 //exports.createPages
-
-
-// const articlesByTag = {}
-// const Tags = posts[index].metadata.tags
-
- // タグページの生成
-  // Object.keys(articlesByTag).forEach((tagId) => {
-  //   createPage({
-  //     path: `/tags/${tagId}`,
-  //     component: tagIndex,
-  //     context: {
-  //       name: articlesByTag[tagId].name,
-  //       contents: articlesByTag[tagId].contents,
-  //     }
-  //   })
-  // })
-
-  // result.data.allContentfulBlogPost.nodes.metadata.tags.forEach(edge => {
-  //   createPage({
-  //   path: `/blog/${edge.node.slug}`,
-  //   component: blogPostTemplate,
-  //   context: {
-  //     title: edge.node.title,
-  //   },
-  //   })
-  // })
-  // createPage({
-  //   path: `/tags/${tags}/`,
-  //   component: blogPost,
-  //   context: {
-  //     tags,
-  //   },
-  // })
-// filter: { tags: { elemMatch: { slug: { eq: $slug } } } }
-// filter: { tags: { elemMatch: { slug: { in: $slug } } } }
-
-
-    // タグに紐付く記事のオブジェクトを作成
-      // Tags.forEach((tag) => {
-      //   post.metadata.tags.forEach((tag) => {
-      // if (tag.contentful_id in articlesByTag) {
-      //   articlesByTag[tag.contentful_id].contents.push(post)
-      // } else {
-      //   articlesByTag[tag.contentful_id] = {
-      //   name: tag.name,
-      //   contents: [post]
-      //   }		
-      // }
-      // })

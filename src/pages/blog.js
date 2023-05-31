@@ -1,16 +1,20 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+// import { Link, graphql } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
 import get from 'lodash/get'
 import Seo from '../components/seo'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 import * as styles from '../styles/hero.module.scss'
-import { StaticImage } from 'gatsby-plugin-image'
-// {/* <StaticImage className={styles.image} */}
+// import * as tagstyles from '../styles/tags.module.scss'
 
 class BlogIndex extends React.Component {
   render() {
     const posts = get(this, 'props.data.allContentfulBlogPost.nodes')
+    // const tags = get(this.props, 'data..allContentfulBlogPost.nodes.metadata.tags')
+    // const post = get(this.props, 'data.contentfulBlogPost')
+    // const tags = get(this.props, 'data.allContentfulBlogPost.nodes.metadata.tags')
     return (
       <Layout location={this.props.location}>
         <Seo title="Blog" />
@@ -40,7 +44,6 @@ export const pageQuery = graphql`
         title
         slug
         publishDate(formatString: "YYYY/MM/DD")
-        tags
         metadata {
           tags {
             contentful_id
