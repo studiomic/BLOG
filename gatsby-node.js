@@ -59,7 +59,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       })
     })
   
-  
     tags.forEach((tag) => {
       createPage({
         path: `tags/${tag.contentful_id}/`,
