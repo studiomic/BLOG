@@ -274,6 +274,22 @@ tt:after {
   // letter-spacing: -0.2em;
 }
 
+.hero-title {
+  letter-spacing: -0.012em;
+  font-size: var(--text-title);
+  font-weight: var(--extrabold);
+  line-height: var(--solid);
+  margin: var(--space-3xl) 0;
+  // border: 1px solid cyan;
+}
+
+
+// .center {
+//   text-align: center;
+// }
+// .flex {
+//   background: #000;
+// }
 // pre,
 // code {
 //   font-family: var(--font-monospace);

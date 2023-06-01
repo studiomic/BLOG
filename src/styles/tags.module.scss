@@ -3,6 +3,11 @@
   gap: var(--space-md);
   // margin-top: var(--space-3xl);
 }
+.center {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+}
 
 .tag {
   background-color: var(--black-fade-5);
