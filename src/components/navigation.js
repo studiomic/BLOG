@@ -14,7 +14,7 @@ import IMG from "../asset/img/logo-wt.png"
 const Navigation = () => (
   <nav role="navigation" className={styles.container} aria-label="Main">
     <Link to="/" className={styles.logoLink}>
-      <img src={IMG} alt="" />
+      <img src={IMG} alt="Style de Cerise" />
     </Link>
     <ul className={styles.navigation}>
       <li className={styles.navigationItem}>
