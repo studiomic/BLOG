@@ -9,7 +9,6 @@
 }
 
 .navigation {
-  // border: 1px solid cyan;
   display: flex;
   list-style: none;
   margin: 0;
@@ -34,10 +33,11 @@
 }
 
 .logoLink {
+  border: 1px solid cyan;
   img {
-    height: calc(var(--space-3xl)* 2.4);
-    // border: 1px solid var(--black);
-    object-fit: contain;
+    height: calc(var(--space-3xl)* 2);//2.4
+    border: 1px solid var(--black);
+    // object-fit: contain;
   }
   &:hover {
     img {
@@ -50,10 +50,11 @@
   .container {
     padding-left: calc(var(--size-gutter)/4);
   }
-  .logoLink {
-    img {
-      height: calc(var(--space-3xl)*2);
-    }
-  }
+  // .logoLink {
+  //   img {
+  //     height: calc(var(--space-3xl)*2);
+  //   }
+  // }
 }
 
+// @media (max-width: 1023.98px) {
