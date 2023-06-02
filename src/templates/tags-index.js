@@ -31,9 +31,12 @@ class TagIndex extends React.Component {
 				<small className={tagstyles.center}>
 				{tags.map(tag => (
 					<div key={tag} className={tagstyles.tag}>
-					<Link to={`/tags/${tag.contentful_id}`}>{tag.name}</Link>
+					<Link to={`/tags/${tag.contentful_id}`} activeClassName="active">{tag.name}</Link>
 					</div>
-				))}
+				))}_
+					<div className={tagstyles.tag}>
+						<Link to="/tags/">ALL TAGS</Link>
+					</div>
 				</small>
 			</Container>
 		</Layout>
