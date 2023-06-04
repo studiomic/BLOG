@@ -67,15 +67,26 @@ html * {
 // 	}
 // }
 
-.wave {
-  // border: 1px solid tomato;
-	margin-top: -200px;
+main {
+  overflow-x: hidden;
+}
+
+// .wave {
+.wave,.wavervs {
+  margin-top: -200px;
 	display: block;
 	height: 200px;
-	transform: scale(-1, -1);
   svg {
     fill: var(--background);
   }
+}
+
+.wave {
+  transform: scale(-1, -1);
+}
+.wavervs {
+  // border: 1px solid tomato;
+  transform: scale(1.75, -1);
 }
   // position: absolute;
   // left: 0;
@@ -96,6 +107,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.3s ease;
+  // overflow-x: hidden;
 }
 
 .dark-mode {
@@ -139,8 +151,6 @@ body.light-mode {
     }
   }
 }
-
-
 
 .dark-mode-toggle {
   display: flex;
@@ -205,8 +215,6 @@ input[type='checkbox'].dmcheck {
     // background: var(--secondary);
   }
 }
-
-
 // body.black-mode {
 //   background-color: var(--black);
 //   color: var(--white);
@@ -285,15 +293,10 @@ tt:after {
 // main {
 //   border: 1px solid cyan;
 // }
-
-
-
 // .center {
 //   text-align: center;
 // }
 // .flex {
-//   
-// }
 // pre,
 // code {
 //   font-family: var(--font-monospace);
@@ -304,11 +307,6 @@ tt:after {
 // pre {
 //   padding: var(--space-xl);
 // }
-
-// .mecode {
-//   background: #000;
-// }
-
   // --space-sm: 4px;
   // --space-md: 8px;
   // --space-lg: 16px;

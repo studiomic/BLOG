@@ -1,12 +1,12 @@
 import React from 'react'
-import * as styles from '../styles/intoro.module.scss'
+import * as styles from '../styles/intoro-note.module.scss'
 // import Container from './container'
 
 const Introduction = () => (
   <div className={styles.intoro}>
     <article>
-      <h1 className={styles.title}>No life without designs</h1>
-      <p>Design Deeply</p>
+      <h1 className={styles.title}>parce qu'il y a un stylo</h1>
+      <p>Hard Coding Notes</p>
     </article>
   </div>
 )
