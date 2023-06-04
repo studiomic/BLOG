@@ -1,21 +1,34 @@
 import * as React from 'react';
 import Layout from '../../components/layout';
-import { graphql } from 'gatsby';
-import * as styles from '../../styles/blog-post.module.scss'
-
+import Seo from '../../components/seo'
+import Intoro from '../../components/intoro'
+import { graphql, Link } from 'gatsby';
+import * as styles from '../../styles/note.module.scss'
 
 const IndexPage = ({ data }) => {
 return (
 <Layout>
+	<Seo title="Notes" />
+	<Intoro />
+
+
+
+
+
+
 	<div className={styles.container}>
 		<div className={styles.article}>
-	<h1>Gatsby Blog Site Notes:Index</h1>
+		<h1>Gatsby Blog Site Notes:Index</h1>
 	{data.allMarkdownRemark.edges.map((edge) => (
 	<div key={edge.node.id}>
-		<h2>{edge.node.frontmatter.title}</h2>
+		<h2>
+		<Link to={`/notes/${edge.node.frontmatter.slug}`}>
+			{edge.node.frontmatter.title}
+		</Link>
+			</h2>
 		<p>{edge.node.frontmatter.date}</p>
 		<p>{edge.node.frontmatter.description}</p>
-		<div dangerouslySetInnerHTML={{ __html: edge.node.html }} />
+		{/* <div dangerouslySetInnerHTML={{ __html: edge.node.html }} /> */}
 	</div>
 	
 	))}
@@ -36,6 +49,7 @@ allMarkdownRemark {
 		title
 		date
 		description
+		slug
 		}
 	}
 	}

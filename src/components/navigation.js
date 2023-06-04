@@ -17,6 +17,7 @@ const Navigation = () => (
       <img src={IMG} alt="Style de Cerise" />
     </Link>
     <ul className={styles.navigation}>
+
       <li className={styles.navigationItem}>
         <Link to="/blog/" activeClassName="active">
           Blog
@@ -27,6 +28,13 @@ const Navigation = () => (
           About
         </Link>
       </li>
+
+      <li className={styles.navigationItem}>
+        <Link to="/notes/" activeClassName="active">
+            Notes
+        </Link>
+      </li>
+
       <li className={styles.navigationItem}>
         {/* <DarkModeToggle /> */}
       </li>
