@@ -290,6 +290,23 @@ tt:after {
   margin: var(--space-3xl) 0;
 }
 
+.primary-col {
+  color: var(--primary);//#ffc400;
+}
+.secondary-col {
+  color: var(--secondary);//#afc2cb;
+}
+.crimson-col {
+  color: var(--crimson);//#DC143C;;
+}
+.blue-col {
+  color: var(--blue);//#4a90e2;
+}
+.bold {
+  font-weight: bold;
+}
+
+
 // main {
 //   border: 1px solid cyan;
 // }

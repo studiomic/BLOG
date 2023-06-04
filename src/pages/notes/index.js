@@ -17,7 +17,7 @@ return (
 	<section className={styles.container}>
 		<article className={styles.article}>
 		{data.allMarkdownRemark.edges.map((edge) => (
-			<div key={edge.node.id}>
+			<div key={edge.node.id} className={styles.top}>
 				<h2>
 					<Link to={`/notes/${edge.node.frontmatter.slug}`}>
 						{edge.node.frontmatter.title}

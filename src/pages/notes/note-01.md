@@ -7,7 +7,13 @@ description: "冷やし中華の話ではなく、Notesコンテンツを増設�
 
 ## Marakdown Code
 
-```js:BlogPostTemplate.js
+Gatsbyおもしろ過ぎて、寝不足続き。<br>
+半角スペースがなければ・・・
+
+パラグラフはどうだ
+
+
+```javascript:title=BlogPostTemplate.js
 const options = {
   renderNode: {
     [BLOCKS.EMBEDDED_ASSET]: (node) => {
