@@ -44,6 +44,7 @@ class TagIndex extends React.Component {
 	}
 }
 export default TagIndex
+
 export const pageQuery = graphql`
 query TagIndexQuery ($slug: String!){
 	allContentfulTag {

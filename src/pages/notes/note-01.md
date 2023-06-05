@@ -1,9 +1,9 @@
----
+<!-- ---
 title: "Markdownはじめました"
 date: "2023-06-03 10:00:00"
 slug: 'note-01'
 description: "冷やし中華の話ではなく、Notesコンテンツを増設した話。"
----
+--- -->
 
 ## Marakdown Code
 

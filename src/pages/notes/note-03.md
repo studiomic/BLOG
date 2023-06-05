@@ -4,6 +4,13 @@ date: "2023-06-04 19:00:00"
 slug: 'note-03'
 description: "続・Gatsby+Contentful Tags｜シラフになって考えたら楽しかった"
 ---
+この記事は[BlogにContentfulのTags機能を追加した](/notes/note-02/)
+(2023/06/04 : Gatsby+Contentful Tags)の続きです。<br>&emsp;<br>
+
+
+___
+&emsp;<br>
+
 とりあえず、インターネット検索で見かけたTagsページの作り方を、Codeのコピペでは埒が開かないと気づいたときに、ひとまずシラフになって設計図とはいえないポンチ図を書き出しました。
 
 制作の鍵は**Pen**です。紙とペン。<br>&emsp;<br>
@@ -17,6 +24,7 @@ description: "続・Gatsby+Contentful Tags｜シラフになって考えたら�
 ___
 
 # createPage
+
 ```graphql:title=gatsby-node.js
 tags.forEach((tag) => {
     createPage({
@@ -33,7 +41,6 @@ tags.forEach((tag) => {
 Postの場合は、**if (posts.length > 0) {&emsp;}** &emsp; （0でなければ）条件下にあるが、IFは書かなかった乱暴者。<br>
 この粗暴さが後でちょっとした仇になる。<br>
 &emsp;
-
 forEachで置き換え元となる **tags.** は result.のContentful Tag（33行目）
 
 
@@ -132,10 +139,10 @@ const tagname = get(this, 'props.pageContext')
 https://www.gatsbyjs.com/docs/creating-and-modifying-pages/<br>&emsp;<br>
 
 ドキュメントを翻訳も交えて真剣に眺めた結果、直接的なコピペネタはなくても、**props** なんだよな、
-**pageContext** はいつもキャメルケースだな、とか「目に伝えてくる」<br>
-今読み返すと下から2番目のcodeSnippetで
+**pageContext** はキャメルケースだな、とか「目に伝えてくる」<br>
+今読み返すと下から2番目のcodeSnippetで気づいたのか。<br>&emsp;<br>
 
-<p class="crimson-col bold">On your pages and templates, you can access your context via the prop pageContext like this:<br>「ページとテンプレートでは、次のように prop pageContext を介してコンテキストにアクセスできます。」</p>
+<p class="crimson-col bold">On your pages and templates, you can access your context via the prop pageContext like this:<br>（ページとテンプレートでは、次のように prop pageContext を介してコンテキストにアクセスできます）</p>
 
 ```js
 import React from "react"
@@ -146,86 +153,153 @@ const Page = ({ pageContext }) => {
 
 export default Page
 ```
-と、手法が少し違うだけな代入ケースが見えたら自分のStarterに合わせた
+手法が少し違うだけな代入ケースが見えたら自分のStarterに合わせた3行目を加筆し
+
 ```js
+const posts = get(this, 'props.data.allContentfulBlogPost.nodes')
+const tags = get(this, 'props.data.allContentfulTag.nodes')
 const tagname = get(this, 'props.pageContext')
+	return (
+		........
+	)	
+```
+createPageでつくられる **/tags/$display_tag/** のテンプレートで
+
+```js:title=/src/templates/tags-index.js
+<h1 className={styles.title}>TAGS : {tagname.name}</h1>
+```
+ようやく対象のTag名をページのタイトルとして埋められました。
+
+たったこれだけだが、Tagリンクを表示するよりずっと難関だった件。<br>&emsp;<br>
+___
+
+
+# TagIndexQueryのソース
+```graphql:title=/src/templates/tags-index.js
+export const pageQuery = graphql`
+query TagIndexQuery ($slug: String!){
+	allContentfulTag {
+		nodes {
+			contentful_id
+			name
+		}
+	}
+	allContentfulBlogPost(
+		sort: { publishDate: DESC }
+		filter: {metadata: {tags: {elemMatch: {contentful_id: {eq: $slug }}}}}
+	){
+		nodes {
+			title
+			slug
+			publishDate(formatString: "YYYY/MM/DD")
+			metadata {
+				tags {
+					contentful_id
+					name
+				}
+			}
+			heroImage {
+				gatsbyImage(
+					layout: FULL_WIDTH
+					placeholder: BLURRED
+					width: 424
+					height: 212
+				)
+			}
+			description {
+			raw
+			}
+		}
+	}
+}
+`
 ```
 
+まずTagsリンクから対象となるPostを絞り込むフィルターに、gatsby-node.jsのcreatePageから
+**context:**
+として渡された **slug: tag.contentful_id,**
+を11行目で使っています。{eq: $slug }
 
-
-
-
-
-
-
-
-pageContext
-
-
-
-
-*************
-
-props
-
-小道具
-
-gatsby-node.js
-
-すぐできたが
-
-
-http://
-
-
-
-
-
-
-
-:title=gatsby-node.js
-
-<br><br><br><br><br>
-
-slug: tag.contentful_id,
-        name: tag.name,
-IDは「名前」をキャメルケースにして付ける模様。
-
-Mac miniは「macMini」・FIFA-WCは「fifaWc」
-
-
-
-
-macMini
-
- FIFA-WC
-
-キャメルケース
-fifaWc
-
-自
-Postページ
-<b>tags.</b>
-
-
-❤️
-
-
-<br><br><br><br><br><br><br>
-
-
-
-```js
-path: `/tags/${tag.contentful_id}/`,
+```JS
+filter: {metadata: {tags: {elemMatch: {contentful_id: {eq: $slug }}}}}
 ```
+そのPostが持つTagsの中に **$slug** と同じ文字列の **contentful_id** があるかどうか。
+**elemMatch:** で確認。
+
+事前に $slug を文字列化する処理が2行目 **($slug: String!)**<br>
+allContentfulTag {&emsp;}<br>
+allContentfulBlogPost(&nbsp;) {&emsp;}<br>
+
+TagとPost 両方のdataを
+GraphQLに要求するpageQuery<br>&emsp;<br>
+___
+
+# PostページにTags <Link to={ $slug }>をリンクを表示する
+
+```html:title=/src/templates/blog-post.js
+<small className={tagstyles.tags}>
+{post.metadata.tags.map(tag => (
+	<div key={tag} className={tagstyles.tag}>
+		<Link to={`/tags/${tag.contentful_id}`}>{tag.name}</Link>
+	</div>
+	))}
+</small>
+```
+styleやHTMLタグもそのまま転記してますが、2行目から6行目のマッピングで置き換え。<br>
+
+日本語で（写像とは）とググると、めちゃくちゃ的確な説明が出てきました。
+
+> 集合の各元(げん)を他の集合（または同じ集合）の元にそれぞれ対応させること。<br>
+> 「実数の対から虚数への―」<br>
+> map(ping) の訳。同一集合内で行うのは特に「変換」と言う。<br>&emsp;<br>
+
+上のソースは、Postページや **/tags/${tag.contentful_id}** 自身にも「TAG Cloud」として載せています。<br>
+[Bolg](/blog)トップページだけは、Tag表示のみリンクなしの使い方をしていますが、Gatsby developの開発環境では問題なかったものが、Buildエラーになりました。<br>&emsp;<br>
+
+path/ に問題がある<br>
+post.metadata.tags. は未定義だ<br>
+
+といったエラー内容で思い当たることが一つ。<br>
+Contentful製のこのStarterは、Webで見る見本ソースより小洒落ているというか、スマートというか・・・だらだらと1ページに書かずに適度にcomponents化してあるのも、お手本になるなぁと気に入っていますが、components化すると階層は深くなるんですね。
+
+その一例が問題になった[Bolg](/blog)トップページで<br>
+src/pages/blog.js 本体にはごく短くHero-Imageと「BLOG」というページタイトルまで。<br>
+Postを並べているGridは
+
+```html:title=/src/pages/blog.js
+<ArticlePreview posts={posts} />
+```
+とcomponentsに渡して任せている。<br>
+見当はつくが対処法はまったく思いつかん。というときに救いの記事💜
 
 
 
+⭐️ [gatsby build 時の「WebpackError: TypeError: Cannot read property 'hoge' of undefined」対処法](https://qiita.com/yosh1ba/items/6c2299813dcc76d910d7)
 
+> 対処法：エラーとなっているプロパティ（この場合はhoge）の前に?.を付け、?.hogeとすることで解消
 
+```html:title=/src/components/ArticlePreview.js
+<ArticlePreview posts={posts} />
+// で{posts}を渡された先のcomponentsで、metadata?. とオプショナルチェイング演算子を挿入
 
-### Marakdown3333はじめての記事
+<small className={tagstyles.tags}>
+	{post.metadata?.tags.map(tag => {
+	return (
+		<div key={tag.contentful_id} className={tagstyles.tag}>
+		{tag.name}
+		</div>
+	)
+	})}
+</small>
+```
+説明が的確だったのでそのまま引用します。
 
-コードスニペット使えると良いね。
+<blockquote>
+<h3>?.とは何なのか</h3>
+調べてみると、オプショナルチェイング演算子と呼ばれるものみたいです。
 
+[MDNによると](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Optional_chaining)、深い入れ子構造になったサブプロパティにアクセスする際は、各プロパティ間の参照を確認する必要があるとのこと。今回のコードで言うと、data.allFile.nodes内にfindでヒットした要素が存在することを確認した上で、publicURLを取得する必要があるようです。
+
+これを暗黙的にやってくれるのが、オプショナルチェイング演算子です。
+</blockquote>
 
