@@ -31,7 +31,8 @@ pre[class*="language-"] {
   padding: 1em;
   margin: .5em 0;
   overflow: auto;
-  border-radius: 0 0.3em 0.3em;
+  /* border-radius: 0 0.3em 0.3em; */
+  border-radius: 4px;
 }
 
 :not(pre) > code[class*="language-"],
@@ -121,10 +122,6 @@ pre[class*="language-"] {
   cursor: help;
 }
 
-
-
-
-
 pre.line-numbers
 {
   position: relative;
@@ -149,9 +146,7 @@ pre.line-numbers > code
   letter-spacing: -1px;
   /* border-right: 1px solid #999; */
   padding: 1em;
-  fontFamily: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-
-
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;

@@ -1,22 +1,13 @@
 .gatsby-code-title {
-	/* background: #0b293f; */
 	background: #282936;
-	color: #ddd;
 	color:#afc2cb;
 	margin-bottom: -0em;
-	padding: 1rem 4rem;
+	padding: 1.2rem 4rem 0.6rem;
 	font-size: 1em;
 	line-height: 0.2;
-	/* font-weight: 600; */
-	border-radius: 0.3em 0.3em 0 0;
-	/* border-radius: 8px 8px 0 0; */
+	/* border-radius: 0.3em 0.3em 0 0; */
+	border-radius: 4px 4px 0 0;
 	display: table;
 	position: relative;
-	top: 10px;
-	/* border-bottom: 1px solid #ddd; */
+	top: 11px;
 }
-
-/* --primary: #4a90e2;
---primary: #ffc400;
---secondary: #afc2cb;
---crimson: #DC143C; */

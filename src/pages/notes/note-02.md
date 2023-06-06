@@ -63,9 +63,7 @@ allContentfulBlogPost {
 	  tags
 	  ...
 ```
-と、BlogPostモデルの中にありました。<br>
-&emsp;
-
+と、BlogPostモデルの中にありました。
 
 ## Contentful Tags の場合
 

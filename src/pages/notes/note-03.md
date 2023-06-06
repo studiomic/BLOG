@@ -4,26 +4,38 @@ date: "2023-06-04 19:00:00"
 slug: 'note-03'
 description: "続・Gatsby+Contentful Tags｜シラフになって考えたら楽しかった"
 ---
-この記事は[BlogにContentfulのTags機能を追加した](/notes/note-02/)
-(2023/06/04 : Gatsby+Contentful Tags)の続きです。<br>&emsp;<br>
+[BlogにContentfulのTags機能を追加した](/notes/note-02/)
+(2023/06/04 : Gatsby+Contentful Tags)の続きです。
+- [createPage](#createPage)
+- [余談：ケバブケースじゃなくていい](#kebabCase)
+- [context:の受け渡し](#context)
+- [TagIndexQueryのソース](#TagIndexQuery)
+- [PostページにTags <Link to={ $slug }>をリンクを表示する](#Tagslink)
+- [?.オプショナルチェイング演算子をつけずにBuild Error](#BuildError)
+<hr>
 
-
-___
-&emsp;<br>
 
 とりあえず、インターネット検索で見かけたTagsページの作り方を、Codeのコピペでは埒が開かないと気づいたときに、ひとまずシラフになって設計図とはいえないポンチ図を書き出しました。
 
-制作の鍵は**Pen**です。紙とペン。<br>&emsp;<br>
+制作の鍵は**Pen**です。紙とペン。
 
-- まずは気ままにPostたちにつけられたTagを、クリックした先に表示する **/tags/$display_tag/** というページ群が、無計画につけられたTagの数だけ必要。<br>動的につくるページだが、外観は「リストである」ため[Bolg](/blog)トップページと同レイアウトで。<br>[💙できたもの：Mac mini というタグ名を押下した例：/tags/macMini/](/tags/macMini/)<br>&emsp;<br>
+&emsp;
 
-- リストから開く、各Postページはすでにあるので不要だが、PostページのTag群は、それぞれ該当の **/tags/$display_tag/** へリンクさせる。displayに見せる表示<br>このStarterの場合は、Tags表示はされていたのを**Contentful Tags**に差し替えてリンクもつけるという工程。<br>[💙できたもの：4つのタグがPostの末尾に表示されている例：/blog/gatsby-cloud/](/blog/gatsby-cloud/)<br>&emsp;<br>
+- まずは気ままにPostたちにつけられたTagを、クリックした先に表示する **/tags/$display_tag/** というページ群が、Tagの数だけ必要。<br>定数のない動的につくるページだが、外観は「リストである」ため[Bolgトップ](/blog)と同レイアウトで。<br>
 
-- タグ一覧表。WordPressウィジェットで「タグ・クラウド」と呼ばれているもの。<br>（うちのBlogに要るかぁ？）とあまり必要を感じなかったが「一望できる・網羅された」はユーザー体験としては大切と考えるタチなので、 **/tags/$display_tag/** 各ページのフッター近くに**TAG Cloud**として載せた。<br>TAG Cloudを書くために作業用でつくった1枚もの[⭐️ALL TAGS](/tags/)もTAG Cloudの右隅にひっそり鎮座。<br>大量に多方面記事を載せるBlogなら重宝するもの。<br>&emsp;<br>
+🩷[成果物：Mac mini というタグ名を押下した例：/tags/macMini/](/tags/macMini/)<br>&emsp;<br>
+
+- リストから開く、各Postページはすでにあるので不要だが、PostページのTag群は、それぞれ該当の **/tags/$display_tag/** へリンクさせる。displayに見せる表示<br>このStarterの場合は、Tags表示はされていたのを**Contentful Tags**に差し替えてリンクもつけるという工程。<br>
+🩷[成果物：4つのタグがPostの末尾に表示されている例：/blog/gatsby-cloud/](/blog/gatsby-cloud/)<br>&emsp;<br>
+
+- タグ一覧表。WordPressウィジェットで「タグ・クラウド」と呼ばれているもの。<br>（うちのBlogに要るかぁ？）とあまり必要を感じなかったが「一望できる・網羅された」はユーザー体験としては大切と考えるタチなので、 **/tags/$display_tag/** 各ページのフッター近くに**TAG Cloud**として載せた。<br>TAG Cloudを書くために作業用でつくった1枚もの[⭐️ALL TAGS](/tags/)もTAG Cloudの右隅にひっそり鎮座。<br>大量に多方面記事を載せるBlogなら重宝するもの。
+
+- 因みに[Blogトップ](/blog/)では以前と同じくTagを表示するのみでLinkをしないため、Linkのあるなしでブロックの高さに変化をつけている。
+
 
 ___
 
-# createPage
+# createPage<a name="createPage"></a>
 
 ```graphql:title=gatsby-node.js
 tags.forEach((tag) => {
@@ -37,12 +49,10 @@ tags.forEach((tag) => {
     })
   })
 ```
-すでにあるBlog Post用の **createPage** と同じ要領でサクッと書ける。<br>
+Tagページの動的な生成は、すでにあるBlogPost用の**createPage**と同じ要領でサクッと書ける。<br>
 Postの場合は、**if (posts.length > 0) {&emsp;}** &emsp; （0でなければ）条件下にあるが、IFは書かなかった乱暴者。<br>
-この粗暴さが後でちょっとした仇になる。<br>
-&emsp;
-forEachで置き換え元となる **tags.** は result.のContentful Tag（33行目）
 
+forEachで置き換え元となる**tags.** は result.のContentful Tag（33行目）
 
 ```graphql:title=gatsby-node.js
 const { createPage } = actions
@@ -85,7 +95,7 @@ const tags = result.data.allContentfulTag.nodes
 で同様にテンプレートを渡している。
 ___
 
-## 余談：ケバブケースじゃなくていい
+## 余談：ケバブケースじゃなくていい<a name="kebabCase"></a>
 
 Gatsbyのタグ、ContentfulTaulのTags、といったキーワードから来た人なら、ニッチでないメジャーなMarkdownの**frontmatter**での手法はとっくに目にしていると思う。
 
@@ -104,7 +114,8 @@ createPage の **context:** として渡しているのはCodeに載せたとお
 **context:** として渡されるんだから、Postページでの扱いはお茶の子さいさいだろう！と思いきや、これがなかなか慣れない初心者には難関になった。
 ___
 
-# context:の受け渡し
+
+# context:の受け渡し<a name="context"></a>
 
 書籍もチェートリアルも読まずに他人のソースだけ見て、どうにかしようという魂胆がまず遠回りの要因なんすが！<br>
 パターンとして多かったのが、こういうdataをマルッと渡すもの
@@ -173,8 +184,7 @@ createPageでつくられる **/tags/$display_tag/** のテンプレートで
 たったこれだけだが、Tagリンクを表示するよりずっと難関だった件。<br>&emsp;<br>
 ___
 
-
-# TagIndexQueryのソース
+# TagIndexQueryのソース<a name="TagIndexQuery"></a>
 ```graphql:title=/src/templates/tags-index.js
 export const pageQuery = graphql`
 query TagIndexQuery ($slug: String!){
@@ -234,7 +244,7 @@ TagとPost 両方のdataを
 GraphQLに要求するpageQuery<br>&emsp;<br>
 ___
 
-# PostページにTags <Link to={ $slug }>をリンクを表示する
+# PostページにTags <Link to={ $slug }>をリンクを表示する<a name="Tagslink"></a>
 
 ```html:title=/src/templates/blog-post.js
 <small className={tagstyles.tags}>
@@ -249,12 +259,15 @@ styleやHTMLタグもそのまま転記してますが、2行目から6行目の
 
 日本語で（写像とは）とググると、めちゃくちゃ的確な説明が出てきました。
 
-> 集合の各元(げん)を他の集合（または同じ集合）の元にそれぞれ対応させること。<br>
-> 「実数の対から虚数への―」<br>
-> map(ping) の訳。同一集合内で行うのは特に「変換」と言う。<br>&emsp;<br>
+<blockquote>
+集合の各元(げん)を他の集合（または同じ集合）の元にそれぞれ対応させること。<br>
+「実数の対から虚数への―」<br>
+map(ping) の訳。同一集合内で行うのは特に「変換」と言う。
+</blockquote>
 
 上のソースは、Postページや **/tags/${tag.contentful_id}** 自身にも「TAG Cloud」として載せています。<br>
-[Bolg](/blog)トップページだけは、Tag表示のみリンクなしの使い方をしていますが、Gatsby developの開発環境では問題なかったものが、Buildエラーになりました。<br>&emsp;<br>
+[Bolgトップ](/blog)だけは、Tag表示のみリンクなしの使い方をしていますが、Gatsby developの開発環境では問題なかったものが、Buildエラーになりました。
+&emsp;<br><a name="BuildError"></a>
 
 path/ に問題がある<br>
 post.metadata.tags. は未定義だ<br>
@@ -262,7 +275,7 @@ post.metadata.tags. は未定義だ<br>
 といったエラー内容で思い当たることが一つ。<br>
 Contentful製のこのStarterは、Webで見る見本ソースより小洒落ているというか、スマートというか・・・だらだらと1ページに書かずに適度にcomponents化してあるのも、お手本になるなぁと気に入っていますが、components化すると階層は深くなるんですね。
 
-その一例が問題になった[Bolg](/blog)トップページで<br>
+その一例が問題になった[Bolgトップ](/blog)で<br>
 src/pages/blog.js 本体にはごく短くHero-Imageと「BLOG」というページタイトルまで。<br>
 Postを並べているGridは
 
