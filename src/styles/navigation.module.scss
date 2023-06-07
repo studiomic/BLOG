@@ -2,8 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  // align-items:end;
   margin: 0 auto;
-  padding: var(--space-xl) var(--size-gutter);
+  padding: var(--space-xl) var(--size-gutter) 0;
   max-width: var(--size-max-width);
   // border: 2px solid pink;
 }

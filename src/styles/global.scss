@@ -15,13 +15,6 @@
   src: url('/fonts/Inter-italic.var.woff2?v=3.19') format('woff2');
 }
 
-// @font-face {
-//   font-family: 'LINE Speed JP';
-//   src: url('/fonts/LINESeedJP_OTF_Rg.woff2') format('woff2');
-// }
-// FONT-FAMILY
-// "LINE Speed JP", sans-serif
-
 html {
   scroll-behavior: smooth;
 }
@@ -79,7 +72,7 @@ main {
 }
 
 // .wave {
-.wave,.wavervs {
+.wave,.wavervs,.wavetop {
   margin-top: -200px;
 	display: block;
 	height: 200px;
@@ -92,16 +85,14 @@ main {
   transform: scale(-1, -1);
 }
 .wavervs {
-  // border: 1px solid tomato;
   transform: scale(1.75, -1);
 }
-  // position: absolute;
-  // left: 0;
-  // right: 0;
-  // min-width: 100%;
-	// background: url(../asset/svg/wave.svg)no-repeat;
-	// background-size: cover;
-  // position: relative;
+.wavetop {
+  transform: scale(1.5, -1);
+  margin-top: -180px;
+  // border: 1px solid tomato;
+}
+
 
 body {
   background: var(--background);
@@ -147,7 +138,6 @@ body.light-mode {
       svg {
         fill: var(--primary);
         opacity: 1;
-
         // fill: var(--crimson);
       }
     }
@@ -315,6 +305,23 @@ tt:after {
   
 }
 
+// .gatsby-code-button {
+//   position: absolute;
+//   top: -17px ;
+//   right: 10px;
+//   z-index: 100;
+//   &::after {
+//       display: none !important;
+//   }
+//   svg {
+//       filter: invert(98%) sepia(5%) saturate(983%) hue-rotate(178deg)
+//           brightness(95%) contrast(99%);
+//       opacity: 0.9;
+//   }
+// }
+
+
+
 // .block-editor-spacer
 // .spacer {
 //   display: block;
@@ -377,3 +384,11 @@ tt:after {
 
 // --background: #282828;
     // --background: #292a2d;
+
+
+// @font-face {
+//   font-family: 'LINE Speed JP';
+//   src: url('/fonts/LINESeedJP_OTF_Rg.woff2') format('woff2');
+// }
+// FONT-FAMILY
+// "LINE Speed JP", sans-serif

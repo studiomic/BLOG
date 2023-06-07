@@ -60,9 +60,7 @@
 .post-body {
 	font-size: 19px;
 	a {
-		// border-bottom: 1px solid var(--primary);
-		// border-bottom: 1px solid var(--blue);
-		// border-bottom: 1px solid var(--crimson);
+		
 		border-bottom: 1px solid currentColor;
 		color: rgba(0, 0, 0, 0.8);
 		color: var(--crimson);
@@ -184,3 +182,6 @@ blockquote {
 // border: 1px solid pink;
 // border: 1px solid pink;
 // border: 1px solid #eee;
+// border-bottom: 1px solid var(--primary);
+		// border-bottom: 1px solid var(--blue);
+		// border-bottom: 1px solid var(--crimson);

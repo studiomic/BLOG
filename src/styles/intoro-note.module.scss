@@ -1,14 +1,7 @@
 .intoro {
-	// background: url(../asset/img/sam-albury-oA7MMRxTVzo-unsplash.jpg);
-	// background: url(../asset/img/sami-boudjelti-unsplash.jpg);
 	background: url(../asset/img/sami-boudjelti-4FwK0mTrqu8-unsplash.jpg);
-	// background: url(../asset/img/sakura/david-brooke-martin-lFTtQqVfx6g-unsplash.jpg);
-	// background: url(../asset/img/sakura/daniel-bernard-ibK7vdiSfAM-unsplash.jpg);
 	background-size: cover;
 	background-position: center;
-	// background-position: 0 1380px;
-	// background-position: bottom;
-	background-attachment: fixed;
 	filter: saturate(70%);
 	// filter: sepia(100%);
 	// filter: grayscale(100%);
@@ -64,8 +57,16 @@
 
 
 
-// @media (min-width: 1200px) {
-// 	.intoro {
-// 		width: calc(85% - var(--size-gutter));
-// 	}
-// }
+@media (min-width: 1200px) {
+	.intoro {
+		background-attachment: fixed;
+	}
+}
+
+
+// background: url(../asset/img/sam-albury-oA7MMRxTVzo-unsplash.jpg);
+	// background: url(../asset/img/sami-boudjelti-unsplash.jpg);
+		// background: url(../asset/img/sakura/david-brooke-martin-lFTtQqVfx6g-unsplash.jpg);
+	// background: url(../asset/img/sakura/daniel-bernard-ibK7vdiSfAM-unsplash.jpg);
+		// background-position: 0 1380px;
+	// background-position: bottom;

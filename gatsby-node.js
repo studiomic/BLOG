@@ -73,3 +73,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   
 }
 //exports.createPages
+
+
+
+// allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
+//   nodes {
+//     frontmatter {
+//       date
+//       description
+//       title
+//       slug
+//     }
+//   }
+// }
