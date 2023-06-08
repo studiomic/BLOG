@@ -1,7 +1,7 @@
 ---
 title: "BlogにTags機能をつける工程"
 date: "2023-06-04 19:00:00"
-slug: 'note-03-ContentfulTags2'
+slug: 'note-03-contentful-tags2'
 description: "続・Gatsby+Contentful Tags｜シラフになって考えたら楽しかった"
 ---
 

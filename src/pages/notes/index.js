@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Layout from '../../components/layout';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 
 const IndexPage = ({ data }) => {
 return (
@@ -8,7 +8,7 @@ return (
 	<h1>Gatsby Blog Site</h1>
 	{data.allMarkdownRemark.edges.map((edge) => (
 		<div key={edge.node.id}>
-		<h2>{edge.node.frontmatter.title}</h2>
+		<h2><Link to={`/notes/${edge.node.frontmatter.slug}`}>{edge.node.frontmatter.title}</Link></h2>
 		<p>{edge.node.frontmatter.date}</p>
 		<p>{edge.node.frontmatter.description}</p>
 		
@@ -29,6 +29,8 @@ query {
 			title
 			date(formatString: "YYYY/MM")
 			description
+			slug
+			book
 		}
 		}
 	}

@@ -1,7 +1,7 @@
 ---
 title: "BlogにContentfulのTags機能を追加した"
 date: "2023-06-04 18:00:00"
-slug: 'note-02-ContentfulTags'
+slug: 'note-02-contentful-tags'
 description: "Gatsby+Contentful Tags"
 ---
 
