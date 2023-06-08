@@ -35,7 +35,7 @@
 
 .logoLink {
   img {
-    height: calc(var(--space-3xl)* 2.4);
+    height: calc(var(--space-3xl)* 1.8);
     // border: 1px solid var(--black);
     object-fit: contain;
   }
@@ -49,10 +49,14 @@
 @media (max-width: 1023.98px) {
   .container {
     padding-left: calc(var(--size-gutter)/4);
+    padding-right: calc(var(--size-gutter)/4);
   }
+}
+
+@media (min-width: 1024px) {
   .logoLink {
     img {
-      height: calc(var(--space-3xl)*2);
+      height: calc(var(--space-3xl) * 2.4);
     }
   }
 }

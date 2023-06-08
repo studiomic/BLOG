@@ -5,7 +5,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Define a template for blog post
   const blogPost = path.resolve('./src/templates/blog-post.js')
   const tagIndex = path.resolve('./src/templates/tags-index.js')
-  const notePost = path.resolve('./src/templates/note-post.js')
+  // const notePost = path.resolve('./src/templates/note-post.js')
+
   const result = await graphql(
     `
       {
@@ -27,19 +28,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             name
           }
         }
-        allMarkdownRemark {
-          nodes {
-            id
-            html
-            frontmatter {
-              date
-              title
-              slug
-              book
-              description
-            }
-          }
-        }
+        
       }
     `
   )
@@ -54,7 +43,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const posts = result.data.allContentfulBlogPost.nodes
   const tags = result.data.allContentfulTag.nodes
-  const notes = result.data.allMarkdownRemark.nodes
+  // const notes = result.data.allMarkdownRemark.nodes
   
   if (posts.length > 0) {
     posts.forEach((post, index) => {
@@ -86,16 +75,30 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 
-  notes.forEach((note) => {
-    createPage({
-      path: `/notes/${note.frontmatter.slug}/`,
-      component: notePost,
-      context: {
-        slug: note.frontmatter.slug,
-        date: note.frontmatter.date,
-        id: note.id,
-      },
-    })
-  })
+  // notes.forEach((note) => {
+  //   createPage({
+  //     path: `/notes/${note.frontmatter.slug}/`,
+  //     component: notePost,
+  //     context: {
+  //       slug: note.frontmatter.slug,
+  //       date: note.frontmatter.date,
+  //       article: note,
+  //     },
+  //   })
+  // })
 }
 //exports.createPages
+
+// allMarkdownRemark {
+        //   nodes {
+        //     id
+        //     html
+        //     frontmatter {
+        //       date
+        //       title
+        //       slug
+        //       book
+        //       description
+        //     }
+        //   }
+        // }

@@ -28,10 +28,17 @@ const Navigation = () => (
         </Link>
       </li>
       <li className={styles.navigationItem}>
-        {/* <DarkModeToggle /> */}
+        <Link to="/notes/" activeClassName="active">
+          Notes
+        </Link>
       </li>
     </ul>
   </nav>
 )
 
 export default Navigation
+
+
+//<li className={styles.navigationItem}>
+//<DarkModeToggle />
+//</li>

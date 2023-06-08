@@ -19,7 +19,7 @@ ___
 
 Starterでは最初から全ての見本記事にTagがつけられており、[Bolg](/blog)トップページにあるTag表示も、componentsに用意されていた。
 
-<img src="asset/2023-06-04-1.png" width="100%" alt="BlogPostで入力するTag">
+<img src="src/asset/notes/2023-06-04-1.png" width="100%" alt="BlogPostで入力するTag">
 
 **Editor** でも記事の中に入力フィールドが。
 ___
