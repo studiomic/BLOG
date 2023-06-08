@@ -10,11 +10,12 @@
 }
 .image {
   /*
-    Ensure golden ratio for the hero size while limiting it to some extend to
-    the viewport width
+  Ensure golden ratio for the hero size while limiting it to some extend to
+  the viewport width
   */
   height: 61.8vh;
-  max-height: 560px;
+  // max-height: 560px;
+  max-height: 500px;
   width: 100%;
   // border: 1px solid cyan;
 }
@@ -52,9 +53,7 @@
 
 @media (min-width: 768px) {
   .hero {
-    // padding-top: var(--size-gutter);
     padding: var(--size-gutter) var(--space-3xl) var(--size-gutter) 0;
-
   }
   .details {
     max-width: 44rem;
@@ -72,3 +71,5 @@
     padding: var(--space-3xl) var(--size-gutter) 0 0;
   }
 }
+
+    // padding-top: var(--size-gutter);

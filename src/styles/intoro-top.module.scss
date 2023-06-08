@@ -6,20 +6,19 @@
 	background-position: bottom;
 	width: 100%;
 	height: 50dvh;
-	margin: var(--space-3xl) 0 0;
-	padding: 0 var(--space-2xl);
+	// margin: var(--space-3xl) 0 0;
+	padding: var(--space-3xl) var(--space-2xl) 0;
 	display: flex;
 	color: rgba(#fdfdfd,.75);
 	color:#b7a5be;
 	color:hsl(283,16%,70%);
 	// color:hsl(283,18%,75%);
 	// color:#f4d3f0;
-	// align-items: center;
 	// background-position: 0 1380px;
 	// background-position: top;
-	// filter: saturate(70%);
+	// filter: saturate(100%);
 	// filter: sepia(50%);
-	// filter: grayscale(40%);
+	filter: grayscale(40%);
 	// justify-content: end;
 	// color: var(--white);
 	p {
@@ -63,18 +62,20 @@
 	.intoro {
 		height: 45dvh;
 		padding: calc( var(--space-2xl)*3);
-		
 		// p {
 			// 	font-size: var(--text-5xl);
 			// }
 		}
 	}
 	
-	
-	
 @media (min-width: 1200px) {
 	.intoro {
 		background-attachment: fixed;
+		margin-top: var(--size-gutter);
+		// background-position: center;
+		height: 65dvh;
+		// align-items: center;
+		// background-position: top;
 		// width: calc(85% - var(--size-gutter));
 	}
 }

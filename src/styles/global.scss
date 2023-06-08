@@ -88,11 +88,15 @@ main {
   transform: scale(1.75, -1);
 }
 .wavetop {
-  transform: scale(1.5, -1);
-  margin-top: -180px;
-  // border: 1px solid tomato;
+  transform: scale(1.75, -1);
+  // margin-top: -180px;
 }
+.wavemdl {
+  transform: scale(1.5, -1);
+  // margin-top: -100px;
+  // border: 1px solid tomato;
 
+}
 
 body {
   background: var(--background);
@@ -236,10 +240,13 @@ h6 {
 a {
   color: currentColor;
   text-decoration: none;
+  // transition: all 5s ease-out;
+  transition: all .2s ease-out;
 }
 
 a:hover {
   color: var(--primary);
+  // transform: 3s;
 }
 
 a.active {
@@ -302,8 +309,12 @@ tt:after {
 .bold {
   font-weight: bold;
   display: inline-block;
-  
 }
+
+// .container {
+//   border: 1px solid tomato;
+// }
+
 
 // .gatsby-code-button {
 //   position: absolute;
