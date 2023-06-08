@@ -54,7 +54,6 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
-    "gatsby-plugin-sass",
     {
       resolve: "gatsby-source-contentful",
       options: {
@@ -64,5 +63,6 @@ module.exports = {
         enableTags: true,
       },
     },
+    "gatsby-plugin-sass",
   ],
 };
