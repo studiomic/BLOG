@@ -26,6 +26,21 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             name
           }
         }
+        allMarkdownRemark {
+          edges {
+            node {
+              html
+              timeToRead
+              frontmatter {
+              title
+              date
+              description
+              slug
+              book
+              }
+            }
+          }
+        }
       }
     `
   )

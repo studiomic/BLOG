@@ -76,7 +76,7 @@ class BlogPostTemplate extends React.Component {
             {timeToRead} minute read
           </span>
           <div className={styles.article}>
-            <div className={styles.body}>
+            <div>
               {post.body?.raw && renderRichText(post.body, options)}
             </div>
             <hr />
@@ -160,3 +160,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+//L80..<div className={styles.body}>
