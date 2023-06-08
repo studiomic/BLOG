@@ -1,9 +1,10 @@
 ---
 title: "BlogにContentfulのTags機能を追加した"
 date: "2023-06-04 18:00:00"
-slug: 'note-02'
+slug: 'note-02-ContentfulTags'
 description: "Gatsby+Contentful Tags"
 ---
+
 Contentfulは、何というかHello Worldなお世界というか、あぁこれが世界かぁ！と井の中の蛙、今更に大海を知るみたいなワクワク感がたくさんあって。
 
 まずは「Locale設定」で記事が2つずつ重複表示されたときに、日本語あるいはOne-languageでしか記事を書くつもりがない人間には、一見迷惑な高機能に思えるのだが、--hoge.com/jp/とか、--hoge.com/en/とか・・・あぁこうやって世界同時発信みたいなことができちゃうわけか！とお上りさん興奮しまスた。なユーザー体験にはじまり

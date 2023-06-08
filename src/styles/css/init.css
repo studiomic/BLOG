@@ -1,0 +1,15 @@
+.gatsby-code-title {
+	background: #282936;
+	color:#afc2cb;
+	margin-bottom: -0em;
+	padding: 1.2rem 4rem 0.6rem;
+	font-size: 1em;
+	line-height: 0.2;
+	border-radius: 4px 4px 0 0;
+	display: table;
+	position: relative;
+	top: 11px;
+}
+
+/* margin: 0 0 1px auto; */
+/* border-radius: 0.3em 0.3em 0 0; */

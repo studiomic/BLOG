@@ -1,9 +1,10 @@
 ---
 title: "Article Style Variables"
 date: "2023-06-03 10:00:00"
-slug: 'note-01'
+slug: 'note-01-styles'
 description: "HTML Elements Style and Color"
 ---
+
 <h2>Variables.scss</h2>
 
 ```css

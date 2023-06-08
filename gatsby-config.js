@@ -6,19 +6,16 @@ module.exports = {
   siteMetadata: {
     title: "Web Design & Web developer - Stylo de Cerise",
     description: "Gatsby+Contentful WebデザイナーノBLOG",
+    author: 'Sakura.i',
+    developer: "Studiomic",
   },
   plugins: [
-    "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `notes`,
         path: `${__dirname}/src/pages/notes/`,
-      },
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/asset/img/`,
       },
     },
     {
@@ -49,9 +46,9 @@ module.exports = {
         ],
       },
     },
-    
-    "gatsby-plugin-sharp",
     "gatsby-plugin-image",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
     "gatsby-plugin-sass",
     {
       resolve: "gatsby-source-contentful",
