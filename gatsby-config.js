@@ -25,7 +25,9 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          `gatsby-remark-prismjs-title`,
+          {
+            resolve: 'gatsby-remark-prismjs-title',
+          },
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
