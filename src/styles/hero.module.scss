@@ -15,9 +15,29 @@
   */
   height: 61.8vh;
   max-height: 560px;
-  max-height: 560px;
   width: 100%;
 }
+
+
+.solidimage {
+  margin: 0;
+  // border-top: 140px solid #000;
+  .image {
+    max-height: 480px;
+    // filter: saturate(50%);
+    // filter: sepia(50%);
+    // filter: grayscale(40%);
+    // border-radius: 50px;
+  }
+  // .details {
+  //   // border-radius: 0 25px;
+  //   // text-align: right;
+
+  // }
+}
+
+
+
 
 .details {
   background: var(--background);
@@ -64,6 +84,7 @@
   .image {
     margin-left: auto;
     width: 90%;
+    // width: 96%;
   }
   .details {
     left: var(--size-gutter);

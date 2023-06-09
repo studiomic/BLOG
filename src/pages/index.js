@@ -3,11 +3,10 @@ import { graphql, Link } from 'gatsby';
 import get from 'lodash/get'
 import Layout from '../components/layout'
 import Intoro from '../components/intoro-top'
-import Hero from '../components/hero'
-// import HeroType from '../components/hero-type'
-// import Intoro from '../components/intoro'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import ArticlePreview from '../components/article-preview'
 import * as styles from '../styles/top-note.module.scss'
+import * as hero from '../styles/hero.module.scss'
 
 class RootIndex extends React.Component {
   render() {
@@ -16,8 +15,6 @@ class RootIndex extends React.Component {
     const [author] = get(this, 'props.data.allContentfulPerson.nodes')
     return (
       <Layout location={this.props.location}>
-<div className="wrapper">
-        
         <Intoro />
         <div class="wavetop">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path d="M0,64L80,85.3C160,107,320,149,480,144C640,139,800,85,960,58.7C1120,32,1280,32,1360,32L1440,32L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"/></svg>
@@ -40,14 +37,16 @@ class RootIndex extends React.Component {
           ))}
           </article>
         </section>
-        <Hero
-          image={author.heroImage.gatsbyImage}
-          title={author.name}
-          content={author.shortBio}
-        />
 
+        <section className={hero.solidimage}>
+          <div className={hero.hero}>
+          <GatsbyImage className={hero.image} alt={author.name} image={author.heroImage.gatsbyImage} />
+            <div className={hero.details}>
+              <h1 className={hero.title}>BLOG</h1>
+            </div>
+          </div>
+        </section>
         <ArticlePreview posts={posts} />
-        </div>
       </Layout>
     )
   }

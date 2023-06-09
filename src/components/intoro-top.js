@@ -6,7 +6,6 @@ const Introduction = () => (
   <div className={styles.intoro}>
     <article>
       <h1 className={styles.title}>Blog et Gatsby Pages de Cerise</h1>
-      {/* <p>Ce site est mon carnet et mon stylo</p> */}
       <p>Je suis Designer et Web Developer</p>
     </article>
   </div>
@@ -14,6 +13,7 @@ const Introduction = () => (
 
 export default Introduction
 
+// {/* <p>Ce site est mon carnet et mon stylo</p> */}
 // Ce site est mon papier et mon stylo
 // Sakura's blog and pages
 // paper and pen

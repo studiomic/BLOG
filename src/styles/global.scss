@@ -250,7 +250,6 @@ tt,
 code,
 kbd {
   background: var(--black-fade-5);
-  // background: var(--black);
   padding-bottom: 0.2em;
   padding-top: 0.2em;
 }
@@ -277,7 +276,7 @@ tt:before,
 tt:after {
   content: ' ';
   letter-spacing: -1em;
-  letter-spacing: -0.2em;
+  // letter-spacing: -0.2em;
 }
 
 .hero-title {
@@ -286,10 +285,24 @@ tt:after {
   font-weight: var(--extrabold);
   line-height: var(--solid);
   margin: var(--space-3xl) 0;
-  // border: 1px solid cyan;
 }
 
-
+.primary-col {
+  color: var(--primary);//#ffc400;
+}
+.secondary-col {
+  color: var(--secondary);//#afc2cb;
+}
+.crimson-col {
+  color: var(--crimson);//#DC143C;;
+}
+.blue-col {
+  color: var(--blue);//#4a90e2;
+}
+.bold {
+  font-weight: bold;
+  display: inline-block;
+}
 // .center {
 //   text-align: center;
 // }
