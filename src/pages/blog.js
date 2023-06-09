@@ -22,6 +22,9 @@ class BlogIndex extends React.Component {
           />
           <div className={styles.details}>
             <h1 className={styles.title}>BLOG</h1>
+            <div className={styles.content}>
+              My Domestic Days Story
+            </div>
           </div>
         </div>
         <ArticlePreview posts={posts} />

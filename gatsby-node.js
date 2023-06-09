@@ -5,9 +5,25 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Define a template for blog post
   const blogPost = path.resolve('./src/templates/blog-post.js')
   const tagIndex = path.resolve('./src/templates/tags-index.js')
+  const notePost = path.resolve('./src/templates/note-post.js')
   const result = await graphql(
     `
       {
+        allMarkdownRemark {
+          edges {
+            node {
+              id
+              html
+              frontmatter {
+                title
+                description
+                date
+                slug
+              }
+            }
+          }
+        }
+
         allContentfulBlogPost {
           nodes {
             title
@@ -38,6 +54,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
+  const notes = result.data.allMarkdownRemark.edges
   const posts = result.data.allContentfulBlogPost.nodes
   const tags = result.data.allContentfulTag.nodes
   
@@ -70,6 +87,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       },
     })
   })
-  
+
+  notes.forEach((note) => {
+    createPage({
+      path: `/notes/${note.node.frontmatter.slug}/`,
+      component: notePost,
+      context: {
+        slug: note.node.frontmatter.slug,
+        id: note.node.id,
+      },
+    })
+  })
 }
 //exports.createPages
