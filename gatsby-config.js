@@ -6,6 +6,8 @@ module.exports = {
   siteMetadata: {
     title: "Web Design & Web developer - Stylo de Cerise",
     description: "Gatsby+Contentful WebデザイナーノBLOG",
+    author: 'Sakura.i',
+    developer: "Studiomic",
   },
   plugins: [
     "gatsby-transformer-sharp",

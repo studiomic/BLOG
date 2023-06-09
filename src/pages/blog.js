@@ -23,7 +23,7 @@ class BlogIndex extends React.Component {
           <div className={styles.details}>
             <h1 className={styles.title}>BLOG</h1>
             <div className={styles.content}>
-              My Domestic Days Story
+              My Domestic Days Stories. 韓国ドラマ好き。
             </div>
           </div>
         </div>

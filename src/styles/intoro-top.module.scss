@@ -1,0 +1,93 @@
+// .wrapper {
+// 	border: 1px solid tomato;
+// }
+.intoro {
+	position: sticky;
+	background: url(../asset/img/david-brooke-martin-unsplash.jpg);
+	background-size: cover;
+	// background-position: center;
+	background-position: bottom;
+	width: 100%;
+	height: 50dvh;
+	// margin: var(--space-3xl) 0 0;
+	padding: var(--space-3xl) var(--space-2xl) 0;
+	display: flex;
+	color: rgba(#fdfdfd,.75);
+	color:#b7a5be;
+	color:hsl(283,16%,70%);
+	// color:hsl(283,18%,75%);
+	// color:#f4d3f0;
+	// background-position: 0 1380px;
+	// background-position: top;
+	// filter: saturate(100%);
+	// filter: sepia(50%);
+	filter: grayscale(40%);
+	// justify-content: end;
+	// color: var(--white);
+	p {
+		margin: initial;
+		font-size: var(--text-xl);
+		line-height: var(---default);
+		font-weight: var(--body);
+		// color: rgba(#DC143C,.5);
+		// color: #b7a5be;//#f4d3f0;
+		// font-size: calc(var(--text-title) * 1.2);
+		// font-size: calc(var(--text-title) * 1);
+		// color: cyan;
+		// text-transform: uppercase;
+		// text-transform: lowercase;
+		// text-transform: capitalize;
+		// font-size: var(--text-3xl);
+		// text-align: center;
+		// border: 1px solid tomato;
+	}
+}
+
+.title {
+	font-size: var(--text-3xl);
+	font-weight: var(--body);
+	// line-height: var(--solid);
+	text-transform: uppercase;
+	margin: 0;
+	// padding-bottom: 50px;
+	// width: 100%;
+	// position: fixed;
+	// font-size: var(--text-title);
+	// text-align: right;
+	// color: var(--white);
+	// padding-bottom: var(--text-title);
+	// min-height: var(--text-title);
+	// display: block;
+	// border: 1px solid pink;
+}
+
+@media (min-width: 1024px) {
+	.intoro {
+		height: 45dvh;
+		padding: calc( var(--space-2xl)*3);
+		// p {
+			// 	font-size: var(--text-5xl);
+			// }
+		}
+	}
+	
+@media (min-width: 1200px) {
+	.intoro {
+		background-attachment: fixed;
+		margin-top: var(--size-gutter);
+		// background-position: center;
+		height: 65dvh;
+		// align-items: center;
+		// background-position: top;
+		// width: calc(85% - var(--size-gutter));
+	}
+}
+
+// .hiro {
+// 	margin: var(--space-3xl) 0 0;
+// 	display: flex;
+// 	justify-content: end;
+// 	align-items: center;
+
+// }
+
