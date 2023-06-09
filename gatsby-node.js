@@ -63,7 +63,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       })
     })
   }
-
   tags.forEach((tag) => {
     createPage({
       path: `/tags/${tag.contentful_id}/`,
@@ -74,6 +73,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       },
     })
   })
+}
+//exports.createPages
+
 
   // notes.forEach((note) => {
   //   createPage({
@@ -86,8 +88,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   //     },
   //   })
   // })
-}
-//exports.createPages
+
+
 
 // allMarkdownRemark {
         //   nodes {
