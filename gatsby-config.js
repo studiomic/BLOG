@@ -25,12 +25,6 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 1000,
-            },
-          },
           `gatsby-remark-prismjs-title`,
           {
             resolve: `gatsby-remark-prismjs`,
@@ -43,6 +37,12 @@ module.exports = {
               },
               showLineNumbers: true, //行数を出したい場合trueに。
               noInlineHighlight: false,
+            },
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1000,
             },
           },
         ],
