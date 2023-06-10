@@ -27,9 +27,6 @@
 	// padding: var(--space-2xl) var(--size-gutter);
 }
 
-
-
-
 .top { 
 	h2 {
 		font-size: var(--text-2xl);
@@ -45,7 +42,8 @@
 	}
 	dd {
 		display: inline-block;
-		color: rgba(0, 0, 0, 0.5);
+		// color: rgba(0, 0, 0, 0.5);
+		color:#666;
 		border-bottom: 1px solid #eee;
 		margin-left: 0;
 		padding-left: 1em;
