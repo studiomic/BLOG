@@ -82,7 +82,7 @@ const =	result.data.allContentfulTag.nodes.name
 <hr>
 
 ローカルリポジトリ → Github mainリポジトリ → Gatsby Cloud（Build）<br>
-CMC:Contentful → Published → Gatsby Cloud（Build）<br>
+CMS:Contentful → Published → Gatsby Cloud（Build）<br>
 
 本来、世間的には下の方が楽なはずだけど、ログインして、記事を書いて、公開ボタン押して、よりも
 Vs codeが勝つのは仕方ない。何せText-Editorという職人であり、Code-Editorという職人頭だ。
