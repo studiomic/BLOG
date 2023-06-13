@@ -37,12 +37,16 @@
   img {
     height: calc(var(--space-3xl) * 1.8);
     width: auto;
+    border-bottom: 2px solid var(--white);
+
     // border: 1px solid var(--black);
     // object-fit: contain;
   }
   &:hover {
     img {
-      filter: invert(40%);
+      // filter: invert(40%);
+      // opacity: 5;
+      border-bottom: 2px solid #9c9c9c;
     }
   }
 }
