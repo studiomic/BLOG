@@ -10,8 +10,21 @@ module.exports = {
     developer: "Studiomic",
   },
   plugins: [
-    "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
+    {
+      resolve: `gatsby-transformer-sharp`,
+      options: {
+        defaults: {
+            formats: [
+                `auto`,
+                `webp`,
+                `avif`,
+            ],
+            quality: 100,
+            placeholder: "blurred",
+        },
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

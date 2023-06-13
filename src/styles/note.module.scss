@@ -1,4 +1,39 @@
-.top { 
+.fits {
+	margin: var(--space-3xl) 0 0;
+	width: 100%;
+	height: 50dvh;
+  // min-height: 50dvh;
+	overflow: hidden;
+	// align-items: flex-end;
+	align-items: center;
+  display: flex;
+  margin: 0 auto;
+  max-width: 100%;
+  // padding: 0 0 var(--size-gutter) 0;
+  position: relative;
+	// border: 4px solid pink;
+	// position: fixed;
+	// position: absolute;
+	z-index: -1;
+	
+	img {
+		// position: fixed;
+		// top: 183px;
+		// max-height:50dvh;
+		// height: 50dvh;
+
+	}
+}
+.wrapper {
+	background: var(--background);
+	margin-top: 50dvh;
+	margin-top: 45dvh;
+	border: 2px solid tomato;
+  position: relative;
+}
+
+
+.top {
 	h2 {
 		font-size: var(--text-2xl);
 		line-height: var(--loose);
@@ -114,6 +149,9 @@ blockquote {
 	.article {
 		gap: var(--space-xl);
 	}
+	.fits {
+		height: 45dvh;
+	}
 }
 
 @media (min-width: 1024px) {
@@ -122,67 +160,8 @@ blockquote {
 		display: block;
 		margin: 0 auto;
 	}
+	.fits {
+		margin-top: var(--size-gutter);
+	}
 }
 
-
-// 	border: 2px solid cornflowerblue;
-// border: 1px solid cadetblue;
-// border-bottom: 1.5px solid currentColor;
-// pre,code {
-// 	background: #282A36;
-// --secondary: #afc2cb;
-//   --crimson: #DC143C;
-// .articleNavigation {
-// 	display: flex;
-// 	flex-wrap: wrap;
-// 	justify-content: space-between;
-// 	list-style: none;
-// 	padding: 0;
-// }
-
-// .gatsby-code-button-container {
-// 	touch-action: none;
-// 	display: flex;
-// 	justify-content: flex-end;
-// 	position: relative;
-// 	top: 28px;
-// 	right: 3px;
-// 	z-index: 100;
-// 	pointer-events: none;
-// }
-
-// .gatsby-code-button-icon {
-// 	display: block;
-// 	width: 14px;
-// 	height: 14px;
-// 	fill: gray;
-// }// .article p {
-// 	margin-bottom: 1.5em;
-// 	margin-top: 0;
-// }
-// font-size: var(--text-title);
-// border: 1px solid #eee;
-// a {
-// 	font-weight: var(--medium);
-// 	transition: all 0.3s ease;
-// 	&:hover {
-// 		border-bottom-color: transparent;
-// 		color: var(--crimson);
-// 		// color: #4a90e2;
-// 	}
-// }
-// border: 1px solid pink;
-// border: 1px solid pink;
-// border: 1px solid #eee;
-// border-bottom: 1px solid var(--primary);
-		// border-bottom: 1px solid var(--blue);
-		// border-bottom: 1px solid var(--crimson);
-
-		// margin: 0 0 0 auto;
-			// text-align-last: right;
-			// padding-right: 1em;
-			// display: inline-block;
-			// border-bottom: 1px solid var(--border);
-			// border-right: 1px solid var(--border);
-			// text-indent: 2em;
-			// display: none;
