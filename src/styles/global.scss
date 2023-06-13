@@ -66,6 +66,7 @@ html * {
 // 		}
 // 	}
 // }
+
 main {
   overflow-x: hidden;
 }
@@ -303,6 +304,17 @@ tt:after {
   font-weight: bold;
   display: inline-block;
 }
+
+
+@media (max-width: 768px) {
+.mno {
+  display: none;
+}
+
+
+}
+
+
 
 
 // footer {

@@ -1,10 +1,11 @@
 .intoro {
-	background: url(../asset/img/david-brooke-martin-unsplash.webp);
+	// background: url(../asset/img/david-brooke-martin-unsplash.webp);
+	background: url(../asset/img/mob-top.webp);
 	background-size: cover;
 	background-position: bottom;
 	width: 100%;
-	height: 30dvh;
-	margin: var(--space-3xl) 0 0;
+	height: 40dvh;
+	margin: var(--space-xl) 0 0;
 	padding: var(--space-3xl) var(--space-2xl) 0;
 	display: flex;
 	color: rgba(#fdfdfd,.75);
@@ -70,14 +71,14 @@
 	.intoro {
 		background-attachment: fixed;
 		margin-top: var(--size-gutter);
-		// background-position: center;
 		height: 65dvh;
-		// align-items: center;
-		// background-position: top;
-		// width: calc(85% - var(--size-gutter));
 	}
 }
 
+// background-position: center;
+// align-items: center;
+// background-position: top;
+// width: calc(85% - var(--size-gutter));
 // .hiro {
 // 	margin: var(--space-3xl) 0 0;
 // 	display: flex;

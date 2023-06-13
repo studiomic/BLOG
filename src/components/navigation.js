@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
-
 // import DarkModeToggle from './DarkModeToggle';
 import * as styles from '../styles/navigation.module.scss'
 // import IMG from "../asset/img/logo-wt.png"
@@ -17,14 +16,13 @@ const Navigation = () => (
   <nav role="navigation" className={styles.container} aria-label="Main">
     <Link to="/" className={styles.logoLink}>
     <StaticImage
-      src="../asset/img/Logo640.webp"
+      src="../asset/img/Logo640.png"
       alt="LOGO"
       placeholder="blurred"
       layout="fixed"
-      width={200}
-      // height={373}
+      width={160}
+      height={93.25}
     />
-      {/* <img src={IMG} alt="Style de Cerise" /> */}
     </Link>
     <ul className={styles.navigation}>
       <li className={styles.navigationItem}>
