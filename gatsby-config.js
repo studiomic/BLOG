@@ -6,11 +6,20 @@ module.exports = {
   siteMetadata: {
     title: "Web Design & Web developer - Stylo de Cerise",
     description: "Gatsby+Contentful WebデザイナーノBLOG",
+    siteUrl: "https://www.studiomic.net",
     author: 'Sakura.i',
     developer: "Studiomic",
   },
   plugins: [
     "gatsby-plugin-react-helmet",
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.studiomic.net',
+        sitemap: 'https://www.studiomic.net/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
     {
       resolve: `gatsby-transformer-sharp`,
       options: {

@@ -10,6 +10,7 @@ const Seo = ({ description = '', lang = 'en', meta = [], title, image }) => {
           siteMetadata {
             title
             description
+            siteUrl
           }
         }
       }
