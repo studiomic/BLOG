@@ -13,14 +13,6 @@ module.exports = {
   plugins: [
     "gatsby-plugin-react-helmet",
     {
-      resolve: 'gatsby-plugin-robots-txt',
-      options: {
-        host: 'https://www.studiomic.net',
-        sitemap: 'https://www.studiomic.net/sitemap.xml',
-        policy: [{ userAgent: '*', allow: '/' }]
-      }
-    },
-    {
       resolve: `gatsby-transformer-sharp`,
       options: {
         defaults: {
