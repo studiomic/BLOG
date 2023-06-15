@@ -3,7 +3,7 @@ import * as styles from '../styles/intoro-top.module.scss'
 // import Container from './container'
 
 const Introduction = () => (
-  <div className={styles.intoro}>
+  <div className={styles.intoro} loading="lazy">
     <article>
       <h1 className={styles.title}>Blog et Gatsby Pages de Cerise</h1>
       <p>Je suis Designer et Web Developer</p>

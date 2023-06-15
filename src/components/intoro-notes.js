@@ -3,7 +3,7 @@ import * as styles from '../styles/intoro-note.module.scss'
 // import Container from './container'
 
 const Introduction = () => (
-  <div className={styles.intoro}>
+  <div className={styles.intoro} loading="lazy">
     <article>
       <h1 className={styles.title}>parce qu'il y a un stylo</h1>
       <p>Hard Coding Notes</p>

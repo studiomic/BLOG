@@ -4,7 +4,7 @@ import React from 'react'
 import * as styles from '../styles/intoro.module.scss'
 
 const Introduction = () => (
-  <div className={styles.intoro}>
+  <div className={styles.intoro} loading="lazy">
     <article>
       <h1 className={styles.title}>No life without designs</h1>
       <p>Design Deeply</p>
