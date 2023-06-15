@@ -52,7 +52,6 @@
 .post-body {
 	font-size: 19px;
 	a {
-		
 		border-bottom: 1px solid currentColor;
 		color: rgba(0, 0, 0, 0.8);
 		color: var(--crimson);
@@ -103,6 +102,34 @@ blockquote {
 	margin-bottom: 0.5em;
 	margin-top: 3em;
 }
+
+.articleNavigation {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	list-style: none;
+	padding: 0;
+}
+.article nav li {
+	padding: var(--space-3xl) 0;
+	a {
+		border-bottom:initial;
+		// background-color: var(--secondary);
+		// background-color: var(--primary);
+		background-color: var(--text-color);
+		color: var(--background);
+		border-radius: var(--radius-sm);
+		border: 0;
+		line-height: var(--solid);
+		padding: var(--space-md) var(--space-lg);
+	}
+}
+
+.article a:hover {
+	// border-bottom-color: transparent;
+	color: var(--primary);
+}
+
 
 
 @media (min-width: 768px) {

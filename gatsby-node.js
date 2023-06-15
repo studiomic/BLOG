@@ -10,7 +10,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(
     `
       {
-        allMarkdownRemark {
+        allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
           edges {
             node {
               id
@@ -90,15 +90,27 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 
-  notes.forEach((note) => {
-    createPage({
-      path: `/notes/${note.node.frontmatter.slug}/`,
-      component: notePost,
-      context: {
-        slug: note.node.frontmatter.slug,
-        id: note.node.id,
-      },
+  if (notes.length > 0) {
+    notes.forEach((note, index) => {
+      const previousNotetSlug = index === 0 ? null : notes[index - 1].node.frontmatter.slug
+      const previousNotetTitle = index === 0 ? null : notes[index - 1].node.frontmatter.title
+      const nextNoteSlug = index === notes.length - 1 ? null : notes[index + 1].node.frontmatter.slug
+      const nextNoteTitle = index === notes.length - 1 ? null : notes[index + 1].node.frontmatter.title
+
+      createPage({
+        path: `/notes/${note.node.frontmatter.slug}/`,
+        component: notePost,
+        context: {
+          slug: note.node.frontmatter.slug,
+          previous:previousNotetSlug,
+          next:nextNoteSlug,
+          previousTitle:previousNotetTitle,
+          nextTitle:nextNoteTitle,
+          id: note.node.id,
+        },
+      })
     })
-  })
+  }
+
 }
 //exports.createPages

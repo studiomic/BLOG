@@ -1,6 +1,6 @@
 import React from "react"
 import get from 'lodash/get'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import * as styles from '../styles/note.module.scss'
@@ -11,6 +11,8 @@ class NotesPostTemplate extends React.Component {
 	render() {
 		const posts = get(this, 'props.data.markdownRemark')
 		const html = get(this, 'props.data.markdownRemark.html')
+		const pagenav = get(this, 'props.pageContext')
+
 		return (
 			<Layout>
 				<Seo
@@ -25,6 +27,24 @@ class NotesPostTemplate extends React.Component {
 							<p>{posts.frontmatter.description}</p>
 						</header>
 						<article className={styles.postBody} dangerouslySetInnerHTML={{ __html: html }} />
+						<nav>
+							<ul className={styles.articleNavigation}>
+							{pagenav.previous && (
+									<li>
+										<Link to={`/notes/${pagenav.previous}`} rel="prev">
+											← {pagenav.previousTitle}
+										</Link>
+									</li>
+								)}
+								{pagenav.next && (
+									<li>
+										<Link to={`/notes/${pagenav.next}`} rel="next">
+											{pagenav.nextTitle} →
+										</Link>
+									</li>
+								)}
+							</ul>
+						</nav>
 					</div>
 				</div>
 			</Layout>
@@ -32,8 +52,6 @@ class NotesPostTemplate extends React.Component {
 	}
 }
 export default NotesPostTemplate
-
-
 
 export const pageQuery = graphql`
 query NotesPostQuery ($id: String!){
