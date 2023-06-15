@@ -5,17 +5,17 @@ import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
 import { BLOCKS, MARKS } from '@contentful/rich-text-types'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-// import { okaidia } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-// import { nord } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import readingTime from 'reading-time'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import Hero from '../components/hero'
-// import Tags from '../components/tags'
 import * as styles from '../styles/blog-post.module.scss'
 import * as tagstyles from '../styles/tags.module.scss'
+// import { okaidia } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+// import { nord } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+// import Tags from '../components/tags'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -76,9 +76,9 @@ class BlogPostTemplate extends React.Component {
             {timeToRead} minute read
           </span>
           <div className={styles.article}>
-            <div className={styles.body}>
+            <article>
               {post.body?.raw && renderRichText(post.body, options)}
-            </div>
+            </article>
             <hr />
             <small className={tagstyles.tags}>
             {post.metadata.tags.map(tag => (
