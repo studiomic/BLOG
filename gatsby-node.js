@@ -6,6 +6,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const blogPost = path.resolve('./src/templates/blog-post.js')
   const tagIndex = path.resolve('./src/templates/tags-index.js')
   const notePost = path.resolve('./src/templates/note-post.js')
+  
   const result = await graphql(
     `
       {
@@ -24,7 +25,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
         }
 
-        allContentfulBlogPost {
+        allContentfulBlogPost(sort: { publishDate: DESC }) {
           nodes {
             title
             slug
@@ -36,6 +37,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
           }
         }
+
         allContentfulTag {
           nodes {
             contentful_id
