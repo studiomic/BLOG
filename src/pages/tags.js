@@ -2,8 +2,8 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import get from 'lodash/get'
-import { SEO } from "../components/seo"
 import Layout from '../components/layout'
+import Seo from '../components/seo'
 import Container from '../components/container'
 import * as styles from '../styles/hero.module.scss'
 import * as tagstyles from '../styles/tags.module.scss'
@@ -40,11 +40,10 @@ class TagsIndex extends React.Component {
     )
   }
 }
+export const Head = () => <Seo title="Tags" />
+
 export default TagsIndex
 
-export const Head = () => (
-  <SEO title="Tags" />
-)
 
 
 

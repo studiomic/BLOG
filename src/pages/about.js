@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/layout'
-import { SEO } from "../components/seo"
+import Seo from '../components/seo'
 // import { StaticImage } from 'gatsby-plugin-image'
 import Intoro from '../components/intoro'
 import * as styles from '../styles/about.module.scss'
@@ -103,9 +103,7 @@ export default function about() {
 	)
 }
 
-export const Head = () => (
-  <SEO title="About" />
-)
+export const Head = () => <Seo title="About" />
 
 
 

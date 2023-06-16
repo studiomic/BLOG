@@ -1,15 +1,13 @@
 import React from 'react'
 import get from 'lodash/get'
 import { Link, graphql } from 'gatsby'
-import { SEO } from '../components/seo'
-// import Seo from '../components/seo'
+import Seo from '../components/seo'
 import Layout from '../components/layout'
 import Container from '../components/container'
-
 import ArticlePreview from '../components/article-preview'
-// import { StaticImage } from 'gatsby-plugin-image'
 import * as styles from '../styles/hero.module.scss'
 import * as tagstyles from '../styles/tags.module.scss'
+// import { StaticImage } from 'gatsby-plugin-image'
 
 class TagIndex extends React.Component {
 	render() {
@@ -44,9 +42,20 @@ class TagIndex extends React.Component {
 }
 export default TagIndex
 
-export const Head = () => (
-  <SEO title="Tags" />
-)
+// export const Head = ({ data: { allContentfulTag: tag } }) => {
+// 	<Seo title={tag.name} />
+// }props.pageContext
+
+// export const Head =  ({ data: { allContentfulTag: tag } }) => {
+export const Head =  ({ pageContext }) => {
+	const names = 'Tags:' + pageContext.name;
+
+  return (
+    <Seo
+      title={names}
+    />
+  )
+}
 
 export const pageQuery = graphql`
 query TagIndexQuery ($slug: String!){

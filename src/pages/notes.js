@@ -1,8 +1,8 @@
-import * as React from 'react';
-import Layout from '../components/layout';
-import { SEO } from "../components/seo"
+import * as React from 'react'
+import Layout from '../components/layout'
+import Seo from '../components/seo'
 import Intoro from '../components/intoro-notes'
-import { graphql, Link } from 'gatsby';
+import { graphql, Link } from 'gatsby'
 import get from 'lodash/get'
 import * as styles from '../styles/note.module.scss'
 // import Container from '../../components/container'
@@ -58,8 +58,8 @@ export const pageQuery = graphql`
 	}
 }
 `
+
+export const Head = () => <Seo title="Notes" />
+
 export default NotesIndex;
 
-export const Head = () => (
-  <SEO title="Notes" />
-)

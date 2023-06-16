@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import get from 'lodash/get'
-import { SEO } from "../components/seo"
+import Seo from '../components/seo'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 import * as styles from '../styles/hero.module.scss'
@@ -64,6 +64,5 @@ export const pageQuery = graphql`
   }
 `
 
-export const Head = () => (
-  <SEO title="Blog" />
-)
+export const Head = () => <Seo title="Blog" />
+

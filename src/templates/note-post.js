@@ -2,7 +2,7 @@ import React from "react"
 import get from 'lodash/get'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
-import { SEO } from "../components/seo"
+import Seo from '../components/seo'
 import * as styles from '../styles/note.module.scss'
 import '../styles/css/dracula-prism.css'
 import '../styles/css/init.css'
@@ -50,13 +50,14 @@ class NotesPostTemplate extends React.Component {
 }
 export default NotesPostTemplate
 
-export const Head = () => (
-	<SEO
-		title={posts.frontmatter.title}
-		description={posts.frontmatter.description}
-	/>
-)
-
+export const Head = ({ data: { markdownRemark: post } }) => {
+  return (
+    <Seo
+      title={post.frontmatter.title}
+      description={post.frontmatter.description || post.excerpt}
+    />
+  )
+}
 
 export const pageQuery = graphql`
 query NotesPostQuery ($id: String!){

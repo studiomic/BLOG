@@ -4,7 +4,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: "Web Design & Web developer - Stylo de Cerise",
+    title: "Stylo de Cerise - Web Design & Web developer",
     description: "Gatsby+Contentful WebデザイナーノBLOG",
     siteUrl: "https://www.studiomic.net",
     author: 'Sakura.i',
