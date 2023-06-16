@@ -1,15 +1,36 @@
-import React from "react"
-import { useSiteMetadata } from "../hooks/use-site-metadata"
+import * as React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 
-export const SEO = ({ title, description, pathname, children }) => {
-  const { title: defaultTitle, description: defaultDescription, image, siteUrl, twitterUsername } = useSiteMetadata()
+// import { useSiteMetadata } from "../hooks/use-site-metadata"
+
+// export const Seo = ({ description = '', lang = 'ja', meta = [], title, image }) => {
+export const SEO = ({ description, meta, title, image, children }) => {
+  const { site } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+            description
+            siteUrl
+            developer
+          }
+        }
+      }
+    `
+  )
+  // export const SEO = ({ title, description, pathname, children }) => {
+  const metaDescription = description || site.siteMetadata.description
+  const defaultTitle = site.siteMetadata?.title
+
+  // const defaultDescription = site.siteMetadata?.description
+  // const { description: defaultDescription, image, siteUrl, twitterUsername } = useSiteMetadata()
 
   const seo = {
     title: title || defaultTitle,
-    description: description || defaultDescription,
+    description: description || metaDescription,
     image: `${siteUrl}${image}`,
     url: `${siteUrl}${pathname || ``}`,
-    twitterUsername,
   }
 
   return (

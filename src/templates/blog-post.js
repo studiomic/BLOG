@@ -60,7 +60,11 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        
+        <SEO
+          title={post.title}
+          description={plainTextDescription}
+          image={`http:${post.heroImage.resize.src}`}
+        />
         <Hero
           image={post.heroImage?.gatsbyImage}
           title={post.title}
@@ -110,8 +114,17 @@ class BlogPostTemplate extends React.Component {
     )
   }
 }
-
 export default BlogPostTemplate
+
+// export const Head = () => (
+//   <SEO
+//     title={post.title}
+//     description={plainTextDescription}
+//     image={`http:${post.heroImage.resize.src}`}
+//   />
+// )
+
+
 
 export const pageQuery = graphql`
   query BlogPostBySlug(
@@ -156,13 +169,7 @@ export const pageQuery = graphql`
     }
   }
 `
-export const Head = () => (
-  <SEO
-    title={post.title}
-    description={plainTextDescription}
-    image={`http:${post.heroImage.resize.src}`}
-  />
-)
+
 
 
 //<Seo

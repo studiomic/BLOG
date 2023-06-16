@@ -1,8 +1,8 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
+import { Link, graphql } from 'gatsby'
+import { SEO } from '../components/seo'
 // import Seo from '../components/seo'
-import { SEO } from "../components/seo"
 import Layout from '../components/layout'
 import Container from '../components/container'
 
@@ -19,7 +19,6 @@ class TagIndex extends React.Component {
 		
 		return (
 		<Layout location={this.props.location}>
-			{/* <Seo title="Blog" /> */}
 			<div className={styles.hero}>
 				<div className={styles.details}>
 					<h1 className={styles.title}>TAGS : {tagname.name}</h1>
@@ -44,6 +43,10 @@ class TagIndex extends React.Component {
 	}
 }
 export default TagIndex
+
+export const Head = () => (
+  <SEO title="Tags" />
+)
 
 export const pageQuery = graphql`
 query TagIndexQuery ($slug: String!){

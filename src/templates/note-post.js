@@ -15,10 +15,7 @@ class NotesPostTemplate extends React.Component {
 
 		return (
 			<Layout>
-				{/* <Seo
-          title={posts.frontmatter.title}
-          description={posts.frontmatter.description}
-        /> */}
+				
 				<div className={styles.container}>
 					<div className={styles.article}>
 						<header>
@@ -52,6 +49,14 @@ class NotesPostTemplate extends React.Component {
 	}
 }
 export default NotesPostTemplate
+
+export const Head = () => (
+	<SEO
+		title={posts.frontmatter.title}
+		description={posts.frontmatter.description}
+	/>
+)
+
 
 export const pageQuery = graphql`
 query NotesPostQuery ($id: String!){

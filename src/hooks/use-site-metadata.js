@@ -7,7 +7,6 @@ export const useSiteMetadata = () => {
         siteMetadata {
           title
           description
-          image
           siteUrl
 					developer
         }
@@ -17,3 +16,5 @@ export const useSiteMetadata = () => {
 
   return data.site.siteMetadata
 }
+
+// image
