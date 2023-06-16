@@ -7,6 +7,7 @@ import { GatsbyImage } from 'gatsby-plugin-image'
 import ArticlePreview from '../components/article-preview'
 import * as styles from '../styles/top-note.module.scss'
 import * as hero from '../styles/hero.module.scss'
+import { SEO } from "../components/seo"
 
 class RootIndex extends React.Component {
   render() {

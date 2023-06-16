@@ -11,7 +11,6 @@ module.exports = {
     developer: "Studiomic",
   },
   plugins: [
-    "gatsby-plugin-react-helmet",
     {
       resolve: `gatsby-transformer-sharp`,
       options: {

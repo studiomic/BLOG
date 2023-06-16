@@ -9,7 +9,7 @@ import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import readingTime from 'reading-time'
 import Layout from '../components/layout'
-import Seo from '../components/seo'
+import { SEO } from "../components/seo"
 import Hero from '../components/hero'
 import * as styles from '../styles/blog-post.module.scss'
 import * as tagstyles from '../styles/tags.module.scss'
@@ -60,11 +60,7 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <Seo
-          title={post.title}
-          description={plainTextDescription}
-          image={`http:${post.heroImage.resize.src}`}
-        />
+        
         <Hero
           image={post.heroImage?.gatsbyImage}
           title={post.title}
@@ -160,3 +156,18 @@ export const pageQuery = graphql`
     }
   }
 `
+export const Head = () => (
+  <SEO
+    title={post.title}
+    description={plainTextDescription}
+    image={`http:${post.heroImage.resize.src}`}
+  />
+)
+
+
+//<Seo
+//  title={post.title}
+//  description={plainTextDescription}
+//  image={`http:${post.heroImage.resize.src}`}
+///>
+
