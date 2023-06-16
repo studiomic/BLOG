@@ -53,10 +53,26 @@ class RootIndex extends React.Component {
   }
 }
 
+
+export const Head = ({ data }) => {
+  return (
+    <>
+      <title>{data.site.siteMetadata.title}</title>
+      <meta name="description" content={data.site.siteMetadata.description} />
+    </>
+  )
+}
+
 export default RootIndex
 
 export const pageQuery = graphql`
   query HomeQuery {
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }
     allContentfulBlogPost(sort: { publishDate: DESC }) {
       nodes {
         title

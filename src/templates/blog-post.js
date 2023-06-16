@@ -13,18 +13,15 @@ import Seo from '../components/seo'
 import Hero from '../components/hero'
 import * as styles from '../styles/blog-post.module.scss'
 import * as tagstyles from '../styles/tags.module.scss'
-// import { okaidia } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-// import { nord } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-// import Tags from '../components/tags'
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = get(this.props, 'data.contentfulBlogPost')
     const previous = get(this.props, 'data.previous')
     const next = get(this.props, 'data.next')
-    const plainTextDescription = documentToPlainTextString(
-      JSON.parse(post.description.raw)
-    )
+    // const plainTextDescription = documentToPlainTextString(
+    //   JSON.parse(post.description.raw)
+    // )
     const plainTextBody = documentToPlainTextString(JSON.parse(post.body.raw))
     const { minutes: timeToRead } = readingTime(plainTextBody)
     
@@ -60,11 +57,6 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <Seo
-          title={post.title}
-          description={plainTextDescription}
-          image={`http:${post.heroImage.resize.src}`}
-        />
         <Hero
           image={post.heroImage?.gatsbyImage}
           title={post.title}
@@ -114,8 +106,22 @@ class BlogPostTemplate extends React.Component {
     )
   }
 }
-
 export default BlogPostTemplate
+
+export const Head = ({ data: { contentfulBlogPost: post } }) => {
+  const plainTextDescription = documentToPlainTextString(
+    JSON.parse(post.description.raw)
+  )
+
+  return (
+    <Seo
+      title={post.title}
+      description={plainTextDescription}
+      // description={post.description || post.excerpt}
+      image={`http:${post.heroImage.resize.src}`}
+    />
+  )
+}
 
 export const pageQuery = graphql`
   query BlogPostBySlug(
@@ -160,3 +166,15 @@ export const pageQuery = graphql`
     }
   }
 `
+
+
+
+//<Seo
+//  title={post.title}
+//  description={plainTextDescription}
+//  image={`http:${post.heroImage.resize.src}`}
+///>
+// import { okaidia } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+// import { nord } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+// import Tags from '../components/tags'
+

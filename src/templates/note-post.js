@@ -15,10 +15,7 @@ class NotesPostTemplate extends React.Component {
 
 		return (
 			<Layout>
-				<Seo
-          title={posts.frontmatter.title}
-          description={posts.frontmatter.description}
-        />
+				
 				<div className={styles.container}>
 					<div className={styles.article}>
 						<header>
@@ -52,6 +49,15 @@ class NotesPostTemplate extends React.Component {
 	}
 }
 export default NotesPostTemplate
+
+export const Head = ({ data: { markdownRemark: post } }) => {
+  return (
+    <Seo
+      title={post.frontmatter.title}
+      description={post.frontmatter.description || post.excerpt}
+    />
+  )
+}
 
 export const pageQuery = graphql`
 query NotesPostQuery ($id: String!){

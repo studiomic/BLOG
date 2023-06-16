@@ -2,8 +2,8 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import get from 'lodash/get'
-import Seo from '../components/seo'
 import Layout from '../components/layout'
+import Seo from '../components/seo'
 import Container from '../components/container'
 import * as styles from '../styles/hero.module.scss'
 import * as tagstyles from '../styles/tags.module.scss'
@@ -13,7 +13,7 @@ class TagsIndex extends React.Component {
     const tags = get(this, 'props.data.allContentfulTag.nodes')
     return (
       <Layout location={this.props.location}>
-        <Seo title="Blog" />
+        {/* <Seo title="Blog" /> */}
         <div className={styles.hero}>
           <StaticImage className={styles.image}
           src="../asset/img/sam-albury-oA7MMRxTVzo-unsplash.jpg"
@@ -40,8 +40,12 @@ class TagsIndex extends React.Component {
     )
   }
 }
+export const Head = () => <Seo title="Tags" />
 
 export default TagsIndex
+
+
+
 
 export const pageQuery = graphql`
   query TagsIndexQuery {

@@ -12,7 +12,7 @@ class BlogIndex extends React.Component {
     const posts = get(this, 'props.data.allContentfulBlogPost.nodes')
     return (
       <Layout location={this.props.location}>
-        <Seo title="Blog" />
+        {/* <Seo title="Blog" /> */}
         <div className={styles.hero}>
           <StaticImage className={styles.image}
           src="../asset/img/mitchell-unsplash.jpg"
@@ -63,4 +63,6 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export const Head = () => <Seo title="Blog" />
 
