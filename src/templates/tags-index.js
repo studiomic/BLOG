@@ -42,14 +42,8 @@ class TagIndex extends React.Component {
 }
 export default TagIndex
 
-// export const Head = ({ data: { allContentfulTag: tag } }) => {
-// 	<Seo title={tag.name} />
-// }props.pageContext
-
-// export const Head =  ({ data: { allContentfulTag: tag } }) => {
 export const Head =  ({ pageContext }) => {
 	const names = 'Tags:' + pageContext.name;
-
   return (
     <Seo
       title={names}
