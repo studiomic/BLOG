@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql, Link } from 'gatsby';
 import get from 'lodash/get'
 import Layout from '../components/layout'
+import Seo from '../components/seo'
 import Intoro from '../components/intoro-top'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import ArticlePreview from '../components/article-preview'
@@ -54,14 +55,27 @@ class RootIndex extends React.Component {
 }
 
 
+// export const Head = () => <Seo title="TOP" />
+
 export const Head = ({ data }) => {
   return (
-    <>
-      <title>{data.site.siteMetadata.title}</title>
-      <meta name="description" content={data.site.siteMetadata.description} />
-    </>
-  )
-}
+    <Seo
+      description={data.site.siteMetadata.description}
+    />
+    )
+  }
+  
+  
+  // export const Head = ({ data }) => {
+  // title={post.frontmatter.title}
+//   return (
+//     <>
+//       <title>{data.site.siteMetadata.title}</title>
+//       <meta name="description" content={data.site.siteMetadata.description} />
+//     </>
+
+//   )
+// }
 
 export default RootIndex
 

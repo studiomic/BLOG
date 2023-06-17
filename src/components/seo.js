@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
-const Seo = ({ description, title, children }) => {
+const Seo = ({ description, title = '', children }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -19,10 +19,10 @@ const Seo = ({ description, title, children }) => {
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
-
+  
   return (
     <>
-      <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
+      <title>{title ? `${title} | ${defaultTitle}` : defaultTitle}</title>
       <meta name="description" content={metaDescription} />
 			<meta property="og:title" content={title} />
 			<meta property="og:description" content={metaDescription} />
@@ -38,6 +38,5 @@ const Seo = ({ description, title, children }) => {
 export default Seo
 
 // import { Helmet } from 'react-helmet'
-
 //<meta name="image" content={seo.image} />
 //<meta property="og:image" content={`${site.siteMetadata?.siteUrl}${imgPath}`} />
