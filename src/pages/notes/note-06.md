@@ -3,7 +3,8 @@ title: "React-helmetを脱いでGatsby Head APIを冠る"
 date: "2023-06-17 16:00:00"
 slug: 'note-05-Hello-GatsbyHeadAPI'
 description: "Bye, React-helmet to Gatsby Head API"
-book: 
+book:
+music: "松任谷由美「DESTINY」"
 ---
 <section style="margin-bottom: 6em;">
 
@@ -90,13 +91,14 @@ titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
 
 title= でページのタイトルを取得し<br>
 defaultTitle= にgatsby-config.jsで記載済みのsiteMetadata.titleを代入<br>
-titleTemplate= で「ページタイトル ｜ サイトタイトル」の形に合成し<br>
+titleTemplate= でdefaultTitleを文字列 | パイプ付に整形し<br>
 
 
-**titleTemplate** がtitle:タグに置かれます。
+**title** と
+**titleTemplate** がtitle:タグに置かれている模様。
 
 ```html
-<title>{titleTemplate}</title>
+<title>{title}{titleTemplate}</title>
 ```
 
 
@@ -108,7 +110,7 @@ import * as React from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-const Seo = ({ description = '', lang = 'en', meta = [], title, image }) => {
+const Seo = ({ description = '', lang = 'ja', meta = [], title, image }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -201,7 +203,8 @@ return (
 ```
 
 同じ変数名defaultTitleへ
-siteMetadata.titleを代入したあと6行目で、Helmet版と同じ置き換えをしています。
+siteMetadata.titleを代入したあと6行目で、Helmet版と<span class="crimson-col bold">似たような</span>置き換えをしています。
+
 
 **${title}**　は、
 
@@ -477,7 +480,7 @@ Gatsby公式サイトの献身性については機会があったら書くと�
 
 そもそもReact Helmetプラグインをほぼ無意識に使っていただけなので、今更にサーバーレンダリングだ、Reactフックだと文字面だけ追って理解もなく。ただ何かうまいことやってくれてたんだろなと想像するのみ。
 
-で、結論として。<br>
+で、途中一度、暴挙に出て。<br>
 ただ単純に直に書くことにした。
 
 
@@ -492,14 +495,10 @@ export const Head = ({ data }) => {
 }
 ```
 
-他のページ群で使いまわしているSeoコンポーネントを通すと、title=を渡さないと<br>
+他のページ群で使いまわしているSeoコンポーネントを通すには、title=を渡さないと<br>
+```<title></title>``` タグを書いてもらえない。
 
-```
-<title>|SiteName</title>
-```
-パイプからドキュメント・タイトルが書かれるようなことになる。
-
-いや、title=を渡さないと、```<title></title>``` タグなしになり、空白文字列を渡せばパイプはじまりで書かれる、か。<br>
+空白文字列を渡せばパイプはじまりで書かれる。<br>
 素直に title="Home"と渡して ```<title>Home | SiteName</title>``` としたって間違いじゃないけど、懐かしのオーサリングソフトにでも書いてもらったか？！な味わい深い感じになる。
 
 まぁそのように書いているわけですからね、Seoコンポーネントで。<br>
@@ -507,23 +506,83 @@ export const Head = ({ data }) => {
 
 <hr>
 
-サイトに唯一のルートファイルという、ユニークなポジションなんだから他と同じものを使い回せない。あるだろ。<br>
-唯一なんだから、一箇所直に書けよー。に気づくまでに30分くらい。
-
-もちろん「siteMetadata」を配置できるよう、GraphQLも書き足して、解決。
-
-<hr>
-
-いろいろ書いちゃったあとで「gatsby-starter-blog」の方を再度、確認にいくと title= に"All posts"と渡してましたね・・・きゃー。オーサリングソフトノフカイアジワイとか失敬な！輩でごめんなさい。
+あれこれ書いちゃったあとで「gatsby-starter-blog」の方を再度、確認にいくと title= に"All posts"と渡してましたね・・・きゃー。オーサリングソフトノフカイアジワイとか失敬な！輩でごめんなさい。
 
 ```js:title=index.js
 export const Head = () => <Seo title="All posts" />
 ```
 ま。スターターは学舎ですからね、卒業するまでは汎用性大事。
 
+「gatsby-starter-blog」の通りでいくと、何をやってもパイプが残り、
+直書きすると、Seoコンポーネントに書いた内容がルートページのHEADに載せられない😨本末転倒なことになるため、少し改変しました。
+
+
+
+</section>
+
+<section style="margin-bottom: 6em;">
+
+## 三項演算子を見直してなおす
+
+```jsx
+<title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
+```
+
+[条件 (三項) 演算子 - JavaScript | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Conditional_operator) を見ながら、
+似て非なるものを見比べた。
+
+```jsx
+titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+```
+
+<blockquote>
+条件に続いて疑問符 (?)、そして条件が真値であった場合に実行する式、コロン (:) が続き、条件が偽値であった場合に実行する式が最後に来ます。
+</blockquote>
+
+下の、React-helmet向けだった方は
+defaultTitleが真値であるため | パイプを前に置く整形をしてたわけで、
+siteMetadata.titleを間違って消したりすれば偽値となって、nullが返る。
+
+上は、defaultTitleが真値なら、{title} と {defaultTitle} の間に | パイプを挿んで整形してね<br>
+defaultTitleが偽値なら、titleを返せば良いよ。<br>
+これはもぅ、siteMetadata.titleを故意に消さないかぎり | パイプから逃れられない式なので、書き換え。
+
+
+```jsx
+<title>{title ? `${title} | ${defaultTitle}` : defaultTitle}</title>
+```
+titleが真値なら、title｜defaultTitle　になり<br>
+titleが偽値なら、defaultTitle　が返る。
+
+つまりページタイトルを設定する気のないサイトルート、index.js は、defaultTitle=siteMetadata.title が表示される。
+
+あー長かった。
+
+それに合わせて、seo.js の冒頭**title,** を空でもいいよーに変更して終わり。
+
+```jsx:title=components/seo.js
+const Seo = ({ description, title = '', children }) => {
+```
+<hr>
+あ。肝心なindex.jsはtitle以外の何かを渡さねばSeoコンポーネントを使えないので、姑息にdescriptionを渡しました。
+
+
+```jsx:title=components/seo.js
+export const Head = ({ data }) => {
+  return (
+    <Seo
+      description={data.site.siteMetadata.description}
+    />
+  )
+}
+```
+
+
+
 </section>
 
 <section style="margin-bottom: 1em;">
+
 
 ## Gatsby Head API いいですね！⭐️⭐️⭐️⭐️⭐️
 
@@ -543,4 +602,4 @@ React-helmet、素晴らしいネーミングセンスだと思ってました�
 
 </section>
 
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+<!-- EOF -->

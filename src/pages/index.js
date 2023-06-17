@@ -54,28 +54,13 @@ class RootIndex extends React.Component {
   }
 }
 
-
-// export const Head = () => <Seo title="TOP" />
-
 export const Head = ({ data }) => {
   return (
     <Seo
       description={data.site.siteMetadata.description}
     />
-    )
-  }
-  
-  
-  // export const Head = ({ data }) => {
-  // title={post.frontmatter.title}
-//   return (
-//     <>
-//       <title>{data.site.siteMetadata.title}</title>
-//       <meta name="description" content={data.site.siteMetadata.description} />
-//     </>
-
-//   )
-// }
+  )
+}
 
 export default RootIndex
 
