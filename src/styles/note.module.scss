@@ -1,7 +1,5 @@
-:root {
-	--borderColor: #ccc;
-}
 
+	
 .top {
 	h2 {
 		font-size: var(--text-2xl);
@@ -13,16 +11,20 @@
 	}
 	dt {
 		display: inline-block;
-		border-bottom: 1px solid #eee;
+		border-bottom: 1px solid var(--dlborderColor);
 	}
 	dd {
 		display: inline-block;
 		color:#666;
-		border-bottom: 1px solid #eee;
+		border-bottom: 1px solid var(--dlborderColor);
 		margin-left: 0;
 		padding-left: 1em;
 	}
 }
+
+
+
+
 
 .article {
 	font-size: var(--text-prose);

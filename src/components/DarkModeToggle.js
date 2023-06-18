@@ -1,10 +1,6 @@
 import React from 'react';
 import Toggle from './Toggle';
 import useDarkMode from 'use-dark-mode';
-// import * as mode from '../styles/darkmord.module.scss'
-// import IMG from "../asset/svg/iconmonstr-weather-2.svg"
-// import IMG2 from "../asset/svg/moon-solid.svg"
-// import IMG3 from "../asset/svg/iconmonstr-star-filled.svg"
 
 const DarkModeToggle = () => {
 	const darkMode = useDarkMode(false);

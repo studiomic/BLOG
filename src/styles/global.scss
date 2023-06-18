@@ -1,8 +1,6 @@
-
 html {
   scroll-behavior: smooth;
 }
-
 html * {
   box-sizing: border-box;
 }
@@ -10,19 +8,38 @@ html * {
 :root {
   --background: var(--white);
   --text-color: var(--black);
+  --borderColor: #ccc;
+  --dlborderColor: #eee;
+  --notedlColor: #666;
+
+
   body.dark-mode {
-    --background: #080b17;
-    --background: #000;
-    --background: #323339;
-    --background: #2B2E2E;
+    // --background: #323339;
     --background: #292934;//鉄紺
+    --background: #080b17;
+    --background: #121212;
+    --background: #000001;
+    --background: #2B2E2E;
     --background: #181818;
+    --background:hsl(195,67%,1%);//#010405
     --text-color: #ddd;
+    --dlborderColor:#666;
+    --notedlColor: #999;
+
   }
   body.light-mode {
     --background: var(--white);
     --text-color: var(--black);
   }
+
+  // body.light-mode {
+  // }
+  
+  // body.dark-mode {
+  
+  // }
+
+
 
   // @media (prefers-color-scheme: dark) {
   //     --background: #323339;
@@ -62,7 +79,6 @@ main {
 }
 
 .wave,.wavervs,.wavetop {
-  // border: 1px solid tomato;
 	margin-top: -200px;
 	display: block;
 	height: 200px;
@@ -157,7 +173,6 @@ body.light-mode {
   // padding: 0;
   display: flex;
   align-items: center;
-  // border: 1px solid pink;
 }
 
 input[type='checkbox'].dmcheck {
@@ -202,11 +217,11 @@ input[type='checkbox'].dmcheck {
 }
 
 
-// body.black-mode {
-//   background-color: var(--black);
-//   color: var(--white);
-//   transition: background-color 0.3s ease;
-// }
+body.black-mode {
+  background-color: var(--black);
+  color: var(--white);
+  transition: background-color 0.3s ease;
+}
 
 img {
   display: block;
@@ -319,4 +334,7 @@ tt:after {
 //   font-named-instance: 'Italic';
 //   src: url('/fonts/Inter-italic.var.woff2?v=3.19') format('woff2');
 // }
+
+// border: 1px solid pink;
+
 
