@@ -19,7 +19,8 @@ class NotesPostTemplate extends React.Component {
 					<div className={styles.article}>
 						<header>
 							<h1>{posts.frontmatter.title}</h1>
-							<p>{posts.frontmatter.date}</p>
+							<p>{posts.frontmatter.date}<span className={styles.meta}> –{' '}
+							{posts.timeToRead} minute read</span></p>
 							<p>{posts.frontmatter.description}</p>
 						</header>
 						<article className={styles.postBody} dangerouslySetInnerHTML={{ __html: html }} />
