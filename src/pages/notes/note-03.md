@@ -6,12 +6,20 @@ description: "続・Gatsby+Contentful Tags｜シラフになって考えたら�
 ---
 [BlogにContentfulのTags機能を追加した](/notes/note-02/)
 (2023/06/04 : Gatsby+Contentful Tags)の続きです。
+<details open>
+  <summary>もくじ</summary>
+
 - [createPage](#createPage)
 - [余談：ケバブケースじゃなくていい](#kebabCase)
 - [context:の受け渡し](#context)
 - [TagIndexQueryのソース](#TagIndexQuery)
 - [PostページにTags <Link to={ $slug }>をリンクを表示する](#Tagslink)
 - [?.オプショナルチェイング演算子をつけずにBuild Error](#BuildError)
+
+</details>
+
+
+
 <hr>
 
 

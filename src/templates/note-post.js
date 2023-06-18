@@ -15,7 +15,6 @@ class NotesPostTemplate extends React.Component {
 
 		return (
 			<Layout>
-				
 				<div className={styles.container}>
 					<div className={styles.article}>
 						<header>

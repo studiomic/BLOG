@@ -1,0 +1,26 @@
+---
+title: "Draft"
+date: "2023-06-18 10:00:00"
+slug: 'note-00-draft'
+description: "HTML Elements and Style"
+book: 谷川史子「はじめてのひと」6巻・7巻
+music: "松任谷由美「DESTINY」"
+---
+
+[AAA](AAA)
+
+
+<details open>
+  <summary>もくじ</summary>
+
+- [createPage](#createPage)
+- [余談：ケバブケースじゃなくていい](#kebabCase)
+- [context:の受け渡し](#context)
+- [TagIndexQueryのソース](#TagIndexQuery)
+- [PostページにTags <Link to={ $slug }>をリンクを表示する](#Tagslink)
+- [?.オプショナルチェイング演算子をつけずにBuild Error](#BuildError)
+
+</details>
+
+<hr>
+
