@@ -8,6 +8,25 @@ music: "松任谷由美「DESTINY」"
 ---
 <section style="margin-bottom: 6em;">
 
+<details>
+  <summary>もくじ</summary>
+
+- [チュートリアルと参考サイト・ソース](#src)
+- [&lt;title&gt;タグを繋げる（React-Helmet）](#title)
+- [Gatsby Head APIでtitleを繋ぐ](#title-API)
+- [固定ページとテンプレート](#page-template)
+- [metadataの書き方](#metadata)
+- [Gatsby Head API版 Seoコンポーネント](#seo-js)
+- [lang属性は、gatsby-ssr.jsへ](#lang)
+- [index.js](#index-js)
+- [三項演算子を見直してなおす](#ternary-operator)
+- [Gatsby Head API いいですね！](#nice)
+
+</details>
+</section>
+
+<section style="margin-bottom: 6em;">
+
 このブログサイトを公開する前からGatsby.jsを触りはじめていたとはいえ、最初からv5で、多分早いうちに
 [gatsby-plugin-react-helmet](https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet/?=he)が非推奨だと知った。
 
@@ -21,6 +40,7 @@ Git branchを3つ使い分けていて・・というかmainと開発環境と2�
 
 咄嗟の思い立ちでいくつかのサイトを参考にさせていただきました。<br>
 
+<a name="src"></a>
 
 列挙：
 
@@ -71,6 +91,9 @@ Gatsby Docs：
 そのまま写経で通用するくらい、変数名や手法も同じなので、GitHubでページごとのソースを確認しながら自分のサイトに適用していきました。
 
 <hr>
+
+<a name="title"></a>
+
 
 今後、Gatsby Head APIへ移行する方の参考になりそうな要点を書き出してみます。
 
@@ -188,7 +211,7 @@ export default Seo
 <section style="margin-bottom: 6em;">
 
 
-## Gatsby Head APIでtitleを繋ぐ
+## Gatsby Head APIでtitleを繋ぐ <a name="title-API"></a>
 
 
 ```js:title=components/seo.js
@@ -253,7 +276,7 @@ export default BlogPostTemplate の直前に配置してあった・・・。
 
 <section style="margin-bottom: 6em;">
 
-## 固定ページとテンプレート
+## 固定ページとテンプレート <a name="page-template"></a>
 
 もともとtwitter:cardやら、SEO方面は何もしてないので、Seoコンポーネントの使用はごく典型的な例が多いです。
 
@@ -294,7 +317,7 @@ export const Head =  ({ pageContext }) => {
 
 <section style="margin-bottom: 6em;">
 
-## metadataの書き方
+## metadataの書き方 <a name="metadata"></a>
 
 ```js:title=react-helmet:seo.js
 meta={[
@@ -336,7 +359,7 @@ website / blog / article を分けて入れるなど、固定値・変数を使�
 
 
 
-## Gatsby Head API版の全体像は
+## Gatsby Head API版の全体像は <a name="seo-js"></a>
 
 タイトルとディスクリプション重視だなぁ・・・<br>
 
@@ -406,7 +429,7 @@ const Seo = ({ description, title, children }) =>
 ```
 
 😨 これだとBlogPostが渡した「heroImage」の収まり場がない。と今更気づいたけど、その訂正はさておき
-
+<a name="lang"></a>
 ```JS
 lang = 'jp',
 
@@ -470,7 +493,7 @@ Gatsby公式サイトの献身性については機会があったら書くと�
 サイトルート、トップページ、について書いて終わります。
 
 
-# index.js
+# index.js <a name="index-js"></a>
 
 まずすごく単純なところを見落として、最後に手間取った**index.js** 処理。<br>
 
@@ -522,7 +545,7 @@ export const Head = () => <Seo title="All posts" />
 
 <section style="margin-bottom: 6em;">
 
-## 三項演算子を見直してなおす
+## 三項演算子を見直してなおす <a name="ternary-operator"></a>
 
 ```jsx
 <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
@@ -584,7 +607,7 @@ export const Head = ({ data }) => {
 <section style="margin-bottom: 1em;">
 
 
-## Gatsby Head API いいですね！⭐️⭐️⭐️⭐️⭐️
+## Gatsby Head API いいですね！⭐️⭐️⭐️⭐️⭐️<a name="nice"></a>
 
 先に書いちゃうと、Lighthouseスコアは、React-helmet も Gatsby Head API も 現状では同じでした。<br>
 特にSEO部分は注力してないままの数値、内容は前に同じでトレースしただけなのでこれは当然。

@@ -6,6 +6,7 @@ description: "続・Gatsby+Contentful Tags｜シラフになって考えたら�
 ---
 [BlogにContentfulのTags機能を追加した](/notes/note-02/)
 (2023/06/04 : Gatsby+Contentful Tags)の続きです。
+
 <details open>
   <summary>もくじ</summary>
 

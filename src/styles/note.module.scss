@@ -134,14 +134,12 @@ blockquote {
 	color: var(--primary);
 }
 
-
-
 details {
 	// border: 1px solid #eee;
 	background: #fdfdfd;
   display: block;
 	position: relative;
-	margin: var(--space-3xl) 0 0 auto;
+	margin: var(--space-3xl) 0;
 	padding: 0 1em;
 	border-radius: 1em;
 	ul {
