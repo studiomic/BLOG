@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
-// import DarkModeToggle from './DarkModeToggle';
+import DarkModeToggle from './DarkModeToggle';
 import * as styles from '../styles/navigation.module.scss'
 // import IMG from "../asset/img/logo-wt.png"
 // import IMG2 from "../asset/svg/iconmonstr-weather-2.svg"
@@ -39,6 +39,9 @@ const Navigation = () => (
         <Link to="/notes/" activeClassName="active">
           Notes
         </Link>
+      </li>
+      <li className={styles.navigationItem}>
+        <DarkModeToggle />
       </li>
     </ul>
   </nav>
