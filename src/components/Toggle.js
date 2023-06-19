@@ -10,7 +10,7 @@ const Toggle = ({ checked, onChange }) => (
 			id="dmcheck"
 			name="DarkModeToggle"
 		/>
-		<label htmlFor="dmcheck" />
+		<label htmlFor="dmcheck" for="DarkModeToggle"></label>
 	</span>
 );
 
