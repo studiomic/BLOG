@@ -8,6 +8,7 @@ const Toggle = ({ checked, onChange }) => (
 			checked={checked}
 			onChange={onChange}
 			id="dmcheck"
+			name="DarkModeToggle"
 		/>
 		<label htmlFor="dmcheck" />
 	</span>
