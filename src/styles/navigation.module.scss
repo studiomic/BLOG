@@ -52,6 +52,10 @@
   }
 }
 
+label {
+  display: none;
+}
+
 @media (max-width: 1023.98px) {
   .container {
     padding-left: calc(var(--size-gutter)/4);
