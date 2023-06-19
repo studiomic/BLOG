@@ -164,6 +164,10 @@ description: "HTML Elements Style and Color"
 <p>私は実に先生をこの雑沓ざっとうの間あいだに見付け出したのである。その時海岸には掛茶屋かけぢゃやが二軒あった。私はふとした機会はずみからその一軒の方に行き慣なれていた。長谷辺はせへんに大きな別荘を構えている人と違って、各自めいめいに専有の着換場きがえばを拵こしらえていないここいらの避暑客には、ぜひともこうした共同着換所といった風ふうなものが必要なのであった。彼らはここで茶を飲み、ここで休息する外ほかに、ここで海水着を洗濯させたり、ここで鹹しおはゆい身体からだを清めたり、ここへ帽子や傘かさを預けたりするのである。海水着を持たない私にも持物を盗まれる恐れはあったので、私は海へはいるたびにその茶屋へ一切いっさいを脱ぬぎ棄すてる事にしていた。</p>
 
 - 0618 : note-post.jsに ```<span className={styles.meta}> –{' '}
-							{posts.timeToRead} minute read</span>``` を追加
+							{posts.timeToRead} minute read</span>``` 
+
+- 0619 : Darkmode追加。gatsby-plugin-use-dark-mode　+　[use-dark-mode](https://github.com/donavon/use-dark-mode)<br>[use-dark-mode - npm](https://www.npmjs.com/package/use-dark-mode?activeTab=readme)
+
+
 
 <!-- EOF -->
