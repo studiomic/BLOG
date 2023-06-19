@@ -4,6 +4,8 @@
 	align-items: flex-start;
 	max-height: 500px;
 	overflow-y: hidden;
+	margin-left: calc(var(--size-gutter)*(-1));
+	margin-right: calc(var(--size-gutter)*(-1));
 	margin-bottom: var(--space-3xl);
 }
 
@@ -221,8 +223,6 @@ details:not([open]) {
 		gap: var(--space-xl);
 		// border: 1px solid pink;
 	}
-	
-
 }
 
 @media (min-width: 1024px) {
@@ -232,12 +232,19 @@ details:not([open]) {
 		margin: 0 auto;
 	}
 	.featuredImg {
-		margin-left: calc( (100vw - 80rem) / 1.5 * (-1));
-		margin-right: calc( (100vw - 80rem) / 1.5 * (-1));
-		margin-bottom: calc(var(--space-2xl) * 3);
+		margin-left: calc( (85% - var(--size-gutter)) /2 * (-1) );
+		margin-right: calc( (85% - var(--size-gutter)) /2 * (-1) );
 	}
 }
 
+
+// @media (min-width: 1280px) {
+// 	.featuredImg {
+// 		// margin-left: calc( (100vw - 80rem) / 2 * (-1));
+// 		// margin-right: calc( (100vw - 80rem) / 2 * (-1));
+// 		// margin-bottom: calc(var(--space-2xl) * 3);
+// 	}
+// }
 // border: 1px solid cyan;
 // width: 100vw;
 // max-width: 100vw;
