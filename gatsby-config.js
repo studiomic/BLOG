@@ -11,7 +11,15 @@ module.exports = {
     developer: "Studiomic",
   },
   plugins: [
-    'gatsby-plugin-use-dark-mode',
+    {
+      resolve: 'gatsby-plugin-use-dark-mode',
+      options: {
+        classNameDark: 'dark-mode',
+        classNameLight: 'light-mode',
+        storageKey: 'darkMode',
+        minify: true,
+      },
+    },
     {
       resolve: `gatsby-transformer-sharp`,
       options: {
