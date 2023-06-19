@@ -14,7 +14,8 @@ hr {
 	&::before {
 		content: '•••';
 		letter-spacing: 2.5em;
-		opacity: .75;
+		// opacity: .75;
+		color: #6272a4;
 	}
 }
 

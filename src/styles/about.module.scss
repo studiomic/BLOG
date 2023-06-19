@@ -4,36 +4,27 @@
 
 .article {
 	display: grid;
-	// background: var(--background);
 	font-size: var(--text-prose);
 	letter-spacing: var(--text-prose-tracking);
 	line-height: var(--loose);
-	// background: var(--background);
-	// background: pink;
-	// background: #000;
-	// border:1px solid pink;
 	grid-template-areas:
-    "desc"
-	"profile"
-    "about"
-	"service"
-	"design";
+		"desc"
+		"profile"
+		"about"
+		"service"
+		"design";
 }
 
 .desc {
 	grid-area: desc;
 	writing-mode: vertical-rl;
 	text-orientation: upright;
-	// font-family: var(--font-min);
-	// border:1px solid tomato;
 	height: 500px;
 	max-height: 90vh;
 	margin: 0 auto var(--space-3xl) auto;
 	h1 {
 		font-size: var(--text-title);
 		font-family: serif;
-		// font-family: var(--font-min);
-		// margin-top: calc(var(--space-2xl) * -2);
 	}
 	p {
 		padding-bottom: var(--space-2xl);
@@ -62,7 +53,6 @@
 }
 
 a.sns {
-	// border: 1px solid salmon;
 	display: block;
 	max-width: 30px;
 	margin: 20px auto 0;
@@ -89,7 +79,7 @@ a.sns {
 .about {
 	grid-area: about;
 	margin-top: var(--space-3xl);
-	border-top: 1px solid #ddd;
+	border-top: 1px solid var(--aboutBorder);//#ddd;
 	padding: var(--space-3xl) var(--space-2xl);
 	font-family: var(--font-min);
 	font-feature-settings: "palt";
@@ -97,7 +87,7 @@ a.sns {
 
 .service {
 	grid-area: service;
-	border-top: 1px solid #ddd;
+	border-top: 1px solid var(--aboutBorder);//#ddd;
 	padding: var(--space-3xl) var(--space-2xl);
 	p {
 		font-family: var(--font-min);
@@ -112,6 +102,7 @@ a.sns {
 	}
 }
 
+// 3dod HR
 hr {
 	border: 0;
 	height: 2em;
@@ -156,26 +147,21 @@ hr {
 	}
 }
 
-// main {
-// }
+
 // background: cyan;
 // border:1px solid #000;
 // border:1px solid green;
 // border: 1px solid salmon;
-
-
-// .wave {
-// 	margin-top: -200px;
-// 	display: block;
-// 	height: 200px;
-// 	background: url(../asset/svg/wave.svg)no-repeat;
 // 	background-size: cover;
 // 	transform: scale(-1, -1);
 // border: 1px solid cyan;
-// .wave {
-// 	background: url(../asset/svg/wave.svg)no-repeat;
 // 	border: 1px solid pink;
-// .waved {
-// 	background: url(../asset/svg/wave-dark.svg)no-repeat;
-// 	background-size: cover;
 // 	border: 1px solid cyan;
+// background: var(--background);
+// background: var(--background);
+// background: pink;
+// background: #000;
+// border:1px solid pink;
+// border:1px solid tomato;
+// font-family: var(--font-min);
+// border: 1px solid salmon;

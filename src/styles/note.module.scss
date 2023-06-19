@@ -1,5 +1,3 @@
-
-	
 .top {
 	h2 {
 		font-size: var(--text-2xl);
@@ -15,16 +13,12 @@
 	}
 	dd {
 		display: inline-block;
-		color:#666;
+		color: var(--notedlColor);
 		border-bottom: 1px solid var(--dlborderColor);
 		margin-left: 0;
 		padding-left: 1em;
 	}
 }
-
-
-
-
 
 .article {
 	font-size: var(--text-prose);
@@ -44,15 +38,15 @@
 			border-bottom: 1px solid var(--border);
 		}
 		p:nth-of-type(2) {
-			color: #666;
-			border-left: 1.2em solid #eee;
-			padding-left: 0.5em;
-			margin-top: 0.5em;
+			color: var(--notedlColor);
+			border-left: 1.2em solid var(--dlborderColor);
+			padding-left: .5em;
+			margin-top: .5em;
 			line-height: 1.2;
 		}
 		.meta {
 			font-style: italic;
-			color: #666;
+			color: var(--notedlColor);
 		}
 	}
 }
@@ -61,13 +55,14 @@
 	font-size: 19px;
 	a {
 		border-bottom: 1px solid currentColor;
-		color: rgba(#4a90e2, 0.9);
+		// color: rgba(#4a90e2, 0.9);
+		// color: #666;
 		margin: 0 .2em;
 		font-weight: 500;
 	}
 	details {
 		a {
-			color: initial;
+			// color: var(--text-color);
 			border: initial;
 		}
 	}
@@ -86,7 +81,8 @@
 		&::before {
 			content: '•••';
 			letter-spacing: 2.5em;
-			opacity: .75;
+			// opacity: .75;
+			color: #6272a4;
 		}
 	}
 	p {
@@ -102,7 +98,6 @@ blockquote {
 .article h2 {
 	font-size: var(--text-2xl);
 }
-
 .article h3,
 .article h4,
 .article h5,
@@ -140,9 +135,10 @@ blockquote {
 	color: var(--primary);
 }
 
+
 details {
 	// border: 1px solid #eee;
-	background: #fdfdfd;
+	background: var(--detailsBg);
   display: block;
 	position: relative;
 	margin: var(--space-3xl) 0;
@@ -150,6 +146,7 @@ details {
 	border-radius: 1em;
 	ul {
 		list-style: none;
+		padding-bottom: 1em;
 	}
 	li {
 		line-height: 1.9;
@@ -178,8 +175,6 @@ details {
 	}
 }
 
-
-
 summary {
   display: inline-block;
   display: block;
@@ -188,7 +183,6 @@ summary {
 	font-family: 'Times New Roman', Times, serif;
 	cursor: pointer;
 	&:hover {
-		// background: #eee;
 		color: var(--borderColor);
 	}
 	&:first-letter {
