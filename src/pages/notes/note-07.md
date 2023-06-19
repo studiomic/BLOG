@@ -119,7 +119,7 @@ MacをLightモードにするのはきついし、ブラウザも同じく。<br
 ダークモードでも発色ゼロの漆黒Blackじゃないと目にきびしいという方もいれば、私は逆に「#000000」は、きつすぎてエディターのテーマなどでも敬遠します。<br>
 「濃灰色」止まり。
 
-このcodepenのをlocalStorage保存つきで実装できれば便利だと思うものの、書けない。
+このCodepenのをlocalStorage保存つきで実装できれば便利だと思うものの、書けない。
 </section>
 
 <section style="margin-bottom: 5em;">
