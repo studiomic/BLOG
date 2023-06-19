@@ -41,6 +41,13 @@ module.exports = {
         path: `${__dirname}/src/pages/notes/`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `featuredImage`,
+        path: `${__dirname}/src/pages/notes/asset/`,
+      },
+    },
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     {

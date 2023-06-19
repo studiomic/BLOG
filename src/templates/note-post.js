@@ -1,6 +1,8 @@
 import React from "react"
 import get from 'lodash/get'
 import { Link, graphql } from 'gatsby'
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import * as styles from '../styles/note.module.scss'
@@ -12,6 +14,7 @@ class NotesPostTemplate extends React.Component {
 		const posts = get(this, 'props.data.markdownRemark')
 		const html = get(this, 'props.data.markdownRemark.html')
 		const pagenav = get(this, 'props.pageContext')
+		let featuredImg = getImage(posts.frontmatter.featuredImage?.childImageSharp?.gatsbyImageData)
 
 		return (
 			<Layout>
@@ -23,6 +26,13 @@ class NotesPostTemplate extends React.Component {
 							{posts.timeToRead} minute read</span></p>
 							<p>{posts.frontmatter.description}</p>
 						</header>
+
+						{featuredImg && (
+						<div className={styles.featuredImg}>
+							<GatsbyImage image={featuredImg} />
+						</div>
+						)}
+
 						<article className={styles.postBody} dangerouslySetInnerHTML={{ __html: html }} />
 						<nav>
 							<ul className={styles.articleNavigation}>
@@ -70,6 +80,11 @@ query NotesPostQuery ($id: String!){
 			date(formatString: "YYYY/MM/DD")
 			description
 			slug
+			featuredImage {
+				childImageSharp {
+					gatsbyImageData(width: 2000, placeholder: BLURRED)
+				}
+			}
 		}
 	}
 }`
