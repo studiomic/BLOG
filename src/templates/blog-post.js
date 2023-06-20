@@ -118,7 +118,7 @@ export const Head = ({ data: { contentfulBlogPost: post } }) => {
       title={post.title}
       description={plainTextDescription}
       // description={post.description || post.excerpt}
-      image={`http:${post.heroImage.resize.src}`}
+      // image={`http:${post.heroImage?.resize.src}`}
     />
   )
 }
