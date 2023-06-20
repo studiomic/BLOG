@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import DarkModeToggle from './DarkModeToggle';
-import * as styles from '../styles/components/navigation.module.scss'
+import * as styles from '../styles/layout/navigation.module.scss'
 
 const Navigation = () => (
   <nav role="navigation" className={styles.container} aria-label="Main">
