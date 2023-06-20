@@ -2,15 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import DarkModeToggle from './DarkModeToggle';
-import * as styles from '../styles/navigation.module.scss'
-// import IMG from "../asset/img/logo-wt.png"
-// import IMG2 from "../asset/svg/iconmonstr-weather-2.svg"
-// import IMG3 from "../asset/svg/moon-solid.svg"
-// import IMG4 from "../asset/svg/iconmonstr-star-filled.svg"
-// import IMG4 from "../asset/svg/iconmonstr-star-lined.svg"
-// import IMG2 from "../asset/svg/noun-sun-5718722.svg"
-// import * as mode from '../styles/darkmord.module.scss'
-// import '../styles/darkmord.scss'
+import * as styles from '../styles/components/navigation.module.scss'
 
 const Navigation = () => (
   <nav role="navigation" className={styles.container} aria-label="Main">
