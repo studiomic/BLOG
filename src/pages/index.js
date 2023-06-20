@@ -61,7 +61,6 @@ export const Head = ({ data }) => {
     />
   )
 }
-
 export default RootIndex
 
 export const pageQuery = graphql`
