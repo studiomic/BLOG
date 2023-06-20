@@ -1,0 +1,38 @@
+.toggleControl {
+  position: relative;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+}
+
+input[type='checkbox'].dmcheck {
+  width: 36px;
+  height: 10px;
+  background: #555;
+  position: relative;
+  border-radius: 6px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  vertical-align: 2px;
+  outline: none;
+  &:checked + label {
+    left: 26px;
+    cursor: pointer;
+  }
+  &:focus-visible {
+    outline: solid 2px white;
+  }
+  & + label {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: absolute;
+    left: 6px;
+    opacity: 0.9;
+    background-color: #f6f6f6;
+  }
+}
