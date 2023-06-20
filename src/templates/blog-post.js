@@ -117,8 +117,8 @@ export const Head = ({ data: { contentfulBlogPost: post } }) => {
     <Seo
       title={post.title}
       description={plainTextDescription}
+      image={`http:${post.heroImage?.resize.src}`}
       // description={post.description || post.excerpt}
-      // image={`http:${post.heroImage?.resize.src}`}
     />
   )
 }
