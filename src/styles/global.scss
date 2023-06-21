@@ -219,6 +219,11 @@ tt:after {
   display: inline-block;
 }
 
+@media (max-width: 768px) {
+  .mno {
+    display: none;
+  }
+}
 
 // .circle {
 //   background: #f3f3f3;
@@ -231,14 +236,6 @@ tt:after {
 //   justify-content: center;
 //   align-items: center;
 // }
-
-
-@media (max-width: 768px) {
-  .mno {
-    display: none;
-  }
-}
-
 
 // @font-face {
 //   font-family: 'Inter var';
@@ -263,26 +260,6 @@ tt:after {
     // --background: #000001;
     // --background: #2B2E2E;
     // --background: #181818;
-  // @media (prefers-color-scheme: dark) {
-  //     --background: #323339;
-  //     --text-color: #ddd;
-  //     nav {
-  //       img {
-  //         filter: invert(100%);
-  //       }
-  //       button:last-child { 
-  //         svg {
-  //           fill: var(--primary);
-  //         }
-  //       }
-  //       svg {
-  //         fill: var(--secondary);
-  //       }
-  //     }
-  //     .picts img {
-  //       filter: invert(100%);
-  //     }
-  // }
 
 // :root {
 // 	--text-color: #333;
