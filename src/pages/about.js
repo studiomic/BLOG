@@ -5,8 +5,6 @@ import Intoro from '../components/intoro'
 import * as styles from '../styles/about.module.scss'
 import IMG from "../asset/img/sakana.png"
 import SNS from "../asset/svg/iconmonstr-instagram-11.svg"
-// import { StaticImage } from 'gatsby-plugin-image'
-// import IMG2 from "../asset/svg/wave.svg"
 
 export default function about() {
 	return (

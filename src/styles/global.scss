@@ -35,7 +35,7 @@ main {
 	margin-top: -200px;
 	display: block;
 	height: 200px;
-	transform: scale(-1, -1);
+	// transform: scale(-1, -1);
   svg {
     fill: var(--background);
   }
@@ -45,10 +45,10 @@ main {
 }
 .wavervs {
   transform: scale(1.75, -1);
+  transform: scale(1.75, -1);
 }
 .wavetop {
   transform: scale(1.75, -1);
-  // margin-top: -180px;
 }
 .wavemdl {
   transform: scale(1.5, -1);

@@ -14,7 +14,7 @@ class BlogIndex extends React.Component {
       <Layout location={this.props.location}>
         <div className={styles.hero}>
           <StaticImage className={styles.image}
-          src="../asset/img/mitchell-unsplash.jpg"
+          src="../asset/img/mitchell-unsplash.webp"
           alt="Hero-image"
           placeholder="BLURRED"
           quality="100"

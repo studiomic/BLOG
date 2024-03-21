@@ -1,7 +1,11 @@
 .intoro {
-	background: url(../asset/img/mob-about.webp);
-	background-position: top center;
+	background: url(../asset/img/mob-about.avif);
+	// background: url(../asset/img/max-ducourneau-KphDsv1OnSA-unsplash.avif);
+	// background-size: contain;
+	// filter: saturate(70%);
 	background-size: cover;
+	background-position: center top;
+	// background-size: 100%;
 	width: 100%;
 	height: 40dvh;
 	margin: var(--space-xl) 0 0;

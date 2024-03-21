@@ -5,8 +5,6 @@ import Intoro from '../components/intoro-notes'
 import { graphql, Link } from 'gatsby'
 import get from 'lodash/get'
 import * as styles from '../styles/note.module.scss'
-// import Container from '../../components/container'
-// const IndexPage = ({ data }) => {
 
 class NotesIndex extends React.Component {
 	render() {
