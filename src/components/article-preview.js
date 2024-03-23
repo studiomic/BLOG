@@ -26,13 +26,11 @@ const ArticlePreview = ({ posts }) => {
               <div className={styles.meta}>
                 <small>{post.publishDate}</small>
                 <small className={tagstyles.tags}>
-                  {post.metadata?.tags.map(tag => {
-                    return (
-                      <div key={tag.contentful_id} className={tagstyles.tag}>
-                        {tag.name}
-                      </div>
-                    )
-                  })}
+                  {post.metadata.tags.map(tag => (
+                    <div key={tag} className={tagstyles.tagPreview}>
+                      <Link to={`/tags/${tag.contentful_id}`}>{tag.name}</Link>
+                    </div>
+                  ))}
                 </small>
               </div>
             </li>

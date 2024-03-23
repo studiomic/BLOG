@@ -12,8 +12,8 @@ const Navigation = () => (
       alt="LOGO"
       placeholder="blurred"
       layout="fixed"
-      width={160}
-      height={93.25}
+      width={128}
+      height={75}
     />
     </Link>
     <ul className={styles.navigation}>

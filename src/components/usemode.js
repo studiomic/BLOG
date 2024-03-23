@@ -1,6 +1,6 @@
 <script>
-      // Insert this script as-is in your index.html right after the <body> tag.
-      // This will help to prevent a flash if dark mode is the default.
+      {/* // Insert this script as-is in your index.html right after the <body> tag.
+      // This will help to prevent a flash if dark mode is the default. */}
 
 	(function() {
 	var classNameDark = 'dark-mode';
@@ -43,4 +43,4 @@
 		localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
 	}
 	})();
-    </script>
+</script>
