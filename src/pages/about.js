@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
-import Intoro from '../components/intoro'
+import Intoro from '../components/intoro-about'
 import * as styles from '../styles/about.module.scss'
 import IMG from "../asset/img/sakana.png"
 import SNS from "../asset/svg/iconmonstr-instagram-11.svg"
@@ -100,6 +100,3 @@ export default function about() {
 }
 
 export const Head = () => <Seo title="About" />
-
-
-

@@ -150,7 +150,7 @@ blockquote {
 details {
 	// border: 1px solid #eee;
 	background: var(--detailsBg);
-  display: block;
+	display: block;
 	position: relative;
 	margin: var(--space-3xl) 0;
 	padding: 0 1em;
@@ -187,8 +187,8 @@ details {
 }
 
 summary {
-  display: inline-block;
-  display: block;
+	// display: inline-block;
+	display: block;
 	font-size: var(--text-3xl);
 	line-height: 1em;
 	font-family: 'Times New Roman', Times, serif;
@@ -212,8 +212,7 @@ details:not([open]) {
 	}
 }
 
-
-@media (min-width: 768px) {
+@container main (min-width: 768px) {
 	.container {
 		max-width: var(--size-max-width);
 		margin: 0 auto;
@@ -221,11 +220,11 @@ details:not([open]) {
 	}
 	.article {
 		gap: var(--space-xl);
-		// border: 1px solid pink;
+		// border: 1px solid orchid;
 	}
 }
 
-@media (min-width: 1024px) {
+@container main (min-width: 1024px) {
 	.article {
 		width: calc(85% - var(--size-gutter));
 		display: block;
@@ -234,13 +233,12 @@ details:not([open]) {
 	.featuredImg {
 		margin-left: calc(-1 * (85% - var(--size-gutter)) /2);
 		margin-right: calc(-1 * (85% - var(--size-gutter)) /2);
-
 		// margin-left: -40%;
 		// margin-right: -15vw;
 	}
 }
 
-@media (min-width: 1280px) {
+@container main (min-width: 1280px) {
 	.featuredImg {
 		margin-left: -20vw;
 		margin-right: -20vw;

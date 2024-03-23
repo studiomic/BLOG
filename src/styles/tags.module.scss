@@ -2,11 +2,13 @@
   display: flex;
   gap: var(--space-md);
   // margin-top: var(--space-3xl);
+  // border: 1px solid cyan;
 }
 .center {
   display: flex;
   gap: var(--space-md);
   justify-content: center;
+  // border: 1px solid cyan;
 }
 
 .tag {
@@ -20,3 +22,24 @@
     display: block;
   }
 }
+
+.tagPreview {
+  background-color: var(--black-fade-5);
+  border-radius: var(--radius-sm);
+  line-height: var(--solid);
+  padding: var(--space-sm) var(--space-md);
+  a {
+    border: initial!important;
+    display: block;
+  }
+}
+
+@container main (max-width: 767.98px) {
+  .center {
+    flex-wrap: wrap;
+  }
+}
+
+// @container main (min-width: 768px) {}
+
+// @container main (min-width: 1024px) {}

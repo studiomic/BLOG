@@ -1,11 +1,10 @@
 .intoro {
-	background: url(../asset/img/mob-about.avif);
-	// background: url(../asset/img/max-ducourneau-KphDsv1OnSA-unsplash.avif);
+	background: url(../asset/img/marc-olivier-jodoin-j2veIzsS9sY-unsplash-1680.avif);
+	// background: url(../asset/img/note-thanun-dOFpWEml0nw-unsplash.avif);
 	// background-size: contain;
-	// filter: saturate(70%);
 	background-size: cover;
-	background-position: center top;
-	// background-size: 100%;
+	background-position: center;	
+	filter: saturate(70%);
 	width: 100%;
 	height: 40dvh;
 	margin: var(--space-xl) 0 0;
@@ -29,22 +28,27 @@
 	margin: 0;
 }
 
-@media (min-width: 1024px) {
+@container main (min-width: 1024px) {
 	.intoro {
 		height: 45dvh;
 		padding: var(--space-3xl);
-		background-position: center;
 	}
 }
 
-
-@media (min-width: 1200px) {
+@container main (min-width: 1200px) {
 	.intoro {
 		background-attachment: fixed;
-		margin-top: var(--size-gutter);
+		background-position: center;
+		background-position: bottom;
+		background-position: 0 -510px;
 	}
 }
 
+@container main (min-width: 1400px) {
+	.intoro {
+		background-position: 0 -75dvh;
+	}
+}
 
 // color: cyan;
 // font-size: var(--text-5xl);

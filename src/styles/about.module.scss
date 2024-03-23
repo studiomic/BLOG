@@ -117,7 +117,7 @@ hr {
 	}
 }
 
-@media (min-width: 1024px) {
+@container main (min-width: 1024px) {
 	.article {
 		// width: calc(85% - var(--size-gutter));
 		padding: var(--size-gutter) var(--size-gutter) calc(var(--size-gutter) * 1.2);
@@ -141,12 +141,14 @@ hr {
 	}
 }
 
-@media (min-width: 1200px) {
+@container main (min-width: 1200px) {
 	.article {
 		width: calc(85% - var(--size-gutter));
 	}
 }
-
+// @container main (max-width: 767.98px) {}
+// @container main (min-width: 768px) {}
+// @container main (min-width: 1024px) {}
 // background: cyan;
 // border:1px solid #000;
 // border:1px solid green;

@@ -40,7 +40,7 @@
 	}
 }
 
-@media (min-width: 768px) {
+@container main (min-width: 768px) {
 	.container {
 		max-width: var(--size-max-width);
 		margin: 0 auto;
@@ -50,7 +50,7 @@
 	}
 }
 
-@media (min-width: 1024px) {
+@container main (min-width: 1024px) {
 	.article {
 		width: calc(85% - var(--size-gutter));
 		display: block;
