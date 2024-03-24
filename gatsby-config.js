@@ -7,7 +7,7 @@ module.exports = {
   siteMetadata: {
     title: "Stylo de Cerise - Web Design & Web developer",
     description: "Gatsby+Contentful WebデザイナーノBLOG",
-    siteUrl: "https://www.studiomic.net",
+    siteUrl: "https://studiomic.github.io/BLOG/",
     author: 'Sakura.i',
     developer: "Studiomic",
   },
