@@ -61,6 +61,7 @@
   "scripts": {
     "dev": "gatsby develop",
     "build": "gatsby build --prefix-paths",
+    "deploy": "npm run build && gh-pages -d BLOG -b gh-pages",
     "heroku-postbuild": "gatsby build",
     "serve": "gatsby serve",
     "postinstall": "node ./bin/hello.js",
