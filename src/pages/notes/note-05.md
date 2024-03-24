@@ -157,7 +157,7 @@ const pagenav = get(this, 'props.pageContext')
 
 
 <div style="border:solid;border-width:2px;border-color:#ddd;">
-	<img src="asset/2023-06-15.png" width="100%" alt="ナビゲーション実装作業中" >
+	<img src="asset/2023-06-15.avif" width="100%" alt="ナビゲーション実装作業中" >
 </div>
 
 画像↑左下の感じでスラッグもタイトルも問題ないねーと確認したら、上のButtonタイプのリンクへ嵌め込む。
