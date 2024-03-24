@@ -5,7 +5,7 @@ slug: 'note-07-darkMode-ternaryOperator'
 description: "ダークモード実装と三項演算子"
 book:
 music:
-featuredImage: "asset/2023-06-19-fi.png"
+featuredImage: "asset/2023-06-19-fi.avif"
 ---
 
 <section style="margin-bottom: 5em;">
