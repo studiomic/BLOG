@@ -42,6 +42,7 @@ Gatsby Cloud、速いし操作性いいし狙い目すぎて、そら狙われ�
 
 <section style="margin-bottom: 6em;">
 
+
 <h1>Gatsbyの移行はスムーズ</h1>
 
 もともと動いていたもの、かつソースはGithubリポジトリにあるため、ホスティング先で成果物に大差はないはずなのだが、うちの場合は前記事の「use-dark-mode」がネックになって2度ほどデプロイに失敗し、エラーログを見ると（あぁやっぱり）そこで躓くか・・・ということで、
@@ -97,183 +98,51 @@ paymentへ進むか、Try anotherするか。なるほど。
 すでに所有しているドメイン名を使用することも、新しいドメイン名を購入することもできます。 弊社でドメインを購入すると、DNS 設定が自動的に構成され、ドメインのワイルドカード証明書がプロビジョニングされます。（Google翻訳）
 <hr>
 
-ふ。いかに私が読まずに進んだか、今発覚する。
+ふ。　いかに私が読まずに進んだか、今発覚する。
+
+まぁでもこのPOSTを書き出したときタイトルを「さようならGatsby Cloud。そしてまたおまえかNetlify！」としかけていた気分がだいぶ和んでます。
+
+話の外れ逸れまくったDNS設定値は、実際のドメイン管理をしているホスティングサービス側でタイプAとCNAMEを編集・追加して完了。
 
 <img src="asset/2024-03-25-2.13.22.avif" alt="Gatsby Cloud" width="100%">
+<hr>
 
 <img src="asset/2024-03-24-22.26.47.avif" alt="Gatsby Cloud" width="100%">
 
-
 </section>
 
+
 <section style="margin-bottom: 4em;">
-
-
-
-
-
-
 
 <h1>Github Pages却下の理由</h1>
 
 疲れたのはこっちかな。
 
+[How to deploy the /public folder](https://github.com/orgs/community/discussions/21853)
+
+Githubのコミュニティページを翻訳で読んで萎えた笑
+
+2022年7月に GitHub Pages: Custom GitHub Actions Workflows (beta)というオフィシャルブログの記事があり、新しいGitHub Actionsについて解説してくれている日本語サイトもありました。
+
+古い手法とどっちでやれば？ で迷って専用ブランチを追加したり錯綜したのが悪いともいえるけども、その経緯の中でズバリ英語検索して出てきたのが上のコミュニティページ。
 
 
+<span class="bold">Q.）Index.html が /public/ フォルダーにある場合、どのようにデプロイすればよいですか?</span>
 
+にはじまり、途中の<span class="bold">スレッド）/public などの任意のフォルダーから gh-page を提供する機能を追加してください。</span>
 
-Vite
+に至るまで、何年越しで放置されてきたんだ、この仕様。<br>
 
+途中腹を空かせて買い物に出て、机を離れて空の下にいるとシラフに戻るんですよね。
 
-
-
-
-
-</hr>
-
-
-<section style="margin-bottom: 4em;">
-
-# gatsby-plugin-use-dark-mode + use-dark-mode
-
-ダークモードは表題の2つを利用しました。<br>
-おそらくは**gatsby-plugin-dark-mode** というプラグインを使った方が簡単だったのでは、と思います。<br>
-いくつか読んでいた他所様の記事で失敗話もなく、スムーズにいくんだろうと予測。
-
-私の場合は今回リベンジで、実のところサイトをつくって公開する前からダークモードはつけていました。<br>
-つまり開発環境developでは容易かったということ。
-
-まだNetlifyにホストしてた時にbuildしてもらえず、ダークモードの有無で公開を遅らせるのもなと、サイトヘッダーのナビゲーションなど「コメントアウト」してやり過ごしてたのを今回あらためて実装した経緯。
-
-もちろんNetlifyに原因はなくて、Gatsby Cloudでも同じようにエラーになって、きちんとメッセージを読んで対応したら生きた。
-
-インストールが少しだけ特殊なのかも。
-```bash:title=bash
-yarn add gatsby-plugin-use-dark-mode use-dark-mode
-```
-これで開発環境では即動くんだけども、package.jsonに書き込みがされず、紐付けされないものをBuildはできないですよとホスト先に断られる。
-
-もっというと、publicフォルダをレンタルサーバーにごそっとアップしたら動いてました。まぁそこで自分の手が足りないだけと確信します。さらに開発者のおっさーんのサングラス顔を見て絶対強者を確信します。笑
-
-
-
+<span class="bold">（あ、ダメだ。この知見をモノにしたところで、1円にもならない。）</span>
 <hr>
+いやいや。1銭にもならないことに血道を上げるタイプですけども！<br>
+それは面白い・やら、楽しい・やら、達成感・自己満足、なにがしかの見返りある場合で、どうしてもuser_name.github.io を使いたいどころか最後にはカスタムドメイン充ててしまうものに、パスの変更あっては面倒すぎる。
 
-どうやらReactのバージョンが高くて、**--legacy-peer-deps** をオプションでつければ
-**npm i use-dark-mode** でいけるんだろうな...というエラーメッセージ。（長いので転記しませんが）
-
-```bash:title=bash
-npm ERR! code ERESOLVE
-npm ERR! ERESOLVE could not resolve
-```
-翻訳かけると<br>
-ールートプロジェクトからのreact@「^18.0.0」を見つけました<br>
-ピアreact@"^16.8.0" from use-dark-mode @ 2.3.1ー<br>
-と、仲間だ依存だ競合だという英単語でなんとなーく状況を理解<br>
-
-legacy-peerなんて言われるとちと不安になりますが、[use-dark-mode - npm](https://www.npmjs.com/package/use-dark-mode?activeTab=readme)　Weekly Downloads：12,590<br>
-レガシーどころかバリ現役じゃん、これは私がpackage.jsonに記載させるとこまで漕ぎつければ何の問題もない。
-
-ということで、gatsby-plugin-use-dark-modeプラグインと、カスタムReact Hook : use-dark-modeを1つずつ**npm i** して、package.jsonの変化をGitで確認してと手堅くゆっくりやりました。
-
-</section>
-
-<section style="margin-bottom: 8em;">
-
-[use-dark-mode - npm](https://www.npmjs.com/package/use-dark-mode?activeTab=readme) の [Dependents (50)](https://www.npmjs.com/package/use-dark-mode?activeTab=dependencies) タブではけっこうな数のGatsby ThemaやStarterが載っていたので、躓いた方に見つけて欲しい。週に13,000て他のReact勢にも使われてますよね。
-```bash:title=bash
-npm i use-dark-mode --legacy-peer-deps
-```
-</section>
-
-<section style="margin-bottom: 5em;">
-
-## 三分岐のダークモードが欲しい。
-
-三畳半の作業部屋では、LED電球2つ以外は真っ暗にしてモニターを見ているわたくし。<br>
-生活がダークモードですが、このサイトのデフォルトは白でした。<br>
-
-で、自分がよく見にいく2つのサイトが生粋のダークモード対応でOSに倣うタイプ。<br>
-MacをLightモードにするのはきついし、ブラウザも同じく。<br>
-たまーにOSをLightモードにして読んだりもするけど、暗い場所で明るいモードを見たい個人的な好みからすると[MDN](https://developer.mozilla.org/ja/)の3択が理想。
-
-外観としては、Codepenで見かけた[Light / Dark / Black Theme](https://codepen.io/havardob/pen/dyOJyje)が全員嬉しい感。
-
-<img src="asset/2023-06-19-3.png" width="100%" alt="3ThemeMode">
-
-ダークモードでも発色ゼロの漆黒Blackじゃないと目にきびしいという方もいれば、私は逆に「#000000」は、きつすぎてエディターのテーマなどでも敬遠します。<br>
-「濃灰色」止まり。
-
-このCodepenのをlocalStorage保存つきで実装できれば便利だと思うものの、書けない。
-</section>
-
-<section style="margin-bottom: 5em;">
-既存のプラグインのコードを見ると、表題の三項演算子が大活躍なんですよね。<br>
-二択はONとOFF、
-
-disable
-enable
-
-true
-false　だから確実であり小難しくないし、我儘なやつ以外はそれで十分と思われているダークモードはさておき。
-</section>
-
-<section style="margin-bottom: 6em;">
-前記事でGatsby Head APIに移行した際に、それまで私はこの「三項演算子」をIF文だと思い込んで見てたんです。実態を知ると（おもしろいなー）となり、これ四項はないの？と冗談のようなことを考えて探しにいき、
-あぁやっぱり 
-<strong>
-if-elseif-else
-</strong>
-なんだ ーな書き方を知りました。
-
-[条件式が複数ある三項演算子に混乱した話 - Qiita](https://qiita.com/riekure/items/e510dba2e507403d990a?utm_source=pocket_saves)
-
-```js
-String str = 条件式1 ? 条件式2 ? "A" : "B" : "C";
-```
-条件1 & 条件式2 が正なら : A<br>
-条件1 だけが正なら : B<br>
-条件1 & 条件式2 が負なら : C<br>
-条件1 が負で条件式2が正も : C<br>
-
-且つ、または、and orで簡潔に文章化できないんですが
-
-true && true = 1<br>
-true && false = 2<br>
-false && false = 3<br>
-false && true = 3<br>
-
-というよりは
-
-```js
-String str = "";
-if (条件式1) & (条件式2):正 {
-	str = "A";
-} elseif (条件式1:正) {
-	str = "B";
-} else {
-	str = "C";
-}
-```
-条件1を主眼とした3分岐なんですね。<br>
-
-最初はクソ真面目に↓の書き方をしてみたけど応えは4種あるようで、3種なんで、三項演算子の拡張版（？）と理解。<br>
-楽しいなぁー。&emsp;IF(&emsp;)
-
-```js
-String str = "";
-if (条件式1) & (条件式2):正 {
-	str = "A";
-} elseif (条件式1:正) {
-	str = "B";
-} elseif (条件式1) & (条件式2):負 {
-	str = "C";
-} elseif (条件式2:正) {
-	str = "C";
-}
-```
-
-人はたらればを云うなぁ！と言いますが、もし〜ならば、ほど美味いものあるかいっ　と思ったりします。うふ。
+単発で使いたいときや、Gatsbyでモックアップ作ったときなど用途によっては無料かつリポジトリと直結してて忘れにくいけども「長居」向きではない。そんな判断ですかね。
+<hr>
+<span class="bold">！</span>コストかけずに知人のサイトをViteでつくっちゃる。なんて場合は向いてるかなぁ。
 
 </section>
 
