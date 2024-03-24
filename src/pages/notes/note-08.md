@@ -20,7 +20,7 @@ featuredImage:
 
 というわけで、今日からこのサイトは<br>
 Netlifyサブドメイン : [stylode.netlify.app ](https://stylode.netlify.app/)へ引っ越した。<br>
- [https://studiomic.net/ ](https://studiomic.net/)へのDNS設定も23：33、たった今確認。
+ [https://studiomic.net/ ](https://studiomic.net/)へのDNS設定も23：33、たった今反映されたのを確認。
 
 さて、この記事のスラッグをURLで確認できる人はどうぞ見て。
 
@@ -35,6 +35,9 @@ Gatsby Cloud、速いし操作性いいし狙い目すぎて、そら狙われ�
 
 
 あぁ、WordPressの改変＋改変も、良く進んでるなという客観視から、もぅ少し他人事にまで距離を置くと、まさに（でも待て。そこまでの学習コストかけてまで関わりたいほど魅力的ではない）と気づいてしまったり。
+
+オープンソースもフリーも、無料であると同時に創作側にこそ手放す自由があるのかもね。<br>
+と閑話休題。
 </section>
 
 <section style="margin-bottom: 6em;">
@@ -43,7 +46,7 @@ Gatsby Cloud、速いし操作性いいし狙い目すぎて、そら狙われ�
 
 もともと動いていたもの、かつソースはGithubリポジトリにあるため、ホスティング先で成果物に大差はないはずなのだが、うちの場合は前記事の「use-dark-mode」がネックになって2度ほどデプロイに失敗し、エラーログを見ると（あぁやっぱり）そこで躓くか・・・ということで、
 
-ライト・ダークモード切り替えトグルを置いていたcomponents：navigationを編集手当てして<br>
+ライト・ダークモード切り替えトグルを書いていたcomponents：navigationを編集手当てして<br>
 gatsby-plugin-use-dark-mode + use-dark-modeをアンインストール
 
 ```jsx
@@ -55,36 +58,79 @@ gatsby-plugin-use-dark-mode + use-dark-modeをアンインストール
 ```
 次ですんなりとパブリッシュ完了。
 
-</hr>
-
-<h2></h2>
 あ。Netlifyは前に使っていたので、アカウントはすでにあり前準備のようなことは全部はしょり。<br>
 ContentfulがわりとNetlifyへの連携しやすかったんですよね。<br>
 そのため使いはじめた当初は苦労した覚えがない。
+<hr>
 
 
+<h2>DNS設定</h2>
+<img src="asset/2024-03-24-22.00.13.avif" alt="Set up DNS" width="100%">
+
+カスタムドメイン追加ボタンから、入力フィールドへ進み「studiomic.net」と打ち込むと、しばし調べたあと「使われてますね」とお返事された。
+
+そこだけ少し戸惑って（そら私がオーナーですもの）　えっと、ここで取得済みドメインを指定するんじゃないの・・・？と一度キャンセルして他の画面を探したが、ここでは
+
+「持ち主のいるドメインを指定しているが、これで構わないんだね？」と訊かれているらしく<br>
+そのまま進むと <span class="bold">2.Add new record</span> この画面へ入れた。
+<hr>
+
+つまり <span class="bold">空いているドメイン</span> をこの流れで取得できるんでしょうね。<br>
+考えたらホスティングサービスなら当然か。<br>
+
+んー。ドメイン検索＆取得の画面て、.comならX円/年 .jpならX円/年みたいなのがずらーりと出るような思い込みが過ぎて気づかなかった。
+
+そうそうテンプレートもあるのでね、Siteテンプレートを選んでそのプロジェクトをGithubにクローンしてリポジトリ作ってくれて、編集できるようになったところで、あるいは完成させたところでドメイン購入。あるあるですわね。
+
+当然ながら気になったらやってみた。（Now
+
+<img src="asset/2024-03-25-3.08.35.avif" alt="" width="100%">
+
+レジスター・ドメイン・なぅ・フォー・＄13.99<br>
+paymentへ進むか、Try anotherするか。なるほど。
 
 
+<img src="asset/2024-03-25-3.09.17.avif" alt="" width="100%">
 
+<h3>カスタム ドメインをサイトに追加する</h3>
 
-表示側もほぼ4行だし
+すでに所有しているドメイン名を使用することも、新しいドメイン名を購入することもできます。 弊社でドメインを購入すると、DNS 設定が自動的に構成され、ドメインのワイルドカード証明書がプロビジョニングされます。（Google翻訳）
+<hr>
 
-```jsx
-let featuredImg = getImage(posts.frontmatter.featuredImage?.childImageSharp?.gatsbyImageData)
+ふ。いかに私が読まずに進んだか、今発覚する。
 
-{featuredImg && (
-<div className={styles.featuredImg}>
-	<GatsbyImage image={featuredImg} />
-</div>
-)}
-```
+<img src="asset/2024-03-25-2.13.22.avif" alt="Gatsby Cloud" width="100%">
 
-Gatsbyさんは異常に親切だし
-[Working with Images in Markdown & MDX | Gatsby](https://www.gatsbyjs.com/docs/how-to/images-and-media/working-with-images-in-markdown/)
+<img src="asset/2024-03-24-22.26.47.avif" alt="Gatsby Cloud" width="100%">
 
-Gatsbyjs Markdown Staticimage でググって4分くらいでもう絵が出てるってどんなお世界。素敵。
 
 </section>
+
+<section style="margin-bottom: 4em;">
+
+
+
+
+
+
+
+<h1>Github Pages却下の理由</h1>
+
+疲れたのはこっちかな。
+
+
+
+
+
+Vite
+
+
+
+
+
+
+</hr>
+
 
 <section style="margin-bottom: 4em;">
 
