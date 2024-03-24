@@ -6,7 +6,7 @@ html * {
 }
 
 :root {
-  body.light-mode {
+  // body.light-mode {
     --background: var(--white);
     --text-color: var(--black);
     --dlborderColor: #eee;
@@ -14,16 +14,16 @@ html * {
     --aboutBorder: #ddd;
     --detailsBg: #fdfdfd;
     --borderColor: #ccc;//mokuji
-  }
-  body.dark-mode {
-    --background:hsl(195,67%,1%);//#010405
-    --text-color: #ddd;
-    --dlborderColor:#666;
-    --notedlColor: #999;
-    --aboutBorder: #555;
-    --detailsBg: #222;
-    --borderColor: #555;
-  }
+  // }
+  // body.dark-mode {
+  //   --background:hsl(195,67%,1%);//#010405
+  //   --text-color: #ddd;
+  //   --dlborderColor:#666;
+  //   --notedlColor: #999;
+  //   --aboutBorder: #555;
+  //   --detailsBg: #222;
+  //   --borderColor: #555;
+  // }
 }
 
 main {
@@ -70,28 +70,28 @@ body {
   // border: 1px solid Cyan;
 }
 
-.dark-mode {
-  nav {
-    img {
-      filter: invert(100%);
-    }
-    button:last-child { 
-      svg {
-        fill: var(--primary);
-      }
-    }
-    svg {
-      // fill: var(--text-color);
-      fill: var(--secondary);
-    }
-  }
-  .picts img {
-    filter: invert(100%);
-  }
-  .logo {
-    filter: invert(100%);
-  }
-}
+// .dark-mode {
+//   nav {
+//     img {
+//       filter: invert(100%);
+//     }
+//     button:last-child { 
+//       svg {
+//         fill: var(--primary);
+//       }
+//     }
+//     svg {
+//       // fill: var(--text-color);
+//       fill: var(--secondary);
+//     }
+//   }
+//   .picts img {
+//     filter: invert(100%);
+//   }
+//   .logo {
+//     filter: invert(100%);
+//   }
+// }
 
 // body.black-mode {
 //   background-color: var(--black);
