@@ -18,17 +18,17 @@ ___
 
 Starterでは最初から全ての見本記事にTagがつけられており、[Bolg](/blog)トップページにあるTag表示も、componentsに用意されていた。
 
-<img src="asset/2023-06-04-1.png" width="100%" alt="BlogPostで入力するTag">
+<img src="asset/2023-06-04-1.avif" width="100%" alt="BlogPostで入力するTag">
 
 **Editor** でも記事の中に入力フィールドが。
 ___
 
 しかし、**Editor** 上のタブが気になる。
 
-<img src="asset/2023-06-04-2.png" width="100%" alt="Tagsタブ">
+<img src="asset/2023-06-04-2.avif" width="100%" alt="Tagsタブ">
 
 タブを切り替えると、こんなイラスト付きでお薦めしてくる。
-<img src="asset/2023-06-04-4.png" width="100%" alt="オーガナイズ・ユア・コンテンツ・ウィズ・Tags">
+<img src="asset/2023-06-04-4.avif" width="100%" alt="オーガナイズ・ユア・コンテンツ・ウィズ・Tags">
 ___
 
 使いはじめてみると、この絵の最適解ぶりがわかるんですが、**Content model**
@@ -47,7 +47,7 @@ Twitterのハッシュタグのようなイメージですかねぇ。<br>
 
 実際に**Blog Post**にTagsを設定した画面。
 
-<img src="asset/2023-06-04-3.png" width="100%">
+<img src="asset/2023-06-04-3.avif" width="100%">
 
 Contentful Tagsは、
 **private** /or/ **public** を最初に決めるので、Contentfulのステージ内でプライベートに使う用途でない場合、つまり**Blog Post**のように外から取り出して使いたい場合は **public** で登録します。

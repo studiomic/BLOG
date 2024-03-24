@@ -1,33 +1,72 @@
 ---
-title: "部屋とTシャツとダークモードと三項演算子"
-date: "2023-06-19 10:00:00"
-slug: 'note-07-darkMode-ternaryOperator'
-description: "ダークモード実装と三項演算子"
+title: "さようならGatsby Cloud。そして再びのNetlify"
+date: "2024-03-24 10:00:00"
+slug: 'note-08-BonjourTristesse'
+description: "おかげでダークモードも長いお別れで筆者がダークモードに"
 book:
 music:
-featuredImage: "asset/2023-06-19-fi.avif"
+featuredImage:
 ---
 
+<img src="asset/GatsbyCloud.avif" alt="Gatsby Cloud" width="100%">
+
 <section style="margin-bottom: 5em;">
-もはやタイトルに曲名の余韻もない。<br>
-Notesにはフィーチャーイメージなんぞいらねーと思ってたのに、JOJO-Tシャツ届くと人が変わる。<br>
-横幅マイナスマージンまでかけて宣伝します。9部「ジョジョ・ランド」パラレルワールドのジョルノ来たよ💜
 
-どんな悪いことやってくれるのか、今から楽しみだ。
+なんとのうGatsbyがNetlifyに買収されたことは知っていたような、昨年末くらいだったかサイト移行しなきゃならんの・・・？　と締切を頭の片隅に見つつ、忙しくて忙殺されていた。
 
+今も忙しいのだが、WordPressばかり触っていると苦しくなるので、息抜きにローカルでGatsbyの開発環境立ち上げて、Github Pagesにでも移行するかと腰をあげ、やっているうちにGithub Pagesのパス周りに虚しさを感じたので結局は当初から（きっとそうなるんだろうなぁ）と思っていたNetlifyへの移行とあいなりました。
+
+<hr>
+
+というわけで、今日からこのサイトは<br>
+Netlifyサブドメイン : [stylode.netlify.app ](https://stylode.netlify.app/)へ引っ越した。<br>
+ [https://studiomic.net/ ](https://studiomic.net/)へのDNS設定も23：33、たった今確認。
+
+さて、この記事のスラッグをURLで確認できる人はどうぞ見て。
+
+<h2 class="bold blue-col">Bonjour Tristesse</h2>
+
+サガンの「悲しみよこんにちは」ままである。<br>
+Gatsby Cloud、速いし操作性いいし狙い目すぎて、そら狙われるわねぇと年末あたりに溜息まじりで舌打ちしていた。
+
+古くはAppleの「無料ホームページ」スペースたらいうものから始まって、GMOのブログサービスが突然移行になるとか、本当にタダほど高いものはない。（後でかかるコストと失せもの被害が大きい）
+
+<hr>
+
+
+あぁ、WordPressの改変＋改変も、良く進んでるなという客観視から、もぅ少し他人事にまで距離を置くと、まさに（でも待て。そこまでの学習コストかけてまで関わりたいほど魅力的ではない）と気づいてしまったり。
 </section>
+
 <section style="margin-bottom: 6em;">
-それにしてもGrapQLというのは便利すぎる。思い立って2分でデータ持って来れるとか目眩しますね。
 
+<h1>Gatsbyの移行はスムーズ</h1>
 
+もともと動いていたもの、かつソースはGithubリポジトリにあるため、ホスティング先で成果物に大差はないはずなのだが、うちの場合は前記事の「use-dark-mode」がネックになって2度ほどデプロイに失敗し、エラーログを見ると（あぁやっぱり）そこで躓くか・・・ということで、
+
+ライト・ダークモード切り替えトグルを置いていたcomponents：navigationを編集手当てして<br>
+gatsby-plugin-use-dark-mode + use-dark-modeをアンインストール
 
 ```jsx
-featuredImage {
-	childImageSharp {
-		gatsbyImageData(width: 2000, placeholder: BLURRED)
-	}
-}
+8:11:26 PM: npm ERR! code ERESOLVE
+8:11:26 PM: npm ERR! ERESOLVE could not resolve
+8:11:26 PM: npm ERR!
+8:11:26 PM: npm ERR! While resolving: use-dark-mode@2.3.1
+8:11:26 PM: npm ERR! Found: react@18.1.0
 ```
+次ですんなりとパブリッシュ完了。
+
+</hr>
+
+<h2></h2>
+あ。Netlifyは前に使っていたので、アカウントはすでにあり前準備のようなことは全部はしょり。<br>
+ContentfulがわりとNetlifyへの連携しやすかったんですよね。<br>
+そのため使いはじめた当初は苦労した覚えがない。
+
+
+
+
+
+
 表示側もほぼ4行だし
 
 ```jsx
@@ -70,7 +109,7 @@ yarn add gatsby-plugin-use-dark-mode use-dark-mode
 
 もっというと、publicフォルダをレンタルサーバーにごそっとアップしたら動いてました。まぁそこで自分の手が足りないだけと確信します。さらに開発者のおっさーんのサングラス顔を見て絶対強者を確信します。笑
 
-[donavon (Donavon West) · GitHub](https://github.com/donavon)
+
 
 <hr>
 
