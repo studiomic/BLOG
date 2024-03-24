@@ -128,7 +128,8 @@ Starterに揃える以外で、変えた箇所といえば、frontmatter/date: "
 (sort: {frontmatter: {date: DESC}})　は時間を表示していなくても、n時n分n秒まで有効とわかります。<br>
 &emsp;<br>
 
-<img src="asset/2023-06-06-1.jpg" alt="OLD Boost Note" width="100%">
+<img src="asset/2023-06-06-1.avif" alt="OLD Boost Note" width="100%">
+
 残るは、CMSのMarkdown Editorに頼らない場合、Previewはどうするんだ - な点。<br>
 
 一般的には、記事一つ書くのにGtasby developで開発環境を立ち上げて・・というのは現実的でないからみなさんCMSを使うという側面もあると思う。
