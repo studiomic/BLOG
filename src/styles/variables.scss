@@ -1,14 +1,17 @@
 :root {
   /* primitives */
   /* font-family */
-  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol';
+  // --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  //   Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+  //   'Segoe UI Symbol';
   // --font-sans: Roboto, Helvetica, sans-serif;
+  // --font-sans: sans-serif;
+  // --font-sans: Helvetica, sans-serif;
+  // --font-sans: BlinkMacSystemFont, sans-serif;
+  --font-sans: "LINE Speed JP", sans-serif;
   --font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
     'Courier New', monospace;
   --font-serif: 'Times New Roman', Times, serif;
-  
 
   /* palette */
   --white: #fff;
