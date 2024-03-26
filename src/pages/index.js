@@ -38,7 +38,7 @@ class RootIndex extends React.Component {
           ))}
           </article>
         </section>
-<div className="mno">
+        <div className="mno">
         <section className={hero.solidimage}>
           <div className={hero.hero}>
           <GatsbyImage className={hero.image} alt={author.name} image={author.heroImage.gatsbyImage} />
@@ -48,7 +48,7 @@ class RootIndex extends React.Component {
           </div>
         </section>
         <ArticlePreview posts={posts} />
-</div>
+      </div>
       </Layout>
     )
   }
