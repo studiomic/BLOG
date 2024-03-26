@@ -15,7 +15,7 @@
     "gatsby-plugin-mdx": "^5.9.0",
     "gatsby-plugin-netlify": "^5.1.0",
     "gatsby-plugin-page-progress": "^2.2.1",
-    "gatsby-plugin-sharp": "^5.5.0",
+    "gatsby-plugin-sharp": "^5.8.1",
     "gatsby-remark-code-buttons": "^2.0.7",
     "gatsby-remark-embed-snippet": "^8.10.0",
     "gatsby-remark-images": "^7.10.0",
