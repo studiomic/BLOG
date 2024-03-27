@@ -111,7 +111,7 @@ export default BlogPostTemplate
 // export const Head = () => {
 //   return (
 //     <>
-//     <html class="darkmode" />
+//     <body class="darkmode" />
 //     </>
 //   )
 // }
@@ -127,7 +127,7 @@ export const Head = ({ data: { contentfulBlogPost: post } }) => {
       description={plainTextDescription}
       image={`http:${post.heroImage?.resize.src}`}
     />
-    <html class="darkmode" />
+    <body class="darkmode" />
     </>
   )
 }

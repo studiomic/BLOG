@@ -2,9 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import DarkModeToggle from './DarkModeToggle'
-import Switch from './Switch'
-
-
+// import Switch from './Switch'
 import * as styles from '../styles/layout/navigation.module.scss'
 
 const Navigation = () => (
@@ -39,7 +37,7 @@ const Navigation = () => (
         <DarkModeToggle />
       </li>
       <li className={styles.navigationItem}>
-        <Switch />
+        {/* <Switch /> */}
       </li>
     </ul>
   </nav>

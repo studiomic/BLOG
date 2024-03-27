@@ -59,7 +59,7 @@ export const pageQuery = graphql`
 export const Head = () => {
   return (
     <>
-    <html class="darkmode" />
+    <body class="darkmode" />
     </>
   )
 }

@@ -43,7 +43,7 @@ class TagsIndex extends React.Component {
 export const Head = () => {
   return (
     <>
-    <html class="darkmode" />
+    <body class="darkmode" />
     </>
   )
 }

@@ -29,7 +29,7 @@ html * {
     --borderColor: #ccc;//mokuji
   // }
 }
-html.lightmode {
+body.lightmode {
   --background: var(--white);
   --text-color: var(--black);
   --dlborderColor: #eee;
@@ -42,7 +42,7 @@ html.lightmode {
 
 
 
-html.darkmode {
+body.darkmode {
   --background:hsl(195,67%,1%);//#010405
   --text-color: #ddd;
   --dlborderColor:#666;
