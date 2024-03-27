@@ -31,10 +31,10 @@ class BlogIndex extends React.Component {
     )
   }
 }
-export const Head = () => {
+export const Head = ({ mode }) => {
   return (
     <>
-    <body class="mode" />
+    <body class={mode} />
     </>
   )
 }

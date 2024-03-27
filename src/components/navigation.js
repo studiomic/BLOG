@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
-import DarkModeToggle from './DarkModeToggle'
 import ModeToggleButton from './modetoggleButton'
 import * as styles from '../styles/layout/navigation.module.scss'
 

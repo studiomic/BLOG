@@ -53,13 +53,13 @@ class RootIndex extends React.Component {
     )
   }
 }
-export const Head = ({ data }) => {
+export const Head = ({ data,mode }) => {
   return (
     <>
     <Seo
       description={data.site.siteMetadata.description}
     />
-    <body class="lightmode" />
+    <body class={mode} />
     </>
   )
 }

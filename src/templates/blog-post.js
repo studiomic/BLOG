@@ -111,12 +111,12 @@ export default BlogPostTemplate
 // export const Head = () => {
 //   return (
 //     <>
-//     <body class="mode" />
+//     <body class={mode} />
 //     </>
 //   )
 // }
 
-export const Head = ({ data: { contentfulBlogPost: post } }) => {
+export const Head = ({ data: { contentfulBlogPost: post },mode }) => {
   const plainTextDescription = documentToPlainTextString(
     JSON.parse(post.description.raw)
   )
@@ -127,7 +127,7 @@ export const Head = ({ data: { contentfulBlogPost: post } }) => {
       description={plainTextDescription}
       image={`http:${post.heroImage?.resize.src}`}
     />
-    <body class="mode" />
+    <body class={mode} />
     </>
   )
 }

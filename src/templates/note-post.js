@@ -60,14 +60,14 @@ class NotesPostTemplate extends React.Component {
 }
 export default NotesPostTemplate
 
-export const Head = ({ data: { markdownRemark: post } }) => {
+export const Head = ({ data: { markdownRemark: post },mode }) => {
   return (
 		<>
     <Seo
       title={post.frontmatter.title}
       description={post.frontmatter.description || post.excerpt}
     />
-		<body class="mode" />
+		<body class={mode} />
     </>
   )
 }

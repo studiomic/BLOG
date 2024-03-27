@@ -98,10 +98,10 @@ export default function about() {
 		</Layout>
 	)
 }
-export const Head = () => {
+export const Head = ({ mode }) => {
   return (
     <>
-    <body class="mode" />
+    <body class={mode} />
     </>
   )
 }
