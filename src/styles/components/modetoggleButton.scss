@@ -30,16 +30,15 @@ body[data-theme=dark] {
 }
 
 .modebox {
+  display: flex;
 	// border: 1px solid salmon;
-	display: flex;
 }
 
-
-input[type=checkbox] {
-  height: 0;
-  width: 0;
-  visibility: hidden;
-}
+// input[type=checkbox] {
+//   height: 0;
+//   width: 0;
+//   visibility: hidden;
+// }
 
 label {
 	// border: 1px solid cyan;
