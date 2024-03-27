@@ -5,7 +5,7 @@ import React from 'react'
 export function Head() {
   return (
     <>
-      <body class="darkmode" />
+      <body class="mode" />
     </>
   )
 }

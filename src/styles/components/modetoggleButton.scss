@@ -16,20 +16,20 @@
 :root {
 	--lightBtn: #ff6ebf;
 	--lightBtn: var(--crimson);
-  --lightBtn: #FE016C;
 	--lightBtn: var(--secondary);
   --lightBtn: #57679a;
+  --lightBtn: #FE016C;
 }
 
 
 body[data-theme=dark] {
   // background: var(--lightBg);
   --lightBtn: #FFBD07;
-  // --lightBg: #232323;
+  --lightBtn: #f2f892;
   // --lightColor: #fff;
 }
 
-.box {
+.modebox {
 	// border: 1px solid salmon;
 	display: flex;
 }
@@ -54,6 +54,7 @@ label {
   align-items: center;
   // -webkit-border-radius: 100px;
   // -moz-border-radius: 100px;
+  // border-radius: 60px;
   border-radius: 100px;
   position: relative;
 	span {
@@ -63,6 +64,7 @@ label {
 
 label:after {
   content: "";
+  background: #000;
   background: #fff;
   width: 20px; //20px;
   height: 20px; //20px;
@@ -76,6 +78,7 @@ label:after {
 }
 
 input:checked + label {
+	background: #f2f892;
   background: #FFBD07;
 }
 

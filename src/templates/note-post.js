@@ -67,7 +67,7 @@ export const Head = ({ data: { markdownRemark: post } }) => {
       title={post.frontmatter.title}
       description={post.frontmatter.description || post.excerpt}
     />
-		<body class="darkmode" />
+		<body class="mode" />
     </>
   )
 }

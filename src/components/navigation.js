@@ -36,14 +36,7 @@ const Navigation = () => (
       <li className={styles.navigationItem}>
         <ModeToggleButton />
       </li>
-      {/* <li>AIDA</li> */}
-      {/* <li className={styles.navigationItem}>
-        <DarkModeToggle />
-      </li> */}
     </ul>
   </nav>
-  
 )
 export default Navigation
-
-//<DarkModeToggle />
