@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import DarkModeToggle from './DarkModeToggle'
-// import Switch from './Switch'
+import ModeToggleButton from './modetoggleButton'
 import * as styles from '../styles/layout/navigation.module.scss'
 
 const Navigation = () => (
@@ -34,10 +34,11 @@ const Navigation = () => (
         </Link>
       </li>
       <li className={styles.navigationItem}>
-        <DarkModeToggle />
+        <ModeToggleButton />
       </li>
+      <li>AIDA</li>
       <li className={styles.navigationItem}>
-        {/* <Switch /> */}
+        <DarkModeToggle />
       </li>
     </ul>
   </nav>
