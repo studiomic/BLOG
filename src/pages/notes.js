@@ -56,7 +56,12 @@ export const pageQuery = graphql`
 }
 `
 
-export const Head = () => <Seo title="Notes" />
-
+export const Head = () => {
+  return (
+    <>
+    <html class="darkmode" />
+    </>
+  )
+}
 export default NotesIndex;
 

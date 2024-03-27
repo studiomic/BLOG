@@ -98,5 +98,10 @@ export default function about() {
 		</Layout>
 	)
 }
-
-export const Head = () => <Seo title="About" />
+export const Head = () => {
+  return (
+    <>
+    <html class="darkmode" />
+    </>
+  )
+}

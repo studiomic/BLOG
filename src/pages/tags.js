@@ -40,12 +40,14 @@ class TagsIndex extends React.Component {
     )
   }
 }
-export const Head = () => <Seo title="Tags" />
-
+export const Head = () => {
+  return (
+    <>
+    <html class="darkmode" />
+    </>
+  )
+}
 export default TagsIndex
-
-
-
 
 export const pageQuery = graphql`
   query TagsIndexQuery {
@@ -81,3 +83,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+// export const Head = () => <Seo title="Tags" />

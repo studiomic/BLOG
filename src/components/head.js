@@ -11,7 +11,11 @@ export function Head() {
 }
 export default Head
 
-// const Navigation = () => (
-// 	)
-// export default Navigation
-{/* <section className={hero.solidimage}> */}
+
+// export const Head = ({ data }) => {
+//   return (
+//     <Seo
+//       description={data.site.siteMetadata.description}
+//     />
+//   )
+// }

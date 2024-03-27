@@ -31,7 +31,13 @@ class BlogIndex extends React.Component {
     )
   }
 }
-export const Head = () => <Seo title="Blog" />
+export const Head = () => {
+  return (
+    <>
+    <html class="darkmode" />
+    </>
+  )
+}
 export default BlogIndex
 
 export const pageQuery = graphql`

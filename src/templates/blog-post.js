@@ -108,18 +108,27 @@ class BlogPostTemplate extends React.Component {
 }
 export default BlogPostTemplate
 
+// export const Head = () => {
+//   return (
+//     <>
+//     <html class="darkmode" />
+//     </>
+//   )
+// }
+
 export const Head = ({ data: { contentfulBlogPost: post } }) => {
   const plainTextDescription = documentToPlainTextString(
     JSON.parse(post.description.raw)
   )
-
   return (
+    <>
     <Seo
       title={post.title}
       description={plainTextDescription}
       image={`http:${post.heroImage?.resize.src}`}
-      // description={post.description || post.excerpt}
     />
+    <html class="darkmode" />
+    </>
   )
 }
 
