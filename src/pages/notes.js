@@ -1,10 +1,10 @@
 import * as React from 'react'
 import Layout from '../components/layout'
-import Seo from '../components/seo'
 import Intoro from '../components/intoro-notes'
 import { graphql, Link } from 'gatsby'
 import get from 'lodash/get'
 import * as styles from '../styles/note.module.scss'
+// import Seo from '../components/seo'
 
 class NotesIndex extends React.Component {
 	render() {

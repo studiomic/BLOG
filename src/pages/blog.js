@@ -2,10 +2,10 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import get from 'lodash/get'
-import Seo from '../components/seo'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 import * as styles from '../styles/hero.module.scss'
+// import Seo from '../components/seo'
 
 class BlogIndex extends React.Component {
   render() {

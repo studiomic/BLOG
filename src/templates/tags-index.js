@@ -49,7 +49,7 @@ export const Head =  ({ pageContext }) => {
     <Seo
       title={names}
     />
-    <html class="lightmode" />
+    <body class="lightmode" />
     </>
   )
 }

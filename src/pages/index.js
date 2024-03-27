@@ -59,7 +59,7 @@ export const Head = ({ data }) => {
     <Seo
       description={data.site.siteMetadata.description}
     />
-    <html class="lightmode" />
+    <body class="lightmode" />
     </>
   )
 }

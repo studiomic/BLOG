@@ -3,10 +3,10 @@ import { Link, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import get from 'lodash/get'
 import Layout from '../components/layout'
-import Seo from '../components/seo'
 import Container from '../components/container'
 import * as styles from '../styles/hero.module.scss'
 import * as tagstyles from '../styles/tags.module.scss'
+// import Seo from '../components/seo'
 
 class TagsIndex extends React.Component {
   render() {
