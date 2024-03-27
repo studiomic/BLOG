@@ -13,7 +13,6 @@ class TagsIndex extends React.Component {
     const tags = get(this, 'props.data.allContentfulTag.nodes')
     return (
       <Layout location={this.props.location}>
-        {/* <Seo title="Blog" /> */}
         <div className={styles.hero}>
           <StaticImage className={styles.image}
           src="../asset/img/sam-albury-oA7MMRxTVzo-unsplash.jpg"

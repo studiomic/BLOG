@@ -36,10 +36,10 @@ const Navigation = () => (
       <li className={styles.navigationItem}>
         <ModeToggleButton />
       </li>
-      <li>AIDA</li>
-      <li className={styles.navigationItem}>
+      {/* <li>AIDA</li> */}
+      {/* <li className={styles.navigationItem}>
         <DarkModeToggle />
-      </li>
+      </li> */}
     </ul>
   </nav>
   
