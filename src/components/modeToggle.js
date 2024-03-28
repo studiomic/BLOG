@@ -19,9 +19,16 @@ const ModeToggle = ({mode,onChecked}) => {
     <label htmlFor="modecheck" for="switch"><span>Toggle</span></label>
 		</>
 	)
-
 }
 export default ModeToggle;
+
+
+
+
+
+
+
+
 
 // if(window.matchMedia('(prefers-color-scheme: dark)').matches == true){
 // window.matchMedia('(prefers-color-scheme: dark)').matches
