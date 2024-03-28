@@ -7,25 +7,34 @@ const ModeToggle = ({mode,onChecked}) => {
 	).matches;
 
 	if(prefersColorSchemeDark){
-	// if(window.matchMedia('(prefers-color-scheme: dark)').matches == true){
-		const mode = 'darkmode';
-		const onChecked = 'checked';
-
+		mode = 'darkmode';
+		onChecked = 'checked';
 	} else {
-		const mode = 'lightmode';
-		const onChecked = '';
-
+		mode = 'lightmode';
+		onChecked = '';
 	}
-	// return (
-		// 	hello!{mode}
-		// 	)
+	return (
+		<>
+		<input type="checkbox" id="switch" name="mode" checked={onChecked} onChange={mode} />
+    <label htmlFor="modecheck" for="switch"><span>Toggle</span></label>
+		</>
+	)
 
-
-		
 }
 export default ModeToggle;
-	
+
+// if(window.matchMedia('(prefers-color-scheme: dark)').matches == true){
 // window.matchMedia('(prefers-color-scheme: dark)').matches
 // const darkMode = useDarkMode(initialState, darkModeConfig);
 // applyTheme('lightmode');
 // applyTheme('darkmode');//dark mode
+
+// {/* <button
+// 	title="Toggle Theme"
+// 	onClick={mode}
+// 	className={onChecked}
+// ></button>
+// <label htmlFor="btn">{mode}</label>
+// <p>{mode}</p>
+//  */}
+

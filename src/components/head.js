@@ -2,27 +2,10 @@ import React from 'react'
 // import * as styles from '../styles/global.scss'
 
 
-export const Head = ({ mode }) => {
-  const Head = ({mode}) => {
-  const prefersColorSchemeDark = matchMedia(
-    '(prefers-color-scheme: dark)'
-  ).matches;
-
+export function Head() {
   return (
     <>
-    <body class={mode} />
-    </>
-  )
-}
-
-
-// export function Head() {
-
-
-
-  return (
-    <>
-      <body class={mode} />
+      <body class="darkmode" />
     </>
   )
 }
