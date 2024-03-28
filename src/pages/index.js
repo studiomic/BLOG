@@ -4,6 +4,7 @@ import { graphql, Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
+// import Head from '../components/head'
 import Intoro from '../components/intoro-top'
 import ArticlePreview from '../components/article-preview'
 import * as styles from '../styles/top-note.module.scss'
@@ -53,13 +54,24 @@ class RootIndex extends React.Component {
     )
   }
 }
-export const Head = ({ data }) => {
+export const Head = ({ data,mode,onChecked }) => {
+  const prefersColorSchemeDark = matchMedia(
+		'(prefers-color-scheme: dark)'
+	).matches;
+
+	if(prefersColorSchemeDark){
+		mode = 'darkmode';
+		onChecked = 'checked';
+	} else {
+		mode = 'lightmode';
+		onChecked = '';
+	}
   return (
     <>
     <Seo
       description={data.site.siteMetadata.description}
     />
-    <body class="mode" />
+    <body class={mode} />
     </>
   )
 }

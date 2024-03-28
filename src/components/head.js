@@ -1,12 +1,20 @@
 import React from 'react'
 // import * as styles from '../styles/global.scss'
 
+const Head = ({ mode,onChecked }) => {
+  const prefersColorSchemeDark = matchMedia(
+		'(prefers-color-scheme: dark)'
+	).matches;
 
-export function Head() {
+	if(prefersColorSchemeDark){
+		mode = 'darkmode';
+		onChecked = 'checked';
+	} else {
+		mode = 'lightmode';
+		onChecked = '';
+	}
   return (
-    <>
-      <body class="darkmode" />
-    </>
+    <body class={mode} />
   )
 }
 export default Head
