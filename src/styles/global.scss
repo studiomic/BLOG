@@ -37,6 +37,7 @@ body.lightmode {
   --aboutBorder: #ddd;
   --detailsBg: #fdfdfd;
   --borderColor: #ccc;//mokuji
+  transition: background-color 0.3s ease;
 }
 
 
@@ -50,6 +51,7 @@ body.darkmode {
   --aboutBorder: #555;
   --detailsBg: #222;
   --borderColor: #555;
+  transition: background-color 0.3s ease;
 }
 
 

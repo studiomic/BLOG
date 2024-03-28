@@ -1,67 +1,32 @@
-//- To see the process of how I made this dark mode toggle, watch this tutorial video:
-//- https://youtu.be/42gltu11wb8
+// グローバル汚染を防ぐために即時関数を使用
+(function (global) {
+	"use strict";
 
+	const switchMode = (changeDark) => {
+			if (changeDark) {
+					// html に "Dark" クラスをセットしてダークモードに切り替える
+					global.document.documentElement.classList.add("darkmode");
+					// localStorage にダークモードであるという情報を保存する
+					localStorage.setItem("dark", "on");
+					return;
+			}
+			// html から "Dark" クラスを削除してライトモードに切り替える
+			global.document.documentElement.classList.remove("darkmode");
+			// localStorage からダークモードであるという情報を削除する
+			localStorage.removeItem("dark");
+	};
 
-
-// Dark Mode Setup
-
-var darkMode;
-
-if (localStorage.getItem('dark-mode')) {  
-  // if dark mode is in storage, set variable with that value
-  darkMode = localStorage.getItem('dark-mode');  
-} else {  
-  // if dark mode is not in storage, set variable to 'light'
-  darkMode = 'light';  
-}
-
-// set new localStorage value
-localStorage.setItem('dark-mode', darkMode);
-
-
-
-if (localStorage.getItem('dark-mode') == 'dark') {
-  // if the above is 'dark' then apply .dark to the body
-  $('body').addClass('dark');  
-  // hide the 'dark' button
-  $('.dark-button').hide();
-  // show the 'light' button
-  $('.light-button').show();
-}
-
-
-// Toggle dark UI
-
-$('.dark-button').on('click', function() {  
-  $('.dark-button').hide();
-  $('.light-button').show();
-  $('body').addClass('dark');  
-  // set stored value to 'dark'
-  localStorage.setItem('dark-mode', 'dark');
-});
-
-$('.light-button').on('click', function() {  
-  $('.light-button').hide();
-  $('.dark-button').show();
-  $('body').removeClass('dark');
-  // set stored value to 'light'
-  localStorage.setItem('dark-mode', 'light');   
-});
-
-
-
-//--------------------------------------------------
-// Below is all that is neede for the basic toggle
-//--------------------------------------------------
-
-// $('.dark-button').on('click', function() {  
-//   $('.dark-button').hide();
-//   $('.light-button').show();
-//   $('body').addClass('dark');
-// });
-
-// $('.light-button').on('click', function() {  
-//   $('.light-button').hide();
-//   $('.dark-button').show();
-//   $('body').removeClass('dark');  
-// });
+	// DOMContentLoaded 時に実行する処理を登録する
+	global.document.addEventListener("DOMContentLoaded", () => {
+			// 「ライトモードにする」ボタンをクリック時にライトモードにするイベントを追加
+			const lightButton = global.document.getElementById("ModeButton--light");
+			lightButton.addEventListener("click", () => {
+					switchMode(false);
+			});
+			// 「ダークモードにする」ボタンをクリック時にダークモードにするイベントを追加
+			const darkButton = global.document.getElementById("ModeButton--dark");
+			darkButton.addEventListener("click", () => {
+					switchMode(true);
+			});
+	});
+})(globalThis);

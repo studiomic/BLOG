@@ -1,6 +1,9 @@
 import React from 'react'
 // import * as styles from '../styles/global.scss'
 
+// class NotesPostTemplate extends React.Component {
+	
+
 const Head = ({ mode,onChecked }) => {
   const prefersColorSchemeDark = matchMedia(
 		'(prefers-color-scheme: dark)'
@@ -14,8 +17,8 @@ const Head = ({ mode,onChecked }) => {
 		onChecked = '';
 	}
   return (
-    <body class={mode} />
-  )
+		<body class={mode} />
+		);
 }
 export default Head
 

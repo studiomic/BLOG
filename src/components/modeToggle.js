@@ -15,26 +15,12 @@ const ModeToggle = ({mode,onChecked}) => {
 	}
 	return (
 		<>
-		<input type="checkbox" id="switch" name="mode" checked={onChecked} onChange={mode} />
-    <label htmlFor="modecheck" for="switch"><span>Toggle</span></label>
+			<input type="checkbox" id="switch" name="mode" checked={onChecked} onChange={mode} />
+			<label htmlFor="modecheck" for="switch"><span>Toggle</span></label>
 		</>
 	)
 }
 export default ModeToggle;
-
-export const Head = () => {
-  return (
-
-    <body class="mode" />
-  )
-}
-
-
-
-
-
-
-
 
 
 // if(window.matchMedia('(prefers-color-scheme: dark)').matches == true){
