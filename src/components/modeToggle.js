@@ -22,6 +22,13 @@ const ModeToggle = ({mode,onChecked}) => {
 }
 export default ModeToggle;
 
+export const Head = () => {
+  return (
+
+    <body class="mode" />
+  )
+}
+
 
 
 

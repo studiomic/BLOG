@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import ModeToggleButton from './modetoggleButton'
 import * as styles from '../styles/layout/navigation.module.scss'
-import ModeToggle from './modeToggle'
+// import ModeToggle from './modeToggle'
 
 const Navigation = () => (
   <nav role="navigation" className={styles.container} aria-label="Main">
