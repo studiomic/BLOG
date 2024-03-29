@@ -55,13 +55,5 @@ export const pageQuery = graphql`
 	}
 }
 `
-
-export const Head = ({ mode }) => {
-  return (
-    <>
-    <body class={mode} />
-    </>
-  )
-}
 export default NotesIndex;
 

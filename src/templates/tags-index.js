@@ -45,12 +45,9 @@ export default TagIndex
 export const Head =  ({ pageContext }) => {
 	const names = 'Tags:' + pageContext.name;
   return (
-		<>
     <Seo
       title={names}
     />
-    <body class="lightmode" />
-    </>
   )
 }
 

@@ -1,25 +1,19 @@
 import React from 'react';
-// import Toggle from '../hook/modeif';
 
-const ModeToggle = ({mode,onChecked}) => {
-	const prefersColorSchemeDark = matchMedia(
-		'(prefers-color-scheme: dark)'
-	).matches;
-
-	if(prefersColorSchemeDark){
-		mode = 'darkmode';
-		onChecked = 'checked';
-	} else {
-		mode = 'lightmode';
-		onChecked = '';
-	}
+const ModeToggle = ({ onMode,onChecked }) => {
 	return (
-		<>
-			<input type="checkbox" id="switch" name="mode" checked={onChecked} onChange={mode} />
-			<label htmlFor="modecheck" for="switch"><span>Toggle</span></label>
-		</>
+	<span>
+		<input
+				type="checkbox"
+				checked={onChecked}
+				onChange={onMode}
+				id="switch"
+				name="mode"
+			/>
+		<label htmlFor="modecheck" for="switch"><span>Toggle</span></label>
+	</span>
 	)
-}
+};
 export default ModeToggle;
 
 

@@ -19,7 +19,6 @@ html * {
 }
 
 :root {
-  // body.lightmode {
     --background: var(--white);
     --text-color: var(--black);
     --dlborderColor: #eee;
@@ -27,7 +26,6 @@ html * {
     --aboutBorder: #ddd;
     --detailsBg: #fdfdfd;
     --borderColor: #ccc;//mokuji
-  // }
 }
 body.lightmode {
   --background: var(--white);
@@ -39,12 +37,9 @@ body.lightmode {
   --borderColor: #ccc;//mokuji
   transition: background-color 0.3s ease;
 }
-
-
-
-
 body.darkmode {
   --background:hsl(195,67%,1%);//#010405
+  --background:#313131;
   --text-color: #ddd;
   --dlborderColor:#666;
   --notedlColor: #999;
@@ -53,7 +48,16 @@ body.darkmode {
   --borderColor: #555;
   transition: background-color 0.3s ease;
 }
-
+body.blackmode {
+  --background: #000;
+  --text-color: #ddd;
+  --dlborderColor:#666;
+  --notedlColor: #999;
+  --aboutBorder: #555;
+  --detailsBg: #222;
+  --borderColor: #555;
+  transition: background-color 0.3s ease;
+}
 
 
 main {
@@ -145,19 +149,19 @@ body.light-mode {
   }
 }
 
-.dark-mode-toggle {
-  display: flex;
-  margin: 0 auto;
-  img {
-		height: 24px;
-	}
-	button {
-    background: initial;
-		border: initial;
-    cursor: pointer;
-    padding: 0;
-	}
-}
+// .dark-mode-toggle {
+//   display: flex;
+//   margin: 0 auto;
+//   img {
+// 		height: 24px;
+// 	}
+// 	button {
+//     background: initial;
+// 		border: initial;
+//     cursor: pointer;
+//     padding: 0;
+// 	}
+// }
 
 .logo {
   height: var(--size-logo);

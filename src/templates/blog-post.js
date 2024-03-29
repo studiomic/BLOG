@@ -108,27 +108,16 @@ class BlogPostTemplate extends React.Component {
 }
 export default BlogPostTemplate
 
-// export const Head = () => {
-//   return (
-//     <>
-//     <body class={mode} />
-//     </>
-//   )
-// }
-
-export const Head = ({ data: { contentfulBlogPost: post },mode }) => {
+export const Head = ({ data: { contentfulBlogPost: post } }) => {
   const plainTextDescription = documentToPlainTextString(
     JSON.parse(post.description.raw)
   )
   return (
-    <>
     <Seo
       title={post.title}
       description={plainTextDescription}
       image={`http:${post.heroImage?.resize.src}`}
     />
-    <body class={mode} />
-    </>
   )
 }
 

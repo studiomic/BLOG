@@ -13,9 +13,7 @@ export default function about() {
 				<section className={styles.about}>
 					
 					<hr />
-					<p>
-						閑話休題。<br />そんなわけで、このブログ「Style de Cerise」は、ヘッドレスCMS : Contentfulが提供している <a href="https://www.gatsbyjs.com/starters/contentful/starter-gatsby-blog/" rel="noreferrer" target='_blank'>starter-gatsby-blog</a> と静的ジェネレーター : Gatsbyでつくりました。<br />
-					</p>
+					
 					
 				</section>
 				
@@ -25,6 +23,12 @@ export default function about() {
 	)
 }
 export const Head = ({ mode }) => {
+
+
+
+
+
+	
   return (
     <>
     <body class={mode} />

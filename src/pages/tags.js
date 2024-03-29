@@ -39,13 +39,6 @@ class TagsIndex extends React.Component {
     )
   }
 }
-export const Head = ({ mode }) => {
-  return (
-    <>
-    <body class={mode} />
-    </>
-  )
-}
 export default TagsIndex
 
 export const pageQuery = graphql`

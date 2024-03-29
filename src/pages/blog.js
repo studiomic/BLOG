@@ -31,13 +31,6 @@ class BlogIndex extends React.Component {
     )
   }
 }
-export const Head = ({ mode }) => {
-  return (
-    <>
-    <body class={mode} />
-    </>
-  )
-}
 export default BlogIndex
 
 export const pageQuery = graphql`

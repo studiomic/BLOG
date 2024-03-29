@@ -54,25 +54,12 @@ class RootIndex extends React.Component {
     )
   }
 }
-export const Head = ({ data,mode,onChecked }) => {
-  const prefersColorSchemeDark = matchMedia(
-		'(prefers-color-scheme: dark)'
-	).matches;
-
-	if(prefersColorSchemeDark){
-		mode = 'darkmode';
-		onChecked = 'checked';
-	} else {
-		mode = 'lightmode';
-		onChecked = '';
-	}
+export const Head = ({ data }) => {
   return (
-    <>
     <Seo
       description={data.site.siteMetadata.description}
     />
-    <body class={mode} />
-    </>
+
   )
 }
 export default RootIndex
