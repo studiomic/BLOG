@@ -35,18 +35,21 @@ body.lightmode {
   --aboutBorder: #ddd;
   --detailsBg: #fdfdfd;
   --borderColor: #ccc;//mokuji
-  transition: background-color 0.3s ease;
+  transition: background-color .5s ease;
 }
 body.darkmode {
-  --background:hsl(195,67%,1%);//#010405
-  --background:#313131;
+  // --background:hsl(195,67%,1%);//#010405
+  // --background:#1f1e23;
+  // --background:#404146;
+  // --background:#313131;
+  --background:#2c2d32;
   --text-color: #ddd;
   --dlborderColor:#666;
   --notedlColor: #999;
   --aboutBorder: #555;
   --detailsBg: #222;
   --borderColor: #555;
-  transition: background-color 0.3s ease;
+  transition: background-color .5s ease;
 }
 body.blackmode {
   --background: #000;
@@ -56,9 +59,8 @@ body.blackmode {
   --aboutBorder: #555;
   --detailsBg: #222;
   --borderColor: #555;
-  transition: background-color 0.3s ease;
+  transition: background-color .5s ease;
 }
-
 
 main {
   overflow-x: hidden;
@@ -73,13 +75,14 @@ main {
 	// transform: scale(-1, -1);
   svg {
     fill: var(--background);
+    transition: 0;
+    // transition: 0.1s ease;
   }
 }
 .wave {
   transform: scale(-1, -1);
 }
 .wavervs {
-  transform: scale(1.75, -1);
   transform: scale(1.75, -1);
 }
 .wavetop {
@@ -149,20 +152,6 @@ body.light-mode {
   }
 }
 
-// .dark-mode-toggle {
-//   display: flex;
-//   margin: 0 auto;
-//   img {
-// 		height: 24px;
-// 	}
-// 	button {
-//     background: initial;
-// 		border: initial;
-//     cursor: pointer;
-//     padding: 0;
-// 	}
-// }
-
 .logo {
   height: var(--size-logo);
   width: var(--size-logo);
@@ -229,7 +218,6 @@ tt:before,
 tt:after {
   content: ' ';
   letter-spacing: -1em;
-  // letter-spacing: -0.2em;
 }
 
 .hero-title {
@@ -264,12 +252,6 @@ tt:after {
 }
 
 
-// .container-switch {
-//   background: fff;
-// }
-
-
-
 // @container main (max-width: 767.98px) {}
 // @container body (max-width: 767.98px) {}
 //   background-image: linear-gradient(90deg, rgba(233, 233, 233, 0.11), rgba(172, 172, 172, 0.21));
@@ -288,10 +270,11 @@ tt:after {
 //   font-style: italic;
 //   font-named-instance: 'Italic';
 //   src: url('/fonts/Inter-italic.var.woff2?v=3.19') format('woff2');
-    // --background: #323339;
-    // --background: #292934;//鉄紺
-    // --background: #080b17;
-    // --background: #121212;
-    // --background: #000001;
-    // --background: #2B2E2E;
-    // --background: #181818;
+
+// --background: #323339;
+// --background: #292934;//鉄紺
+// --background: #080b17;
+// --background: #121212;
+// --background: #000001;
+// --background: #2B2E2E;
+// --background: #181818;
