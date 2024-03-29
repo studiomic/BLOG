@@ -35,6 +35,7 @@ body.lightmode {
   --aboutBorder: #ddd;
   --detailsBg: #fdfdfd;
   --borderColor: #ccc;//mokuji
+  --modeButtonBg: #fdfdfd;
   transition: background-color .5s ease;
 }
 body.darkmode {
@@ -49,6 +50,7 @@ body.darkmode {
   --aboutBorder: #555;
   --detailsBg: #222;
   --borderColor: #555;
+  --modeButtonBg: #fdfdfd;
   transition: background-color .5s ease;
 }
 body.blackmode {
@@ -59,8 +61,15 @@ body.blackmode {
   --aboutBorder: #555;
   --detailsBg: #222;
   --borderColor: #555;
+  --modeButtonBg: #494a50;
+  --modeButtonBg: #494a50;
+  --modeButtonBg: #404146;
   transition: background-color .5s ease;
 }
+
+// background-color: #2c2d32;
+//     background-color: #;
+
 
 main {
   overflow-x: hidden;
