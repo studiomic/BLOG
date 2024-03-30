@@ -1,32 +1,41 @@
-// import * as React from "react"
+import * as React from "react"
 // import { useEffect, useState } from 'react'
-import React from 'react'
-import { useEffect } from 'react'
 import * as styles from '../styles/toggle.module.scss'
+// import React from 'react'
+// import { useEffect } from 'react'
 
 const ModeToggleButton = () => {
-
-  useEffect(() => { //初期設定をSet
-    if (document.body.classList.value === "") {
-      document.body.classList.add("lightmode");
-      let putMode = "lightmode";
-      localStorage.setItem('dark-mode', putMode);
+    // Gatsbyのbuildエラー対策
+    if (typeof window !== undefined) {
+      // document.documentElement.classList.toggle("dark")
+      document.body.classList.add("lightmode")
     }
-  });
+  
 
-  let putMode = localStorage.getItem('dark-mode');
-  if (putMode === "darkmode") {
+
+  // useEffect(() => { //初期設定をSet
+  //   const prefersColorSchemeDark = matchMedia('(prefers-color-scheme: dark)').matches;
+  //   if(prefersColorSchemeDark){
+  //     setMode = 'darkmode';
+  //   } else {
+  //     setMode = 'lightmode';
+  //   }
+  //   localStorage.setItem('dark-mode', setMode);
+  // });
+
+  let setMode = localStorage.getItem('dark-mode');
+  if (setMode === "darkmode") {
     document.body.classList.add("darkmode");
     // document.body.classList.remove("lightmode","blackmode");
-    putMode = "darkmode";
-  } else if (putMode === "blackmode") {
+    setMode = "darkmode";
+  } else if (setMode === "blackmode") {
     document.body.classList.add("blackmode");
     // document.body.classList.remove("darkmode","lightmode");
-    putMode = "blackmode";
+    setMode = "blackmode";
   } else {
     document.body.classList.add("lightmode");
     // document.body.classList.remove("darkmode","blackmode");
-    putMode = "lightmode";
+    setMode = "lightmode";
   }
   
 
@@ -40,20 +49,20 @@ const ModeToggleButton = () => {
   function Light(){
     document.body.classList.add("lightmode");
     document.body.classList.remove("darkmode","blackmode");
-    putMode = "lightmode";
-    localStorage.setItem('dark-mode', putMode);
+    setMode = "lightmode";
+    localStorage.setItem('dark-mode', setMode);
   };
   function Dark(){
     document.body.classList.add("darkmode");
     document.body.classList.remove("lightmode","blackmode");
-    putMode = "darkmode";
-    localStorage.setItem('dark-mode', putMode);
+    setMode = "darkmode";
+    localStorage.setItem('dark-mode', setMode);
   };
   function Black(){
     document.body.classList.add("blackmode");
     document.body.classList.remove("darkmode","lightmode");
-    putMode = "blackmode";
-    localStorage.setItem('dark-mode', putMode);
+    setMode = "blackmode";
+    localStorage.setItem('dark-mode', setMode);
   };
 
   return (

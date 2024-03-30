@@ -1,10 +1,6 @@
 import React from 'react'
-// import * as styles from '../styles/global.scss'
 
-// class NotesPostTemplate extends React.Component {
-	
-
-const Head = ({ mode,onChecked }) => {
+const Light = () => {
   const prefersColorSchemeDark = matchMedia(
 		'(prefers-color-scheme: dark)'
 	).matches;
@@ -16,16 +12,11 @@ const Head = ({ mode,onChecked }) => {
 		mode = 'lightmode';
 		onChecked = '';
 	}
-
-	useEffect(() => {
-		document.body.setAttribute('data-theme', theme);
-}, [theme])
-
   return (
 		<body class={mode} />
-		);
+	);
 }
-export default Head
+export default Light
 
 
 // export const Head = ({ data }) => {
