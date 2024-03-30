@@ -1,27 +1,28 @@
 import * as React from "react"
-// import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import * as styles from '../styles/toggle.module.scss'
 // import React from 'react'
 // import { useEffect } from 'react'
 
 const ModeToggleButton = () => {
-    // Gatsbyのbuildエラー対策
-    if (typeof window !== undefined) {
-      // document.documentElement.classList.toggle("dark")
-      document.body.classList.add("lightmode")
-    }
-  
 
 
-  // useEffect(() => { //初期設定をSet
-  //   const prefersColorSchemeDark = matchMedia('(prefers-color-scheme: dark)').matches;
-  //   if(prefersColorSchemeDark){
-  //     setMode = 'darkmode';
-  //   } else {
-  //     setMode = 'lightmode';
-  //   }
-  //   localStorage.setItem('dark-mode', setMode);
-  // });
+  // const localStorage = typeof window !== `undefined` ? require("node-localstorage") : null
+
+// useEffect(() => { //初期設定をSet
+//   const prefersColorSchemeDark = matchMedia('(prefers-color-scheme: dark)').matches;
+//   if(prefersColorSchemeDark){
+//     setMode = 'darkmode';
+//   } else {
+//     setMode = 'lightmode';
+//   }
+//   localStorage.setItem('dark-mode', setMode);
+// });
+
+  // if (typeof window !== `undefined`) {
+  //   // code that references a browser global
+  //   window.alert("Woohoo!")
+  // }
 
   let setMode = localStorage.getItem('dark-mode');
   if (setMode === "darkmode") {
