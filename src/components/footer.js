@@ -11,7 +11,9 @@ const Footer = () => (
         <span><a href="https://gatsbyjs.com">Gatsby</a> &middot;{' '}</span>
         <span><a href="https://github.com/contentful/starter-gatsby-blog">Source</a></span>
       </div>
+      <div>
         © {new Date().getFullYear()} <a href="/">Studio Mic.</a>
+      </div>
     </div>
   </Container>
 )

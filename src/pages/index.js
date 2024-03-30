@@ -1,7 +1,7 @@
 import React from 'react'
 import get from 'lodash/get'
 import { graphql, Link } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image'
+// import { GatsbyImage } from 'gatsby-plugin-image'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 // import Head from '../components/head'
@@ -14,7 +14,7 @@ class RootIndex extends React.Component {
   render() {
     const posts = get(this, 'props.data.allContentfulBlogPost.nodes')
     const notes = get(this, 'props.data.allMarkdownRemark.edges')
-    const [author] = get(this, 'props.data.allContentfulPerson.nodes')
+    // const [author] = get(this, 'props.data.allContentfulPerson.nodes')
     return (
       <Layout location={this.props.location}>
         <Intoro />
@@ -42,7 +42,7 @@ class RootIndex extends React.Component {
         <div className="mno">
         <section className={hero.solidimage}>
           <div className={hero.hero}>
-          <GatsbyImage className={hero.image} alt={author.name} image={author.heroImage.gatsbyImage} />
+          {/* <GatsbyImage className={hero.image} alt={author.name} image={author.heroImage.gatsbyImage} /> */}
             <div className={hero.details}>
               <h1 className={hero.title}>BLOG</h1>
             </div>
@@ -59,7 +59,6 @@ export const Head = ({ data }) => {
     <Seo
       description={data.site.siteMetadata.description}
     />
-
   )
 }
 export default RootIndex

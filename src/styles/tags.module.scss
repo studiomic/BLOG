@@ -8,11 +8,11 @@
   display: flex;
   gap: var(--space-md);
   justify-content: center;
-  // border: 1px solid cyan;
 }
 
 .tag {
-  background-color: var(--black-fade-5);
+  // border: 1px solid cyan;
+  background-color: var(--tagBg);
   border-radius: var(--radius-sm);
   line-height: var(--solid);
   padding: var(--space-sm) var(--space-md);
@@ -24,10 +24,14 @@
 }
 
 .tagPreview {
-  background-color: var(--black-fade-5);
+  // border: 1px solid pink;
+  background-color: var(--tagBg);
   border-radius: var(--radius-sm);
   line-height: var(--solid);
   padding: var(--space-sm) var(--space-md);
+  white-space: nowrap;
+  white-space: pre;
+  
   a {
     border: initial!important;
     display: block;
@@ -41,5 +45,4 @@
 }
 
 // @container main (min-width: 768px) {}
-
 // @container main (min-width: 1024px) {}

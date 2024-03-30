@@ -26,6 +26,7 @@ html * {
     --aboutBorder: #ddd;
     --detailsBg: #fdfdfd;
     --borderColor: #ccc;//mokuji
+    --tagBg: var(--black-fade-5);
 }
 body.lightmode {
   --background: var(--white);
@@ -35,14 +36,11 @@ body.lightmode {
   --aboutBorder: #ddd;
   --detailsBg: #fdfdfd;
   --borderColor: #ccc;//mokuji
-  --modeButtonBg: #fdfdfd;
-  transition: background-color .5s ease;
+  --modeButtonBg: #f3f3f3;
+  --modeButtonBg: #f0f0f0;
+  --tagBg: var(--black-fade-5);
 }
 body.darkmode {
-  // --background:hsl(195,67%,1%);//#010405
-  // --background:#1f1e23;
-  // --background:#404146;
-  // --background:#313131;
   --background:#2c2d32;
   --text-color: #ddd;
   --dlborderColor:#666;
@@ -50,8 +48,11 @@ body.darkmode {
   --aboutBorder: #555;
   --detailsBg: #222;
   --borderColor: #555;
-  --modeButtonBg: #fdfdfd;
-  transition: background-color .5s ease;
+  --modeButtonBg: #242424;
+  --modeButtonBg: #17191f;
+  --modeButtonBg: #494a50;
+  --modeButtonBg: #42444c;
+  --tagBg: #494a50;
 }
 body.blackmode {
   --background: #000;
@@ -61,22 +62,14 @@ body.blackmode {
   --aboutBorder: #555;
   --detailsBg: #222;
   --borderColor: #555;
-  --modeButtonBg: #494a50;
-  --modeButtonBg: #494a50;
   --modeButtonBg: #404146;
-  transition: background-color .5s ease;
+  --tagBg: #404146;
 }
-
-// background-color: #2c2d32;
-//     background-color: #;
-
-
 main {
   overflow-x: hidden;
   container: main / inline-size;
   // border: 1px solid crimson;
 }
-
 .wave,.wavervs,.wavetop {
 	margin-top: -200px;
 	display: block;
@@ -84,7 +77,7 @@ main {
 	// transform: scale(-1, -1);
   svg {
     fill: var(--background);
-    transition: 0;
+    // transition: background-color .6s ease;
     // transition: 0.1s ease;
   }
 }
@@ -113,26 +106,52 @@ body {
   -webkit-font-smoothing: antialiased;
   transition: background-color .7s ease-out;
   container: body / inline-size;
+  transition: background-color .5s ease;
   // border: 1px solid Cyan;
 }
 
-// .dark-mode {
+/* Dark-mode ------------------------------- */
 .darkmode {
   nav {
     img {
       filter: invert(100%);
     }
-    button:last-child { 
-      svg {
-        fill: var(--primary);
+    button:nth-of-type(2) {
+      cursor: unset;
+      span {
+        font-weight: bold;
+        color: var(--background);
       }
-    }
-    svg {
-      // fill: var(--text-color);
-      fill: var(--secondary);
     }
   }
   .picts img {
+    filter: invert(100%);
+    
+  }
+  .logo {
+    filter: invert(100%);
+  }
+}
+
+/* Black-mode ------------------------------- */
+.blackmode {
+  nav {
+    img {
+      filter: invert(100%);
+    }
+    button:nth-of-type(3) {
+      cursor: unset;
+      span {
+        font-weight: bold;
+        opacity: .5;
+        color: var(--background);
+      }
+      svg {
+        opacity: .5;
+      }
+    }
+  }
+  .picts img {//aboutPage
     filter: invert(100%);
   }
   .logo {
@@ -140,23 +159,16 @@ body {
   }
 }
 
-body.blackmode {
-  background-color: var(--black);
-  color: var(--white);
-}
-
-body.light-mode {
+.lightmode {
   nav {
-    button:first-child { 
-      svg {
-        fill: var(--primary);
-        opacity: 1;
-        // fill: var(--crimson);
+    button:nth-of-type(1) {
+      cursor: unset;
+      span {
+        font-weight: bold;
+        opacity: .4;
+        // color: var(--background);
+        // color: #17191f;
       }
-    }
-    svg {
-      fill: var(--secondary);
-      opacity: 0.5;
     }
   }
 }
@@ -259,31 +271,3 @@ tt:after {
     display: none;
   }
 }
-
-
-// @container main (max-width: 767.98px) {}
-// @container body (max-width: 767.98px) {}
-//   background-image: linear-gradient(90deg, rgba(233, 233, 233, 0.11), rgba(172, 172, 172, 0.21));
-//   border-radius:64% 36% 53% 47% / 45% 42% 58% 55%;
-// @font-face {
-//   font-family: 'Inter var';
-//   font-weight: 100 900;
-//   font-display: swap;
-//   font-style: normal;
-//   font-named-instance: 'Regular';
-//   src: url('/fonts/Inter-roman.var.woff2?v=3.19') format('woff2');
-// @font-face {
-//   font-family: 'Inter var';
-//   font-weight: 100 900;
-//   font-display: swap;
-//   font-style: italic;
-//   font-named-instance: 'Italic';
-//   src: url('/fonts/Inter-italic.var.woff2?v=3.19') format('woff2');
-
-// --background: #323339;
-// --background: #292934;//鉄紺
-// --background: #080b17;
-// --background: #121212;
-// --background: #000001;
-// --background: #2B2E2E;
-// --background: #181818;

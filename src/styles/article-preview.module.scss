@@ -26,12 +26,10 @@
 
 .meta {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
-	// border: 1px solid tomato;
+  justify-content: space-between;
+  // small:first-of-type {
+  //   margin-right: 100px;
+  //   border: 1px solid tomato;
+  // }
 }
-
-//   .article-list {
-//     grid-template-columns: repeat(3, 1fr); // 横に3つ並べる
-//   }
-// }
