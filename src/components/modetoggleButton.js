@@ -1,52 +1,59 @@
 // import * as React from "react"
+// import { useEffect, useState } from 'react'
 import React from 'react'
+import { useEffect } from 'react'
 import * as styles from '../styles/toggle.module.scss'
 
 const ModeToggleButton = () => {
-  var darkMode;
 
-  if (localStorage.getItem('dark-mode')) {
-    darkMode = localStorage.getItem('dark-mode');
-
-    if (darkMode === "darkmode") {
-      document.body.classList.add("darkmode");
-      document.body.classList.remove("lightmode","blackmode");
-      darkMode = "darkmode";
-    } else if (darkMode === "blackmode") {
-      document.body.classList.add("blackmode");
-      document.body.classList.remove("darkmode","lightmode");
-      darkMode = "blackmode";
-    } else {
+  useEffect(() => { //初期設定をSet
+    if (document.body.classList.value === "") {
       document.body.classList.add("lightmode");
-      document.body.classList.remove("darkmode","blackmode");
-      darkMode = "lightmode";
+      let putMode = "lightmode";
+      localStorage.setItem('dark-mode', putMode);
     }
-  } else {  
+  });
+
+  let putMode = localStorage.getItem('dark-mode');
+  if (putMode === "darkmode") {
+    document.body.classList.add("darkmode");
+    // document.body.classList.remove("lightmode","blackmode");
+    putMode = "darkmode";
+  } else if (putMode === "blackmode") {
+    document.body.classList.add("blackmode");
+    // document.body.classList.remove("darkmode","lightmode");
+    putMode = "blackmode";
+  } else {
     document.body.classList.add("lightmode");
-    document.body.classList.remove("darkmode","blackmode");
-    darkMode = "lightmode";
-  };
-  localStorage.setItem('dark-mode', darkMode);
+    // document.body.classList.remove("darkmode","blackmode");
+    putMode = "lightmode";
+  }
+  
+
+
+
+
+
+
 
 
   function Light(){
     document.body.classList.add("lightmode");
     document.body.classList.remove("darkmode","blackmode");
-    darkMode = "lightmode";
-    localStorage.setItem('dark-mode', darkMode);
-    // document.querySelector('input[name="LightMode"]').disabled = true;
+    putMode = "lightmode";
+    localStorage.setItem('dark-mode', putMode);
   };
   function Dark(){
     document.body.classList.add("darkmode");
     document.body.classList.remove("lightmode","blackmode");
-    darkMode = "darkmode";
-    localStorage.setItem('dark-mode', darkMode);
+    putMode = "darkmode";
+    localStorage.setItem('dark-mode', putMode);
   };
   function Black(){
     document.body.classList.add("blackmode");
     document.body.classList.remove("darkmode","lightmode");
-    darkMode = "blackmode";
-    localStorage.setItem('dark-mode', darkMode);
+    putMode = "blackmode";
+    localStorage.setItem('dark-mode', putMode);
   };
 
   return (
