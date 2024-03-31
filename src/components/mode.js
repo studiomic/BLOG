@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react';
-// import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import * as styles from '../styles/toggle.module.scss'
+// import React, { useState, useEffect } from 'react';
 
 const Modebutton = () => {
   
-  let [mode, modeType] = useState('');
+  // let [mode, modeType] = useState('');
+  let modeType;
   
   const Light = () => {
-    global.document.body.classList.add("lightmode");
+    document.body.classList.add("lightmode");
     document.body.classList.remove("darkmode","blackmode");
     modeType = "lightmode";
     localStorage.setItem('mode', modeType);
