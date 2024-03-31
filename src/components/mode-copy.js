@@ -7,21 +7,21 @@ const Modebutton = () => {
   let [mode, modeType] = useState('');
 
   // OK
-  // modeType = localStorage.getItem('mode');
+  modeType = localStorage.getItem('mode');
   
-  // if ( modeType === 'darkmode') {
-  //   document.body.classList.add("darkmode");
-  //   document.body.classList.remove("lightmode","blackmode");
-  // } else if ( modeType === 'blackmode') {
-  //   document.body.classList.add("blackmode");
-  //   document.body.classList.remove("darkmode","lightmode");
-  // } else {
-  //   document.body.classList.add("lightmode");
-  //   document.body.classList.remove("darkmode","blackmode");
-  // };
+  if ( modeType === 'darkmode') {
+    document.body.classList.add("darkmode");
+    document.body.classList.remove("lightmode","blackmode");
+  } else if ( modeType === 'blackmode') {
+    document.body.classList.add("blackmode");
+    document.body.classList.remove("darkmode","lightmode");
+  } else {
+    document.body.classList.add("lightmode");
+    document.body.classList.remove("darkmode","blackmode");
+  };
 
-  // // OK
-  // localStorage.setItem('mode', modeType);
+  // OK
+  localStorage.setItem('mode', modeType);
   
   const Light = () => {
     global.document.body.classList.add("lightmode");

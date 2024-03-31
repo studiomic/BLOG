@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
-import ModeToggleButton from './modetoggleButton'
 import * as styles from '../styles/layout/navigation.module.scss'
+import ModeButton from './mode'
+// import ModeToggleButton from './modetoggleButton'
 // import ModeToggle from './modeToggle'
 
 const Navigation = () => (
@@ -34,7 +35,7 @@ const Navigation = () => (
         </Link>
       </li>
       <li className={styles.navigationItem}>
-        <ModeToggleButton />
+        <ModeButton />
       </li>
     </ul>
   </nav>
