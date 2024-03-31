@@ -42,7 +42,6 @@ const Modebutton = () => {
     localStorage.setItem('mode', modeType);
   };
 
-
   const handleBeforeUnload = () => {
     console.log('beforeunload')
   }
