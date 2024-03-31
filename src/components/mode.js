@@ -46,30 +46,20 @@ const Modebutton = () => {
   const handleBeforeUnload = () => {
     console.log('beforeunload')
   }
-  
   useEffect(() => {
     window.addEventListener('beforeunload', handleBeforeUnload)
-  // OK
-  modeType = localStorage.getItem('mode');
-  
-  if ( modeType === 'darkmode') {
-    document.body.classList.add("darkmode");
-    document.body.classList.remove("lightmode","blackmode");
-  } else if ( modeType === 'blackmode') {
-    document.body.classList.add("blackmode");
-    document.body.classList.remove("darkmode","lightmode");
-  } else {
-    document.body.classList.add("lightmode");
-    document.body.classList.remove("darkmode","blackmode");
-  };
-
-  // OK
-  localStorage.setItem('mode', modeType);
-
-
-
-
-
+    modeType = localStorage.getItem('mode');
+    if ( modeType === 'darkmode') {
+      document.body.classList.add("darkmode");
+      document.body.classList.remove("lightmode","blackmode");
+    } else if ( modeType === 'blackmode') {
+      document.body.classList.add("blackmode");
+      document.body.classList.remove("darkmode","lightmode");
+    } else {
+      document.body.classList.add("lightmode");
+      document.body.classList.remove("darkmode","blackmode");
+    };
+    localStorage.setItem('mode', modeType);
     return () => {
       window.removeEventListener('beforeunload', handleBeforeUnload)
     }
