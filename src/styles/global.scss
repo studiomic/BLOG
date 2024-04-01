@@ -11,13 +11,6 @@
   font-weight: 700;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-html * {
-  box-sizing: border-box;
-}
-
 :root {
     --background: var(--white);
     --text-color: var(--black);
@@ -28,7 +21,7 @@ html * {
     --borderColor: #ccc;//mokuji
     --tagBg: var(--black-fade-5);
 }
-body.lightmode {
+.lightmode {
   --background: var(--white);
   --text-color: var(--black);
   --dlborderColor: #eee;
@@ -40,7 +33,7 @@ body.lightmode {
   --modeButtonBg: #f0f0f0;
   --tagBg: var(--black-fade-5);
 }
-body.darkmode {
+.darkmode {
   --background:#2c2d32;
   --text-color: #ddd;
   --dlborderColor:#666;
@@ -52,7 +45,7 @@ body.darkmode {
   --modeButtonBg: #42444c;
   --tagBg: #494a50;
 }
-body.blackmode {
+.blackmode {
   --background: #000;
   --text-color: #ddd;
   --dlborderColor:#666;
@@ -63,33 +56,19 @@ body.blackmode {
   --modeButtonBg: #404146;
   --tagBg: #404146;
 }
+
+html {
+  scroll-behavior: smooth;
+  background: var(--background);
+}
+html * {
+  box-sizing: border-box;
+}
+
 main {
   overflow-x: hidden;
   container: main / inline-size;
   // border: 1px solid crimson;
-}
-.wave,.wavervs,.wavetop {
-	margin-top: -200px;
-	display: block;
-	height: 200px;
-	// transform: scale(-1, -1);
-  svg {
-    fill: var(--background);
-    // transition: background-color .6s ease;
-    // transition: 0.1s ease;
-  }
-}
-.wave {
-  transform: scale(-1, -1);
-}
-.wavervs {
-  transform: scale(1.75, -1);
-}
-.wavetop {
-  transform: scale(1.75, -1);
-}
-.wavemdl {
-  transform: scale(1.5, -1);
 }
 
 body {
@@ -169,6 +148,30 @@ body {
       }
     }
   }
+}
+
+.wave,.wavervs,.wavetop {
+	margin-top: -200px;
+	display: block;
+	height: 200px;
+	// transform: scale(-1, -1);
+  svg {
+    fill: var(--background);
+    // transition: background-color .6s ease;
+    // transition: 0.1s ease;
+  }
+}
+.wave {
+  transform: scale(-1, -1);
+}
+.wavervs {
+  transform: scale(1.75, -1);
+}
+.wavetop {
+  transform: scale(1.75, -1);
+}
+.wavemdl {
+  transform: scale(1.5, -1);
 }
 
 .logo {
