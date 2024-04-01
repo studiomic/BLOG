@@ -19,6 +19,9 @@ featuredImage:
 - [Buttonアクション](#Buttonアクション)
 - [localStorageとは](#localStorageとは)
 - [Relodeアクションにするまでの右往左往](#Relodeアクションにするまでの右往左往)
+- [バカみたいに当たり前なこと](#バカみたいに当たり前なこと)
+- <a href="#React Hook &#123; useEffect &#125;">React Hook &#123; useEffect &#125;</a>
+
 
 </details>
 
@@ -234,7 +237,9 @@ develop".
 
 このエラーの詳細については、ドキュメント ページを参照してください: https://gatsby.dev/debug-html
 ```
-# バカみたいに当たり前なこと
+# バカみたいに当たり前なこと<a name="バカみたいに当たり前なこと"></a>
+
+
 
 そう。localStorageはブラウザに保管され、参照したり上書きしたり、配列を使ったりできるもの。<br>
 所有者：Browserさん。<br>
@@ -258,7 +263,7 @@ Zenn記事曰くの「useEffectでlocalStorageへの参照のタイミングを�
 
 </section>
 
-<section style="margin-bottom: 5em;">
+<section style="margin-bottom: 5em;" id="React Hook { useEffect }">
 
 ## React Hook { useEffect }
 
@@ -320,7 +325,7 @@ const Modebutton = () => {
   }
   useEffect(() => {
     window.addEventListener('beforeunload', handleBeforeUnload)
-    
+
     modeType = localStorage.getItem('mode');
     if ( modeType === 'darkmode') {
       document.body.classList.add("darkmode");
@@ -338,6 +343,14 @@ const Modebutton = () => {
     }
   }, [handleBeforeUnload])
 ```
+
+
+Reactの画面リロード処理：中に<strong>useEffect</strong>を使って
+
+
+- [Window: beforeunload イベント - Web API | MDN](https://developer.mozilla.org/ja/docs/Web/API/Window/beforeunload_event)
+
+- [【React】画面がリロードされた際に処理を実行する方法 #React - Qiita](https://qiita.com/P-man_Brown/items/45adb922a437995165db)
 
 </section>
 
@@ -530,7 +543,7 @@ createPage の **context:** として渡しているのはCodeに載せたとお
 ___
 
 
-# context:の受け渡し<a name="context"></a>
+# context:の受け渡し
 
 書籍もチェートリアルも読まずに他人のソースだけ見て、どうにかしようという魂胆がまず遠回りの要因なんすが！<br>
 パターンとして多かったのが、こういうdataをマルッと渡すもの
@@ -597,53 +610,7 @@ createPageでつくられる **/tags/$display_tag/** のテンプレートで
 ようやく対象のTag名をページのタイトルとして埋められました。
 
 たったこれだけだが、Tagリンクを表示するよりずっと難関だった件。<br>&emsp;<br>
-___
 
-# TagIndexQueryのソース<a name="TagIndexQuery"></a>
-```graphql:title=/src/templates/tags-index.js
-export const pageQuery = graphql`
-query TagIndexQuery ($slug: String!){
-	allContentfulTag {
-		nodes {
-			contentful_id
-			name
-		}
-	}
-	allContentfulBlogPost(
-		sort: { publishDate: DESC }
-		filter: {metadata: {tags: {elemMatch: {contentful_id: {eq: $slug }}}}}
-	){
-		nodes {
-			title
-			slug
-			publishDate(formatString: "YYYY/MM/DD")
-			metadata {
-				tags {
-					contentful_id
-					name
-				}
-			}
-			heroImage {
-				gatsbyImage(
-					layout: FULL_WIDTH
-					placeholder: BLURRED
-					width: 424
-					height: 212
-				)
-			}
-			description {
-			raw
-			}
-		}
-	}
-}
-`
-```
-
-まずTagsリンクから対象となるPostを絞り込むフィルターに、gatsby-node.jsのcreatePageから
-**context:**
-として渡された **slug: tag.contentful_id,**
-を11行目で使っています。{eq: $slug }
 
 ```JS
 filter: {metadata: {tags: {elemMatch: {contentful_id: {eq: $slug }}}}}
@@ -659,26 +626,6 @@ TagとPost 両方のdataを
 GraphQLに要求するpageQuery<br>&emsp;<br>
 ___
 
-# PostページにTags <Link to={ $slug }>をリンクを表示する<a name="Tagslink"></a>
-
-```html:title=/src/templates/blog-post.js
-<small className={tagstyles.tags}>
-{post.metadata.tags.map(tag => (
-	<div key={tag} className={tagstyles.tag}>
-		<Link to={`/tags/${tag.contentful_id}`}>{tag.name}</Link>
-	</div>
-	))}
-</small>
-```
-styleやHTMLタグもそのまま転記してますが、2行目から6行目のマッピングで置き換え。<br>
-
-日本語で（写像とは）とググると、めちゃくちゃ的確な説明が出てきました。
-
-<blockquote>
-集合の各元(げん)を他の集合（または同じ集合）の元にそれぞれ対応させること。<br>
-「実数の対から虚数への―」<br>
-map(ping) の訳。同一集合内で行うのは特に「変換」と言う。
-</blockquote>
 
 上のソースは、Postページや **/tags/${tag.contentful_id}** 自身にも「TAG Cloud」として載せています。<br>
 [Bolgトップ](/blog)だけは、Tag表示のみリンクなしの使い方をしていますが、Gatsby developの開発環境では問題なかったものが、Buildエラーになりました。
@@ -706,29 +653,7 @@ Postを並べているGridは
 
 > 対処法：エラーとなっているプロパティ（この場合はhoge）の前に?.を付け、?.hogeとすることで解消
 
-```html:title=/src/components/ArticlePreview.js
-<ArticlePreview posts={posts} />
-// で{posts}を渡された先のcomponentsで、metadata?. とオプショナルチェイング演算子を挿入
 
-<small className={tagstyles.tags}>
-	{post.metadata?.tags.map(tag => {
-	return (
-		<div key={tag.contentful_id} className={tagstyles.tag}>
-		{tag.name}
-		</div>
-	)
-	})}
-</small>
-```
-説明が的確だったのでそのまま引用します。
 
-<blockquote>
-<h3>?.とは何なのか</h3>
-調べてみると、オプショナルチェイング演算子と呼ばれるものみたいです。
-
-[MDNによると](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Optional_chaining)、深い入れ子構造になったサブプロパティにアクセスする際は、各プロパティ間の参照を確認する必要があるとのこと。今回のコードで言うと、data.allFile.nodes内にfindでヒットした要素が存在することを確認した上で、publicURLを取得する必要があるようです。
-
-これを暗黙的にやってくれるのが、オプショナルチェイング演算子です。
-</blockquote>
 
 <!-- EOF -->
