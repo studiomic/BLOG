@@ -98,7 +98,7 @@ legacy-peerなんて言われるとちと不安になりますが、[use-dark-mo
 [use-dark-mode - npm](https://www.npmjs.com/package/use-dark-mode?activeTab=readme) の [Dependents (50)](https://www.npmjs.com/package/use-dark-mode?activeTab=dependencies) タブではけっこうな数のGatsby ThemaやStarterが載っていたので、躓いた方に見つけて欲しい。週に13,000て他のReact勢にも使われてますよね。
 ```bash:title=bash
 npm i use-dark-mode --legacy-peer-deps
-```
+```5
 </section>
 
 <section style="margin-bottom: 5em;">

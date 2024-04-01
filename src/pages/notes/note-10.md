@@ -77,7 +77,7 @@ MDNの場合は
 
 <hr>
 
-と、そのときは思っていてプラグインを導入したわけだが、Gatsby Cloud → Netlify移転で元の木阿弥、まっさら白紙に戻ったこの機会に<strong class="crimson-col">3択モード</strong>を実装することにした。
+と、そのときは思ってプラグインを導入したわけだが、Gatsby Cloud → Netlify移転で元の木阿弥、まっさら白紙に戻ったこの機会に<strong class="crimson-col">3択モード</strong>を実装することにした。
 
 </section>
 
@@ -93,7 +93,7 @@ MDNの場合は
 と行くまでに、けっこう重要だったかも！なのが
 
 外観はともかく、インプットを<strong>checkbox</strong>にするか<strong>button</strong>にするかで面倒くささが違う。<br>
-<strong>checkbox</strong>でも<strong>radio</strong>でも、状態が遷移するものは当然アウトプット用の返り値を書かないとならんし、特に<strong>checkbox</strong>など同じ<strong>name</strong>を複数につけられるものは、For文で洗いださないと「動作」があった：という根拠にできないので更に面倒だ。と後で気づいた。
+<strong>checkbox</strong>でも<strong>radio</strong>でも、状態が遷移するものは当然アウトプット用の返り値を書かないとならんし、特に<strong>checkbox</strong>など同じ<strong>name</strong>属性を複数につけられるものは、For文で洗いださないと「動作」があった：という根拠にできないので更に面倒だ。と後で気づいた。
 
 <strong>button</strong>は単に押されたかどうか、のみでトリガーにできるのが重宝。
 
@@ -168,7 +168,7 @@ localStorage は、JavaScript を用いて作られたサイトやアプリが�
 
 <hr>
 
-私は上から考えちゃうので、（頭の中身が2D）
+私は上から考えちゃうので、（頭の中身が2D）　😢失敗例
 
 ```JS
 const Modebutton = () => {
@@ -311,8 +311,9 @@ const Modebutton = () => {
     modeType = "blackmode";
     localStorage.setItem('mode', modeType);
   };
-
 ```
+
+
 そりゃそうですよね、<strong>localStorage.setItem</strong>はしてるけど、保存した値を<strong>getItem</strong>するタイミングは？
 
 <hr>
@@ -345,7 +346,6 @@ const Modebutton = () => {
   }, [handleBeforeUnload])
 ```
 
-
 Reactの画面リロード処理：中に<strong>useEffect</strong>を使って<br>
 <strong>useEffect内でlocalStorageを参照：</strong>localStorage.getItem('mode');<br>できました。
 
@@ -360,14 +360,29 @@ Reactの画面リロード処理：中に<strong>useEffect</strong>を使って<
 あとは3つボタンの外観として用意していたソースを
 return ()した&lt;Modebutton /&gt;コンポーネントをnavigation.jsに配置してBuildチェック。
 
-問題なく完了したらmainブランチへマージ＆プッシュして
+<hr>
+
+## 余談
+
+「use-dark-mode」プラグインで苦労したときから、わりと色々なダークモードの書き方を読んだはずだが、Window: beforeunloadイベントなど使っている例を見たことがない。
+
+とんでもな獣道でなきゃいいけど・・・と思いつつ、まぁ思いつきでやってみて、予想通りの結果だったから採用した。<br>
 
 
+ただ検証中に勘で、そういう方法でいいんでね？と
 
+[ページをリロードしたとき React のアンマウント処理は行われない |
+knmts.com](https://knmts.com/as-a-engineer-92/)
 
-
-
-
+```jsx
+<script>
+  (function (global) {
+    if (localStorage.getItem("dark")) {
+        global.document.documentElement.classList.add("Dark");
+    }
+  })(globalThis);
+</script>
+```
 
 
 <!-- EOF -->

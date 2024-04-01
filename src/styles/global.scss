@@ -60,6 +60,7 @@
 html {
   scroll-behavior: smooth;
   background: var(--background);
+  transition: background-color .5s ease;
 }
 html * {
   box-sizing: border-box;
@@ -72,7 +73,7 @@ main {
 }
 
 body {
-  background: var(--background);
+  // background: var(--background);
   color: var(--text-color);
   font-family: var(--font-sans);
   font-size: 16px;
@@ -83,7 +84,7 @@ body {
   -webkit-font-smoothing: antialiased;
   transition: background-color .7s ease-out;
   container: body / inline-size;
-  transition: background-color .5s ease;
+  // transition: background-color .5s ease;
   // border: 1px solid Cyan;
 }
 
