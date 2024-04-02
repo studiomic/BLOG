@@ -1,5 +1,5 @@
 ---
-title: "Reactでダークモードを実装する with Gatsby"
+title: "Reactでダークモードを再開した with Gatsby"
 date: "2024-03-31 19:00:00"
 slug: 'note-10-Darkmode-on-React'
 description: "Gatsbyプラグインなし + localStorage + React Hook"
@@ -14,6 +14,7 @@ featuredImage:
 <details>
   <summary>もくじ</summary>
 
+- [感想](#感想)
 - [要件](#要件)
 - [工程](#工程)
 - [Buttonアクション](#Buttonアクション)
@@ -22,11 +23,33 @@ featuredImage:
 - [バカみたいに当たり前なこと](#バカみたいに当たり前なこと)
 - <a href="#React Hook &#123; useEffect &#125;">React Hook &#123; useEffect &#125;</a>
 
-
 </details>
 
 
+<section style="margin-top: 5em;margin-bottom: 5em;" id="感想">
 
+# 感想
+このサイトはContentful製 : [starter-gatsby-blog](https://www.gatsbyjs.com/starters/contentful/starter-gatsby-blog)からはじまっているので、
+[Blog](/blog)ページだけ趣が違うというか、ほぼ原型。<br>
+シンプルだから掲載写真によってまるで別物に見えそうなデザインだが、元々が白ベースで作られていたもの、自分が作業するにも画面は白でかまわない。ただし閲覧者は別。と思ってきた。
+
+<hr>
+
+かなり前に、Webクリエーターボックス : <span class="crimson-col">[ダークモードに対応していないWebサイトを無理やりダークモードにする拡張](https://www.webcreatorbox.com/webinfo/darkmode-extensions)</span>を読んだとき、先に書かれた[Webサイトをダークモードに対応させよう](https://www.webcreatorbox.com/tech/dark-mode)という記事ではよく理解していなかった「スターバースト現象」というものに （え？！） となり、以来ダークモードを実装するなら極力、背景色「#000;」
+
+自分が不要でも、World wide Webに25年も浸かってきた人間が余力あるなら、つけとけよ！ てな感じで前回はプラグインで実装したきりほぼダークモード・トグル使ってなかったんですが、今回は理想としていたー Light / Dark / Black ーの3択タイプにしたので、晴れてダークモードは「真っ黒黒」じゃない。
+
+<hr>
+
+案外、居心地良い。編集画面とアウトプットで色が違う2画面とか、デュアルディスプレイ甲斐があるっ<br>
+
+色で判断したい獣タイプなんでね、丸の内線と銀座線が赤と黄色じゃなくなった長い期間・・・どれほど乗り越しと乗り間違えをやらかしたことか。
+
+堕落してない人はきっとわからないでしょう。脳のキャパシティーを使わないためなら、けっこうマメに手も体も動かすんですよ怠惰なわたくしも。（何の話だ）
+
+<hr>
+
+</section>
 
 <section style="margin-top: 5em;margin-bottom: 5em;" id="要件">
 
