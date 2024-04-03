@@ -12,14 +12,17 @@
 }
 
 :root {
-    --background: var(--white);
-    --text-color: var(--black);
-    --dlborderColor: #eee;
-    --notedlColor: #666;
-    --aboutBorder: #ddd;
-    --detailsBg: #fdfdfd;
-    --borderColor: #ccc;//mokuji
-    --tagBg: var(--black-fade-5);
+    // --background: var(--white);
+    // --text-color: var(--black);
+    // --dlborderColor: #eee;
+    // --notedlColor: #666;
+    // --aboutBorder: #ddd;
+    // --detailsBg: #fdfdfd;
+    // --borderColor: #ccc;//mokuji
+    // --tagBg: var(--black-fade-5);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 .lightmode {
   --background: var(--white);
@@ -104,7 +107,6 @@ body {
   }
   .picts img {
     filter: invert(100%);
-    
   }
   .logo {
     filter: invert(100%);
