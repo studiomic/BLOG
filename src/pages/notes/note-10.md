@@ -14,9 +14,10 @@ featuredImage:
 <details>
   <summary>もくじ</summary>
 
-- [感想](#感想)
+- [サンプル（別タブ）](#sample)
 - [要件](#要件)
 - [工程](#工程)
+- [感想](#感想)
 - [Buttonアクション](#Buttonアクション)
 - [localStorageとは](#localStorageとは)
 - [Relodeアクションにするまでの右往左往](#Relodeアクションにするまでの右往左往)
@@ -25,22 +26,25 @@ featuredImage:
 
 </details>
 
-
 <section style="margin-top: 5em;margin-bottom: 5em;" id="感想">
 
 # 感想
 このサイトはContentful製 : [starter-gatsby-blog](https://www.gatsbyjs.com/starters/contentful/starter-gatsby-blog)からはじまっているので、
 [Blog](/blog)ページだけ趣が違うというか、ほぼ原型。<br>
-シンプルだから掲載写真によってまるで別物に見えそうなデザインだが、元々が白ベースで作られていたもの、自分が作業するにも画面は白でかまわない。ただし閲覧者は別。と思ってきた。
+もともと白ベースで作られていたのを見慣れていたから、前回プラグインで実装したときは、自分はほとんど使うことはなかった。
+
+ただし閲覧者は別。ダークモード対応するしないは、配慮の問題と考えている。
 
 <hr>
 
 かなり前に、Webクリエーターボックス : <span class="crimson-col">[ダークモードに対応していないWebサイトを無理やりダークモードにする拡張](https://www.webcreatorbox.com/webinfo/darkmode-extensions)</span>を読んだとき、先に書かれた[Webサイトをダークモードに対応させよう](https://www.webcreatorbox.com/tech/dark-mode)という記事ではよく理解していなかった「スターバースト現象」というものに （え？！） となり、以来ダークモードを実装するなら極力、背景色「#000;」
 
-自分が不要でも、World wide Webに25年も浸かってきた人間が余力あるなら、つけとけよ！ てな感じで前回はプラグインで実装したきりほぼダークモード・トグル使ってなかったんですが、今回は理想としていたー Light / Dark / Black ーの3択タイプにしたので、晴れてダークモードは「真っ黒黒」じゃない。
+自分が不要でも、World wide Webに25年も浸かってきた人間が余力あるなら、つけとけよ！ てな感覚に変化した。
+ただし自分は「真っ黒黒」が苦手で持ち腐れていたわけだが、今回は理想としていたー Light / Dark / Black ーの3択タイプにしたので、晴れて好みの色を設定できたダークモードを活用している。
 
 <hr>
 
+情けは人の為ならず。<br>
 案外、居心地良い。編集画面とアウトプットで色が違う2画面とか、デュアルディスプレイ甲斐があるっ<br>
 
 色で判断したい獣タイプなんでね、丸の内線と銀座線が赤と黄色じゃなくなった長い期間・・・どれほど乗り越しと乗り間違えをやらかしたことか。
@@ -49,15 +53,27 @@ featuredImage:
 
 <hr>
 
+# サンプル<a name="sample"></a>
+
+<a href="https://studiomic.github.io/blackmode/" target="_blank" rel="noopener noreferrer">Darkmode+3Type</a>
+
+このサイトとまったく同じものですが。ナビゲーションだけにしてあるソースが<br>
+<a href="https://github.com/studiomic/studiomic.github.io/tree/Dark-Lighe-Black-mode/mode" target="_blank" rel="noopener noreferrer">studiomic.github.io/mode at Dark-Lighe-Black-mode</a>
+
+
+
+
+
 </section>
 
 <section style="margin-top: 5em;margin-bottom: 5em;" id="要件">
 
 # 要件
 
-1. @media (prefers-color-scheme: dark) 対応はせずユーザーアクション主体
+1. @media (prefers-color-scheme: dark) 対応はせずユーザーアクション主体（予定）
 1. 背景色 #000; == 完全ダークモードをBlackモードとして3択にする（擬似MDN）
-1. ページ毎動作ではなく設定保持でわずらわしくないのが良い
+1. ページ毎動作ではなく設定保持でわずらわしくないのが良い（localStorage）
+1. 後日気が変わって　1.はOSカラースキームを開始点にした（初回のみ）
 
 <hr>
 
@@ -76,20 +92,11 @@ MDNの場合は
 <hr>
 
 
-またWebクリエーターボックス:<span class="primary-col">[ダークモードに対応していないWebサイトを無理やりダークモードにする拡張](https://www.webcreatorbox.com/webinfo/darkmode-extensions)</span>を読むと、（え？！）となるのが「スターバースト現象」<br>
-ユーザーエクスペリエンスを謳うならダークモードは背景「#000;」一択やないかーい。と頭に染み込む良記事というか実体験💦 
-
-先に書かれた[Webサイトをダークモードに対応させよう](https://www.webcreatorbox.com/tech/dark-mode)という既読POSTでは、よく理解してなかったんすよ。<br>
-「そこまでとは思っていなかった」てやつですね。
-
-なんだけども、我儘をいえば私自身は逆に「真っ黒黒」はややしんどい。
-
-という流れで過去にも書いていたのを引用する。
-
+また先の「スターバースト現象」を読んで、ユーザーエクスペリエンスを謳うならダークモードは背景「#000;」一択やないかーい。と思っていた流れで過去にも書いていたのを引用する。
 
 <hr>
 
-> 外観としては、Codepenで見かけた[Light / Dark / Black Theme](https://codepen.io/havardob/pen/dyOJyje)が全員嬉しい感。
+> 外観としては、Codepenで見かけた<a href="https://codepen.io/havardob/pen/dyOJyje" target="_blank" rel="noopener noreferrer">Light / Dark / Black Theme</a>が全員嬉しい感。
 
 <img src="asset/2023-06-19-3.png" loading="lazy" width="100%" alt="3ThemeMode">
 
@@ -103,6 +110,10 @@ MDNの場合は
 と、そのときは思ってプラグインを導入したわけだが、Gatsby Cloud → Netlify移転で元の木阿弥、まっさら白紙に戻ったこの機会に<strong class="crimson-col">3択モード</strong>を実装することにした。
 
 </section>
+
+
+
+
 
 <section style="margin-bottom: 5em;" id="工程">
 
@@ -126,6 +137,11 @@ MDNの場合は
 <hr>
 
 </section>
+
+
+
+
+
 
 <section style="margin-bottom: 5em;" id="Buttonアクション">
 

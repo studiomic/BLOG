@@ -1,14 +1,14 @@
 import React from 'react'
 import get from 'lodash/get'
 import { graphql, Link } from 'gatsby';
-// import { GatsbyImage } from 'gatsby-plugin-image'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
-// import Head from '../components/head'
 import Intoro from '../components/intoro-top'
 import ArticlePreview from '../components/article-preview'
 import * as styles from '../styles/top-note.module.scss'
 import * as hero from '../styles/hero.module.scss'
+// import { GatsbyImage } from 'gatsby-plugin-image'
+// import Head from '../components/head'
 
 class RootIndex extends React.Component {
   render() {
