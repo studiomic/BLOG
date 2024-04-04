@@ -38,31 +38,35 @@
 }
 .darkmode {
   --background:#2c2d32;
-  --text-color: #ddd;
-  --dlborderColor:#666;
-  --notedlColor: #999;
-  --aboutBorder: #555;
-  --detailsBg: #17191f;
-  --borderColor: #555;
-  // --modeButtonBg: #494a50;
-  --modeButtonBg: #42444c;
-  --tagBg: #494a50;
+  // body {
+    --text-color: #ddd;
+    --dlborderColor:#666;
+    --notedlColor: #999;
+    --aboutBorder: #555;
+    --detailsBg: #17191f;
+    --borderColor: #555;
+    // --modeButtonBg: #494a50;
+    --modeButtonBg: #42444c;
+    --tagBg: #494a50;
+  // }
 }
 .blackmode {
   --background: #000;
-  --text-color: #ddd;
-  --dlborderColor:#666;
-  --notedlColor: #999;
-  --aboutBorder: #555;
-  --detailsBg: #222;
-  --borderColor: #555;
-  --modeButtonBg: #404146;
-  --tagBg: #404146;
+  // body {
+    --text-color: #ddd;
+    --dlborderColor:#666;
+    --notedlColor: #999;
+    --aboutBorder: #555;
+    --detailsBg: #222;
+    --borderColor: #555;
+    --modeButtonBg: #404146;
+    --tagBg: #404146;
+  // }
 }
 
 html {
   scroll-behavior: smooth;
-  background: var(--background);
+  background-color: var(--background);
   transition: background-color .5s ease;
 }
 html * {

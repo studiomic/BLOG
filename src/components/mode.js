@@ -17,39 +17,34 @@ const Modebutton = () => {
       } else if ( modeType === 'blackmode') {
         document.documentElement.classList.add("blackmode");
         document.documentElement.classList.remove("darkmode","lightmode");
-      } else if ( modeType === 'lightmode') {
+      } else {
         document.documentElement.classList.add("lightmode");
         document.documentElement.classList.remove("darkmode","blackmode");
-      } else {
-        const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-        const changeDark = darkModeMediaQuery.matches;
-        if (changeDark) {
-          document.documentElement.classList.add("darkmode");
-        }
+      };
+    } else {
+      const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      const changeDark = darkModeMediaQuery.matches;
+      if (changeDark) {
+        document.documentElement.classList.add("darkmode");
       }
     };
   });
+
   
   let modeType;
   const Light = () => {
-    document.body.classList.add("lightmode");
-    document.body.classList.remove("darkmode","blackmode");
     document.documentElement.classList.add("lightmode");
     document.documentElement.classList.remove("darkmode","blackmode");
     modeType = "lightmode";
     localStorage.setItem('mode', modeType);
   };
   const Dark = () => {
-    document.body.classList.add("darkmode");
-    document.body.classList.remove("lightmode","blackmode");
     document.documentElement.classList.add("darkmode");
     document.documentElement.classList.remove("lightmode","blackmode");
     modeType = "darkmode";
     localStorage.setItem('mode', modeType);
   };
   const Black = () => {
-    document.body.classList.add("blackmode");
-    document.body.classList.remove("darkmode","lightmode");
     document.documentElement.classList.add("blackmode");
     document.documentElement.classList.remove("darkmode","lightmode");
     modeType = "blackmode";
