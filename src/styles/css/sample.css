@@ -1,0 +1,56 @@
+@supports(animation-timeline: view()) {
+	@keyframes colorize-dot {
+		50% {
+			background: #ff00fa;
+		}
+	}
+
+	[data-component="carousel"] {
+		timeline-scope: --entry1, --entry2, --entry3, --entry4, --entry5;
+
+		.markers a {
+			animation: colorize-dot linear both;
+			/* animation-range: contain calc(0% - 50px) contain calc(100% + 50px); */
+		}
+
+		.entries li:nth-child(1) {
+			view-timeline: --entry1 inline;
+		}
+		.entries li:nth-child(2) {
+			view-timeline: --entry2 inline;
+		}
+		.entries li:nth-child(3) {
+			view-timeline: --entry3 inline;
+		}
+		.entries li:nth-child(4) {
+			view-timeline: --entry4 inline;
+		}
+		.entries li:nth-child(5) {
+			view-timeline: --entry5 inline;
+		}
+		.markers li:nth-child(1) a {
+			animation-timeline: --entry1;
+		}
+		.markers li:nth-child(2) a {
+			animation-timeline: --entry2;
+		}
+		.markers li:nth-child(3) a {
+			animation-timeline: --entry3;
+		}
+		.markers li:nth-child(4) a {
+			animation-timeline: --entry4;
+		}
+		.markers li:nth-child(5) a {
+			animation-timeline: --entry5;
+		}
+	}
+}
+
+.entries {
+	/* display: flex; */
+	/* img {
+		width: 200px;
+		margin-bottom: 100px;
+	} */
+display: block;
+}
