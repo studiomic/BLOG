@@ -1,8 +1,6 @@
 .tags {
   display: flex;
   gap: var(--space-md);
-  // margin-top: var(--space-3xl);
-  // border: 1px solid cyan;
 }
 .center {
   display: flex;
@@ -11,7 +9,6 @@
 }
 
 .tag {
-  // border: 1px solid cyan;
   background-color: var(--tagBg);
   border-radius: var(--radius-sm);
   line-height: var(--solid);
@@ -24,14 +21,12 @@
 }
 
 .tagPreview {
-  // border: 1px solid pink;
   background-color: var(--tagBg);
   border-radius: var(--radius-sm);
   line-height: var(--solid);
   padding: var(--space-sm) var(--space-md);
   white-space: nowrap;
   white-space: pre;
-  
   a {
     border: initial!important;
     display: block;

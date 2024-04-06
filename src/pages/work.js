@@ -9,6 +9,11 @@ export default function work() {
 	return (
 		<Layout>
 			<Intoro />
+
+
+			<hr />
+<hr />
+
 			<div className={styles.wrapper}>
 				<div className={styles.item1}>
 					<h2>WORK</h2>

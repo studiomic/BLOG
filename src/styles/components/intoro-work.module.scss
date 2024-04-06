@@ -1,6 +1,6 @@
 :root {
---duskGray: #292f3b;
---lunaGray: #a6afb4;
+--duskGray: #272f3a;//292f3b;
+--lunaGray: #a6b1b5;
 --shineWhite: #f4f4f4;
 --paperSoftness: #d1bca1;
 }
@@ -9,12 +9,14 @@
 	display: grid;
 	margin: 0;
 	padding: 0;
+	width: 100%;
+	height: 45dvh;
 	grid-template-columns: 70% 20% 10%;
   grid-template-rows: 400px;
 }
 
 .grid1 {
-	background: var(--duskGray);
+	background: var(--shineWhite);
 }
 .grid2 {
 	background: var(--lunaGray);
@@ -30,12 +32,7 @@
 
 .intoro {
 	// border: red 2px solid;
-	background: url(./../../asset/img/IMG_3872.png);
-	background: url(./../../asset/img/note-thanun-dOFpWEml0nw-unsplash.avif);//tokyo
-	background: url(./../../asset/img/faizur-rehman-dJpupM4LiS4-unsplash.png);//pad
-	background: url(./../../asset/img/sajad-nori-1mbX8s7PjMc-unsplash.png);//HDD
-	background: url(./../../asset/img/code3.png);
-	background: url(./../../asset/img/firos-nv-Z2c6ounF-iE-unsplash.jpg);//2
+	
 	background: url(./../../asset/img/carmen-martinez-K4uj-VPRjJc-unsplash.png);//1
 	
 // transition: cubic-bezier();
@@ -50,16 +47,15 @@
 	background-position: bottom;
 	margin: var(--space-xl) 0 0;
 	width: 100%;
-	height: 45dvh;
 	// height: 40dvh;
 	// margin: var(--space-xl) 0 0;
 	// padding: var(--space-3xl) var(--space-2xl) 0;
-	display: flex;
-	filter: blur(1px);
-	filter: saturate(.4);
-	filter: brightness(0.5);
-	filter: grayscale(40%);
-	filter: sepia(50%);
+	// display: flex;
+	// filter: blur(1px);
+	// filter: saturate(.4);
+	// filter: brightness(0.5);
+	// filter: grayscale(40%);
+	// filter: sepia(50%);
 	// transform:skewY(-4deg);
 	
 	// color: rgba(#fdfdfd,.90);
@@ -115,21 +111,28 @@
 // 		}
 // 	}
 	
-@container main (min-width: 1200px) {
-	.intoro {
-		// background-attachment: fixed;
-		// background-position: center;
-		background-attachment:scroll;
-		background-attachment: fixed;
-		// background-repeat: no-repeat, repeat-y;
-		background-position: top;
-		background-position: center;
-		background-position: bottom;
-		background-position: 0 -45dvh;
-		// background-position: 0 50dvh;
-		height: 50dvh;
-	}
-}
+// @container main (min-width: 1200px) {
+// 	.intoro {
+// 		// background-attachment: fixed;
+// 		// background-position: center;
+// 		// background-attachment:scroll;
+// 		// background-attachment: fixed;
+// 		// background-repeat: no-repeat, repeat-y;
+// 		// background-position: top;
+// 		// background-position: center;
+// 		// background-position: bottom;
+// 		// background-position: 0 -45dvh;
+// 		// background-position: 0 50dvh;
+// 		// height: 50dvh;
+// 	}
+// }
 
 // @container main (min-width: 768px) {}
 // @container main (min-width: 1024px) {}
+
+	// background: url(./../../asset/img/IMG_3872.png);
+	// background: url(./../../asset/img/note-thanun-dOFpWEml0nw-unsplash.avif);//tokyo
+	// background: url(./../../asset/img/faizur-rehman-dJpupM4LiS4-unsplash.png);//pad
+	// background: url(./../../asset/img/sajad-nori-1mbX8s7PjMc-unsplash.png);//HDD
+	// background: url(./../../asset/img/code3.png);
+	// background: url(./../../asset/img/firos-nv-Z2c6ounF-iE-unsplash.jpg);//2

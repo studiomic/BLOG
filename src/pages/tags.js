@@ -4,8 +4,9 @@ import { StaticImage } from 'gatsby-plugin-image'
 import get from 'lodash/get'
 import Layout from '../components/layout'
 import Container from '../components/container'
-import * as styles from '../styles/hero.module.scss'
-import * as tagstyles from '../styles/tags.module.scss'
+import * as styles from '../styles/tag.module.scss'
+// import * as styles from '../styles/hero.module.scss'
+// import * as tagstyles from '../styles/tags.module.scss'
 // import Seo from '../components/seo'
 
 class TagsIndex extends React.Component {
@@ -26,9 +27,9 @@ class TagsIndex extends React.Component {
         </div>
         <Container>
           <div className="center">
-            <small className={tagstyles.center}>
+            <small className={styles.center}>
               {tags.map(tag => (
-                <div key={tag} className={tagstyles.tag}>
+                <div key={tag} className={styles.tag}>
                   <Link to={`/tags/${tag.contentful_id}`}>{tag.name}</Link>
                 </div>
               ))}

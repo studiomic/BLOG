@@ -12,7 +12,7 @@ import Layout from '../components/layout'
 import Seo from '../components/seo'
 import Hero from '../components/hero'
 import * as styles from '../styles/blog-post.module.scss'
-import * as tagstyles from '../styles/tags.module.scss'
+// import * as tagstyles from '../styles/tags.module.scss'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -72,9 +72,9 @@ class BlogPostTemplate extends React.Component {
               {post.body?.raw && renderRichText(post.body, options)}
             </article>
             <hr />
-            <small className={tagstyles.tags}>
+            <small className={styles.tags}>
             {post.metadata.tags.map(tag => (
-                <div key={tag} className={tagstyles.tag}>
+                <div key={tag} className={styles.tag}>
                   <Link to={`/tags/${tag.contentful_id}`}>{tag.name}</Link>
                 </div>
               ))}

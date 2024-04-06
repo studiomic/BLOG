@@ -5,8 +5,9 @@ import Layout from '../components/layout'
 import Seo from '../components/seo'
 import Intoro from '../components/intoro-top'
 import ArticlePreview from '../components/article-preview'
-import * as styles from '../styles/top-note.module.scss'
-import * as hero from '../styles/hero.module.scss'
+import * as styles from '../styles/index.module.scss'
+// import * as styles from '../styles/top-note.module.scss'
+// import * as hero from '../styles/hero.module.scss'
 // import { GatsbyImage } from 'gatsby-plugin-image'
 // import Head from '../components/head'
 
@@ -40,11 +41,11 @@ class RootIndex extends React.Component {
           </article>
         </section>
         <div className="mno">
-        <section className={hero.solidimage}>
-          <div className={hero.hero}>
+        <section className={styles.solidimage}>
+          <div className={styles.hero}>
           {/* <GatsbyImage className={hero.image} alt={author.name} image={author.heroImage.gatsbyImage} /> */}
-            <div className={hero.details}>
-              <h1 className={hero.title}>BLOG</h1>
+            <div className={styles.details}>
+              <h1 className={styles.title}>BLOG</h1>
             </div>
           </div>
         </section>

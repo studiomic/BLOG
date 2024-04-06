@@ -5,7 +5,6 @@ import get from 'lodash/get'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 import * as styles from '../styles/hero.module.scss'
-// import Seo from '../components/seo'
 
 class BlogIndex extends React.Component {
   render() {
