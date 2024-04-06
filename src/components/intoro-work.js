@@ -1,33 +1,20 @@
 import React from 'react'
-import * as istyles from '../styles/components/intoro-work.module.scss'
+import * as styles from '../styles/components/intoro-work.module.scss'
 
 const Introduction = () => (
-  <div className={istyles.intoro} loading="lazy">
-    <div className={istyles.grid}>
-      <section className={istyles.grid1}>
-
+  <div className={styles.intoro} loading="lazy">
+    <div className={styles.grid}>
+      <section className={styles.grid1}>
+        {/* <p>in the trade name</p> */}
       </section>
-      <section className={istyles.grid2}>
+      <section className={styles.grid2}>
         <article>
-          <h1 className={istyles.title}>Design Work</h1>
-          <p>Je suis Designer et Web Developer</p>
+          <h1 className={styles.title}>Design Work</h1>
         </article>
       </section>
-      <section className={istyles.grid3}>
-
+      <section className={styles.grid3}>
+        {/* <p>Studio Mic</p> */}
       </section>
-
-
-
-
-
-
-
-
-
-
-
-    
     </div>
   </div>
 )

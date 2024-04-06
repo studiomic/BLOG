@@ -35,33 +35,38 @@
   --modeButtonBg: #f3f3f3;
   --modeButtonBg: #f0f0f0;
   --tagBg: var(--black-fade-5);
+  //workPages
+	// --duskGray: #292f3b;
+	// --shineWhite: #f4f4f4;
 }
 .darkmode {
   --background:#2c2d32;
-  // body {
-    --text-color: #ddd;
-    --dlborderColor:#666;
-    --notedlColor: #999;
-    --aboutBorder: #555;
-    --detailsBg: #17191f;
-    --borderColor: #555;
-    // --modeButtonBg: #494a50;
-    --modeButtonBg: #42444c;
-    --tagBg: #494a50;
-  // }
+  --text-color: #ddd;
+  --dlborderColor:#666;
+  --notedlColor: #999;
+  --aboutBorder: #555;
+  --detailsBg: #17191f;
+  --borderColor: #555;
+  --modeButtonBg: #42444c;
+  --tagBg: #494a50;
+  //workPages
+	// --duskGray: #f4f4f4;
+	// --shineWhite: #292f3b;
+	// --shineWhite: #272f3a;//292f3b;
 }
 .blackmode {
   --background: #000;
-  // body {
-    --text-color: #ddd;
-    --dlborderColor:#666;
-    --notedlColor: #999;
-    --aboutBorder: #555;
-    --detailsBg: #222;
-    --borderColor: #555;
-    --modeButtonBg: #404146;
-    --tagBg: #404146;
-  // }
+  --text-color: #ddd;
+  --dlborderColor:#666;
+  --notedlColor: #999;
+  --aboutBorder: #555;
+  --detailsBg: #222;
+  --borderColor: #555;
+  --modeButtonBg: #404146;
+  --tagBg: #404146;
+  //workPages
+	// --duskGray: #f4f4f4;
+	// --shineWhite: #272f3a;//292f3b;
 }
 
 html {
