@@ -4,7 +4,7 @@
 // 6 2 7
 // 8 2 7
 // 9 2 10
-// --duskGray: #272f3a;
+//	--duskGray: #272f3a;
 // 	--duskGray: #292f3b;
 // 	--lunaGray: #a6b1b5;
 // 	--shineWhite: #f4f4f4;
@@ -18,47 +18,58 @@
 // 	display: block;
 // 	background: var(--paperSoftness);
 // }
+// .worksDetails {
 
+.figset::-webkit-scrollbar {
+	display:none;
+}
 
 .figset {
 	display: flex;
-	flex-direction: column;
-	article {
+	align-items: center;
+	overflow-x: scroll;
+	-ms-overflow-style: none;// スクロールバー非表示（IE・Edge）
+	scrollbar-width: none;// スクロールバー非表示（Firefox）
+	padding: var(--space-3xl);
+	padding-right: 300px;
+	details {
+		// border: 1px solid salmon;
+		margin: 0;
+		padding: 0;
+		font-size: small;
 		position: relative;
-	}
-
-	// justify-content: center;
-	// overflow-x: scroll;
-	// margin: 0 var(--space-3xl);
-	// border: 1px solid salmon;
-	// animation: loop 20s linear -60s both;
-	// animation: loop 30s infinite linear -60s both;
-	// &:hover {
-	// 		animation-play-state: paused;
-	// }
-	figure {
-		// padding: calc(var(--space-3xl)*1.5) var(--space-xl);
-		// gap: var(--space-xl);
-		// margin: 0;
-		// margin: var(--space-xl) var(--space-xl);
-		// margin: 0;
-		// padding: 0;
-		// display: inline-block;
-		// text-align: center;
-		
-		
-		div {
-			border: 0;
-			border-top: 1px solid var(--shineWhite);
-			border-left: 1px solid var(--shineWhite);
-			
-			// border: 1px solid tomato;
-			// margin-top: -100px;
-			// padding-bottom: 100px;
-			// box-shadow: 0px 1px 50px var(--paperSoftness);
-			// box-shadow: 0px 1px 10px var(--shineWhite);
-			// box-shadow: 0px 0px 50px var(--boxShadow);
+		p {
+			white-space: nowrap;
+			line-height: 1;
 		}
+	}
+	summary {
+		display: block;
+		list-style: none;
+	}
+	summary::-webkit-details-marker {
+		display: none; /* 矢印を消す */
+	}
+	aside {
+		position: absolute;
+		left: 0;
+		bottom: -2em;
+		// background: var(--paperSoftness);
+		// background: var(--shineWhite);
+		background: var(--background);
+		padding: 1em 1em 1em 3em;
+		// opacity: 0.9;
+		z-index: 7;
+		width: 85%;
+		// margin: 0 var(--space-2xl) 0 0;
+	}
+	figure {
+		margin: 0 var(--space-2xl);
+		// box-shadow: 0px 1px 50px var(--paperSoftness);
+		// box-shadow: 0px 1px 10px var(--shineWhite);
+		// box-shadow: 0px 0px 10px var(--boxShadow);
+		cursor: pointer;
+		// border: 1px solid tomato;
 		img {
 			width: 340px;
 			min-width: 340px;
@@ -67,62 +78,10 @@
 			object-fit: cover;
 			object-position: left top;
 			z-index: 2;
-
-			// border: 10px solid #999;
 		}		
 	}
-	figcaption {
-		display: block;
-		// position: absolute;
-		background: var(--shineWhite);
-		// border: 1px solid tomato;
-		// top:0;
-		bottom: 0;
-		z-index: 1;
-		width: 100%;
-		width: 90%;
-		height: 150px;
-		margin-top: -120px;
-		// padding-top: 150px;
-		text-align: right;
-
-		// view-timeline-name: --reveal;
-		// view-timeline-axis: block;
-
-		// animation-name: fadeinRight;
-		// animation-duration: 2s;
-		// animation-timing-function: linear;
-		// animation-timeline: --reveal;
-		// animation-range: entry 25% cover 50%;
-		// animation-fill-mode: forwards;
-		// animation-timeline: view();
-		// animation-timeline: scroll();
-		// // animation-iteration-count: infinite;
-		// animation-
-
-		// animation: linear both;
-
-		// animation: fadeinRight linear both;
-		// animation-timeline: view();
-		// animation-range: entry 25% cover 50%;
-
-
-		animation: grow-progress linear;
-    animation-timeline: scroll();
-
-		
-	}
-	article{height: 100vh;}
 }
 
-// .revealingimage {
-// 	view-timeline-name: --revealingimage;
-// 	view-timeline-axis: block;
-
-// 	animation: linear reveal both;
-// 	animation-timeline: --revealingimage;
-// 	animation-range: entry 25% cover 50%;
-// }
 
 
 
@@ -131,27 +90,26 @@
 		transform: translateX(-100%);
     opacity: 0;
 		// clip-path: inset(45% 20% 45% 20%);
-
 	}
 	100% {
 		transform: translateX(0);
     opacity: 1;
 		// clip-path: inset(0% 0% 0% 0%);
-
 	}
 }
 
+			// border: 10px solid #999;
 
-@keyframes grow-progress {
-	from {
-		scale: 1 0;
-    opacity: 0;
+// div {
+// 	border: 1px solid salmon;
+// 	border: 0;
+// 	// border-top: 1px solid var(--shineWhite);
+// 	// border-left: 1px solid var(--shineWhite);
+// }
 
-	}
-	to {
-		scale: 1 1;
-    opacity: 1;
-
-	}
-}
-
+	// border: 1px solid salmon;
+	// animation: loop 20s linear -60s both;
+	// animation: loop 30s infinite linear -60s both;
+	// &:hover {
+	// 		animation-play-state: paused;
+	// }

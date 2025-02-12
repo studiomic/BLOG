@@ -32,10 +32,8 @@
 
 .grid1 {
 	background: var(--shineWhite);
-	color: var(--duskGray);
-	// p {
-	// 	transform: rotate(-45deg)
-	// }
+	// color: var(--duskGray);
+	// color: var(--text-color);
 }
 .grid2 {
 	background: var(--lunaGray);
@@ -46,14 +44,13 @@
 }
 .grid3 {
 	background: var(--duskGray);
-	color: var(--shineWhite);
-	// p {
-	// 	transform: rotate(-45deg)
-	// }
+	// opacity: 0.5;
+	// color: var(--shineWhite);
+	// color: var(--background);
+	// color: #000;
 }
 
 .intoro {
-	// border: red 2px solid;
 	background: url(./../../asset/img/carmen-martinez-K4uj-VPRjJc-unsplash.png);//1
 	background-size: contain;
 	background-size: cover;
@@ -64,7 +61,9 @@
 	margin: var(--space-xl) 0 0;
 	padding: 0;
 	width: 100%;
+	
 	// height: 45dvh;
+	// border: red 2px solid;
 
 	// height: 40dvh;
 	// margin: var(--space-xl) 0 0;
@@ -109,9 +108,6 @@
 	}
 }
 
-		// background-position: top;
-
-
 // @container main (min-width: 820px) {
 // 	.intoro {
 // 		background-position: center;
@@ -123,19 +119,22 @@
 	.grid {
 		grid-template-rows: 32dvh;
 	}
-	// 	.intoro {
+}
+
+// 	.intoro {
 // 		height: 45dvh;
 // 		background-position: 0 -340px;
 // 		background-position: top;
 // 		padding: calc( var(--space-2xl)*3);
 // 		}
-	}
 	
 @container main (min-width: 1200px) {
 	.grid {
 		grid-template-rows: 42dvh;
 	}
-	// 	.intoro {
+}
+
+// 	.intoro {
 // 		// background-attachment: fixed;
 // 		// background-position: center;
 // 		// background-attachment:scroll;
@@ -148,7 +147,6 @@
 // 		// background-position: 0 50dvh;
 // 		// height: 50dvh;
 // 	}
-}
 
 // @container main (min-width: 768px) {}
 // @container main (min-width: 1024px) {}
