@@ -79,4 +79,4 @@ z-needs
 .vscode
 znetlify
 
-src/pages/notes/asset/
+# src/pages/notes/asset/
