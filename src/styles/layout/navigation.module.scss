@@ -6,6 +6,8 @@
   padding: var(--space-lg) var(--size-gutter) 0;
   max-width: var(--size-max-width);
   // container: nav-container / inline-size;
+  // border: 1px solid cyan;
+  // margin-bottom: 100px;
 }
 
 .navigation {
@@ -18,7 +20,6 @@
 }
 
 .navigationItem {
-  // border: 1px solid cyan;
   display: inline-flex;
   align-items: center;
   flex-direction: row;
@@ -43,7 +44,6 @@
     img {
       filter: invert(70%);
       // opacity: .5;
-      // border: 2px solid red;
     }
   }
 }
@@ -63,5 +63,6 @@ label {
     transform: scale(0.8, 0.8);
   }
 }
+
 // @container main (min-width: 768px) {}
 // @container main (min-width: 1024px) {}

@@ -20,8 +20,8 @@ const Navigation = () => (
     </Link>
     <ul className={styles.navigation}>
       <li className={styles.navigationItem}>
-        <Link to="/test/" activeClassName="active">
-          TEST
+        <Link to="/new-index/" activeClassName="active">
+          index
         </Link>
       </li>
       <li className={styles.navigationItem}>

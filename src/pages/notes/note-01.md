@@ -3,6 +3,7 @@ title: "Article Style Variables"
 date: "2023-06-03 10:00:00"
 slug: 'note-01-styles'
 description: "HTML Elements Style and Color"
+featuredImage: "asset/f2f2f2.png"
 ---
 <section style="margin-bottom: 4em;">
 このPostはStyleサンプルです。文章は夏目漱石「こころ」より抜粋。

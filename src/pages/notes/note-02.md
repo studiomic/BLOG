@@ -3,6 +3,7 @@ title: "BlogにContentfulのTags機能を追加した"
 date: "2023-06-04 18:00:00"
 slug: 'note-02-ContentfulTags'
 description: "Gatsby+Contentful Tags"
+featuredImage: "asset/f2f2f2.png"
 ---
 Contentfulは、何というかHello Worldなお世界というか、あぁこれが世界かぁ！と井の中の蛙、今更に大海を知るみたいなワクワク感がたくさんあって。
 
