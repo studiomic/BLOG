@@ -4,6 +4,7 @@ date: "2023-05-20 10:00:00"
 slug: 'code-syntaxHighlighter'
 description: "contentful リッチテキストで codeシンタックスハイライトを使う"
 featuredImage: "asset/Caelus.avif"
+tag: 'Contentful,Gatsby.js,Rich-Text'
 ---
 このブログポストは今日現在、Gatsby＋Contentful＋netlifyで公開している。 プロジェクトスターターにContentful社のstarter-gatsby-blogを使ったので、ContentfulにあるBlog Postとの連携まではやたらスムーズだった。
 

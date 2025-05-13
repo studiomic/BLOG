@@ -4,6 +4,7 @@ date: "2022-12-05 10:00:00"
 slug: '2022-25'
 description: "WordPressで書いた記事"
 featuredImage: "asset/macbook-air-3.avif"
+tag: 'eM Client'
 ---
 近頃変わったこと。レンタルサーバーを移転したためオマケの無料ドメインなど得て、オートスタートでConoHaが設置してくれたのがこのブログ・サイト。 有料テーマのいくつかは管理画面から購入できるようで、無料テーマは「Cocoon」のみ。 あのテーマカスタマイズ画面は二度と見たくない悪印象で無料ではじめると二度手間かぁと思いかけたが、インストール時点で選択されているのはWordPress公式の「Twenty Twenty-Three」だった。
 

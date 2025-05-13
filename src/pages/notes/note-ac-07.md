@@ -4,6 +4,7 @@ date: "2023-06-18 10:00:00"
 slug: 'JOJOT'
 description: "ウルトラジャンプ特大号の全員プレゼント到着ぅ！"
 featuredImage: "asset/IMG_3484.avif"
+tag: 'JOJO'
 ---
 ジョディオのTシャツ、東方定助と康穂ちゃんのTシャツよりひとまわりくらい大きくて夏に着やすそうで良い。
 

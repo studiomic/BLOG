@@ -4,6 +4,7 @@ date: "2023-02-11 10:00:00"
 slug: 'Mac-mini-M2'
 description: "Blog「サクライロノペン」のポスト"
 featuredImage: "asset/IMG_2066-1536x1152.avif"
+tag: 'Mac mini'
 ---
 <h2>Mac mini M2</h2>
 
