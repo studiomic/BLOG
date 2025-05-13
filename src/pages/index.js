@@ -6,10 +6,6 @@ import Seo from '../components/seo'
 import Intoro from '../components/intoro-top'
 import ArticlePreview from '../components/article-preview'
 import * as styles from '../styles/index.module.scss'
-// import * as styles from '../styles/top-note.module.scss'
-// import * as hero from '../styles/hero.module.scss'
-// import { GatsbyImage } from 'gatsby-plugin-image'
-// import Head from '../components/head'
 
 class RootIndex extends React.Component {
   render() {
