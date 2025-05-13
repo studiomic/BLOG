@@ -4,11 +4,7 @@ import { Link, graphql } from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from '../components/layout'
 import Seo from '../components/seo'
-import * as herostyles from '../styles/hero.module.scss'
 import * as styles from '../styles/note.module.scss'
-
-// import * as blogstyles from '../styles/note.module.scss'
-
 import '../styles/css/dracula-prism.css'
 import '../styles/css/init.css'
 
@@ -21,22 +17,21 @@ class NotesPostTemplate extends React.Component {
 
 		return (
 			<Layout>
-				<div className={herostyles.hero}>
-					{featuredImg && (
-						<GatsbyImage className={herostyles.image} alt="featuredImg" image={featuredImg} />
-					)}
-					<div className={herostyles.details}>
-						<h1 className={herostyles.title}>{posts.frontmatter.title}</h1>
-							<div className={herostyles.content}>{posts.frontmatter.description}</div>
-					</div>
-				</div>
-
 				<div className={styles.container}>
-					<p className={styles.meta}>
-							{posts.frontmatter.date}<span> –{' '}
-							{posts.timeToRead} minute read</span>
-					</p>
 					<div className={styles.article}>
+						<header>
+							<h1>{posts.frontmatter.title}</h1>
+							<p>{posts.frontmatter.date}<span className={styles.meta}> –{' '}
+							{posts.timeToRead} minute read</span></p>
+							<p>{posts.frontmatter.description}</p>
+						</header>
+
+						{featuredImg && (
+						<div className={styles.featuredImg}>
+							<GatsbyImage image={featuredImg} />
+						</div>
+						)}
+
 						<article className={styles.postBody} dangerouslySetInnerHTML={{ __html: html }} />
 						<nav>
 							<ul className={styles.articleNavigation}>

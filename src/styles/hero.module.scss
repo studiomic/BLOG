@@ -19,27 +19,26 @@
 
 .solidimage {
   margin: 0;
-  // border-top: 140px solid #000;
   .image {
     max-height: 480px;
-    // filter: saturate(50%);
-    // filter: sepia(50%);
-    // filter: grayscale(40%);
-    // border-radius: 50px;
   }
+}
+// border-top: 140px solid #000;
+// filter: saturate(50%);
+// filter: sepia(50%);
+// filter: grayscale(40%);
+// border-radius: 50px;
   // .details {
   //   // border-radius: 0 25px;
   //   // text-align: right;
-
   // }
-}
 
 .details {
   background: var(--background);
   left: 0;
   max-width: 40rem;
   width: 85%;
-  padding: var(--space-2xl) var(--size-gutter) 0;
+  padding: var(--space-2xl) var(--size-gutter);
   position: absolute;
 }
 
@@ -55,6 +54,7 @@
   font-size: var(--text-lead);
   font-weight: var(--semibold);
   margin: 0;
+  // line-height: var(--loose);
 }
 
 @container main (min-width: 480px) {
@@ -66,6 +66,7 @@
 @container main (min-width: 768px) {
   .hero {
     padding: var(--size-gutter) var(--space-3xl) var(--size-gutter) 0;
+    // border: 1px solid crimson;
   }
   .details {
     max-width: 44rem;
