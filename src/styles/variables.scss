@@ -1,11 +1,12 @@
 :root {
   // --font-sans: 'Helvetica Neue', sans-serif;
-  --font-sans: "Roboto", "Noto Sans JP", sans-serif;
+  --font-sans: "Roboto", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro","Noto Sans JP", sans-serif;
   --font-sans2: "LINE Speed JP", sans-serif;
-  // --font-sans: "system-ui", sans-serif;Noto Sans JP
+  // --font-sans: "system-ui", sans-serif;
   --font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
     'Courier New', monospace;
   --font-serif: 'Times New Roman', Times, serif;
+  --font-serif-JP: 'Noto Serif JP', Times, serif;
 
   /* palette */
   --white: #fff;

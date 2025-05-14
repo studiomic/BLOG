@@ -31,16 +31,12 @@ class RootIndex extends React.Component {
 						<div className={styles.rowline2}></div>
 						<div className={styles.rowline3}></div>
 						<div className={styles.free5}></div>
+						{/* <div className={styles.grid}></div>
 						<div className={styles.grid}></div>
-						<div className={styles.grid}></div>
-						<div className={styles.grid}></div>
+						<div className={styles.grid}></div> */}
 					</div>
 
 					<div className={styles.wrapper}>
-						<div className={styles.grid}>1</div>
-						<div className={styles.grid}>2</div>
-						<div className={styles.grid}>3</div>
-						
 						<div className={styles.notepost}>
 							<h1 className={styles.title}>Notes</h1>
 								{notes.map((edge) => (
@@ -58,7 +54,7 @@ class RootIndex extends React.Component {
 							))}
 						</div>
 						
-						<div className={styles.grid}>2</div>
+						{/* <div className={styles.grid}>2</div>
 						<div className={styles.grid}>2</div>  
 						<div className={styles.grid}>2</div>
 						<div className={styles.grid}>3</div>
@@ -66,7 +62,9 @@ class RootIndex extends React.Component {
 						<div className={styles.grid}>3</div>
 						<div className={styles.grid}>4</div>
 						
-						
+						<div className={styles.grid}>1</div>
+						<div className={styles.grid}>2</div>
+						<div className={styles.grid}>3</div> */}
 
 					</div>
 				</section>

@@ -33,7 +33,7 @@
 .grid {
   // background: #ddd;
   // background: #ddd;
-  padding: 10px;
+  // padding: 10px;
   // border-radius: 8px;
   border: 1px solid #eee;
 }
@@ -164,8 +164,8 @@ header {
   grid-template-rows: auto auto auto;
 	grid-template-rows: repeat(6,400px) auto;
 	// height: 65dvh;
-	padding-bottom: var(--space-xl);
-  border-bottom: 1px solid var(--border);
+	// padding-bottom: var(--space-xl);
+  // border-bottom: 1px solid var(--border);
 }
 
 .notepost {
