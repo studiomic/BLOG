@@ -41,7 +41,7 @@ class RootIndex extends React.Component {
 						<div className={styles.notepost}>
 							<h1 className={styles.title}>Notes</h1>
 								{notes.map((edge) => (
-								<div key={edge.id} className={styles.top}>
+								<div key={edge.id} className={styles.postloop}>
 									<h2>
 										<Link to={`/notes/${edge.node?.frontmatter.slug}`}>
 											{edge.node.frontmatter.title}
@@ -56,12 +56,12 @@ class RootIndex extends React.Component {
 						</div>
 						
 						<div className={styles.lamp} loading="lazy"></div>
-						<div className={styles.bggrid}>2</div>  
+						{/* <div className={styles.bggrid}>2</div>  
 						<div className={styles.grid}>2</div>
 						<div className={styles.grid}>3</div>
 						<div className={styles.grid}>3</div>
 						<div className={styles.grid}>3</div>
-						<div className={styles.grid}>4</div>
+						<div className={styles.grid}>4</div> */}
 						
 						{/* <div className={styles.grid}>1</div>
 						<div className={styles.grid}>2</div>

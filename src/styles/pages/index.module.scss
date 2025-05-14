@@ -17,6 +17,9 @@
   // container: nav-container / inline-size;
 }
 
+// INDEX - HEADER < INTORO
+// ------------------------------*/
+
 .layoutGrid {
 	display: grid;
   // gap: 2rem;
@@ -140,13 +143,8 @@ header {
 	}
 }
 
-
-
-
-
-
-
-
+// INDEX - POST GRID
+// ------------------------------*/
 .wrapper {
 	margin-top: var(--size-gutter);
 	position: relative;
@@ -193,7 +191,7 @@ header {
 	// border: 1px solid tomato;
 }
 
-.top { 
+.postloop { 
 	h2 {
 		font-family: serif;
 		font-size: var(--text-2xl);
@@ -224,7 +222,6 @@ header {
 	// background: url("../../asset/img/bundo-kim-IStZpF3ZeiQ-unsplash2.avif") no-repeat center top;
 	background: url("../../asset/img/marc-olivier-jodoin-j2veIzsS9sY-unsplash-1680.avif") no-repeat;
 	background-size: cover;
-
 	// transform: skew(15deg,15deg);
 	// transform: rotate(7deg);
 	// background-size: contain;
@@ -283,16 +280,24 @@ header {
 	border-right: 38px solid var(--white);
 	&::before,&::after {
 		position: absolute;
-	}
-	&::before {
 		content: '';
 		display: block;
+	}
+	&::before {
 		background: var(--duskGray);
-		width: 48px;
-		left: - 64px;
-		top: var(--size-gutter);
+		width: 54px;//48px;
+		left: - 70px;
+		top: calc( var(--size-gutter)*1.2);
+		bottom: 0;
+	}
+	&::after {
+		background: var(--shineWhite);
+		width: 54px;
+		left: 70px;
+		top: calc( var(--size-gutter)*3);
 		bottom: 0;
 		z-index: 4;
+		
 	}
 }
 
