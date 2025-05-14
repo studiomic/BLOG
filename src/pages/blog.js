@@ -4,7 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import get from 'lodash/get'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
-import * as styles from '../styles/hero.module.scss'
+import * as styles from '../styles/components/hero.module.scss'
 
 class BlogIndex extends React.Component {
   render() {

@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from '../components/layout'
 import Seo from '../components/seo'
-import * as herostyles from '../styles/hero.module.scss'
+import * as herostyles from '../styles/components/hero.module.scss'
 import * as styles from '../styles/note.module.scss'
 
 // import * as blogstyles from '../styles/note.module.scss'

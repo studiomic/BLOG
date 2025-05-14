@@ -5,7 +5,7 @@ import Seo from '../components/seo'
 import Layout from '../components/layout'
 import Container from '../components/container'
 import ArticlePreview from '../components/article-preview'
-import * as styles from '../styles/hero.module.scss'
+import * as styles from '../styles/components/hero.module.scss'
 import * as tagstyles from '../styles/tags.module.scss'
 
 class TagIndex extends React.Component {
