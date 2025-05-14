@@ -23,6 +23,7 @@ class RootIndex extends React.Component {
 								<p>Development 26th</p>
 							</header>
 							<section>
+								{/* <h3>Blog et Gatsby Pages de Cerise</h3> */}
 								<h3>Studio Mic</h3>
 								<p>スタジオミック</p>
 							</section>
@@ -55,7 +56,7 @@ class RootIndex extends React.Component {
 						</div>
 						
 						<div className={styles.lamp} loading="lazy"></div>
-						<div className={styles.grid}>2</div>  
+						<div className={styles.bggrid}>2</div>  
 						<div className={styles.grid}>2</div>
 						<div className={styles.grid}>3</div>
 						<div className={styles.grid}>3</div>

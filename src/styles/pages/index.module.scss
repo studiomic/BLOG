@@ -38,18 +38,24 @@
   // border: 1px solid #eee;
 	section {
 		display: block;
-		transition: deg(50px);
-		margin: var(--space-xl) 0 0 auto;
-		width: 40%;
+		// display: flex;
+		// transition: deg(50px);
+		margin: 0 0 0 auto;
+		margin: -2em 0 2em auto;
 		text-align: center;
+		width: 40%;
 		// background: url("../../asset/img/914575.avif") no-repeat;
 		// background-size: contain;
-		// transform: rotate(-14deg);
+		
 		// border: 1px solid crimson;
 		// text-orientation: upright;
 		// writing-mode: vertical-rl;
 		h3 {
 			font-size: 2.2em;
+			// font-size: 1.2em;
+			// text-transform: uppercase;
+
+
 			margin: 0;
 			// background: url("../../asset/img/note-thanun-dOFpWEml0nw-unsplash.avif") no-repeat center bottom;
 			// background: url("../../asset/img/carmen-martinez-K4uj-VPRjJc-unsplash.jpg") no-repeat right bottom;
@@ -104,7 +110,6 @@ header {
 		font-weight: 400;
 	}
 	h1 {
-		
 		background: url("../../asset/img/carmen-martinez-K4uj-VPRjJc-unsplash.jpg") no-repeat center bottom;
 		background-size: cover;
 		font-size: 8em;
@@ -151,7 +156,7 @@ header {
   // max-width: var(--size-max-width);
 	display: grid;
 	grid-column-gap: var(--size-gutter);
-	grid-row-gap: 0;
+	grid-row-gap: var(--size-gutter);
 	grid-template-columns: 1fr 1fr 1fr auto;
   // grid-template-rows: 40dvh 10dvh auto;
   grid-template-rows: auto auto auto;
@@ -219,6 +224,9 @@ header {
 	// background: url("../../asset/img/bundo-kim-IStZpF3ZeiQ-unsplash2.avif") no-repeat center top;
 	background: url("../../asset/img/marc-olivier-jodoin-j2veIzsS9sY-unsplash-1680.avif") no-repeat;
 	background-size: cover;
+
+	// transform: skew(15deg,15deg);
+	// transform: rotate(7deg);
 	// background-size: contain;
 	// opacity: .8;
 	animation-name: filters;
@@ -265,6 +273,28 @@ header {
 	}
 }
 
+.bggrid {
+	grid-column: 2/3;
+	grid-row: 3/4;
+	position: relative;
+	// background: var(--primary);
+	background-color: #EADD36;
+	border-left: 38px solid var(--white);
+	border-right: 38px solid var(--white);
+	&::before,&::after {
+		position: absolute;
+	}
+	&::before {
+		content: '';
+		display: block;
+		background: var(--duskGray);
+		width: 48px;
+		left: - 64px;
+		top: var(--size-gutter);
+		bottom: 0;
+		z-index: 4;
+	}
+}
 
 
 

@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from './../components/layout'
 import Intoro from './../components/intoro-work'
 import Loop from './../components/workloop'
-import * as styles from './../styles/work.module.scss'
+import * as styles from './../styles/pages/work.module.scss'
 
 export default function work() {
 	return (

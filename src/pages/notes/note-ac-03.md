@@ -2,7 +2,7 @@
 title: "M2 Mac mini"
 date: "2023-02-09 10:00:00"
 slug: 'm2-mac-mini'
-description: "そこに在るのを忘れる存在をの小ささが好き。 慎ましやかな働きもの。"
+description: "そこに在るのを忘れる存在の小ささが好き。 慎ましやかな働きもの。"
 featuredImage: "asset/IMG_1968-2-1536x2048.avif"
 tag: 'Mac mini'
 ---

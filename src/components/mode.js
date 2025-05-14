@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import * as styles from '../styles/toggle.module.scss'
+import * as styles from '../styles/components/toggle.module.scss'
 
 const Modebutton = () => {
   // localStorage.clear();
