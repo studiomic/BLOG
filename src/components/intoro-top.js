@@ -1,5 +1,5 @@
 import React from 'react'
-import * as styles from '../styles/intoro-top.module.scss'
+import * as styles from '../styles/components/intoro-top.module.scss'
 
 const Introduction = () => (
   <div className={styles.intoro} loading="lazy">
