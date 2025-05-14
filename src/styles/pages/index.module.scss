@@ -22,30 +22,58 @@
   // gap: 2rem;
 	grid-column-gap: 1rem;
 	grid-row-gap: 0;
-	grid-template-columns: auto 3rem 3rem 3rem 5rem;
-  grid-template-rows: 30dvh 30dvh 30dvh;
-  grid-template-rows: auto auto auto;
+	grid-template-columns: auto 3rem 3rem 3rem 1rem;
+  grid-template-rows: 40dvh 10dvh auto;
+  // grid-template-rows: auto auto auto;
 	// height: 65dvh;
+	padding-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--border);
 }
 
 .grid {
   // background: #ddd;
   // background: #ddd;
-  // padding: 10px;
+  padding: 10px;
   // border-radius: 8px;
   border: 1px solid #eee;
-
 }
-
 
 .headers {
 	grid-column: 1/1;
 	grid-row: 1/4;
 	// background: #fefefe;
 	// background: PINK;
-  border: 1px solid #eee;
-
+  // border: 1px solid #eee;
+	section {
+		display: block;
+		transition: deg(50px);
+		margin: var(--space-xl) 0 0 auto;
+		width: 40%;
+		text-align: center;
+		// transform: rotate(-14deg);
+		// border: 1px solid crimson;
+		// text-orientation: upright;
+		// writing-mode: vertical-rl;
+		h3 {
+			font-size: 2.5em;
+			margin: 0;
+			// background: url("../../asset/img/note-thanun-dOFpWEml0nw-unsplash.avif") no-repeat center bottom;
+			// background: url("../../asset/img/carmen-martinez-K4uj-VPRjJc-unsplash.jpg") no-repeat right bottom;
+			// -webkit-background-clip: text;
+			// background-clip: text;
+			// color: transparent;
+			// background-size: cover;
+			font-weight: 300;
+		}
+		h3 + p {
+			margin: -.6em 0 0;
+			font-size: 1.5em;
+			font-family: var(--font-sans2);
+			// border: 1px solid cyan;
+		}
+	}
 }
+
 .rowline1 {
 	grid-column: 2/2;
 	grid-row: 1/3;
@@ -67,36 +95,34 @@
 .free5 {
 	grid-column: 5/5;
 	grid-row: 1/4;
-  border: 1px solid #eee;
+  // border-right: 1px solid var(--border);
 }
 
+.center {
+	text-align: center;
+}
+
+// h1,h2,h3,p {
+// }
 
 header {
-	margin: var(--space-3xl) 0 0;
-	// border: 1px solid crimson;
-
-	h1,h2,h3 {
-		border: 1px solid cyan;
-	}
+	// border: 1px solid cyan;
+	// margin: var(--space-3xl) 0 0;
 	h2,h3 {
 		font-weight: 400;
 	}
-
-
 	h1 {
-		// background: url("../../asset/img/carmen-martinez-K4uj-VPRjJc-unsplash.jpg") no-repeat center center;
-		background: url("../../asset/img/note-thanun-dOFpWEml0nw-unsplash.avif") no-repeat center bottom;
+		// background: url("../../asset/img/note-thanun-dOFpWEml0nw-unsplash.avif") no-repeat center bottom;
 		background: url("../../asset/img/carmen-martinez-K4uj-VPRjJc-unsplash.jpg") no-repeat center bottom;
 		background-size: cover;
 		font-size: 8em;
 		font-size: 7.2svw;
-		// line-height: 1.2;
-		// margin: 0;
+		margin-top: .8em;
 		margin-bottom: var(--space-3xl);
 		-webkit-background-clip: text;
 		background-clip: text;
 		color: transparent;
-		// color: var(--shineWhite);
+		// border: 1px solid cyan;
 	}
 	h2 {
 		margin: 0;
@@ -105,26 +131,40 @@ header {
 	}
 	h2 + p {
 		font-size: 3em;
-		border: 1px solid cyan;
 		margin: 0;
-		// padding: 0;
 		line-height: 1;
+		// border: 1px solid cyan;
 	}
 	h3 {
 		margin: 0;
 		font-size: 3em;
 		text-transform: uppercase;
-
-		border: 1px solid cyan;
+		// border: 1px solid cyan;
 	}
 }
 
 
+
+
+
+
+
+
 .wrapper {
-	position: relative;
-	padding: 0 var(--size-gutter);
-	padding: var(--space-lg) var(--size-gutter) 0;
-  max-width: var(--size-max-width);
+	margin-top: var(--size-gutter);
+	// position: relative;
+	// padding: 0 var(--size-gutter);
+	// padding: var(--space-lg) var(--size-gutter) 0;
+  // max-width: var(--size-max-width);
+	display: grid;
+	grid-column-gap: 1rem;
+	grid-row-gap: 0;
+	grid-template-columns: 20dvh 20dvh 20dvh auto;
+  // grid-template-rows: 40dvh 10dvh auto;
+  grid-template-rows: 20dvh 20dvh 20dvh;
+	// height: 65dvh;
+	padding-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--border);
 }
 
 @container main (min-width: 768px) {
@@ -133,21 +173,21 @@ header {
 		margin: 0 auto;
 		// border: 1px solid tomato;
 	}
-	.wrapper {
-		gap: var(--space-xl);
-		// border: 1px solid tomato;
-	}
+	// .wrapper {
+	// 	gap: var(--space-xl);
+	// 	// border: 1px solid tomato;
+	// }
 }
 
 @container main (min-width: 1024px) {
-	.wrapper {
-		width: calc(85% - var(--size-gutter));
-		display: block;
-		margin: 0 auto;
-		// .title {
-		// 	margin: -60px 0 var(--space-3xl);
-		// }
-	}
+	// .wrapper {
+	// 	width: calc(85% - var(--size-gutter));
+	// 	display: block;
+	// 	margin: 0 auto;
+	// 	// .title {
+	// 	// 	margin: -60px 0 var(--space-3xl);
+	// 	// }
+	// }
 }
 
 // border: 1px solid cyan;

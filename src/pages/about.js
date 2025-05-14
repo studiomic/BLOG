@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
 import Intoro from '../components/intoro-about'
-import * as styles from '../styles/about.module.scss'
+import * as styles from '../styles/pages/about.module.scss'
 import IMG from "../asset/img/sakana.png"
 import SNS from "../asset/svg/iconmonstr-instagram-11.svg"
 // import Seo from '../components/seo'
