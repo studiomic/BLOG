@@ -1,8 +1,9 @@
 :root {
-	--duskGray: #272f3a;
+	// --duskGray: #272f3a;
 	--duskGray: #292f3b;
 	--lunaGray: #a6b1b5;
 	--shineWhite: #f4f4f4;
+	--shineWhite2: #fafafa;
 	--paperSoftness: #d1bca1;
 	--intoroRow: 42dvh;
 }
@@ -30,7 +31,8 @@
   // grid-template-rows: auto auto auto;
 	// height: 65dvh;
 	padding-bottom: var(--space-xl);
-  border-bottom: 1px solid var(--border);
+  // border-bottom: 1px solid var(--border);
+	// margin-bottom: 120px;
 }
 
 .headers {
@@ -50,24 +52,21 @@
 		width: 40%;
 		// background: url("../../asset/img/914575.avif") no-repeat;
 		// background-size: contain;
-		
 		// border: 1px solid crimson;
 		// text-orientation: upright;
 		// writing-mode: vertical-rl;
 		h3 {
 			font-size: 2.2em;
+			font-weight: 300;
+			margin: 0;
 			// font-size: 1.2em;
 			// text-transform: uppercase;
-
-
-			margin: 0;
 			// background: url("../../asset/img/note-thanun-dOFpWEml0nw-unsplash.avif") no-repeat center bottom;
 			// background: url("../../asset/img/carmen-martinez-K4uj-VPRjJc-unsplash.jpg") no-repeat right bottom;
 			// -webkit-background-clip: text;
 			// background-clip: text;
 			// color: transparent;
 			// background-size: cover;
-			font-weight: 300;
 		}
 		h3 + p {
 			margin: -.6em 0 0;
@@ -100,12 +99,6 @@
 	grid-row: 1/4;
   // border-right: 1px solid var(--border);
 }
-// .center {
-// 	text-align: center;
-// }
-
-// h1,h2,h3,p {
-// }
 
 header {
 	// border: 1px solid cyan;
@@ -165,20 +158,19 @@ header {
   // border-bottom: 1px solid var(--border);
 }
 
-.grid {
-  // background: #ddd;
-  // background: #ddd;
-  // padding: 10px;
-  // border-radius: 8px;
-  border: 1px solid var(--border);
-}
+// .grid {
+//   // background: #ddd;
+//   // background: #ddd;
+//   // padding: 10px;
+//   // border-radius: 8px;
+//   border: 1px solid var(--border);
+// }
 
 .notepost {
 	grid-column: 4/5;
 	grid-row: 1/-1;
 	position: relative;
-  border-left: 1px solid var(--border);
-	// padding: 0;
+  // border-left: 1px solid var(--border);
 	padding: 0 0 0 var(--size-gutter);
 	.title {
 		font-family: serif;
@@ -223,8 +215,7 @@ header {
 	// background: url("../../asset/img/bundo-kim-IStZpF3ZeiQ-unsplash2.avif") no-repeat center top;
 	background: url("../../asset/img/marc-olivier-jodoin-j2veIzsS9sY-unsplash-1680.avif") no-repeat;
 	background-size: cover;
-	// transform: skew(15deg,15deg);
-	// transform: rotate(7deg);
+	
 	// background-size: contain;
 	// opacity: .8;
 	animation-name: filters;
@@ -233,18 +224,7 @@ header {
 	animation-fill-mode: forwards;
 	animation-iteration-count: infinite;
 	border-radius: 100% 0% 0% 100% / 0% 50% 50% 100%;
-	// border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
-	// border-radius: 68% 32% 22% 78% / 52% 49% 51% 48%;
-	// border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
-	// border-radius: 68% 32% 22% 78% / 44% 49% 51% 56%;
-	// border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
-	// border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
-	// border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
-	// border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
-	// border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
-	// border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
-	// border-radius:62% 38% 63% 37% / 40% 60% 40% 60%;
-	// border-radius: 68% 32% 52% 48% / 52% 49% 51% 48%;
+	
 }
 
 @keyframes filters {
@@ -297,7 +277,7 @@ header {
 
 
 
-		// transform: rotate(0.25turn);
+		
 		// white-space: nowrap;
 	}
 	&::before,&::after {
@@ -322,6 +302,72 @@ header {
 	}
 }
 
+// INDEX - About details
+// ------------------------------*/
+details {
+  border-bottom: 1px solid var(--border);
+	position: relative;
+	
+	// font-size: var(--text-lg);
+	// p {
+	// 	font-family: var(--font-serif-Yu);
+	// }
+}
+
+summary {
+	cursor: pointer;
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	list-style: none;
+	&:hover {
+    // background: #eee;
+    transition: all linear 2s;
+  }
+	span {
+		background: var(--border);
+		width: 2.4em;
+		height: calc(tan(60deg) * 2.2em / 2);
+		clip-path: polygon(0 0, 100% 0, 50% 100%);
+		margin-right: .5em;
+	}
+	h2 {
+		text-transform: uppercase;
+		font-weight: 300;
+	}
+}
+summary::-webkit-details-marker {
+	display: none;
+}
+
+details[open] {
+	// padding-bottom: var(--space-xl);
+	padding: 0 0 var(--space-xl) var(--size-gutter);
+	animation: accordion .5s linear;
+
+	summary {
+		flex-direction: column;
+		flex-direction: row-reverse;
+		// margin: 0 auto 0 0;
+	}
+	span {
+		clip-path: polygon(50% 0, 100% 100%, 0 100%);
+		margin-left: 1em;
+	}
+}
+
+@keyframes accordion {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 
 
 
@@ -330,10 +376,6 @@ header {
 		max-width: var(--size-max-width);
 		margin: 0 auto;
 	}
-	// .wrapper {
-	// 	gap: var(--space-xl);
-	// 	// border: 1px solid tomato;
-	// }
 }
 
 @container main (min-width: 1024px) {
@@ -347,5 +389,37 @@ header {
 	// }
 }
 
+
+// h3 {
+	// 	// background: var(--duskGray);
+	// 	// background: var(--lunaGray);
+	// 	// background: var(--shineWhite);
+	// 	display: inline-block;
+	// 	background: var(--border);
+	// 	font-weight: normal;
+	// 	// transform: skew(10deg,10deg);
+	// 	// transform: rotate(0.25turn);
+	// 	// transform:skewY(-7deg);
+	// 	transform: rotate(-7deg);
+	// 	// padding: calc(var(--size-gutter)/3);
+	// 	padding: .5em 1em;
+	// 	position: absolute;
+	// 	right: 0;
+	// 	top: 0;
+	// 	border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
+	// 	border-radius: 62% 38% 63% 37% / 40% 60% 40% 60%;
+	// 	border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
+	// 	border-radius: 68% 32% 22% 78% / 52% 49% 51% 48%;
+	// 	border-radius: 68% 32% 22% 78% / 44% 49% 51% 56%;
+	// 	border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
+	// 	border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
+	// 	// border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
+	// 	// border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
+	// 	// border-radius: 68% 32% 52% 48% / 52% 49% 51% 48%;
+	// 	// border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
+	// 	// border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
+	// }
+
 // border: 1px solid cyan;
 // 	border: 1px solid tomato;
+	// border: 1px solid tomato;

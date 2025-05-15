@@ -1,12 +1,16 @@
 :root {
   // --font-sans: 'Helvetica Neue', sans-serif;
-  --font-sans: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro","Noto Sans JP", sans-serif;
+  --font-sans: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "LINE Speed JP", sans-serif;
+  // --font-sans: "ヒラギノ丸ゴ ProN W4", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "LINE Speed JP", sans-serif;
+  --font-sansLINE: "LINE Speed JP", sans-serif;
+  --font-sans2: "Noto Sans JP", sans-serif;
   --font-Roboto: "Roboto", sans-serif;
-  --font-sans2: "LINE Speed JP", sans-serif;
   --font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
   'Courier New', monospace;
   --font-serif: 'Times New Roman', Times, serif;
   --font-serif-JP: 'Noto Serif JP', Times, serif;
+  --font-serif-Yu:  游明朝, "Yu Mincho", YuMincho, serif;
+
   // --font-sans: "system-ui", sans-serif;
 
   /* palette */

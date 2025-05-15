@@ -23,7 +23,6 @@ class RootIndex extends React.Component {
 								<p>Development 26th</p>
 							</header>
 							<section>
-								{/* <h3>Blog et Gatsby Pages de Cerise</h3> */}
 								<h3>Studio Mic</h3>
 								<p>スタジオミック</p>
 							</section>
@@ -32,10 +31,34 @@ class RootIndex extends React.Component {
 						<div className={styles.rowline2}></div>
 						<div className={styles.rowline3}></div>
 						<div className={styles.free5}></div>
-						{/* <div className={styles.grid}></div>
-						<div className={styles.grid}></div>
-						<div className={styles.grid}></div> */}
 					</div>
+
+					<article className={styles.about}>
+						<details>
+							<summary>
+								<span></span>
+								<h2>Blog et Gatsby Pages de Cerise</h2>
+							</summary>
+							<p>
+								このブログ的な「Stylo de Cerise」は、長年Web屋を営むわたくし桜が、私的な記録ノートとして運営しているドメスティックなWebサイトです。<br />
+								Webデザイナーのサガで、たまに新しいワイヤーフレームを試したくなると、このサイトの外観がしばしば変化します。
+							</p>
+							<p>
+								屋台としては、React のフレームワークの一つである Gatsby.js でつくっています。<br />
+								CGIのインタラクティブ大好きから始まったWeb屋稼業のたぶん最後にはまった好きなオモチャが、<b>The Great Gatsby！</b> だったかと。
+							</p>
+							<p>
+								好きなら「1銭にもならないことに血道を上げるタイプ」「買うより高いDIY」<br />
+								この2つが主なる私の悪口（主観）ですが、急ぎ50枚のWebページつくるのに、Gatsbyマジで便利で速くて楽しい三拍子。
+							</p>
+							<p>
+								と、手段が目的と化した「Stylo de Cerise」ですが、コンテンツは文才もなく努力家でもなく目も当てられないのを、徐々にJOJOに改善できたらと想う、今日この頃のジョジョラーです。
+							</p>
+
+						</details>
+					</article>
+
+
 
 					<div className={styles.wrapper}>
 						<div className={styles.notepost}>
@@ -54,36 +77,23 @@ class RootIndex extends React.Component {
 								</div>
 							))}
 						</div>
-						
+
 						<div className={styles.lamp} loading="lazy"></div>
 						<div className={styles.bggrid} loading="lazy">
 							<h2>Designing with CSS Grid</h2>
 						</div>
-						
+
+
 						{/* <div className={styles.grid}>2</div>
 						<div className={styles.grid}>3</div>
 						<div className={styles.grid}>3</div>
 						<div className={styles.grid}>3</div>
 						<div className={styles.grid}>4</div> */}
-						
 						{/* <div className={styles.grid}>1</div>
 						<div className={styles.grid}>2</div>
 						<div className={styles.grid}>3</div> */}
-
 					</div>
 				</section>
-
-
-
-
-			{/* <Intoro /> */}
-			{/* <div className={styles.wrapper}>
-				<div className={styles.item1}>
-					
-
-				</div>
-				
-			</div> */}
 		</Layout>
 	)
 	}
