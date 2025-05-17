@@ -77,14 +77,23 @@
   --text-prose-tracking: -0.011em;
 
   /* size */
-  --size-gutter: var(--space-2xl);
+  --size-gutter: var(--space-2xl); //24px
   --size-logo: var(--space-2xl);
-  --size-max-width: 80rem;
+  --size-max-width: 80rem;//1280
+  --full-width: 100%;
+  --nav-width: calc(100% - 64px * 2);// minus64 double
+  
+  // var(--space-lg)+var(--space-3xl);
+  // --nav-size: 2000px; //1480
+  // --size-max-width: 2000px;//1480
 }
+// --main-size: 80rem; //1280
+// --size-max-width: 160rem;//2560
+// --size-max-width: 92.5rem;//1480
 
 @media (min-width: 480px) {
   :root {
-    --size-gutter: var(--space-3xl);
+    --size-gutter: var(--space-3xl); //48px
   }
 }
 
