@@ -23,7 +23,7 @@ class RootIndex extends React.Component {
 								<p>Development 26th</p>
 							</header>
 							<section>
-								<h3>Studio Mic</h3>
+								<h3>©Studio Mic</h3>
 								<p>スタジオミック</p>
 							</section>
 						</article>
@@ -34,7 +34,7 @@ class RootIndex extends React.Component {
 					</div>
 
 					<article className={styles.about}>
-						<details>
+						<details open>
 							<summary>
 								<span></span>
 								<h2>Blog et Gatsby Pages de Cerise</h2>
@@ -45,20 +45,17 @@ class RootIndex extends React.Component {
 							</p>
 							<p>
 								屋台としては、React のフレームワークの一つである Gatsby.js でつくっています。<br />
-								CGIのインタラクティブ大好きから始まったWeb屋稼業のたぶん最後にはまった好きなオモチャが、<b>The Great Gatsby！</b> だったかと。
+								CGIのインタラクティブ大好きから始まったWeb屋稼業の、たぶん最後にはまった好きなオモチャが <b>The Great Gatsby！</b> だったかと。
 							</p>
 							<p>
 								好きなら「1銭にもならないことに血道を上げるタイプ」「買うより高いDIY」<br />
-								この2つが主なる私の悪口（主観）ですが、急ぎ50枚のWebページつくるのに、Gatsbyマジで便利で速くて楽しい三拍子。
+								この2つが主なる私の悪口（主観）ですが、急ぎ50枚のWebページをつくるとかに、Gatsbyはマジで便利で速くて楽しい三拍子。
 							</p>
 							<p>
 								と、手段が目的と化した「Stylo de Cerise」ですが、コンテンツは文才もなく努力家でもなく目も当てられないのを、徐々にJOJOに改善できたらと想う、今日この頃のジョジョラーです。
 							</p>
-
 						</details>
 					</article>
-
-
 
 					<div className={styles.wrapper}>
 						<div className={styles.notepost}>
