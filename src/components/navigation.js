@@ -7,7 +7,7 @@ import ModeButton from './mode'
 // import ModeToggle from './modeToggle'
 
 const Navigation = () => (
-  <nav role="navigation" className={styles.container} aria-label="Main">
+  <nav role="navigation" className={styles.navcontainer} aria-label="Main">
     <Link to="/" className={styles.logoLink}>
     <StaticImage
       src="../asset/img/Logo640.png"

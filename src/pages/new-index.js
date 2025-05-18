@@ -30,7 +30,7 @@ class RootIndex extends React.Component {
 						<div className={styles.rowline1}></div>
 						<div className={styles.rowline2}></div>
 						<div className={styles.rowline3}></div>
-						<div className={styles.free5}></div>
+						{/* <div className={styles.free5}></div> */}
 					</div>
 
 					<article className={styles.about}>
