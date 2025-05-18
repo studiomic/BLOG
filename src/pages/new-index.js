@@ -34,26 +34,28 @@ class RootIndex extends React.Component {
 					</div>
 
 					<article className={styles.about}>
-						<details open>
+						<details>
 							<summary>
 								<span></span>
 								<h2>Blog et Gatsby Pages de Cerise</h2>
 							</summary>
-							<p>
-								このブログ的な「Stylo de Cerise」は、長年Web屋を営むわたくし桜が、私的な記録ノートとして運営しているドメスティックなWebサイトです。<br />
-								Webデザイナーのサガで、たまに新しいワイヤーフレームを試したくなると、このサイトの外観がしばしば変化します。
-							</p>
-							<p>
-								屋台としては、React のフレームワークの一つである Gatsby.js でつくっています。<br />
-								CGIのインタラクティブ大好きから始まったWeb屋稼業の、たぶん最後にはまった好きなオモチャが <b>The Great Gatsby！</b> だったかと。
-							</p>
-							<p>
-								好きなら「1銭にもならないことに血道を上げるタイプ」「買うより高いDIY」<br />
-								この2つが主なる私の悪口（主観）ですが、急ぎ50枚のWebページをつくるとかに、Gatsbyはマジで便利で速くて楽しい三拍子。
-							</p>
-							<p>
-								と、手段が目的と化した「Stylo de Cerise」ですが、コンテンツは文才もなく努力家でもなく目も当てられないのを、徐々にJOJOに改善できたらと想う、今日この頃のジョジョラーです。
-							</p>
+							<div>
+								<p>
+									<span className={styles.rows1}>このブログ的な「Stylo de Cerise」は、長年Web屋を営むわたくし桜が、私的な記録ノートとして運営しているドメスティックなWebサイトです。</span><br />
+									<span className={styles.rows2}>Webデザイナーのサガで、たまに新しいワイヤーフレームを試したくなると、このサイトの外観がしばしば変化します。</span>
+								</p>
+								<p>
+									<span className={styles.rows3}>屋台としては、React のフレームワークの一つである Gatsby.js でつくっています。</span><br />
+									<span className={styles.rows4}>CGIのインタラクティブ大好きから始まったWeb屋稼業の、たぶん最後にはまった好きなオモチャが <b>The Great Gatsby！</b> だったかと。</span>
+								</p>
+								<p>
+									<span className={styles.rows5}>好きなら「1銭にもならないことに血道を上げるタイプ」「買うより高いDIY」</span><br />
+									<span className={styles.rows6}>この2つが主なる私の悪口（主観）ですが、急ぎ50枚のWebページをつくるとかに、Gatsbyはマジで便利で速くて楽しい三拍子。</span>
+								</p>
+								<p>
+									<span className={styles.rows7}>と、手段が目的と化した「Stylo de Cerise」ですが、コンテンツは文才もなく努力家でもなく目も当てられないのを、徐々にJOJOに改善できたらと想う、今日この頃のジョジョラーです。</span>
+								</p>
+							</div>
 						</details>
 					</article>
 
