@@ -1,7 +1,6 @@
 :root {
   // --font-sans: 'Helvetica Neue', sans-serif;
   --font-sans: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "LINE Speed JP", sans-serif;
-  // --font-sans: "ヒラギノ丸ゴ ProN W4", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "LINE Speed JP", sans-serif;
   --font-sansLINE: "LINE Speed JP", sans-serif;
   --font-sans2: "Noto Sans JP", sans-serif;
   --font-Roboto: "Roboto", sans-serif;
@@ -10,7 +9,8 @@
   --font-serif: 'Times New Roman', Times, serif;
   --font-serif-JP: 'Noto Serif JP', Times, serif;
   --font-serif-Yu:  游明朝, "Yu Mincho", YuMincho, serif;
-
+  
+  // --font-sans: "ヒラギノ丸ゴ ProN W4", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "LINE Speed JP", sans-serif;
   // --font-sans: "system-ui", sans-serif;
 
   /* palette */
@@ -25,6 +25,7 @@
   --blue: #4a90e2; // default--primary
   --orangeIceberg: #e2a478; 
   --border: var(--black-fade-5);
+
   /* worksPage */
   // --duskGray: #292f3b;
 	// --lunaGray: #a6b1b5;

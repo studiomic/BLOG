@@ -4,7 +4,7 @@ import * as styles from '../styles/layout/footer.module.scss'
 
 const Footer = () => (
   <Container as="footer">
-    <div className={styles.container}>
+    <div className={styles.footcontainer}>
       <div className={styles.logoLink}>
         <span class="logo" />
         <span>Built with <a href="https://contentful.com/">Contentful</a> and{' '}</span>
