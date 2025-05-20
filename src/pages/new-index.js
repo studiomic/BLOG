@@ -82,15 +82,16 @@ class RootIndex extends React.Component {
 							<h2>Designing with CSS Grid</h2>
 						</div>
 
-
-						{/* <div className={styles.grid}>2</div>
-						<div className={styles.grid}>3</div>
-						<div className={styles.grid}>3</div>
-						<div className={styles.grid}>3</div>
-						<div className={styles.grid}>4</div> */}
-						{/* <div className={styles.grid}>1</div>
+						<div className={styles.grid}>1</div>
 						<div className={styles.grid}>2</div>
-						<div className={styles.grid}>3</div> */}
+						<div className={styles.grid}>3</div>
+
+						<div className={styles.grid}>4</div>
+						<div className={styles.grid}>5</div>
+
+						{/* <div className={styles.grid}>6</div>
+						<div className={styles.grid}>7</div>
+						<div className={styles.grid}>8</div> */}
 					</div>
 				</section>
 		</Layout>
