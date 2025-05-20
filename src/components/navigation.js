@@ -3,15 +3,13 @@ import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import * as styles from '../styles/layout/navigation.module.scss'
 import ModeButton from './mode'
-// import ModeToggleButton from './modetoggleButton'
-// import ModeToggle from './modeToggle'
 
 const Navigation = () => (
   <nav role="navigation" className={styles.navcontainer} aria-label="Main">
     <Link to="/" className={styles.logoLink}>
     <StaticImage
-      src="../asset/img/Logo640.png"
-      alt="LOGO"
+      src="../asset/img/Logo.avif"
+      alt="Stylo de Cerise"
       placeholder="blurred"
       layout="fixed"
       width={128}
