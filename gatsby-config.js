@@ -5,11 +5,11 @@ require("dotenv").config({
 module.exports = {
   // pathPrefix: "/BLOG",
   siteMetadata: {
-    title: "Stylo de Cerise - Web Design & Web developer",
-    description: "Gatsby+Contentful WebデザイナーノBLOG",
+    title: "Studio Mic - Nakano - Stylo de Cerise",
+    description: "Web Design & Web developer - Web屋ノ私的Note",
     siteUrl: "https://www.studiomic.net",
     author: 'Sakura.i',
-    developer: "Studiomic",
+    developer: "StudioMic",
   },
   plugins: [
     {

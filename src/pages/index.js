@@ -1,125 +1,145 @@
 import React from 'react'
 import get from 'lodash/get'
 import { graphql, Link } from 'gatsby';
-import Layout from '../components/layout'
-import Seo from '../components/seo'
-import Intoro from '../components/intoro-top'
-import ArticlePreview from '../components/article-preview'
-import * as styles from '../styles/index.module.scss'
+import Layout from './../components/layout'
+import Seo from './../components/seo'
+import * as styles from '../styles/pages/index.module.scss'
+// import Intoro from './../components/intoro-index'
+// import Loop from './../components/workloop'
+// import * as styles from './../styles/work.module.scss'
+// export default function work() {
 
 class RootIndex extends React.Component {
-  render() {
-    const posts = get(this, 'props.data.allContentfulBlogPost.nodes')
-    const notes = get(this, 'props.data.allMarkdownRemark.edges')
-    // const [author] = get(this, 'props.data.allContentfulPerson.nodes')
-    return (
-      <Layout location={this.props.location}>
-        <Intoro />
-        <div class="wavetop">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path d="M0,64L80,85.3C160,107,320,149,480,144C640,139,800,85,960,58.7C1120,32,1280,32,1360,32L1440,32L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"/></svg>
-        </div>
-        <section className={styles.container}>
-          <article className={styles.article}>
-            <h1 className={styles.title}>Notes</h1>
-            {notes.map((edge) => (
-            <div key={edge.id} className={styles.top}>
-              <h2>
-                <Link to={`/notes/${edge.node?.frontmatter.slug}`}>
-                  {edge.node.frontmatter.title}
-                </Link>
-              </h2>
-              <dl>
-                <dt>{edge.node.frontmatter.date}</dt>
-                <dd>{edge.node.frontmatter.description}</dd>
-              </dl>
-            </div>
-          ))}
-          </article>
-        </section>
-        <div className="mno">
-        <section className={styles.solidimage}>
-          <div className={styles.hero}>
-          {/* <GatsbyImage className={hero.image} alt={author.name} image={author.heroImage.gatsbyImage} /> */}
-            <div className={styles.details}>
-              <h1 className={styles.title}>BLOG</h1>
-            </div>
-          </div>
-        </section>
-        <ArticlePreview posts={posts} />
-      </div>
-      </Layout>
-    )
-  }
+	render() {
+		const notes = get(this, 'props.data.allMarkdownRemark.edges')
+	return (
+		<Layout>
+				<section className={styles.container}>
+					<div className={styles.layoutGrid}>
+						<article className={styles.headers}>
+							<header>
+								<h1>Design Deeply</h1>
+								<h2>Web designer.</h2>
+								<p>Development 26th</p>
+							</header>
+							<section>
+								<h3>©Studio Mic</h3>
+								<p>スタジオミック</p>
+							</section>
+						</article>
+						<div className={styles.rowline1}></div>
+						<div className={styles.rowline2}></div>
+						<div className={styles.rowline3}></div>
+						{/* <div className={styles.free5}></div> */}
+					</div>
+
+					<article className={styles.about}>
+						<details>
+							<summary>
+								<span></span>
+								<h2>Blog et Gatsby Pages de Cerise</h2>
+							</summary>
+							<div>
+								<p>
+									<span className={styles.rows1}>このブログ的な「Stylo de Cerise」は、長年Web屋を営むわたくし桜が、私的な記録ノートとして運営しているドメスティックなWebサイトです。</span><br />
+									<span className={styles.rows2}>Webデザイナーのサガで、たまに新しいワイヤーフレームを試したくなると、このサイトの外観がしばしば変化します。</span>
+								</p>
+								<p>
+									<span className={styles.rows3}>屋台としては、React のフレームワークの一つである Gatsby.js でつくっています。</span><br />
+									<span className={styles.rows4}>CGIのインタラクティブ大好きから始まったWeb屋稼業の、たぶん最後にはまった好きなオモチャが <b>The Great Gatsby！</b> だったかと。</span>
+								</p>
+								<p>
+									<span className={styles.rows5}>好きなら「1銭にもならないことに血道を上げるタイプ」「買うより高いDIY」</span><br />
+									<span className={styles.rows6}>この2つが主なる私の悪口（主観）ですが、急ぎ50枚のWebページをつくるとかに、Gatsbyはマジで便利で速くて楽しい三拍子。</span>
+								</p>
+								<p>
+									<span className={styles.rows7}>と、手段が目的と化した「Stylo de Cerise」ですが、コンテンツは文才もなく努力家でもなく目も当てられないのを、徐々にJOJOに改善できたらと想う、今日この頃のジョジョラーです。</span>
+								</p>
+							</div>
+						</details>
+					</article>
+
+					<div className={styles.wrapper}>
+						<div className={styles.notepost}>
+							<h1 className={styles.title}>Notes</h1>
+								{notes.map((edge) => (
+								<div key={edge.id} className={styles.postloop}>
+									<h2>
+										<Link to={`/notes/${edge.node?.frontmatter.slug}`}>
+											{edge.node.frontmatter.title}
+										</Link>
+									</h2>
+									<dl>
+										<dt>{edge.node.frontmatter.date}</dt>
+										<dd>{edge.node.frontmatter.description}</dd>
+									</dl>
+								</div>
+							))}
+						</div>
+
+						<div className={styles.lamp} loading="lazy"></div>
+						<div className={styles.bggrid} loading="lazy">
+							<h2>Designing with CSS Grid</h2>
+						</div>
+
+						{/* <div className={styles.grid}>1</div>
+						<div className={styles.grid}>2</div>
+						<div className={styles.grid}>3</div> */}
+
+						{/* <div className={styles.grid}>4</div>
+						<div className={styles.grid}>5</div> */}
+
+						{/* <div className={styles.grid}>6</div>
+						<div className={styles.grid}>7</div>
+						<div className={styles.grid}>8</div> */}
+					</div>
+				</section>
+		</Layout>
+	)
+	}
 }
-export const Head = ({ data }) => {
+
+export const Head = () => {
   return (
     <Seo
-      description={data.site.siteMetadata.description}
+			title={'Studio Mic - Nakano - '}
+      description={'WEB DEGIGN'}
     />
   )
 }
 export default RootIndex
 
+// export const Head = ({ data }) => {
+//   return (
+//     <Seo
+//       description={data.site.siteMetadata.description}
+//     />
+//   )
+// }
+
+
 export const pageQuery = graphql`
-  query HomeQuery {
-    site {
-      siteMetadata {
-        title
-        description
-      }
-    }
-    allContentfulBlogPost(sort: { publishDate: DESC }) {
-      nodes {
-        title
-        slug
-        publishDate(formatString: "YYYY/MM/DD")
-        heroImage {
-          gatsbyImage(
-            layout: FULL_WIDTH
-            placeholder: BLURRED
-            width: 424
-            height: 212
-          )
-        }
-        description {
-          raw
-        }
-        metadata {
-          tags {
-            contentful_id
-            name
-          }
-        }
-      }
-    }
-    allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
-      edges {
-        node {
-          html
-          timeToRead
-          frontmatter {
-            title
-            date(formatString: "YYYY/MM/DD")
-            description
-            slug
-          }
-        }
-      }
-    }
-    allContentfulPerson(
-      filter: { contentful_id: { eq: "15jwOBqpxqSAOy2eOO4S0m" } }
-    ) {
-      nodes {
-        name
-        shortBio {
-          raw
-        }
-        title
-        heroImage: image {
-          gatsbyImage(layout: CONSTRAINED, placeholder: BLURRED, width: 1180)
-        }
-      }
-    }
-  }
+query IndexQuery {
+	site {
+		siteMetadata {
+			title
+			description
+		}
+	}
+	allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
+		edges {
+			node {
+				html
+				timeToRead
+				frontmatter {
+					title
+					date(formatString: "YYYY/MM/DD")
+					description
+					slug
+				}
+			}
+		}
+	}	
+}	
 `
- //BLURRED//TRACED_SVG
+
