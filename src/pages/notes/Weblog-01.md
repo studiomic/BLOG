@@ -5,8 +5,9 @@ slug: 'triple-monitor'
 # description: "LGウルトラワイド34とPHILIPS27インチに大満足"
 description: "Silicon Motion - macOS instantView"
 featuredImage: "asset/InstantView.avif"
-tag: 'Mac mini M2'
+tag: 'Mac mini M2,モニター,Anker,トリプルディスプレイ'
 ---
+
 
 hpの27インチモニターを使い始めた頃から、メインモニターは大きければ大きいほど使いやすいと痛感していて、かれこれ3年経ち、34インチのウルトラワイドモニターを新調した。
 

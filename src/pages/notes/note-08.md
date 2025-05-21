@@ -5,7 +5,7 @@ slug: 'note-08-BonjourTristesse'
 description: "おかげでダークモードも長いお別れで筆者がダークモードに"
 book:
 music:
-featuredImage: "asset/f2f2f2.png"
+featuredImage: "asset/Frame.avif"
 ---
 
 <img src="asset/GatsbyCloud.avif" alt="Gatsby Cloud" width="100%">

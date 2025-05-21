@@ -22,22 +22,16 @@ const Navigation = () => (
           index
         </Link>
       </li>
-      <li className={styles.navigationItem}>
+      {/* <li className={styles.navigationItem}>
         <Link to="/work/" activeClassName="active">
           Work
         </Link>
-      </li>
+      </li> */}
       <li className={styles.navigationItem}>
         <Link to="/blog/" activeClassName="active">
           Blog
         </Link>
       </li>
-      <li className={styles.navigationItem}>
-        <Link to="/about/" activeClassName="active">
-          About
-        </Link>
-      </li>
-
       <li className={styles.navigationItem}>
         <ModeButton />
       </li>
