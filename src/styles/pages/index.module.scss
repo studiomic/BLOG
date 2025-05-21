@@ -4,8 +4,6 @@
 	--lunaGray: #a6b1b5;
 	--shineWhite: #f4f4f4;
 	--underlowline: #EADD36;
-
-
 	// background-color: #EADD36;
 	// --shineWhite2: #fafafa;
 	// --paperSoftness: #d1bca1;
@@ -180,16 +178,12 @@ header {
 	grid-column: 1/4;
 	grid-row: 2/3;
 	background: url("../../asset/img/marc-olivier-jodoin-j2veIzsS9sY-unsplash-1680.avif") no-repeat;
-	
 	animation-name: filters;
 	animation-duration: 15s;
 	animation-timing-function: linear;
 	animation-fill-mode: forwards;
 	animation-iteration-count: infinite;
-	
-
-	// background: url("../../asset/img/bundo-kim-IStZpF3ZeiQ-unsplash2.avif") no-repeat center top;
-	// opacity: .8;
+	display: none;
 }
 
 @keyframes filters {
@@ -223,6 +217,7 @@ header {
 	background-color: var(--underlowline);//#EADD36;
 	display: flex;
 	justify-content: center;
+	display: none;
 	h2 {
 		writing-mode: vertical-rl;
 		margin: 0;
@@ -354,10 +349,11 @@ details[open] {
 			padding: 0 var(--size-gutter) var(--space-xl);
 		}
 	}
-	.lamp,.bggrid {
-		display: none;
-	}
 }
+
+
+
+
 
 @container body (min-width: 1024px) {
   .container {
@@ -392,6 +388,19 @@ details[open] {
 	// 	grid-column: 5/5;
 	// 	grid-row: 1/4;
 	// }
+	details[open] {
+		padding: 0 var(--size-gutter) var(--space-xl);
+	}
+}
+
+@container body (min-width: 1250px) {
+	.lamp,.bggrid {
+		display: block;
+	}
+}
+
+
+@container body (min-width: 1280px) {
 	.wrapper {
 		position: relative;
 		display: grid;
@@ -422,9 +431,6 @@ details[open] {
 			display: inline-block;
 			padding-left: 1em;
 		}
-	}
-	details[open] {
-		padding: 0 var(--size-gutter) var(--space-xl);
 	}
 }
 
@@ -473,10 +479,28 @@ details[open] {
 	border: 1px solid var(--border);
 }
 
-
-
-
-
+// @media (max-width: 1023.98px) {
+	
+// }
+// @media (min-width: 1024px) {
+// 	// .lamp,.bggrid {
+// 	// 	display: none;
+// 	// }
+// 	.wrapper {
+// 		position: relative;
+// 		display: grid;
+// 		grid-column-gap: var(--size-gutter);
+// 		grid-row-gap: var(--size-gutter);
+// 		grid-template-columns: 1fr 48px 1fr auto;
+// 		// grid-template-rows: auto auto auto;
+// 		grid-template-rows: 300px 469px auto;
+// 	}
+// 	.lamp {
+// 		background-size: contain;
+// 		background-size: cover;
+// 		border-radius: 100% 0% 0% 100% / 0% 50% 50% 100%;
+// 	}
+// }
 
 // @container main (min-width: 768px) {}
 // @container main (min-width: 1024px) {

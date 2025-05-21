@@ -2,9 +2,10 @@ import React from 'react'
 import get from 'lodash/get'
 import { graphql, Link } from 'gatsby';
 import Layout from './../components/layout'
-// import Intoro from './../components/intoro-index'
 import Seo from './../components/seo'
 import * as styles from '../styles/pages/index.module.scss'
+
+// import Intoro from './../components/intoro-index'
 // import Loop from './../components/workloop'
 // import * as styles from './../styles/work.module.scss'
 // export default function work() {
@@ -82,12 +83,12 @@ class RootIndex extends React.Component {
 							<h2>Designing with CSS Grid</h2>
 						</div>
 
-						<div className={styles.grid}>1</div>
+						{/* <div className={styles.grid}>1</div>
 						<div className={styles.grid}>2</div>
-						<div className={styles.grid}>3</div>
+						<div className={styles.grid}>3</div> */}
 
-						<div className={styles.grid}>4</div>
-						<div className={styles.grid}>5</div>
+						{/* <div className={styles.grid}>4</div>
+						<div className={styles.grid}>5</div> */}
 
 						{/* <div className={styles.grid}>6</div>
 						<div className={styles.grid}>7</div>
@@ -109,8 +110,23 @@ export const Head = () => {
 }
 export default RootIndex
 
+// export const Head = ({ data }) => {
+//   return (
+//     <Seo
+//       description={data.site.siteMetadata.description}
+//     />
+//   )
+// }
+
+
 export const pageQuery = graphql`
-	query NotesIndexQuery {
+query IndexQuery {
+	site {
+		siteMetadata {
+			title
+			description
+		}
+	}
 	allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
 		edges {
 			node {
@@ -124,7 +140,7 @@ export const pageQuery = graphql`
 				}
 			}
 		}
-	}
-}
+	}	
+}	
 `
 
