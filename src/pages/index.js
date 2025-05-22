@@ -2,7 +2,8 @@ import React from 'react'
 import get from 'lodash/get'
 import { graphql, Link } from 'gatsby';
 import Layout from './../components/layout'
-import Seo from './../components/seo'
+
+import Seo from '../components/seo'
 import * as styles from '../styles/pages/index.module.scss'
 // import Intoro from './../components/intoro-index'
 // import Loop from './../components/workloop'
@@ -99,33 +100,24 @@ class RootIndex extends React.Component {
 	}
 }
 
-export const Head = () => {
+export const Head = ({ data }) => {
   return (
     <Seo
-			title={'Studio Mic - Nakano - '}
-      description={'WEB DEGIGN'}
+			title={data.site.siteMetadata.description}
+      description={data.site.siteMetadata.description}
     />
   )
 }
 export default RootIndex
 
-// export const Head = ({ data }) => {
-//   return (
-//     <Seo
-//       description={data.site.siteMetadata.description}
-//     />
-//   )
-// }
-
-
 export const pageQuery = graphql`
-query IndexQuery {
-	site {
-		siteMetadata {
-			title
-			description
-		}
-	}
+query HomeQuery {
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }
 	allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
 		edges {
 			node {

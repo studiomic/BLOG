@@ -10,6 +10,8 @@ module.exports = {
     siteUrl: "https://www.studiomic.net",
     author: 'Sakura.i',
     developer: "StudioMic",
+    // twitterUsername: `@gatsbyjs`,
+    // image: `/gatsby-icon.png`,
   },
   plugins: [
     {
