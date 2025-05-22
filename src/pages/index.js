@@ -2,7 +2,6 @@ import React from 'react'
 import get from 'lodash/get'
 import { graphql, Link } from 'gatsby';
 import Layout from './../components/layout'
-
 import Seo from '../components/seo'
 import * as styles from '../styles/pages/index.module.scss'
 // import Intoro from './../components/intoro-index'

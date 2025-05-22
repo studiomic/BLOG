@@ -17,11 +17,11 @@ const Navigation = () => (
     />
     </Link>
     <ul className={styles.navigation}>
-      <li className={styles.navigationItem}>
+      {/* <li className={styles.navigationItem}>
         <Link to="/new-index/" activeClassName="active">
           index
         </Link>
-      </li>
+      </li> */}
       {/* <li className={styles.navigationItem}>
         <Link to="/work/" activeClassName="active">
           Work
