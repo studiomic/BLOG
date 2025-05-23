@@ -22,6 +22,12 @@ class NotesPostTemplate extends React.Component {
 					{featuredImg && (
 						<GatsbyImage className={herostyles.image} alt="featuredImg" image={featuredImg} />
 					)}
+
+					{/* {featuredImg && (
+						<div className={herostyles.image}>
+							<GatsbyImage image={featuredImg} />
+						</div>
+					)} */}
 					<div className={herostyles.details}>
 						<h1 className={herostyles.title}>{posts.frontmatter.title}</h1>
 						<div className={herostyles.content}>{posts.frontmatter.description}</div>

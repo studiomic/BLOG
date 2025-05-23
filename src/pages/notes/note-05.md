@@ -4,7 +4,7 @@ date: "2023-06-15 10:00:00"
 slug: 'note-05-page-nav'
 description: "Notesにも前後記事へのナビゲーションをつけた"
 book: 谷川史子「はじめてのひと」6巻・7巻
-featuredImage: "asset/f2f2f2.png"
+featuredImage: "asset/mitchell-unsplash.avif"
 ---
 <section style="margin-bottom: 6em;">
 Blogの記事がまだ少ないので気づいたのだが、スターターに始めからついていた

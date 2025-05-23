@@ -3,7 +3,7 @@ title: "BlogにTags機能をつける工程"
 date: "2023-06-04 19:00:00"
 slug: 'note-03-ContentfulTags2'
 description: "続・Gatsby+Contentful Tags｜シラフになって考えたら楽しかった"
-featuredImage: "asset/f2f2f2.png"
+featuredImage: "asset/mitchell-unsplash.avif"
 ---
 [BlogにContentfulのTags機能を追加した](/notes/note-02/)
 (2023/06/04 : Gatsby+Contentful Tags)の続きです。
