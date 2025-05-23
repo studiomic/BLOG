@@ -1,7 +1,7 @@
 ---
 title: "近況とメンテナンス"
 date: "2024-03-25 10:00:00"
-slug: 'note-10-MarchComes-in-LikeALion'
+slug: 'note-09-MarchComes-in-LikeALion'
 description: "３月はライオンのようにやってきて子羊のように去っていく。"
 book: 若桑みどり「クアトロ・ラガッツィ」
 music:

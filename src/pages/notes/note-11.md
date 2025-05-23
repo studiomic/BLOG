@@ -1,11 +1,11 @@
 ---
 title: "最近のGatsbyでGoogleFontを使う方法"
 date: "2025-05-14 19:00:00"
-slug: 'GoogleFont-on-Gatsby'
+slug: 'note-11-GoogleFont-on-Gatsby'
 description: "Gatsbyプラグインとかなしで。SEOに書くだけ"
 book:
 music:
-featuredImage: "asset/f2f2f2.png"
+featuredImage: "asset/Google_Fonts_logo.svg.png"
 ---
 <section style="margin-bottom: 5em;">
 

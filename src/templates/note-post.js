@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from '../components/layout'
 import Seo from '../components/seo'
-import * as herostyles from '../styles/components/hero.module.scss'
+import * as herostyles from '../styles/components/herogrid.module.scss'
 import * as styles from '../styles/components/note.module.scss'
 import '../styles/css/dracula-prism.css' //CSS
 import '../styles/css/init.css' //CSS
@@ -24,7 +24,7 @@ class NotesPostTemplate extends React.Component {
 					)}
 					<div className={herostyles.details}>
 						<h1 className={herostyles.title}>{posts.frontmatter.title}</h1>
-							<div className={herostyles.content}>{posts.frontmatter.description}</div>
+						<div className={herostyles.content}>{posts.frontmatter.description}</div>
 					</div>
 				</div>
 

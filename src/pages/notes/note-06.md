@@ -1,7 +1,7 @@
 ---
 title: "React-helmetを脱いでGatsby Head APIを冠る"
 date: "2023-06-17 16:00:00"
-slug: 'note-05-Hello-GatsbyHeadAPI'
+slug: 'note-06-Hello-GatsbyHeadAPI'
 description: "Bye, React-helmet to Gatsby Head API"
 book:
 music: "松任谷由美「DESTINY」"
