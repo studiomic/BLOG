@@ -165,7 +165,11 @@ header {
 .lamp {
 	grid-column: 1/4;
 	grid-row: 2/3;
-	background: url("../../asset/img/marc-olivier-jodoin-j2veIzsS9sY-unsplash-1680.avif") no-repeat;
+	// background: url("../../asset/img/marc-olivier-jodoin-j2veIzsS9sY-unsplash-1680.avif") no-repeat;
+	// background: url("../../asset/img/alex-CamJb_3RDoM-unsplash.jpg") no-repeat;
+
+
+	
 	animation-name: filters;
 	animation-duration: 15s;
 	animation-timing-function: linear;
