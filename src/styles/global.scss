@@ -21,47 +21,43 @@
   --text-color: var(--black);
   --dlborderColor: #eee;
   --notedlColor: #666;
-  --aboutBorder: #ddd;
   --detailsBg: #fdfdfd;
-  --borderColor: #ccc;//mokuji
-  --modeButtonBg: #f3f3f3;
-  --modeButtonBg: #f0f0f0;
-  --tagBg: var(--black-fade-5);
-  //workPages
-  --boxShadow : var(--shineWhite);
-	// --duskGray: #292f3b;
-	// --shineWhite: #f4f4f4;
+  --borderColor: #ccc; //mokuji
+  --duskGray: #292f3b; //indexPageLine
+	--lunaGray: #a6b1b5;
+	--shineWhite: #f4f4f4;
+	--underlowline: #EADD36;
+	--underduskGray:#292f3b;
+  --summaryborder:rgb(0 0 0 / 0.1);
 }
 .darkmode {
   --background:#2c2d32;
   --text-color: #ddd;
   --dlborderColor:#666;
   --notedlColor: #999;
-  --aboutBorder: #555;
   --detailsBg: #17191f;
   --borderColor: #555;
-  --modeButtonBg: #42444c;
-  --tagBg: #494a50;
-  //workPages
-  --boxShadow : var(--background);
-	// --duskGray: #f4f4f4;
-	// --shineWhite: #292f3b;
-	// --shineWhite: #272f3a;//292f3b;
+  --duskGray: rgb(95 146 160 / 0.9);
+	--lunaGray: rgb(166 177 181 / 0.9);//#a6b1b5;
+	--shineWhite: rgb(244 244 244 / 0.8);//#f4f4f4;
+	--underlowline: #EADD36;
+	--underduskGray: rgb(95 146 160 / 0.7);
+  --summaryborder:rgb(244 244 244 / 0.2);
+
 }
 .blackmode {
   --background: #000;
   --text-color: #ddd;
   --dlborderColor:#666;
   --notedlColor: #999;
-  --aboutBorder: #555;
   --detailsBg: #222;
   --borderColor: #555;
-  --modeButtonBg: #404146;
-  --tagBg: #404146;
-  //workPages
-  --boxShadow : var(--lunaGray);
-	// --duskGray: #f4f4f4;
-	// --shineWhite: #272f3a;//292f3b;
+  --duskGray: rgb(95 146 160 / 0.8);
+	--lunaGray: rgb(166 177 181 / 0.8);//#a6b1b5;
+	--shineWhite: rgb(244 244 244 / 0.8);//#f4f4f4;
+	--underlowline: #EADD36;
+	--underduskGray: rgb(95 146 160 / 0.7);
+  --summaryborder:rgb(244 244 244 / 0.2);
 }
 
 html {
@@ -158,29 +154,27 @@ body {
   }
 }
 
-.wave,.wavervs,.wavetop {
-	margin-top: -200px;
-	display: block;
-	height: 200px;
-	// transform: scale(-1, -1);
-  svg {
-    fill: var(--background);
-    // transition: background-color .6s ease;
-    // transition: 0.1s ease;
-  }
-}
-.wave {
-  transform: scale(-1, -1);
-}
-.wavervs {
-  transform: scale(1.75, -1);
-}
-.wavetop {
-  transform: scale(1.75, -1);
-}
-.wavemdl {
-  transform: scale(1.5, -1);
-}
+// .wave,.wavervs,.wavetop {
+// 	margin-top: -200px;
+// 	display: block;
+// 	height: 200px;
+// 	// transform: scale(-1, -1);
+//   svg {
+//     fill: var(--background);
+//   }
+// }
+// .wave {
+//   transform: scale(-1, -1);
+// }
+// .wavervs {
+//   transform: scale(1.75, -1);
+// }
+// .wavetop {
+//   transform: scale(1.75, -1);
+// }
+// .wavemdl {
+//   transform: scale(1.5, -1);
+// }
 
 .logo {
   height: var(--size-logo);
@@ -285,11 +279,44 @@ tt:after {
 //   }
 // }
 
-    // --background: var(--white);
-    // --text-color: var(--black);
-    // --dlborderColor: #eee;
-    // --notedlColor: #666;
-    // --aboutBorder: #ddd;
-    // --detailsBg: #fdfdfd;
-    // --borderColor: #ccc;//mokuji
-    // --tagBg: var(--black-fade-5);
+// --background: var(--white);
+// --text-color: var(--black);
+// --dlborderColor: #eee;
+// --notedlColor: #666;
+// --aboutBorder: #ddd;
+// --detailsBg: #fdfdfd;
+// --borderColor: #ccc;//mokuji
+// --tagBg: var(--black-fade-5);
+
+
+
+// --aboutBorder: #ddd;
+// --modeButtonBg: #f3f3f3;
+// --modeButtonBg: #f0f0f0;
+// --tagBg: var(--black-fade-5);
+//workPages
+// --boxShadow : var(--shineWhite);
+// --duskGray: #292f3b;
+// --shineWhite: #f4f4f4;
+  // --aboutBorder: #555;
+  // --modeButtonBg: #42444c;
+  // --tagBg: #494a50;
+  //workPages
+  // --boxShadow : var(--background);
+	// --duskGray: #f4f4f4;
+	// --shineWhite: #292f3b;
+	// --shineWhite: #272f3a;//292f3b;
+  // --duskGray: #5f92a0;
+	// --lunaGray: #a6b1b5;
+	// --shineWhite: #f4f4f4;
+    // --aboutBorder: #555;
+  // --modeButtonBg: #404146;
+  // --tagBg: #404146;
+  //workPages
+  // --boxShadow : var(--lunaGray);
+	// --duskGray: #f4f4f4;
+	// --shineWhite: #272f3a;//292f3b;
+  // --duskGray: #5f92a0;
+
+  // transition: background-color .6s ease;
+    // transition: 0.1s ease;
