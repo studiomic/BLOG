@@ -65,11 +65,12 @@
 .meta {
 	font-size: var(--text-lg);
 	font-style: italic;
-	margin: 1em auto;
-	max-width: var(--size-max-width);
-	padding-bottom: var(--size-gutter);
+	margin: 1em auto var(--size-gutter);
 	padding-left: var(--size-gutter);
 }
+	// text-align: right;
+	// max-width: var(--size-max-width);
+	// padding-bottom: var(--size-gutter);
 
 .post-body {
 	font-size: 19px;
