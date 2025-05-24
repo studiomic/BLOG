@@ -7,31 +7,16 @@ import ModeButton from './mode'
 const Navigation = () => (
   <nav role="navigation" className={styles.navcontainer} aria-label="Main">
     <Link to="/" className={styles.logoLink}>
-    <StaticImage
-      src="../asset/img/Logo.avif"
-      alt="Stylo de Cerise"
-      placeholder="blurred"
-      layout="fixed"
-      width={128}
-      height={75}
-    />
+      <StaticImage
+        src="../asset/img/Logo.avif"
+        alt="Stylo de Cerise"
+        placeholder="blurred"
+        layout="fixed"
+        width={128}
+        height={75}
+      />
     </Link>
     <ul className={styles.navigation}>
-      {/* <li className={styles.navigationItem}>
-        <Link to="/new-index/" activeClassName="active">
-          index
-        </Link>
-      </li> */}
-      {/* <li className={styles.navigationItem}>
-        <Link to="/work/" activeClassName="active">
-          Work
-        </Link>
-      </li> */}
-      {/* <li className={styles.navigationItem}>
-        <Link to="/blog/" activeClassName="active">
-          Blog
-        </Link>
-      </li> */}
       <li className={styles.navigationItem}>
         <ModeButton />
       </li>
@@ -40,4 +25,18 @@ const Navigation = () => (
 )
 export default Navigation
 
-
+// <li className={styles.navigationItem}>
+// <Link to="/new-index/" activeClassName="active">
+//           index
+//         </Link>
+//       </li> */}
+// {/* <li className={styles.navigationItem}>
+//   <Link to="/work/" activeClassName="active">
+//     Work
+//   </Link>
+// </li> */}
+// {/* <li className={styles.navigationItem}>
+//   <Link to="/blog/" activeClassName="active">
+//     Blog
+//   </Link>
+// </li> */}
