@@ -1,3 +1,25 @@
+.progressbar {
+  position: fixed;
+  display: block;
+  top: 100px;
+  left: 0;
+  width: 0;
+  width: 1000px;
+  height: 40px;
+  background: #f0932b;
+  // animation-name: scrollbar;
+  // animation-timeline: scroll(root);
+}
+@keyframes scrollbar {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+
 .navcontainer {
   display: flex;
   justify-content: space-between;
@@ -5,7 +27,7 @@
   margin: 0 auto;
   padding-top: var(--space-lg);
   // max-width: var(--size-max-width);
-  // border: 1px solid pink;
+  border: 1px solid pink;
 }
 
 .navigation {
