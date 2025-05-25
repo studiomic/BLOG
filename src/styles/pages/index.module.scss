@@ -1,23 +1,9 @@
-// :root {
-// 	--border: rgba(0, 0, 0, 0.1);
-// // --duskGray: #292f3b;
-// // --lunaGray: #a6b1b5;
-// // --shineWhite: #f4f4f4;
-// // --underlowline: #EADD36;
-// // --underduskGray:#292f3b;
-// // --duskGray: #272f3a;
-// // background-color: #EADD36;
-// // --shineWhite2: #fafafa;
-// // --paperSoftness: #d1bca1;
-// // --intoroRow: 42dvh;
+// @media (prefers-reduced-motion: reduce) {
+//   *, *::before, *::after {
+//     transition-duration: 0.01ms !important;
+//     animation-duration: 0.01ms !important;
+//   }
 // }
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-  }
-}
-
 
 .container {
   display: block;
@@ -34,7 +20,6 @@
 	grid-template-columns: auto 3rem 3rem 3rem 0; // All
   grid-template-rows: auto 7svh 4svh 5svh; // 768max
 }
-
 .headers {
 	// background: url("../../asset/img/alex-CamJb_3RDoM-unsplash.jpg") no-repeat center center;
 	// background-size: cover;
@@ -121,6 +106,9 @@ header {
 	display: grid;
 }
 .notepost {
+	// animation-name: fadeinPost;
+  // animation-timeline: view();
+	// animation-timeline: scroll();
 	grid-column: 4/5;
 	grid-row: 1/-1;
 	position: relative;
@@ -138,12 +126,6 @@ header {
 }
 
 .postloop {
-	animation-name: fadeinline;
-  animation-timeline: view();
-	// animation-timeline: scroll();
-	border: 1px solid tomato;
-	opacity: 0.5;
-
 	h2 {
 		font-family: serif;
 		font-size: var(--text-2xl);
@@ -165,24 +147,6 @@ header {
 		padding-left: 0;
 	}
 }
-@keyframes fadeinline {
-  // 0% {
-  //   opacity: 0;
-  //   // filter: blur(1rem);
-  //   // transform: scale(0.9);
-  // }
-  // 50% {
-  //   opacity: 1;
-  //   // filter: blur(0);
-  //   // transform: scale(1);
-  // }
-	100% {
-    opacity: 1;
-    // filter: blur(0);
-    // transform: scale(1);
-  }
-}
-
 .lamp,.bggrid {
 		display: none;
 }
@@ -589,4 +553,17 @@ header {
 // 	.lamp,.bggrid {
 // 		display: block;
 // 	}
+// }
+// :root {
+// 	--border: rgba(0, 0, 0, 0.1);
+// // --duskGray: #292f3b;
+// // --lunaGray: #a6b1b5;
+// // --shineWhite: #f4f4f4;
+// // --underlowline: #EADD36;
+// // --underduskGray:#292f3b;
+// // --duskGray: #272f3a;
+// // background-color: #EADD36;
+// // --shineWhite2: #fafafa;
+// // --paperSoftness: #d1bca1;
+// // --intoroRow: 42dvh;
 // }
