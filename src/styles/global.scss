@@ -19,6 +19,7 @@
 .lightmode {
   --background: var(--white);
   --text-color: var(--black);
+  --text-colorRGB: 0,0,0;
   --dlborderColor: #eee;
   --notedlColor: #666;
   --detailsBg: #fdfdfd;
@@ -29,10 +30,16 @@
 	--underlowline: #EADD36;
 	--underduskGray:#292f3b;
   --summaryborder:rgb(0 0 0 / 0.1);
+  // --intoroBG: url("../asset/img/note-thanun-dOFpWEml0nw-unsplash.avif") no-repeat center center;
+  // --intoroBG: url("../asset/img/carmen-martinez-K4uj-VPRjJc-unsplash.jpg") no-repeat center bottom;
+  --intoroBG: url("../asset/img/faizur-rehman-dJpupM4LiS4-unsplash1.png") no-repeat center center;
+
+  
 }
 .darkmode {
   --background:#2c2d32;
   --text-color: #ddd;
+  --text-colorRGB: 221,221,221;
   --dlborderColor:#666;
   --notedlColor: #999;
   --detailsBg: #17191f;
@@ -43,11 +50,13 @@
 	--underlowline: #EADD36;
 	--underduskGray: rgb(95 146 160 / 0.7);
   --summaryborder:rgb(244 244 244 / 0.2);
+  --intoroBG: url("../asset/img/yannes-kiefer-uhHcrSWjfs0-unsplash.jpg") no-repeat center center;
 
 }
 .blackmode {
   --background: #000;
   --text-color: #ddd;
+  --text-colorRGB: 221,221,221;
   --dlborderColor:#666;
   --notedlColor: #999;
   --detailsBg: #222;
@@ -58,6 +67,8 @@
 	--underlowline: #EADD36;
 	--underduskGray: rgb(95 146 160 / 0.7);
   --summaryborder:rgb(244 244 244 / 0.2);
+  // --intoroBG: url("../asset/img/mob-about.avif") no-repeat center center;
+  --intoroBG: url("../asset/img/parrish-freeman-SlkTQFWSpz4-unsplash.jpg") no-repeat center top;
 }
 
 html {

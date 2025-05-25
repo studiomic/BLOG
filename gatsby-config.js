@@ -6,7 +6,7 @@ module.exports = {
   // pathPrefix: "/BLOG",
   siteMetadata: {
     title: "Studio Mic - Nakano - Stylo de Cerise",
-    description: "Web Design & Web developer - Web屋ノ私的Note",
+    description: "Web Design & Web developer - Web屋ノ私的note",
     siteUrl: "https://www.studiomic.net",
     author: 'Sakura.i',
     developer: "StudioMic",

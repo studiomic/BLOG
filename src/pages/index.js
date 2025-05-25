@@ -102,7 +102,7 @@ class RootIndex extends React.Component {
 export const Head = ({ data }) => {
   return (
     <Seo
-			title={data.site.siteMetadata.description}
+			title={data.site.siteMetadata.title}
       description={data.site.siteMetadata.description}
     />
   )
