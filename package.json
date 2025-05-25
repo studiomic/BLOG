@@ -10,7 +10,7 @@
     "@contentful/rich-text-plain-text-renderer": "^15.12.1",
     "@mdx-js/react": "^2.3.0",
     "clipboard": "^2.0.11",
-    "gatsby": "^5.5.0",
+    "gatsby": "^5.14.3",
     "gatsby-plugin-image": "^3.5.0",
     "gatsby-plugin-mdx": "^5.9.0",
     "gatsby-plugin-netlify": "^5.1.0",
