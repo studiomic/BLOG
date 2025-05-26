@@ -1,7 +1,3 @@
-// require("dotenv").config({
-//   path: `.env.${process.env.NODE_ENV}`,
-// });
-
 module.exports = {
   // pathPrefix: "/BLOG",
   siteMetadata: {
@@ -72,15 +68,14 @@ module.exports = {
         ],
       },
     },
-    "gatsby-plugin-sass",
-    // {
-    //   resolve: "gatsby-source-contentful",
-    //   options: {
-    //     spaceId: process.env.CONTENTFUL_SPACE_ID,
-    //     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-    //     host: process.env.CONTENTFUL_HOST,
-    //     enableTags: true,
-    //   },
-    // },
+    {
+      resolve: "gatsby-plugin-sass",
+      options: {
+        sassOptions: {
+          api: "modern",
+          silenceDeprecations: ['legacy-js-api'],
+        },
+      },
+    }
   ],
 };
