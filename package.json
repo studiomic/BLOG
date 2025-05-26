@@ -1,10 +1,10 @@
 {
-  "name": "contentful-starter-gatsby-blog",
-  "description": "Contentful Gatsby Starter Blog",
+  "name": "stylo-de-cerise",
+  "description": "Studio Mic",
   "version": "0.0.1",
-  "author": "Contentful <opensource@contentful.com>",
+  "author": "Sakura.i <webwork@studiomic.net>",
   "bugs": {
-    "url": "https://github.com/contentful/starter-gatsby-blog/issues"
+    "url": "https://github.com/studiomic/BLOG/issues"
   },
   "dependencies": {
     "@contentful/rich-text-plain-text-renderer": "^15.12.1",
@@ -44,10 +44,10 @@
   "engines": {
     "node": ">=18.0.0"
   },
-  "homepage": "https://github.com/contentful/starter-gatsby-blog#readme",
+  "homepage": "https://github.com/studiomic/BLOG#readme",
   "keywords": [
     "gatsby",
-    "contentful",
+    "blog",
     "starter"
   ],
   "license": "MIT",
