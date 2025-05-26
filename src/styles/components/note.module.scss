@@ -74,6 +74,8 @@
 
 .post-body {
 	font-size: 19px;
+	font-size: var(--text-xl);
+
 	a {
 		border-bottom: 1px solid currentColor;
 		margin: 0 .2em;
@@ -109,6 +111,7 @@
 		font-feature-settings: "palt";
 	}
 	article {
+
 		a {
 			display: flex;
 			align-items: center;
