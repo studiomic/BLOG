@@ -1,13 +1,4 @@
 // .featuredImg {
-// 	display: flex;
-// 	align-items: center;
-// 	align-items: flex-start;
-// 	max-height: 500px;
-// 	overflow-y: hidden;
-// 	margin-left: calc(var(--size-gutter)*(-1));
-// 	margin-right: calc(var(--size-gutter)*(-1));
-// 	margin-bottom: var(--space-3xl);
-// }
 
 .top {
 	h2 {
@@ -73,9 +64,9 @@
 	// padding-bottom: var(--size-gutter);
 
 .post-body {
-	font-size: 19px;
 	font-size: var(--text-xl);
-
+	// font-size: 19px;
+	// position: relative;
 	a {
 		border-bottom: 1px solid currentColor;
 		margin: 0 .2em;
@@ -110,32 +101,26 @@
 	p {
 		font-feature-settings: "palt";
 	}
-	article {
-
-		a {
-			display: flex;
-			align-items: center;
-			border: 1px solid var(--border);
-			padding: var(--space-xl);
-
-			img {
-				max-width: 11em;
-				max-height: 11em;
-				object-fit: contain;
-				margin-right: 1em;
-			}
-			h3 {
-				font-weight: normal;
-				margin: 0;
-			}
-		}
-	}
+	// article {
+  //   border: 1px solid crimson;
+	// 	a {
+	// 		display: flex;
+	// 		align-items: center;
+	// 		border: 1px solid var(--border);
+	// 		padding: var(--space-xl);
+	// 		img {
+	// 			max-width: 11em;
+	// 			max-height: 11em;
+	// 			object-fit: contain;
+	// 			margin-right: 1em;
+	// 		}
+	// 		h3 {
+	// 			font-weight: normal;
+	// 			margin: 0;
+	// 		}
+	// 	}
+	// }
 }
-
-
-
-
-
 
 blockquote {
 	border-left: 4px solid var(--secondary);
@@ -258,11 +243,9 @@ blockquote {
 	.container {
 		max-width: var(--size-max-width);
 		margin: 0 auto;
-    // border: 1px solid crimson;
 	}
 	.article {
 		gap: var(--space-xl);
-    // border: 1px solid crimson;
 	}
 }
 
