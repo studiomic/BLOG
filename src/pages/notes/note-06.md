@@ -5,7 +5,7 @@ slug: 'note-06-Hello-GatsbyHeadAPI'
 description: "Bye, React-helmet to Gatsby Head API"
 book:
 music: "松任谷由美「DESTINY」"
-featuredImage: "asset/GatsbyCloud.avif"
+featuredImage: "asset/Gatsbyartdeco.avif"
 ---
 <section style="margin-bottom: 6em;">
 

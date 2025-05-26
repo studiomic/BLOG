@@ -3,7 +3,7 @@ title: "M2 Mac mini"
 date: "2023-02-09 10:00:00"
 slug: 'm2-mac-mini'
 description: "そこに在るのを忘れる存在の小ささが好き。 慎ましやかな働きもの。"
-featuredImage: "asset/IMG_1968-2-1536x2048.avif"
+featuredImage: "asset/MacminiM2.avif"
 tag: 'Mac mini'
 ---
 2月5日の日曜日にお迎えした。 iMacにhpの外付けモニターを増設した時点で、次はMac miniを買うだろうと予定はしていた。 Amazonでモニターを注文したのが2022年4月26日だから、10ヶ月ほどはAdobe Creative Cloudの重さに辛抱し続けたわけだった。もちろん、それよりずっと以前から。

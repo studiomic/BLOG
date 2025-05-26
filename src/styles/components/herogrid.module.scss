@@ -76,11 +76,23 @@
 @container main (min-width: 1024px) {
   .hero {
     grid-template-columns: 1fr 6fr 2fr;
+    // border: 1px solid cyan;
   }
   .image {
+    // border: 1px solid tomato;
     height: 62svh; //61.8vh;
     grid-column: 2/4;
     grid-row: 1/3;
+    // aspect-ratio: 16 / 9;
+    // aspect-ratio: 21 / 9;
+    img {
+      object-fit: contain;
+      // width: auto;
+      height: auto;
+      // align-self: center;
+      // margin: 0 0 0 auto;
+      // margin: 0 auto;
+    }
   }
   .details {
     grid-column: 1/3;

@@ -4,7 +4,7 @@ date: "2023-06-06 10:00:00"
 slug: 'note-04-Markdown'
 description: "冷やし中華の話ではなく、Notesコンテンツを増設した話。"
 book: 谷川史子「おひとり様物語」
-featuredImage: "asset/mitchell-unsplash.avif"
+featuredImage: "asset/Pattern9.avif"
 ---
 ContentfulのリッチテキストEditorが少し使いづらい、というのはブログにも書いたのですが、では使いやすいというMarkdown Editorの方を使い出したか、というとそうでもなくて。
 
