@@ -39,7 +39,7 @@ featuredImage: "asset/outdated0250526.avif"
 いくら良記事があって、（<b>お任せ</b>でやってみようかなぁ）と楽しげな誘惑に駆られても
 
 あとで焦れったくなって手動に切り替えるくらいなら、最初から手動でコツコツやれ。<br>
-ローカルとリモートで同時進行すると、その気紛れは、あとでgit pushに競合拒否される。<br>
+ローカルとリモートで同時進行すると、その気紛れは、あとでgit pushに同期拒否される。<br>
 この自己反省のみ。
 
 要はあっちゃこっちゃ、同時にやるな。
@@ -147,30 +147,50 @@ reactは、18.から19.へ<br>メジャーバージョンアップができな�
 数あるパッケージをまとめてメジャーバージョンアップするには、**npm-check-updates**が良い。とわかったところで、参考記事をリンクしておく。
 
 
+- [npm installしたパッケージの更新確認とアップデート(npm-check-updates) - dackdive's blog](https://dackdive.hateblo.jp/entry/2016/10/10/095800)
 
 
-
-<span style="display: block;margin-bottom: 40em;"></span>
-
+- [package.json dependencies メンテの仕方 最短ルート #JavaScript - Qiita](https://qiita.com/alfe_below/items/1141ec9acbb81b504855)
 
 
-**Latest**
+- [package.json に記載されているパッケージのバージョンアップ方法 【 npm-check-updates, outdated 】 #npm - Qiita](https://qiita.com/sugurutakahashi12345/items/df736ddaf65c244e1b4f)
 
-セキュリティ脆弱性の
-**Current**
-update
-outdated
-時代遅れ
-<small style="color: crimson;">（項目をよく見ると、嘘。<br>
-大事なものばかりWantedで止めているので再考とリトライの余地ありだが、本記事の内容には支障ないため続行）</small>
+<hr>
 
-<span style="display: block;margin-bottom: 2em;"></span>
+今回はある意味、Contentful周辺の除外が目的だったのもあり、それこそ1行ずつ確実に消したり上書きする作業を目視したかった、時間かけたい系「鈍行」気分だったのですが、次回**npm-check-updates**知見を活かしたいと思います。
 
+<span style="display: block;margin-bottom: 4em;"></span>
 
-<span style="color: crimson;"></span>
+ところで、今時「鈍行」なんて単語通じるのか・・・と思いググると、現代語では「各停」「各駅停車」だそうで。
 
+おぉ、そうまさに「各駅停車」でいちいちホームを眺めて運行確認したかったため、表現は合ってた。
 
+<span style="display: block;margin-bottom: 4em;"></span>
 
+そんなわけで、Contentfulからすっかり足を洗うリモデル完了。<br>
+外観テーマを先に手掛け、あとからpackage.json書き換え込みのNodeパッケージ改め。
 
+ContentfulのRich-textエディターもWPのブロックエディターも、よく出来てはいるけど、所詮HTML書けるやつのMarkdownの楽さ、速さには適わない。
 
-Dependabot
+<span style="display: block;margin-bottom: 8em;"></span>
+余談ですが、わたくしのMarkdownはかなりインチキで（笑）
+
+Markdownで空白行を複数挿むとか、この無骨モノには（なにその繊細な話・・・）だけど
+
+```html
+<span style="display: block;margin-bottom: 3em;"></span>
+```
+と、これブロックエディターの「スペース」ブロックで思いついた。<br>
+3emの値を変えれば、100行の空白も造作なく作れる、空白おきには便利。
+
+WPの場合は透明なdivをデフォルトで100px挿入するブロック、あれはまるで今時のスペーサーGIF
+
+必要な要件は今も昔もたいして変わらんのねー。て事でMarkdownも半分はHTMLで書いている。<br>
+通常のMarkdownエディタのプレビューに直タグは表現されないけど、VS Code使いにはEmmetが速度の鍵。
+
+## Notion
+
+も、やたらと便利なタスク管理、くらいな気でライトユーザーでいましたが、今回コード転記に使っていて、（これ、つまりMarkdownだな）と気づき、いちいち「コードを挿入」するのが面倒で、
+<span style="font-weight:bold; color:crimson;">```</span>記号（アクサンクラーブ3つ）打った時点で、ちゃんと「コードを埋め込む」マウス操作と同じく、スニペット枠の中にいました。
+
+ハニカムちゃんの話題からだいぶ遠かったところで、終わり。
