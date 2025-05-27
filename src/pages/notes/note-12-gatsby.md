@@ -24,9 +24,7 @@ Deprecation Warningが出る理由は、 <a href="https://zenn.dev/levtech/artic
 
 <hr>
 
-
-
-要はビルドツールがGatsby、Nuxt、Viteだといった種別は関係なく**node_modules**のSass<br>
+要はビルドツールがGatsby、Nuxt、Viteだといった種別は関係なく**node_modules**の<a href="https://www.npmjs.com/package/sass" rel="noopener">Sass</a><br>
 node_modules/sass/sass.dart.jsに<br>
 廃止する予定の"legacy-js-api"だと書いてあり
 
