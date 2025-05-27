@@ -37,6 +37,9 @@ B.Deprecation_fsU = new A.Deprecation("legacy-js-api", "1.79.0", "legacyJsApi");
 
 node_modules/sass/types/deprecations.d.ts には警告文が載っていた。
 
+<span style="display: block;margin-bottom: 3em;"></span>
+
+
 ## All of the deprecation types currently used by Sass.
 （Sass で現在使用されているすべての非推奨タイプ。） ー がいつから警告だすか列挙してあった。
 
@@ -59,7 +62,7 @@ node_modules/sass/types/deprecations.d.ts には警告文が載っていた。
 <span style="display: block;margin-bottom: 2em;"></span>
 
 ここまではVS Codeで検索して見つかったが、なぜ警告文の対象になっているのかが <b>？？</b> だったのが、<br>
-先のZennの投稿で（おぉ。なるほど）と理解+納得できたので、あとは対処。
+先のZennの投稿で （おぉ。なるほど） と理解+納得できたので、あとは対処。
 
 <hr>
 
@@ -80,25 +83,25 @@ node_modules/sass/types/deprecations.d.ts には警告文が載っていた。
     },
 ```
 
-Gatsbyさん、英語文書しか充実してないけども。<br>
-ディスカッションはわかりやすい。
+Gatsbyさん、日本語文書は充実してないけども。<br>
+英語圏のディスカッションはわかりやすい。
 
 GitHub の Discussionsからマルっとコピー。
 
 <a href="https://github.com/gatsbyjs/gatsby/discussions/39146" target="_blank" rel="noopener noreferrer">DEPRECATION WARNING: The legacy JS API is deprecated 
 and will be removed in Dart Sass 2.0.0.</a><br>
-訳：非推奨の警告: レガシー JS API は非推奨であり、Dart Sass 2.0.0 で削除されます。
+訳：/ 非推奨の警告: レガシー JS API は非推奨であり、Dart Sass 2.0.0 で削除されます。
 
 
 
 
 <span style="display: block;margin-bottom: 4em;"></span>
 
-
+sassOptions:には、modern APIを使う,
 ```js
 api: "modern",
 ```
-sassOptions:には、modern APIを使う,　と
+と
 非推奨の警告には沈黙してもらう,　の2行を書いて解決。
 
 ```js
