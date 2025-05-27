@@ -25,7 +25,7 @@ featuredImage: "asset/outdated0250526.avif"
 はいはい、そのうちやります。の度がすぎて、アイコンに人格を付与する妄想に入った。<br>
 やるならやらねば。
 
-<div inert><img src="asset/Dependabot.avif" loading="lazy" width="100vw" alt=""></div>
+<img src="asset/Dependabot.avif" loading="lazy" width="100vw" alt="">
 
 ただし、この記事の主題は、npmでパッケージ個別アップデートをする方法の備忘録で<br>
 ハニカム氏については、対処法や使い方、いくらでも良記事があるはずなので、他をご参考いただくとして。
@@ -49,7 +49,7 @@ featuredImage: "asset/outdated0250526.avif"
 
 ## まずは完了形
 
-<div inert><img src="asset/outdated-After.avif" loading="lazy" width="100%" alt=""></div>
+<img src="asset/outdated-After.avif" loading="lazy" width="100%" alt="">
 
 そこそこ我慢ごろというか安定かつ警鐘なしになった画面が上。
 
@@ -61,7 +61,7 @@ featuredImage: "asset/outdated0250526.avif"
 ・・・どんだけ放置してきた
 という話である。
 
-<div inert><img src="asset/outdated0250526.avif" loading="lazy" width="100%" alt=""></div>
+<img src="asset/outdated0250526.avif" loading="lazy" width="100%" alt="">
 
 <span style="display: block;margin-bottom: 2em;"></span>
 まぁいいんだ。制作費を稼げるサイトが先なのでね。<br>
@@ -124,7 +124,7 @@ dependencies 対処として、<br>**update** ではなく **--save-dev** を使
 
 <span style="display: block;margin-bottom: 2em;"></span>
 
-<div inert><img src="asset/outdated-After.avif" loading="lazy" width="100%" alt=""></div>
+<img src="asset/outdated-After.avif" loading="lazy" width="100%" alt="">
 
 <span style="display: block;margin-bottom: 2em;"></span>
 再びもってきた現状の最終形。
@@ -144,7 +144,11 @@ reactは、18.から19.へ<br>メジャーバージョンアップができな�
 
 <hr>
 
-数あるパッケージを
+数あるパッケージをまとめてメジャーバージョンアップするには、**npm-check-updates**が良い。とわかったところで、参考記事をリンクしておく。
+
+
+
+
 
 <span style="display: block;margin-bottom: 40em;"></span>
 
