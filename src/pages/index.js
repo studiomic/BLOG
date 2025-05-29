@@ -46,7 +46,7 @@ class RootIndex extends React.Component {
 								</p>
 								<p>
 									<span className={styles.rows3}>屋台としては、React のフレームワークの一つである Gatsby.js でつくっています。</span><br />
-									<span className={styles.rows4}>CGIのインタラクティブ大好きから始まったWeb屋稼業の、たぶん最後にはまった好きなオモチャが <b>The Great Gatsby！</b> だったかと。</span>
+									<span className={styles.rows4}>CGIのインタラクティブ大好きから始まったWeb屋稼業の、たぶん最後にはまった好きなオモチャが <strong>The Great Gatsby！</strong> だったかと。</span>
 								</p>
 								<p>
 									<span className={styles.rows5}>好きなら「1銭にもならないことに血道を上げるタイプ」「買うより高いDIY」</span><br />

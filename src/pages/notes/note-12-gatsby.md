@@ -59,7 +59,7 @@ node_modules/sass/types/deprecations.d.ts には警告文が載っていた。
 
 <span style="display: block;margin-bottom: 2em;"></span>
 
-ここまではVS Codeで検索して見つかったが、なぜ警告文の対象になっているのかが <b>？？</b> だったのが、<br>
+ここまではVS Codeで検索して見つかったが、なぜ警告文の対象になっているのかが <strong>？？</strong> だったのが、<br>
 先のZennの投稿で （おぉ。なるほど） と理解+納得できたので、あとは対処。
 
 <hr>
