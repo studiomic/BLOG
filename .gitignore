@@ -81,5 +81,6 @@ znetlify
 ads.txt
 
 backup
+backup/
 
 # src/pages/notes/asset/
