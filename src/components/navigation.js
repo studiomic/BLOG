@@ -18,6 +18,12 @@ const Navigation = () => (
     </Link>
     <ul className={styles.navigation}>
       <li className={styles.navigationItem}>
+<Link to="/pager/" activeClassName="active">
+Pager
+</Link>
+      </li>
+
+      <li className={styles.navigationItem}>
         <ModeButton />
       </li>
     </ul>
