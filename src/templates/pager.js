@@ -3,15 +3,17 @@ import get from 'lodash/get'
 import { graphql, Link } from 'gatsby';
 import Layout from './../components/layout'
 import Seo from '../components/seo'
+import Pagination from '../components/pagination'
 import * as styles from '../styles/pages/index.module.scss'
 // import Intoro from './../components/intoro-index'
 // import Loop from './../components/workloop'
 // import * as styles from './../styles/work.module.scss'
 // export default function work() {
 
-class RootIndex extends React.Component {
+class NotesPegerTemplate extends React.Component {
 	render() {
 		const notes = get(this, 'props.data.allMarkdownRemark.edges')
+		const pageContext = get(this, 'props.pageContext')
 	return (
 		<Layout>
 				<section className={styles.container}>
@@ -30,7 +32,6 @@ class RootIndex extends React.Component {
 						<div className={styles.rowline1}></div>
 						<div className={styles.rowline2}></div>
 						<div className={styles.rowline3}></div>
-						{/* <div className={styles.free5}></div> */}
 					</div>
 
 					<article className={styles.about}>
@@ -75,6 +76,7 @@ class RootIndex extends React.Component {
 									</dl>
 								</div>
 							))}
+							<Pagination pageContext={pageContext} />
 						</div>
 
 						<div className={styles.lamp} loading="lazy"></div>
@@ -96,17 +98,21 @@ export const Head = ({ data }) => {
     />
   )
 }
-export default RootIndex
+export default NotesPegerTemplate
 
 export const pageQuery = graphql`
-query HomeQuery {
+query HomeQuery ($skip: Int!, $limit: Int!){
 	site {
 		siteMetadata {
 			title
 			description
 		}
 	}
-	allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
+	allMarkdownRemark(
+		sort: {frontmatter: {date: DESC}}
+		limit: $limit
+		skip: $skip
+		) {
 		edges {
 			node {
 				html

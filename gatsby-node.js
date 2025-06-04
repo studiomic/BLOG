@@ -58,13 +58,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   }
   
-  const notePerPage = 5
+  const notePerPage = 10
 
   if (notes.length > notePerPage) {
     const numPages = Math.ceil(notes.length / notePerPage)
     Array.from({ length: numPages }).forEach((_, i) => {
         createPage({
-            path: i === 0 ? `/notes` : `/notes/${i + 1}`,
+            path: i === 0 ? `/` : `/${i + 1}`,
             component: noteList,
             context: {
                 limit: notePerPage,
