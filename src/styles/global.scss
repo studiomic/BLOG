@@ -226,6 +226,10 @@ a:hover {
 a.active {
   font-weight: var(--bold);
 }
+a.current{
+  background: var(--text-color);
+  color: var(--background);
+}
 
 tt,
 code,

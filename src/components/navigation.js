@@ -18,9 +18,14 @@ const Navigation = () => (
     </Link>
     <ul className={styles.navigation}>
       <li className={styles.navigationItem}>
-<Link to="/pager/" activeClassName="active">
-Pager
-</Link>
+        <Link to="/2/" activeClassName="active">
+        Page2
+        </Link>
+      </li>
+      <li className={styles.navigationItem}>
+        <Link to="/3/" activeClassName="active">
+        Page3
+        </Link>
       </li>
 
       <li className={styles.navigationItem}>
