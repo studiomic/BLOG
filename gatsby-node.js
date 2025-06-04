@@ -3,6 +3,7 @@ const path = require('path')
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
   const notePost = path.resolve('./src/templates/note-post.js')
+  const noteList = path.resolve('./src/templates/pager.js')
   
   const result = await graphql(
     `
@@ -54,6 +55,24 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           id: note.node.id,
         },
       })
+    })
+  }
+  
+  const notePerPage = 5
+
+  if (notes.length > notePerPage) {
+    const numPages = Math.ceil(notes.length / notePerPage)
+    Array.from({ length: numPages }).forEach((_, i) => {
+        createPage({
+            path: i === 0 ? `/notes` : `/notes/${i + 1}`,
+            component: noteList,
+            context: {
+                limit: notePerPage,
+                skip: i * notePerPage,
+                numPages,
+                currentPage: i + 1,
+            },
+        })
     })
   }
 }
