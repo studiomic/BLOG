@@ -3,6 +3,7 @@ import get from 'lodash/get'
 import { graphql, Link } from 'gatsby';
 import Layout from './../components/layout'
 import Seo from '../components/seo'
+import Pagination from '../components/pagination'
 import * as styles from '../styles/pages/index.module.scss'
 // import Intoro from './../components/intoro-index'
 // import Loop from './../components/workloop'
@@ -12,6 +13,16 @@ import * as styles from '../styles/pages/index.module.scss'
 class RootIndex extends React.Component {
 	render() {
 		const notes = get(this, 'props.data.allMarkdownRemark.edges')
+		const pageContext = get(this, 'props.pageContext')
+		// const numPages = get(this, 'props.pageContext')
+		// const limit = pageContext.limit
+		
+		// const posts = get(this, 'props.data.allContentfulBlogPost.nodes')
+		// const skip = get(this, 'props.pageContext')
+		// const currentPage = get(this, 'props.pageContext')
+		// const pageContext = get(this, 'props.pageContext')
+		
+
 	return (
 		<Layout>
 				<section className={styles.container}>
@@ -30,7 +41,6 @@ class RootIndex extends React.Component {
 						<div className={styles.rowline1}></div>
 						<div className={styles.rowline2}></div>
 						<div className={styles.rowline3}></div>
-						{/* <div className={styles.free5}></div> */}
 					</div>
 
 					<article className={styles.about}>
@@ -75,23 +85,26 @@ class RootIndex extends React.Component {
 									</dl>
 								</div>
 							))}
+							<Pagination pageContext={pageContext} />
 						</div>
-
 						<div className={styles.lamp} loading="lazy"></div>
 						<div className={styles.bggrid} loading="lazy">
 							<h2>Designing with CSS Grid</h2>
 						</div>
-
-						{/* <div className={styles.grid}>1</div>
+						<div className={styles.grid}>1</div>
 						<div className={styles.grid}>2</div>
-						<div className={styles.grid}>3</div> */}
+						<div className={styles.grid}>3</div>
 
-						{/* <div className={styles.grid}>4</div>
-						<div className={styles.grid}>5</div> */}
+						<div className={styles.grid}>4</div>
+						<div className={styles.grid}>5</div>
 
 						{/* <div className={styles.grid}>6</div>
 						<div className={styles.grid}>7</div>
 						<div className={styles.grid}>8</div> */}
+
+
+
+
 					</div>
 				</section>
 		</Layout>
@@ -110,14 +123,18 @@ export const Head = ({ data }) => {
 export default RootIndex
 
 export const pageQuery = graphql`
-query HomeQuery {
-    site {
-      siteMetadata {
-        title
-        description
-      }
-    }
-	allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
+query HomeQuery ($limit: Int = 10, $skip: Int = 0){
+	site {
+		siteMetadata {
+			title
+			description
+		}
+	}
+	allMarkdownRemark(
+		sort: {frontmatter: {date: DESC}}
+		limit: $limit
+		skip: $skip
+		) {
 		edges {
 			node {
 				html

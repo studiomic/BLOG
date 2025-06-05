@@ -3,7 +3,7 @@ const path = require('path')
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
   const notePost = path.resolve('./src/templates/note-post.js')
-  const noteList = path.resolve('./src/pages/index.js')
+  const noteList = path.resolve('./src/templates/index.js')
   
   const result = await graphql(
     `
@@ -58,9 +58,19 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   
     const notePerPage = 10
+
     if (notes.length > notePerPage) {
       const numPages = Math.ceil(notes.length / notePerPage)
+      
+
+      // numPages.forEach((page, index) => {
+      //   const previousPage = index === 0 ? null : page[index - 1]
+      //   const nextPage = index === numPages ? null : page[index + 1]
+
+
       Array.from({ length: numPages }).forEach((_, i) => {
+        
+
         createPage({
           path: i === 0 ? `/` : `/${i + 1}`,
           component: noteList,
@@ -69,6 +79,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             skip: i * notePerPage,
             numPages,
             currentPage: i + 1,
+            // previousPage,
+            // nextPage,
           },
         })
       })

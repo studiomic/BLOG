@@ -1,6 +1,6 @@
 .peger {
 	font-size: 1.4em;
-	a {
+	a:not(.pnbtn){
 		font-family: var(--font-Roboto);
 		font-family: var(--font-sansLINE);
 		margin-right: 1em;
