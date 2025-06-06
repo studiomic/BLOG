@@ -335,7 +335,7 @@ header {
 		// grid-row-gap: var(--size-gutter);
 		grid-row-gap: 0;
 		grid-template-columns: 1fr 48px 1fr 3fr;
-		grid-template-rows: 12svh 40vw auto;
+		grid-template-rows: 11svh 40vw auto;
 	}
 	
 	.notepost {
@@ -372,8 +372,6 @@ header {
 
 		margin: auto auto var(--size-gutter);
 		// transform: rotate(15deg) translateX(0) translateY(0);
-
-
 		animation-name: filters;
 		animation-duration: 15s;
 		animation-timing-function: linear;
@@ -397,7 +395,7 @@ header {
 			font-weight: 300;
 			font-size: 2em;
 			color: var(--white);
-			padding-top: calc(var(--size-gutter) * 5);
+			padding-top: calc(var(--size-gutter) * 3);
 		}
 		&::before,&::after {
 			position: absolute;

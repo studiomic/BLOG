@@ -14,16 +14,8 @@ class RootIndex extends React.Component {
 	render() {
 		const notes = get(this, 'props.data.allMarkdownRemark.edges')
 		const pageContext = get(this, 'props.pageContext')
-		// const numPages = get(this, 'props.pageContext')
-		// const limit = pageContext.limit
-		
-		// const posts = get(this, 'props.data.allContentfulBlogPost.nodes')
-		// const skip = get(this, 'props.pageContext')
-		// const currentPage = get(this, 'props.pageContext')
-		// const pageContext = get(this, 'props.pageContext')
-		
 
-	return (
+		return (
 		<Layout>
 				<section className={styles.container}>
 					<div className={styles.layoutGrid}>
@@ -91,20 +83,6 @@ class RootIndex extends React.Component {
 						<div className={styles.bggrid} loading="lazy">
 							<h2>Designing with CSS Grid</h2>
 						</div>
-						<div className={styles.grid}>1</div>
-						<div className={styles.grid}>2</div>
-						<div className={styles.grid}>3</div>
-
-						<div className={styles.grid}>4</div>
-						<div className={styles.grid}>5</div>
-
-						{/* <div className={styles.grid}>6</div>
-						<div className={styles.grid}>7</div>
-						<div className={styles.grid}>8</div> */}
-
-
-
-
 					</div>
 				</section>
 		</Layout>

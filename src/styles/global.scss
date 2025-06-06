@@ -51,7 +51,6 @@
 	--underduskGray: rgb(95 146 160 / 0.7);
   --summaryborder:rgb(244 244 244 / 0.2);
   --intoroBG: url("../asset/img/yannes-kiefer-uhHcrSWjfs0-unsplash.jpg") no-repeat center center;
-
 }
 .blackmode {
   --background: #000;
@@ -169,27 +168,6 @@ body {
   }
 }
 
-// .wave,.wavervs,.wavetop {
-// 	margin-top: -200px;
-// 	display: block;
-// 	height: 200px;
-// 	// transform: scale(-1, -1);
-//   svg {
-//     fill: var(--background);
-//   }
-// }
-// .wave {
-//   transform: scale(-1, -1);
-// }
-// .wavervs {
-//   transform: scale(1.75, -1);
-// }
-// .wavetop {
-//   transform: scale(1.75, -1);
-// }
-// .wavemdl {
-//   transform: scale(1.5, -1);
-// }
 
 .logo {
   height: var(--size-logo);
@@ -339,3 +317,26 @@ tt:after {
 
   // transition: background-color .6s ease;
     // transition: 0.1s ease;
+
+
+    // .wave,.wavervs,.wavetop {
+// 	margin-top: -200px;
+// 	display: block;
+// 	height: 200px;
+// 	// transform: scale(-1, -1);
+//   svg {
+//     fill: var(--background);
+//   }
+// }
+// .wave {
+//   transform: scale(-1, -1);
+// }
+// .wavervs {
+//   transform: scale(1.75, -1);
+// }
+// .wavetop {
+//   transform: scale(1.75, -1);
+// }
+// .wavemdl {
+//   transform: scale(1.5, -1);
+// }
