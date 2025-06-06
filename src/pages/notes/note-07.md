@@ -125,7 +125,9 @@ MacをLightモードにするのはきついし、ブラウザも同じく。<br
 外観としては、Codepenで見かけた[Light / Dark / Black Theme](https://codepen.io/havardob/pen/dyOJyje)が全員嬉しい感。
 
 
-<img src="asset/2023-06-19-3.png" alt="3ThemeMode">
+<img src="asset/2023-06-19-3.png" alt="ダークモードテーマ+">
+
+
 
 ダークモードでも発色ゼロの漆黒Blackじゃないと目にきびしいという方もいれば、私は逆に「#000000」は、きつすぎてエディターのテーマなどでも敬遠します。<br>
 「濃灰色」止まり。
