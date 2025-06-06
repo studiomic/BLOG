@@ -61,16 +61,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     if (notes.length > notePerPage) {
       const numPages = Math.ceil(notes.length / notePerPage)
-      
-
-      // numPages.forEach((page, index) => {
-      //   const previousPage = index === 0 ? null : page[index - 1]
-      //   const nextPage = index === numPages ? null : page[index + 1]
-
-
       Array.from({ length: numPages }).forEach((_, i) => {
-        
-
         createPage({
           path: i === 0 ? `/` : `/${i + 1}`,
           component: noteList,
@@ -79,8 +70,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             skip: i * notePerPage,
             numPages,
             currentPage: i + 1,
-            // previousPage,
-            // nextPage,
           },
         })
       })
