@@ -83,4 +83,7 @@ ads.txt
 backup
 back-up
 
+src/pages/notes/draft
+.draft
+
 # src/pages/notes/asset/

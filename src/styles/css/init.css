@@ -9,13 +9,14 @@
 	text-decoration:underline;
 	text-decoration-style: wavy;
 	text-decoration-color: #6272a4;
+	
+	/* border-bottom: 1px solid #6272a4; */
 	/* salmon; */
 	text-underline-offset: .3em;
 	color: var(--crimson);
 	color:var(--white);
 	color:var(--secondary);
 	color:#aaa;
-	/* border-bottom: 1px solid #000; */
 	margin: 0;
 	width: 100%;
 	padding: 0.5em 1.5em 0.5em;
@@ -30,9 +31,6 @@
 }
 
 
-
-
-
-
+/* border-bottom: 1px solid #000; */
 /* margin: 0 0 1px auto; */
 /* border-radius: 0.3em 0.3em 0 0; */
