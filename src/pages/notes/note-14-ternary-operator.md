@@ -2,7 +2,7 @@
 title: "Gatsbyページネーションと三項演算子の話"
 date: "2025-06-06 22:00:00"
 slug: 'ternary-operator-14'
-description: "わかってみるとスマートだったかもという理解"
+description: "わかってみるとスマートだったという理解"
 book:
 music:
 # featuredImage: "asset/Dependabot.avif"
@@ -12,7 +12,7 @@ featuredImage: "asset/ternary-operator-14.png"
 サイトのデザインを一新した際に、当初はBlogとNotesと2つメニューに分けていた記事群を、一つにまとめた。<br>
 内訳はBlog（Contentful）とNotes（Markdown）の棲み分けだったに過ぎず、コンテンツとしてはまったく同種、他人様から見たら、なぜ分けているのか意味不明・・・どっちもBlogじゃん。を、Markdownへ合算したため、急に一覧表示対象の記事数が増えた。
 
-個人的には、アイキャッチ画像などない全記事一覧を一望ってのもわりと好きなんだけども。<br>
+個人的には、アイキャッチ画像などない全記事タイトル一覧を一望ってのもわりと好きなんだけども。<br>
 どこまでもスクロール長が伸びていくのもな、という心境から、ページネーション（ページャー）を実装した。
 
 <img src="asset/ternary-operator-14.png" loading="lazy" width="100%" alt="">
@@ -54,7 +54,7 @@ String str = 条件式1 ? 条件式2 ? "A" : "B" : "C";
 
 簡単に説明すると、よく見る条件式が1つの三項演算子がIF文の代替なら、条件式が2つあるコレは、「IF文のネスト」代替だ。
 
-と文脈ありで考えたとき、条件式が最初に2つ並んでいるのは、まず「ネストしとります、入れ子は1つ、結果は3通り」とサラリと書かれているようで、あれ？親切か。むしろ解りやすく直感的なのでは？　と一旦、目を見張った。
+と、文脈ありで考えたとき、条件式が最初に2つ並んでいるのは、まず「ネストしとります、入れ子は1つ、結果は3通り」とサラリと書かれているようで、あれ？親切か。むしろ解りやすく直感的なのでは？　と一旦、目を見張った。
 
 混乱するコードとされつつ、書いた人むちゃくちゃ賢いんじゃ。という見直し。
 
@@ -100,28 +100,31 @@ String str = 条件式1 ? 条件式2 ? "A" : "B" : "C";
 
 こう書いてみたかったんですけども！
 
-結論として
+<hr>
+
+一応、対抗馬として元の記事で「より見やすい」とされた例も掲載しておく。<br>
 
 ```JS
 String str = !条件式1 ? "C" : 条件式2 ? "A" : "B";
 ```
-こうなりました。
+
 
 <span style="display: block;margin-bottom: 5em;"></span>
 
 
 ## previousリンクの特異性
 
-というか、Webページのパスの特性ですよね。
+というか、Webページのパスの特性ですよね。<br>
+パスが「増」へ進むのは数の増で済むが、「減」へ進むと、ルートにぶつかる。
 
 <img src="asset/ternary-operator-14.png" loading="lazy" width="100%" alt="">
 
 （丸数字）はカレントページ現在地なので、生成されたページ数だけある。<br>
 NEXTページは、**currentPage + 1**
-で加算していくだけ。
+で加算していくだけ。<br>
+表示されないのは、1ページに表示するパラメータがn件なのにPOSTがまだn件未満のうちと、ラストページ。
 
-表示されないのは、1ページに表示するパラメータが10件なのにPOSTがまだ10件未満のうちと、ラストページだけ。<br>
-previousを略したPREVページは、**currentPage - 1**の場合が圧倒多数だが、1ページ目には不要であり、2ページ目には数値でなく「/」ルートを渡すべき、という制約2件。
+previousを略したPREVページは、**currentPage - 1**の場合が圧倒多数だが、1ページ目には不要であり、2ページ目には数値「1」でなく「/」ルートを渡すべき、という制約2件。
 
 <hr>
 
@@ -136,14 +139,24 @@ createPage({
 
 Gatsbyの場合、ページを生成するgatsby-node.jsの中で、createPageメソッドに書いている。
 
-<span style="display: block;margin-bottom: 3em;"></span>
+文章がおかしいな。<br>
+戻り先としてpath:を充てているわけではなく、そのパス・位置にページをつくらせている。<br>
+ために、ページネーションで〔PREV ・ NEXT〕をつけたい時は、そのパスを拾いにいく。当然だが文章はこちらが正しい。（言い方！とツッコみたくなった）
+
+pageContextで何を渡すかは、作り手の作り方、好みで構わないが、あまりに色々と渡そうとすると、開発環境で
+**Warn when pageContext is too large**
+と注意されたりする。
+
+<hr>
+
+
 
 さて。<br>
 1ページでもなけりゃ、2ページでもない、3ページ目以降なら**currentPage - 1**<br>
 1ページでは表示しないのでnullを返す。<br>
 2ページでは数値ではなく「/」を渡したい。
 
-これを例題に落とし込みたかったんだけど
+これを例題に落とし込みたかった
 
 ```JS
 String str = 条件式1 ? 条件式2 ? "A" : "B" : "C";
@@ -155,19 +168,19 @@ String str = 条件式1 ? 条件式2 ? "A" : "B" : "C";
 const previousPage = currentPage !== 1 ? currentPage !== 2 ? `/${currentPage -1}`: `/` : null
 ```
 
-・・・嘘書いた。
-<span style="display: block;margin-bottom: 3em;"></span>
-あー前述の
 
-結論として
+<span style="display: block;margin-bottom: 3em;"></span>
+
+少しだけ、対抗馬として置いた↓に似てます。（似てねぇけど）
+
 
 ```JS
 String str = !条件式1 ? "C" : 条件式2 ? "A" : "B";
 ```
-こうなりました。　←ここ、嘘でしたね。<br>
+
 条件式にnotイコール
 **!==**
-を使ってるだけで "A" : "B" : "C" と並べてました。
+を使ってるだけで "A" : "B" : "C" と行儀よく並べました。
 
 
 <span style="display: block;margin-bottom: 3em;"></span>
@@ -178,7 +191,6 @@ String str = !条件式1 ? "C" : 条件式2 ? "A" : "B";
 重箱の隅ですが「!条件式1」てなんね？
 
 <span style="display: block;margin-bottom: 2em;"></span>
-
 
 もちろん元記事を書いた人の混乱したコードが何を条件にしていたか、どんな3種の結果を導くためのコードか不明なので、例題だけをみた評価なんですけど
 
@@ -200,24 +212,162 @@ currentPage !== 1 ? currentPage !== 2 ? `/${currentPage -1}`
 
 # ふ。
 
-スマートに書いてみたくてはじめた試みがまったく賢くない事に気づきます。
+スマートに書いてみたくてはじめた試みが、うん、なかなか泥臭いな、と気づきます。
 
 ここでしたいことは、三項演算子を使った代入なので、
 
+1ページでは表示しないのでnullを返す。という野暮ったさは避けられない。「空白文字」を返す、でも良いのだけど「代入しない」「何もしない」を選択できない。これがIF文との違いだったんですね。
 
-1ページでは表示しないのでnullを返す。
+```JS
+if (currentPage >= 3) {
+    previousPage = `/${currentPage -1}`;
+} else {
+    if (currentPage == 2) {previousPage = `/`;}
+}
+```
+IF文の場合、そもそもpreviousPageは2ページ目以上にしか登場しないものとして、はなから1ページ目は除外された書き方。
 
 
+三項演算子に置き換えるに、条件の書き方はいろいろ考えられるけど
+
+```JS
+const previousPage = currentPage > 1 ? currentPage === 2 ?  `/` : `/${currentPage -1}` : null
+```
+先に書いたのと似たり寄ったり。まぁ得たい結果が同じ3パターンなので当然か。と思いつつ、色々書き試ししてみました。<br>
+今回は理想の "A" : "B" : "C";　を辿る旅回みたいな位置付けだったので（笑）
+
+<span style="display: block;margin-bottom: 2em;"></span>
+
+で、一目瞭然なのは、何もしなければ勝手に「undefined（未定義）」とされるのを、nullやundefinedを渡すのを「泥臭い」とか野暮を言わなければ！ 代入や二択が一気に一行でできる三項演算子、やはり便利ですね、と。
+
+<hr>
+
+余談として、三項演算子、長らく呼び名を知らなかったけれど、もうとっくに長らく「編集」はしてました。<br>
+WordPress案件はいつからか何十年も多く受けているため、やたら見かける「ハテナ・コロン」<br>
+天然なので、PHP特有のIF文の書き方なんだろーなぁと思っていた。
+
+そういう意味では（可読性わりぃー）を自分こそ散々感じていたわけだが、IF文を挿むには、<code><?php</code>をいちいち切らなきゃいけないとか、別の不便を避けるに、良い方便だなと使い分けていた。
+
+<span style="display: block;margin-bottom: 4em;"></span>
+
+
+# おさらい
+
+曖昧に使い分けてきた、あるいはもっと天然にどっちもIF文だと思ってた！ぐらいの輩は、下手な考えを引き延ばすより、辞書を引いた方が早い。
+
+AIは文章力があるので説得力もありました。
+
+
+IF関数とは、ある条件が「真」の場合と「偽」の場合で、それぞれ異なる結果を返す関数です。
+
+三項演算子（ternary operator）とは、3つの項（被演算子）を用いて一つの結果を求める演算子です。
+
+<hr>
+
+シラフで読むと、ぜんぜん違う。
+
+
+そうそう、IF文というのは、Aという値を持って処理1へ進む、Bという値を保持して処理1へ進む、それ以外のC群：つまりelse群は処理2へ・・・みたいな分岐がイメージですよね。
+
+に対して、三項演算子は、たしかに真偽を問うて一つの結果を求める。だから代入にも適している。
+
+
+```
+function example() {
+    return condition1 ? value1
+         : condition2 ? value2
+         : condition3 ? value3
+         : value4;
+}
+```
+
+```js
+const previousPage = 
+    currentPage >= 3 ? `/${currentPage -1}`
+    : currentPage === 2 ? `/`
+    : null
+```
+
+
+
+
+<span style="display: block;margin-bottom: 2em;"></span>
+
+
+
+
+
+
+
+
+
+
+<hr>
+
+とどのつまり、可読性が良いか悪いか、悪いと感じるのは個人のレベルだなと薄々気づいてます。<br>
+レベルというのが感じが悪ければ「慣れ」<br>
+どうやら由来はC言語
+
+
+
+
+<span style="display: block;margin-bottom: 2em;"></span>
+<span style="display: block;margin-bottom: 13em;"></span>
+
+
+
+```JS
+const previousPage = currentPage !== 1 ? currentPage !== 2 ? `/${currentPage -1}`: `/` : null
+```
+
+
+
+
+
+
+
+
+```JS
+if (currentPage !=1 && currentPage !=2) {
+    previousPage = `/${currentPage -1}`;
+} elseif (currentPage == 2) {
+    previousPage = `/`;}
+} else {
+ null
+}
+```
+
+
+
+
+
+
+多勢に無勢
 
 
 <span style="display: block;margin-bottom: 13em;"></span>
 
 
-nullかundefined
+
+
+
+
+
+
+
+llかundefined
 
 
 <span style="display: block;margin-bottom: 3em;"></span>
 
+
+
+
+<!-- 本当に重箱の隅、4つ突くつもりか！なしつこさで書くと<br>
+IF文て「条件分岐」、絞り込みに使うか、仕分けに使うか、分かれ道を作るものでしょう。
+
+例として、国民に未成年と成年がおり、それぞれその男女がいる、4つに分かれる。<br>
+例として、健康保険の定期健診を発送する、年齢で区切ったり、その上で男女別で奨める健診 -->
 
 
 
