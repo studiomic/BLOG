@@ -139,6 +139,8 @@ createPage({
 
 Gatsbyの場合、ページを生成するgatsby-node.jsの中で、createPageメソッドに書いている。
 
+<span style="display: block;margin-bottom: 2em;"></span>
+
 文章がおかしいな。<br>
 戻り先としてpath:を充てているわけではなく、そのパス・位置にページをつくらせている。<br>
 ために、ページネーションで〔PREV ・ NEXT〕をつけたい時は、そのパスを拾いにいく。当然だが文章はこちらが正しい。（言い方！とツッコみたくなった）
@@ -242,11 +244,13 @@ const previousPage = currentPage > 1 ? currentPage === 2 ?  `/` : `/${currentPag
 
 <hr>
 
-余談として、三項演算子、長らく呼び名を知らなかったけれど、もうとっくに長らく「編集」はしてました。<br>
+余談ですが、三項演算子、長らく呼び名を知らなかったけれど、もうとっくに長らく「編集」はしてました。<br>
 WordPress案件はいつからか何十年も多く受けているため、やたら見かける「ハテナ・コロン」<br>
 天然なので、PHP特有のIF文の書き方なんだろーなぁと思っていた。
 
-そういう意味では（可読性わりぃー）を自分こそ散々感じていたわけだが、IF文を挿むには、<code><?php</code>をいちいち切らなきゃいけないとか、別の不便を避けるに、良い方便だなと使い分けていた。
+そういう意味では（可読性わりぃー）を自分こそ散々感じていたわけだが、IF文を挿むには、<code><?php</code>をいちいち切らなきゃいけないとか、別の不便を避けるに、良い方便だなと使い分けていた。<br>
+
+しかし・・・
 
 <span style="display: block;margin-bottom: 4em;"></span>
 
@@ -271,8 +275,41 @@ IF関数とは、ある条件が「真」の場合と「偽」の場合で、そ
 
 に対して、三項演算子は、たしかに真偽を問うて一つの結果を求める。だから代入にも適している。
 
+<span style="display: block;margin-bottom: 2em;"></span>
 
-```
+### 関数（function）と演算子（operator）
+
+あぁ本当にごめんなさい。味噌も糞も一緒にしてた・・・というフレーズしか浮かばなかった。
+
+とどのつまり、可読性が良いか悪いか、悪いと感じるのは個人のレベルだなと薄々気づいてました途中から。<br>
+レベルというのが感じが悪ければ「慣れ」<br>
+どうやら由来はC言語らしいので、慣れている人には、長けたやり方なんだろうと想像できます。
+
+<span style="display: block;margin-bottom: 3em;"></span>
+
+先に断ると、元記事で「より見やすい」とされた例を挙げたコメント欄にはきちんと、
+
+<blockquote>
+
+三項演算子は可読性が低いと思っている人がたまにいますが、可読性が低いのは三項演算子自体ではなくネストした条件です。
+ネストした条件はif文で書いても三項演算子で書いても可読性は低いです。
+
+例に挙げている条件も２つの条件がネストしていますが、工夫すればフラットな条件に書き直すことで見やすくできます。
+</blockquote>
+
+と、前置きありで書かれたコード。
+
+<span style="display: block;margin-bottom: 2em;"></span>
+
+途中「!条件式1」てなんね？ と噛みついてますが、本音は、コメントの大事なところを省いて、「より見やすい」は短絡すぎるだろう・・・です。
+
+<span style="display: block;margin-bottom: 3em;"></span>
+
+最後に
+[MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Conditional_operator)
+に載っていた連鎖の2例をトレースします。
+
+```js
 function example() {
     return condition1 ? value1
          : condition2 ? value2
@@ -282,251 +319,77 @@ function example() {
 ```
 
 ```js
+function example() {
+  if (condition1) {
+    return value1;
+  } else if (condition2) {
+    return value2;
+  } else if (condition3) {
+    return value3;
+  } else {
+    return value4;
+  }
+}
+```
+条件によるが、少なくとも代入が目的なら、どちらが可読性が高いか、顕著ですよね。
+
+前に書いたpreviousPageへの代入も改行を入れて、このようにも書ける。
+
+```js
 const previousPage = 
     currentPage >= 3 ? `/${currentPage -1}`
     : currentPage === 2 ? `/`
     : null
 ```
 
+でも、最初の「1ページでもなけりゃ、2ページでもない」も捨てがたい。
 
+```JS
+const previousPage = 
+    currentPage !== 1 ? currentPage !== 2 ? `/${currentPage -1}`
+    : `/`
+    : null
+```
+だが改行は断る！　って感じで解りにくくなりましたわ。
 
 
 <span style="display: block;margin-bottom: 2em;"></span>
 
+# 結論
 
+<blockquote>
 
+三項演算子は可読性が低いと思っている人がたまにいますが、可読性が低いのは三項演算子自体ではなくネストした条件です。
 
+</blockquote>
 
-
-
-
-
-
-<hr>
-
-とどのつまり、可読性が良いか悪いか、悪いと感じるのは個人のレベルだなと薄々気づいてます。<br>
-レベルというのが感じが悪ければ「慣れ」<br>
-どうやら由来はC言語
-
-
-
-
-<span style="display: block;margin-bottom: 2em;"></span>
-<span style="display: block;margin-bottom: 13em;"></span>
-
+これが金言だったって、ことと。
 
 
 ```JS
-const previousPage = currentPage !== 1 ? currentPage !== 2 ? `/${currentPage -1}`: `/` : null
+String str = 条件式1 ? 条件式2 ? "A" : "B" : "C";
 ```
+このコードは使い慣れるか、具体例をおけば、とてもスマートだとわかった話でした。
+
+<span style="display: block;margin-bottom: 6em;"></span>
 
 
+# PREV ・ NEXT実例
 
-
-
-
-
-
-```JS
-if (currentPage !=1 && currentPage !=2) {
-    previousPage = `/${currentPage -1}`;
-} elseif (currentPage == 2) {
-    previousPage = `/`;}
-} else {
- null
-}
-```
-
-
-
-
-
-
-多勢に無勢
-
-
-<span style="display: block;margin-bottom: 13em;"></span>
-
-
-
-
-
-
-
-
-
-llかundefined
-
-
-<span style="display: block;margin-bottom: 3em;"></span>
-
-
-
-
-<!-- 本当に重箱の隅、4つ突くつもりか！なしつこさで書くと<br>
-IF文て「条件分岐」、絞り込みに使うか、仕分けに使うか、分かれ道を作るものでしょう。
-
-例として、国民に未成年と成年がおり、それぞれその男女がいる、4つに分かれる。<br>
-例として、健康保険の定期健診を発送する、年齢で区切ったり、その上で男女別で奨める健診 -->
-
-
-
-
-
-
-
-画像では、**PREV ・ NEXT**
-が両方表示される真ん中の「2ページ目」を撮っているが、最初と最後で、**PREV**
+長々と代入のネタになっていた
+**previousPage**
 と
-**NEXT**
-は、ぞれぞれ消える。<br>
-
-
-平たく1ページ目に**PREV**は不要。<br>
-この場合の最終3ページでは**NEXT**が不要となる。
-
-<span style="display: block;margin-bottom: 3em;"></span>
-
-**NEXT**
-は単純で、最後のページでは消えて欲しいので、**null**を返す。<br>
-それ以外は、ずっと
-**currentPage + 1**
-で加算していくだけ。
-
-```js
-const nextPage = currentPage < numPages ? `/${currentPage + 1}` : null
-```
-全ページ数numPagesより現在ページが小さければ、nextPageは、現在ページ + 1<br>
-
-<hr>
-
-
-が、**PREV**は逆に
-**currentPage - 1**
-と減算していくだけでは、2ページ目の前ページは
-**/1/**　や　**/blog/1/**　といったURIパスとしておかしなことになる。
-
-一般に生成されるページ、Webページのパスは
-
-/<br>
-/2/<br>
-/3/<br>
-
-あるいは、/blog/ディレクトリ下の例で
-
-/blog/<br>
-/blog/2/<br>
-/blog/3/<br>
-
- 故に、（説明が恐ろしく長くなったが！）
- やりたいことは、
- 
- 1ページ目ではnull<br>
- 2ページ目では "/"<br>
-それ以外はすべて
-**currentPage - 1** で前のページ値を渡したい。
-
-よって、前に見覚えのあった
-
-
-の出番である。
-
-<hr>
-
-# 振り返り
-
-
-<span style="display: block;margin-bottom: 2em;"></span>
-
-「問題となったコード」とされている
-```JS
-String str = 条件式1 ? 条件式2 ? "A" : "B" : "C";
-```
-
-条件式が1つの「三項演算子」がIF文の代替なら、条件式が2つあるコレは、「IF文のネスト」代替だ。
-
-と文章で考えたとき、条件式がいきなり2つ並んでいるのは、逆に「ネストしとります、入れ子は1つ、結果は3通り」とサラリと書かれているようで、あれ？むしろ解りやすく直感的なスマートさを感じた。
-
-<span style="display: block;margin-bottom: 3em;"></span>
-
-結果：ABCを真偽に置き換えると
-
-```JS
-String str = 条件式1 ? 条件式2 ? "真1/真2" : "真1/偽2" : "偽1/偽2||偽1/真2";
-```
-なんてことはメモらないで
-
-```JS
-String str = 条件式1 ? 条件式2 ? "正・正" : "正・誤" : "正・誤・誤";
-```
-のようなテキトーを頭に描いて、うん、たぶんスマート！きっとスマート！と（ジョジョ台詞っぽく）今更になって感心した。
-
-
-
-
-
-
-わかりやすいでん
-
-
-
-
-
-
-
-
-2ページ目から currentPage - 1　を計算して
-**/1/**
-や
-**/blog/1/**
-
-
-
-<span style="display: block;margin-bottom: 2em;"></span>
-
-生成されるページのPathは、ルートや
-
-```
-/
-/2/
-/3/
-```
-
-Gatsbyの場合、ページを生成する方法は、gatsby-node.jsの中で、createPageメソッドを使い、
-
-/
-/2/
-/3/
-
-```
-
-```
-
-
-<span style="display: block;margin-bottom: 13em;"></span>
-
-
-Gatsbyの場合、ページを生成する方法は、gatsby-node.jsの中で、createPageメソッドを使い、その際「pageContext」でテンプレートに必要な値も渡せる。<br>
-たとえば現在地であるカレントページなど。
-
-```js
-currentPage: i + 1,
-```
-
-
-
-
-
-
-<hr>
-
-
-
-
-
-
-問題となったコード
-
-```JS
-String str = 条件式1 ? 条件式2 ? "A" : "B" : "C";
+**nextPage**
+<br>実際の配置は、以下のように使います。
+
+```JSX:title=components/pagination.js
+return (
+    <div className={styles.peger}>
+    { previousPage ? <Link to={previousPage}>&lsaquo; Prev</Link> : null }
+    
+    {/*ここに（丸数字）の処理*/} 
+    
+    { nextPage ? <Link to={nextPage}>Next &rsaquo;</Link> : null }
+    </div>
+)
 ```
