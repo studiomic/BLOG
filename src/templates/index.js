@@ -5,10 +5,6 @@ import Layout from './../components/layout'
 import Seo from '../components/seo'
 import Pagination from '../components/pagination'
 import * as styles from '../styles/pages/index.module.scss'
-// import Intoro from './../components/intoro-index'
-// import Loop from './../components/workloop'
-// import * as styles from './../styles/work.module.scss'
-// export default function work() {
 
 class RootIndex extends React.Component {
 	render() {

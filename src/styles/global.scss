@@ -33,8 +33,6 @@
   // --intoroBG: url("../asset/img/note-thanun-dOFpWEml0nw-unsplash.avif") no-repeat center center;
   // --intoroBG: url("../asset/img/carmen-martinez-K4uj-VPRjJc-unsplash.jpg") no-repeat center bottom;
   --intoroBG: url("../asset/img/faizur-rehman-dJpupM4LiS4-unsplash1.png") no-repeat center center;
-
-  
 }
 .darkmode {
   --background:#2c2d32;
@@ -44,11 +42,13 @@
   --notedlColor: #999;
   --detailsBg: #17191f;
   --borderColor: #555;
-  --duskGray: rgb(95 146 160 / 0.9);
+  --duskGray: rgb(95 146 160 / 0.6);
 	--lunaGray: rgb(166 177 181 / 0.9);//#a6b1b5;
-	--shineWhite: rgb(244 244 244 / 0.8);//#f4f4f4;
-	--underlowline: #EADD36;
-	--underduskGray: rgb(95 146 160 / 0.7);
+	--shineWhite: rgb(244 244 244 / 0.7);//#f4f4f4;
+	// --underlowline: #EADD36;
+	--underlowline: rgb(95 146 160 / 0.6);
+	// --underduskGray: rgb(95 146 160 / 0.7);
+	--underduskGray: rgb(195 145 160 / 0.7);
   --summaryborder:rgb(244 244 244 / 0.2);
   --intoroBG: url("../asset/img/yannes-kiefer-uhHcrSWjfs0-unsplash.jpg") no-repeat center center;
 }
@@ -60,11 +60,13 @@
   --notedlColor: #999;
   --detailsBg: #222;
   --borderColor: #555;
-  --duskGray: rgb(95 146 160 / 0.8);
-	--lunaGray: rgb(166 177 181 / 0.8);//#a6b1b5;
-	--shineWhite: rgb(244 244 244 / 0.8);//#f4f4f4;
-	--underlowline: #EADD36;
-	--underduskGray: rgb(95 146 160 / 0.7);
+  --duskGray: rgb(95 146 160 / 0.6);
+	--lunaGray: rgb(166 177 181 / 0.7);//#a6b1b5;
+	--shineWhite: rgb(244 244 244 / 0.6);//#f4f4f4;
+	// --underlowline: #EADD36;
+  --underlowline: rgb(95 146 160 / 0.5);
+	// --underduskGray: rgb(95 146 160 / 0.7);
+  --underduskGray: rgb(165 145 160 / 0.7);
   --summaryborder:rgb(244 244 244 / 0.2);
   // --intoroBG: url("../asset/img/mob-about.avif") no-repeat center center;
   --intoroBG: url("../asset/img/parrish-freeman-SlkTQFWSpz4-unsplash.jpg") no-repeat center top;
