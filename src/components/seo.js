@@ -41,8 +41,6 @@ const Seo = ({ description, title = '', image, children }) => {
 }
 export default Seo
 
-
-
 // import { Helmet } from 'react-helmet'
 //<meta name="image" content={seo.image} />
 //<meta property="og:image" content={`${site.siteMetadata?.siteUrl}${imgPath}`} />

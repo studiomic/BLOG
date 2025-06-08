@@ -25,16 +25,6 @@ const Navigation = () => (
 )
 export default Navigation
 
-// <li className={styles.navigationItem}>
-// <Link to="/new-index/" activeClassName="active">
-//           index
-//         </Link>
-//       </li> */}
-// {/* <li className={styles.navigationItem}>
-//   <Link to="/work/" activeClassName="active">
-//     Work
-//   </Link>
-// </li> */}
 // {/* <li className={styles.navigationItem}>
 //   <Link to="/blog/" activeClassName="active">
 //     Blog
