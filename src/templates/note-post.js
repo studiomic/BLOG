@@ -9,11 +9,6 @@ import * as styles from '../styles/components/note.module.scss'
 import '../styles/css/dracula-prism.css' //CSS
 import '../styles/css/init.css' //CSS
 
-// import '../styles/css/dracula-prism.css' //CSS
-// import '../styles/css/prism.css' //CSS
-// /Users/sakura/Sites/Gatsby-Demo/BLOG/node_modules/refractor/node_modules/prismjs/themes
-
-
 class NotesPostTemplate extends React.Component {
 	render() {
 		const posts = get(this, 'props.data.markdownRemark')

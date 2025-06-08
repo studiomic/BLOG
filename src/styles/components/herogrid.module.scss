@@ -20,10 +20,6 @@
   // width: 98%;
   // border: 1px solid crimson;
 }
-  // left: 0;
-  
-  // max-width: 40rem;
-  // padding: var(--space-2xl) var(--size-gutter);
 
 .title {
   letter-spacing: -0.012em;
@@ -53,7 +49,7 @@
 
 @container main (width < 1024px) {
   .hero {
-    grid-template-rows: 3fr 1fr;
+    // grid-template-rows: 3fr 1fr;
     grid-template-rows: auto 1fr;
   }
   .image {
@@ -97,7 +93,7 @@
   .details {
     grid-column: 1/3;
     grid-row: 2/3;
-    position: absolute;
+    // position: absolute;
     bottom: 0;
     z-index: 2;
   }
