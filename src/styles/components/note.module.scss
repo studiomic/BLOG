@@ -1,7 +1,4 @@
-// .featuredImg {
-
 img {
-	
 	user-select:none;
 	-webkit-user-select:none;	// Google Chrome、Safari
 	-webkit-user-drag:none;
@@ -56,10 +53,6 @@ img {
 			margin-top: .5em;
 			line-height: 1.2;
 		}
-		// .meta {
-		// 	font-style: italic;
-		// 	color: var(--notedlColor);
-		// }
 	}
 }
 
@@ -69,25 +62,17 @@ img {
 	margin: 1em auto var(--size-gutter);
 	padding-left: var(--size-gutter);
 }
-	// text-align: right;
-	// max-width: var(--size-max-width);
-	// padding-bottom: var(--size-gutter);
 
 .post-body {
 	font-size: var(--text-xl);
-	// font-size: 19px;
-	// position: relative;
 	a {
 		border-bottom: 1px solid currentColor;
 		margin: 0 .2em;
 		font-weight: 500;
-		// color: rgba(#4a90e2, 0.9);
-		// color: #666;
 	}
 	details {
 		a {
 			border: initial;
-			// color: var(--text-color);
 		}
 	}
 	strong {
@@ -111,25 +96,6 @@ img {
 	p {
 		font-feature-settings: "palt";
 	}
-	// article {
-  //   border: 1px solid crimson;
-	// 	a {
-	// 		display: flex;
-	// 		align-items: center;
-	// 		border: 1px solid var(--border);
-	// 		padding: var(--space-xl);
-	// 		img {
-	// 			max-width: 11em;
-	// 			max-height: 11em;
-	// 			object-fit: contain;
-	// 			margin-right: 1em;
-	// 		}
-	// 		h3 {
-	// 			font-weight: normal;
-	// 			margin: 0;
-	// 		}
-	// 	}
-	// }
 }
 
 blockquote {
@@ -243,12 +209,6 @@ blockquote {
 	}
 }
 
-// .postBody {
-// 	background: #000;
-// }
-
-
-
 @container main (min-width: 768px) {
 	.container {
 		max-width: var(--size-max-width);
@@ -265,16 +225,25 @@ blockquote {
 		display: block;
 		margin: 0 auto;
 	}
-	// .featuredImg {
-	// 	margin-left: calc(-1 * (85% - var(--size-gutter)) /2);
-	// 	margin-right: calc(-1 * (85% - var(--size-gutter)) /2);
-	// }
 }
 
-// @container main (min-width: 1280px) {
-// 	.featuredImg {
-// 		margin-left: -20vw;
-// 		margin-right: -20vw;
-// 	}
-// }
 
+// article {
+  //   border: 1px solid crimson;
+	// 	a {
+	// 		display: flex;
+	// 		align-items: center;
+	// 		border: 1px solid var(--border);
+	// 		padding: var(--space-xl);
+	// 		img {
+	// 			max-width: 11em;
+	// 			max-height: 11em;
+	// 			object-fit: contain;
+	// 			margin-right: 1em;
+	// 		}
+	// 		h3 {
+	// 			font-weight: normal;
+	// 			margin: 0;
+	// 		}
+	// 	}
+	// }

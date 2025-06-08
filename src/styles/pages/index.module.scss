@@ -334,8 +334,8 @@ header {
 		grid-column-gap: calc(var(--size-gutter)/2);
 		// grid-row-gap: var(--size-gutter);
 		grid-row-gap: 0;
-		grid-template-columns: 1fr 48px 1fr auto;
-		grid-template-rows: 12svh 40vw auto;
+		grid-template-columns: 1fr 48px 1fr 3fr;
+		grid-template-rows: 11svh 40vw auto;
 	}
 	
 	.notepost {
@@ -372,41 +372,12 @@ header {
 
 		margin: auto auto var(--size-gutter);
 		// transform: rotate(15deg) translateX(0) translateY(0);
-
-
 		animation-name: filters;
 		animation-duration: 15s;
 		animation-timing-function: linear;
 		animation-fill-mode: forwards;
 		animation-iteration-count: infinite;
-		// &::before {
-		// 	position: absolute;
-		// 	content: '';
-		// 	display: block;
-		// 	background: rgb(248 248 248 / .2);
-		// 	// background: url("../../asset/img/marc-olivier-jodoin-j2veIzsS9sY-unsplash-1680.avif") no-repeat right top;
-		// 	// background: url("../../asset/img/marc-olivier-jodoin-j2veIzsS9sY-unsplash-1680.avif") no-repeat right bottom;
-		// 	background-size: 200%;
-		// 	width: 75%;
-		// 	height: 75%;
-		// 	// max-width: 275px;
-		// 	// max-height: 275px;
-		// 	right: 0em;
-		// 	top: 0em;
-		// 	// border-top: 1em solid var(--background);
-		// 	// border-right: 1em solid var(--background);
-		// 	// border-left: .2em solid var(--background);
-		// 	// border-bottom: 4em solid var(--background);
-		// 	// border-width: 0 0 4em .2em;
-		// 	// border-color: var(--background);
-
-
-		// 	// transform: rotate(-9deg) translateY(0);
-		// 	border-radius: 0% 100% 100% 0% / 50% 0% 100% 50%;
-		// 	border-radius: 0% 100% 50% 50% / 100% 100% 0% 0%;
-		// 	border-radius: 100% 0% 0% 100% / 0% 50% 50% 100%;
-		// 	z-index: -1;
-		// }
+		
 	}
 	.bggrid {
 		grid-column: 2/3;
@@ -424,7 +395,7 @@ header {
 			font-weight: 300;
 			font-size: 2em;
 			color: var(--white);
-			padding-top: calc(var(--size-gutter) * 5);
+			padding-top: calc(var(--size-gutter) * 3);
 		}
 		&::before,&::after {
 			position: absolute;
@@ -565,4 +536,34 @@ header {
 // // --shineWhite2: #fafafa;
 // // --paperSoftness: #d1bca1;
 // // --intoroRow: 42dvh;
+// }
+
+
+// &::before {
+// 	position: absolute;
+// 	content: '';
+// 	display: block;
+// 	background: rgb(248 248 248 / .2);
+// 	// background: url("../../asset/img/marc-olivier-jodoin-j2veIzsS9sY-unsplash-1680.avif") no-repeat right top;
+// 	// background: url("../../asset/img/marc-olivier-jodoin-j2veIzsS9sY-unsplash-1680.avif") no-repeat right bottom;
+// 	background-size: 200%;
+// 	width: 75%;
+// 	height: 75%;
+// 	// max-width: 275px;
+// 	// max-height: 275px;
+// 	right: 0em;
+// 	top: 0em;
+// 	// border-top: 1em solid var(--background);
+// 	// border-right: 1em solid var(--background);
+// 	// border-left: .2em solid var(--background);
+// 	// border-bottom: 4em solid var(--background);
+// 	// border-width: 0 0 4em .2em;
+// 	// border-color: var(--background);
+
+
+// 	// transform: rotate(-9deg) translateY(0);
+// 	border-radius: 0% 100% 100% 0% / 50% 0% 100% 50%;
+// 	border-radius: 0% 100% 50% 50% / 100% 100% 0% 0%;
+// 	border-radius: 100% 0% 0% 100% / 0% 50% 50% 100%;
+// 	z-index: -1;
 // }

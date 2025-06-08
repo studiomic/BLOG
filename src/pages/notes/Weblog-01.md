@@ -179,7 +179,7 @@ USB グラフィック変換製品経由で接続されたモニターでは、H
 
 <article>
 	<a href="https://amzn.to/3YSugRT" target="_blank" rel="noopener noreferrer">
-		<img src="https://m.media-amazon.com/images/I/61i9tBqCFhL._AC_SL1000_.jpg" loading="lazy" alt="PHILIPS モニター" />
+		<img src="https://m.media-amazon.com/images/I/61i9tBqCFhL._AC_SL1000_.jpg" loading="lazy" alt="PHILIPS モニター" style="max-width:400px;margin: 0 auto;"/>
 		<h3>PHILIPS モニターディスプレイ 271E1D/11 (27インチ/IPS Technology/FHD/5年保証/HDMI/D-Sub/DVI-D/フレームレス)</h3>
 	</a>
 </article>
@@ -215,7 +215,7 @@ USB グラフィック変換製品経由で接続されたモニターでは、H
 
 <article>
 	<a href="https://amzn.to/43p0zsX" target="_blank" rel="noopener noreferrer">
-		<img src="https://m.media-amazon.com/images/I/61OUg2scRpL._AC_SL1500_.jpg" loading="lazy" alt="LG ウルトラワイドモニター" />
+		<img src="https://m.media-amazon.com/images/I/61OUg2scRpL._AC_SL1500_.jpg" loading="lazy" alt="LG ウルトラワイドモニター" style="max-width:400px;margin: 0 auto;"/>
 		<h3>
 			LG ウルトラワイドモニター 平面 UltraWide Monitor 34WQ500-B 34インチ/2560×1080/100Hz/MBR 1ms/IPS/sRGB 99%/DisplayHDR 400/アンチグレア/HDMI/DisplayPort/VRR(FreeSync)/3年安心・無輝点保証/34WP550B 34WP500B 後継機
 		</h3>
@@ -232,7 +232,7 @@ Mac mini M2のHDMIポートに接続してます。Thunderboltは、元々のPRi
 
 <article>
 	<a href="https://amzn.to/3H1mdvX" target="_blank" rel="noopener noreferrer">
-		<img src="https://m.media-amazon.com/images/I/61guV4m3sIL._AC_SL1500_.jpg" loading="lazy" alt=""/>
+		<img src="https://m.media-amazon.com/images/I/61guV4m3sIL._AC_SL1500_.jpg" loading="lazy" alt="" style="max-width:300px;margin: 0 auto;" />
 		<h3>
 			Anker 563 USB-C ハブ (10-in-1, Dual 4K HDMI, for MacBook) 100W MST機能 3画面出力 トリプルモニター 4K対応 HDMIポート 着脱式ケーブル 50cm USB PD 対応 M1 M2 MacBook 1Gbps イーサネット USB-A USB-Cポート microSD＆SDカード スロット搭載
 		</h3>
@@ -247,7 +247,7 @@ Mac mini M2のHDMIポートに接続してます。Thunderboltは、元々のPRi
 
 <article>
 	<a href="https://amzn.to/4jhaRRP" target="_blank" rel="noopener noreferrer">
-		<img src="https://m.media-amazon.com/images/I/61Jq2n7SYPL._AC_SL1500_.jpg" loading="lazy" alt=""/>
+		<img src="https://m.media-amazon.com/images/I/61Jq2n7SYPL._AC_SL1500_.jpg" loading="lazy" alt="" style="max-width:300px;margin: 0 auto;" />
 		<h3>
 			Anker 563 USB-C ドッキングステーション (10-in-1) 最大100W出力 MST機能 トリプルモニター USB PD 対応 M1 MacBook 4K対応 HDMIポート ディスプレイポート 1Gbps イーサネットポート 3.5mm オーディオジャック USB-Aポート USB-Cポート 搭載
 		</h3>
@@ -258,7 +258,7 @@ Mac mini M2のHDMIポートに接続してます。Thunderboltは、元々のPRi
 
 <article>
 	<a href="https://amzn.to/3HiMXb6" target="_blank" rel="noopener noreferrer">
-		<img src="https://m.media-amazon.com/images/I/71ZMDkw9sdL._AC_SL1500_.jpg" loading="lazy" alt=""/>
+		<img src="https://m.media-amazon.com/images/I/71ZMDkw9sdL._AC_SL1500_.jpg" loading="lazy" alt="" style="max-width:400px;margin: 0 auto;" />
 		<h3>
 			VECELO まな板スタンド まな板立て 12cmx12cm x 21.5cm まな板ラック 包丁スタンド まな板オーガナイザー キッチン 鍋 滑り止め付き ブラック
 		</h3>

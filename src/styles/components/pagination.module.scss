@@ -1,0 +1,39 @@
+.peger {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-Roboto);
+  a:not(.pnbtn){
+    font-size: 1.4em;
+		margin: 0 .5em;
+		line-height: 1;
+		width: 2em;
+		height: 2em;
+		text-align: center;
+		padding-top: 0.5em;
+		border: 1px solid var(--border);
+		border: 1px solid var(--text-color);
+		border-radius: 100%;
+    &:hover {
+      background: var(--text-color);
+      color: var(--background);
+      opacity: .5;
+    }
+	}
+}
+
+.pnbtn {
+display: inline-flex;
+  align-items: center;
+}
+
+.prev,.next {
+  padding: .5em .5em 0;
+  text-transform: uppercase;
+}
+
+.symbol {
+  font-size: 2em;
+  line-height: 1;
+}
+
+// border: 1px solid crimson;

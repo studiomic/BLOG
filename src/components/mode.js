@@ -2,12 +2,7 @@ import React, { useEffect } from 'react';
 import * as styles from '../styles/components/modetoggle.module.scss'
 
 const Modebutton = () => {
-  // localStorage.clear();
-  // const handleBeforeUnload = () => {
-  //   console.log('beforeunload')
-  // }
   useEffect(() => {
-    // window.addEventListener('beforeunload', handleBeforeUnload)
     let modeType = localStorage.getItem('mode');
 
     if ( modeType !== '') {

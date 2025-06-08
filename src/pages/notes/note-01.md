@@ -1,6 +1,7 @@
 ---
 title: "Article Style Variables"
-date: "2023-06-03 10:00:00"
+# date: "2023-06-03 10:00:00"
+date: "2022-12-01 10:00:00"
 slug: 'note-01-styles'
 description: "HTML Elements Style and Color"
 featuredImage: "asset/cafe.avif"

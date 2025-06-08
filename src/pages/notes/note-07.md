@@ -8,15 +8,16 @@ music:
 featuredImage: "asset/2023-06-19-fi.avif"
 ---
 
-<section style="margin-bottom: 5em;">
 もはやタイトルに曲名の余韻もない。<br>
 Notesにはフィーチャーイメージなんぞいらねーと思ってたのに、JOJO-Tシャツ届くと人が変わる。<br>
 横幅マイナスマージンまでかけて宣伝します。9部「ジョジョ・ランド」パラレルワールドのジョルノ来たよ💜
 
 どんな悪いことやってくれるのか、今から楽しみだ。
 
-</section>
-<section style="margin-bottom: 6em;">
+<span style="display: block;margin-bottom: 5em;"></span>
+
+
+
 それにしてもGrapQLというのは便利すぎる。思い立って2分でデータ持って来れるとか目眩しますね。
 
 
@@ -28,6 +29,7 @@ featuredImage {
 	}
 }
 ```
+
 表示側もほぼ4行だし
 
 ```jsx
@@ -45,9 +47,12 @@ Gatsbyさんは異常に親切だし
 
 Gatsbyjs Markdown Staticimage でググって4分くらいでもう絵が出てるってどんなお世界。素敵。
 
-</section>
+<span style="display: block;margin-bottom: 6em;"></span>
 
-<section style="margin-bottom: 4em;">
+
+
+
+
 
 # gatsby-plugin-use-dark-mode + use-dark-mode
 
@@ -63,9 +68,11 @@ Gatsbyjs Markdown Staticimage でググって4分くらいでもう絵が出て�
 もちろんNetlifyに原因はなくて、Gatsby Cloudでも同じようにエラーになって、きちんとメッセージを読んで対応したら生きた。
 
 インストールが少しだけ特殊なのかも。
+
 ```bash:title=bash
 yarn add gatsby-plugin-use-dark-mode use-dark-mode
 ```
+
 これで開発環境では即動くんだけども、package.jsonに書き込みがされず、紐付けされないものをBuildはできないですよとホスト先に断られる。
 
 もっというと、publicフォルダをレンタルサーバーにごそっとアップしたら動いてました。まぁそこで自分の手が足りないだけと確信します。さらに開発者のおっさーんのサングラス顔を見て絶対強者を確信します。笑
@@ -91,17 +98,20 @@ legacy-peerなんて言われるとちと不安になりますが、[use-dark-mo
 
 ということで、gatsby-plugin-use-dark-modeプラグインと、カスタムReact Hook : use-dark-modeを1つずつ**npm i** して、package.jsonの変化をGitで確認してと手堅くゆっくりやりました。
 
-</section>
+<span style="display: block;margin-bottom: 4em;"></span>
 
-<section style="margin-bottom: 8em;">
+
+
 
 [use-dark-mode - npm](https://www.npmjs.com/package/use-dark-mode?activeTab=readme) の [Dependents (50)](https://www.npmjs.com/package/use-dark-mode?activeTab=dependencies) タブではけっこうな数のGatsby ThemaやStarterが載っていたので、躓いた方に見つけて欲しい。週に13,000て他のReact勢にも使われてますよね。
+
 ```bash:title=bash
 npm i use-dark-mode --legacy-peer-deps
-```5
-</section>
+```
 
-<section style="margin-bottom: 5em;">
+<span style="display: block;margin-bottom: 8em;"></span>
+
+
 
 ## 三分岐のダークモードが欲しい。
 
@@ -114,15 +124,19 @@ MacをLightモードにするのはきついし、ブラウザも同じく。<br
 
 外観としては、Codepenで見かけた[Light / Dark / Black Theme](https://codepen.io/havardob/pen/dyOJyje)が全員嬉しい感。
 
-<img src="asset/2023-06-19-3.png" width="100%" alt="3ThemeMode">
+
+<img src="asset/2023-06-19-3.png" alt="ダークモードテーマ+">
+
+
 
 ダークモードでも発色ゼロの漆黒Blackじゃないと目にきびしいという方もいれば、私は逆に「#000000」は、きつすぎてエディターのテーマなどでも敬遠します。<br>
 「濃灰色」止まり。
 
 このCodepenのをlocalStorage保存つきで実装できれば便利だと思うものの、書けない。
-</section>
 
-<section style="margin-bottom: 5em;">
+<span style="display: block;margin-bottom: 5em;"></span>
+
+
 既存のプラグインのコードを見ると、表題の三項演算子が大活躍なんですよね。<br>
 二択はONとOFF、
 
@@ -131,21 +145,25 @@ enable
 
 true
 false　だから確実であり小難しくないし、我儘なやつ以外はそれで十分と思われているダークモードはさておき。
-</section>
 
-<section style="margin-bottom: 6em;">
+
+<span style="display: block;margin-bottom: 5em;"></span>
+
+
 前記事でGatsby Head APIに移行した際に、それまで私はこの「三項演算子」をIF文だと思い込んで見てたんです。実態を知ると（おもしろいなー）となり、これ四項はないの？と冗談のようなことを考えて探しにいき、
 あぁやっぱり 
-<strong>
-if-elseif-else
-</strong>
+
+<strong>if-elseif-else</strong>
+
 なんだ ーな書き方を知りました。
 
 [条件式が複数ある三項演算子に混乱した話 - Qiita](https://qiita.com/riekure/items/e510dba2e507403d990a?utm_source=pocket_saves)
 
+
 ```js
 String str = 条件式1 ? 条件式2 ? "A" : "B" : "C";
 ```
+
 条件1 & 条件式2 が正なら : A<br>
 条件1 だけが正なら : B<br>
 条件1 & 条件式2 が負なら : C<br>
@@ -170,10 +188,13 @@ if (条件式1) & (条件式2):正 {
 	str = "C";
 }
 ```
+
+
 条件1を主眼とした3分岐なんですね。<br>
 
 最初はクソ真面目に↓の書き方をしてみたけど応えは4種あるようで、3種なんで、三項演算子の拡張版（？）と理解。<br>
 楽しいなぁー。&emsp;IF(&emsp;)
+
 
 ```js
 String str = "";
@@ -190,6 +211,4 @@ if (条件式1) & (条件式2):正 {
 
 人はたらればを云うなぁ！と言いますが、もし〜ならば、ほど美味いものあるかいっ　と思ったりします。うふ。
 
-</section>
-
-<!-- EOF -->
+<span style="display: block;margin-bottom: 5em;"></span>
