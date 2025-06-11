@@ -18,6 +18,9 @@ const Navigation = () => (
     </Link>
     <ul className={styles.navigation}>
       <li className={styles.navigationItem}>
+        <Link to="/workshop/" activeClassName="active">workshop</Link>
+      </li>
+      <li className={styles.navigationItem}>
         <ModeButton />
       </li>
     </ul>
