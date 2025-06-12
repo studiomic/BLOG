@@ -1,13 +1,13 @@
-// import React from 'react'
+import React from 'react'
 // import get from 'lodash/get'
 // import React, { useState, useEffect } from 'react';
-import React, { useEffect } from 'react';
+// import React, { useEffect } from 'react';
 import { graphql } from 'gatsby';
 import Layout from './../components/layout'
 import Seo from './../components/seo'
 
-import hljs from 'highlight.js/lib/core';
-import javascript from 'highlight.js/lib/languages/javascript';
+// import hljs from 'highlight.js/lib/core';
+// import javascript from 'highlight.js/lib/languages/javascript';
 import 'highlight.js/styles/atom-one-dark.css';
 import 'highlight.js/styles/lioshi.css';
 
@@ -17,7 +17,7 @@ import './../styles/css/init.css' //CSS
 
 
 import * as styles from './../styles/pages/workshop.module.scss'
-import File from './../pages/data/snippet-1.md'
+// import File from './../pages/data/snippet-1.md'
 
 
 // import logo from "./logo.png" // Tell webpack this JS file uses this image

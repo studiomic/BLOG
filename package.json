@@ -12,6 +12,7 @@
     "gatsby-plugin-page-progress": "^2.2.1",
     "gatsby-remark-code-buttons": "^2.0.7",
     "gatsby-remark-link-preview": "^1.0.1",
+    "gatsby-remark-shiki": "^0.2.1",
     "gatsby-source-filesystem": "^5.9.0",
     "html-react-parser": "^5.2.5",
     "lodash": "^4.17.21",
