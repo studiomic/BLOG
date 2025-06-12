@@ -18,7 +18,7 @@ const Seo = ({ description, pagetitle = '', title = '', image, children }) => {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  const defaultTitle = pagetitle || site.siteMetadata?.title
   
   return (
     <>

@@ -37,7 +37,8 @@
     "prismjs": "^1.30.0",
     "react": "^18.3.1",
     "react-syntax-highlighter": "^15.6.1",
-    "sass": "^1.89.0"
+    "sass": "^1.89.0",
+    "shiki": "^3.6.0"
   },
   "engines": {
     "node": ">=18.0.0"
