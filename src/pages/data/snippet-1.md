@@ -6,7 +6,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const noteList = path.resolve('./src/templates/index.js')
   
   const result = await graphql(
-    `
       {
         allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
           edges {
@@ -23,12 +22,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
         }
       }
-    `
   )
 
   if (result.errors) {
     reporter.panicOnBuild(
-      `There was an error loading your Posts`,
+      There was an error loading your Posts,
       result.errors
     )
     return
@@ -44,7 +42,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       const nextNoteTitle = index === notes.length - 1 ? null : notes[index + 1].node.frontmatter.title
 
       createPage({
-        path: `/notes/${note.node.frontmatter.slug}/`,
+        path: /notes/${note.node.frontmatter.slug}/,
         component: notePost,
         context: {
           slug: note.node.frontmatter.slug,
@@ -63,7 +61,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       const numPages = Math.ceil(notes.length / notePerPage)
       Array.from({ length: numPages }).forEach((_, i) => {
         createPage({
-          path: i === 0 ? `/` : `/${i + 1}`,
           component: noteList,
           context: {
             limit: notePerPage,

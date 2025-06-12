@@ -27,3 +27,29 @@ const Pagination = ({ pageContext }) => {
 	)
 }
 export default Pagination
+
+
+
+// totalCount: notes,
+// limit: notePerPage,
+// skip: i * notePerPage,
+// numPages,
+// currentPage: i + 1,
+// const info = { id: '123', age: 88 };
+// const userName = info.userName ? info.userName : 'no_name';
+
+// const nextNoteTitle = index === notes.length - 1 ? null : notes[index + 1].node.frontmatter.title
+// const previousNotetSlug = index === 0 ? null : notes[index - 1].node.frontmatter.slug
+// const signalColor = 'red';
+// const action = { red: 'Stop', yellow: 'Be careful', blue: 'Go!!' }[signalColor];
+
+// const previousPage = string;
+// const song = "Fight the Youth";
+// const score = 9;
+// const highestScore = 10;
+// const output = `I like the song ${song}. I gave it a score of ${(score / highestScore) * 100}%.`;
+// console.log(output); // "I like the song Fight the Youth. I gave it a score of 90%."
+// function example() {
+//     return 
+// 		condition1 ? value1 : condition2 ? value2 : condition3 ? value3: value4;
+// }
