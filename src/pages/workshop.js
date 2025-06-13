@@ -8,11 +8,9 @@ import Seo from './../components/seo'
 
 // import hljs from 'highlight.js/lib/core';
 // import javascript from 'highlight.js/lib/languages/javascript';
-import 'highlight.js/styles/atom-one-dark.css';
-import 'highlight.js/styles/lioshi.css';
 
-import './../styles/css/dracula-prism.css' //CSS
-import './../styles/css/init.css' //CSS
+// import './../styles/css/dracula-prism.css' //CSS
+// import './../styles/css/init.css' //CSS
 
 
 
