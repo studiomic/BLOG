@@ -92,11 +92,11 @@ allContentfulBlogPost {
 
 ```graphql
 allContentfulTag {
-          nodes {
-            contentful_id
-            name
-          }
-        }
+  nodes {
+    contentful_id
+    name
+  }
+}
 ```
 <br>
 
