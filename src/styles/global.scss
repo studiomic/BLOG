@@ -212,7 +212,7 @@ a.current{
 }
 
 tt,
-code,
+// code,
 kbd {
   background: var(--black-fade-5);
   padding-bottom: 0.2em;
@@ -235,8 +235,8 @@ code {
   color: var(--black);
 }
 
-code:before,
-code:after,
+// code:before,
+// code:after,
 tt:before,
 tt:after {
   content: ' ';
@@ -270,6 +270,10 @@ tt:after {
 .bold {
   font-weight: bold;
   display: inline-block;
+}
+
+.language-id {
+  display: none!important;
 }
 
 // @container body (max-width: 768px) {

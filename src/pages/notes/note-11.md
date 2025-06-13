@@ -27,7 +27,7 @@ Googleさんからコピーできるソースを
 
 seo.jsコンポーネントのreturn ()文の中にペーストすれば、解決でした。
 
-```html
+```js
 return ()
 	<>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />

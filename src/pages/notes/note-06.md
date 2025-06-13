@@ -107,7 +107,8 @@ Gatsby Docs：
 
 旧react-helmet版では
 
-```js:title=components/seo.js
+```js
+// components/seo.js
 title={title}
 defaultTitle={defaultTitle}
 titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
@@ -129,7 +130,8 @@ titleTemplate= でdefaultTitleを文字列 | パイプ付に整形し<br>
 SEOコンポーネント全体では、27-29行のところ
 
 
-```js:title=components/seo.js
+```js
+// components/seo.js
 import * as React from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
@@ -215,7 +217,8 @@ export default Seo
 ## Gatsby Head APIでtitleを繋ぐ <a name="title-API"></a>
 
 
-```js:title=components/seo.js
+```js
+// components/seo.js
 const metaDescription = description || site.siteMetadata.description
 const defaultTitle = site.siteMetadata?.title
 
@@ -232,13 +235,13 @@ siteMetadata.titleを代入したあと6行目で、Helmet版と<span class="cri
 
 **${title}**　は、
 
-```HTML
+```html
 <Seo title="About" />
 ```
 といった書き方でSeoコンポーネントに渡していた値です。<br>
 ページdescriptionや、BlogPost「Hero Image」をimage=で渡しているケースが多いかと思います。
 
-```HTML
+```html
 <Seo
 	title={post.title}
 	description={plainTextDescription}
@@ -251,7 +254,8 @@ siteMetadata.titleを代入したあと6行目で、Helmet版と<span class="cri
 
 **export const Head =** でHTML ```<head>``` に直接書きだす形になります。
 
-```js:title=templates/blog-post.js
+```js
+// templates/blog-post.js
 export const Head = ({ data: { contentfulBlogPost: post } }) => {
   const plainTextDescription = documentToPlainTextString(
     JSON.parse(post.description.raw)
@@ -281,13 +285,15 @@ export default BlogPostTemplate の直前に配置してあった・・・。
 
 もともとtwitter:cardやら、SEO方面は何もしてないので、Seoコンポーネントの使用はごく典型的な例が多いです。
 
-```js:title=固定ページ：タイトルのみ
+```js
+// 固定ページ：タイトルのみ
 export const Head = () => <Seo title="Blog" />
 ```
 
 という最小例から、Markdown用テンプレートや
 
-```js:title=templates/note-post.js
+```js
+// templates/note-post.js
 export const Head = ({ data: { markdownRemark: post } }) => {
   return (
     <Seo
@@ -299,7 +305,8 @@ export const Head = ({ data: { markdownRemark: post } }) => {
 ```
 タグ一覧のテンプレートでは、pageContextで渡されたTagの表示名「Gatsby.js」などをtitleに入れるようにしたり。
 
-```js:title=templates/tag-index.js
+```js
+// templates/tag-index.js
 export const Head =  ({ pageContext }) => {
 	const names = 'Tags:' + pageContext.name;
   return (
@@ -310,7 +317,7 @@ export const Head =  ({ pageContext }) => {
 }
 ```
 
-```HTML:title=OUTPUT
+```html
 <title>Tags:Gatsby.js | SiteTitle</title>
 ```
 
@@ -320,7 +327,8 @@ export const Head =  ({ pageContext }) => {
 
 ## metadataの書き方 <a name="metadata"></a>
 
-```js:title=react-helmet:seo.js
+```js
+// react-helmet:seo.js
 meta={[
         {
           name: `description`,
@@ -335,7 +343,7 @@ React-helmetプラグイン版で、ずらりと配列されていた部分。
 
 HTML ```<head>``` に何を書くか、なので古式ゆかしくmetaタグ書きをしていく中に、適宜変数を与える感じです。
 
-```HTML
+```html
 <meta name="description" content={metaDescription} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={metaDescription} />
@@ -373,7 +381,8 @@ website / blog / article を分けて入れるなど、固定値・変数を使�
 最後に変数受け取り用の **{children}** を4行目と合わせて追加。
 
 
-```js:title=seo.js
+```jsx
+// seo.js
 import * as React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
@@ -431,7 +440,7 @@ const Seo = ({ description, title, children }) =>
 
 😨 これだとBlogPostが渡した「heroImage」の収まり場がない。と今更気づいたけど、その訂正はさておき
 <a name="lang"></a>
-```JS
+```js
 lang = 'jp',
 
 <Helmet
@@ -442,13 +451,14 @@ lang = 'jp',
 の行き場。
 
 
-```HTML
+```html
 <html lang="ja">
 ```
 	
 HTML ```<head>``` 要素ではないlang属性は、サイトのルートに[gatsby-ssr.js](https://github.com/gatsbyjs/gatsby-starter-blog/blob/master/gatsby-ssr.js)ファイルを作成して、
 
-```jsx:title=gatsby-ssr.js
+```jsx
+// gatsby-ssr.js
 /**
  * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
  *
@@ -508,7 +518,8 @@ Gatsby公式サイトの献身性については機会があったら書くと�
 ただ単純に直に書くことにした。
 
 
-```js:title=index.js
+```js
+// index.js
 export const Head = ({ data }) => {
   return (
     <>
@@ -532,7 +543,8 @@ export const Head = ({ data }) => {
 
 あれこれ書いちゃったあとで「gatsby-starter-blog」の方を再度、確認にいくと title= に"All posts"と渡してましたね・・・きゃー。オーサリングソフトノフカイアジワイとか失敬な！輩でごめんなさい。
 
-```js:title=index.js
+```js
+// index.js
 export const Head = () => <Seo title="All posts" />
 ```
 ま。スターターは学舎ですからね、卒業するまでは汎用性大事。
@@ -584,14 +596,16 @@ titleが偽値なら、defaultTitle　が返る。
 
 それに合わせて、seo.js の冒頭**title,** を空でもいいよーに変更して終わり。
 
-```jsx:title=components/seo.js
+```jsx
+// components/seo.js
 const Seo = ({ description, title = '', children }) => {
 ```
 <hr>
 あ。肝心なindex.jsはtitle以外の何かを渡さねばSeoコンポーネントを使えないので、姑息にdescriptionを渡しました。
 
 
-```jsx:title=components/seo.js
+```jsx
+// components/seo.js
 export const Head = ({ data }) => {
   return (
     <Seo

@@ -1,6 +1,25 @@
 pre {
 	border-radius: 8px;
+	padding: .5em 1em;
+	overflow-x: scroll;
 }
+
+.code-container {
+	text-align-last: left;
+}
+
+// .languageid {
+// 		color: red;
+
+// }
+
+.shiki {
+	.langege-id {
+		text-align: right;
+	}
+}
+
+
 
 img {
 	user-select:none;

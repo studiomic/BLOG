@@ -46,7 +46,7 @@ module.exports = {
           {
             resolve: "gatsby-remark-shiki-twoslash",
             options: {
-              theme: "vitesse-dark",
+              theme: "poimandres",
             }
           },
           {

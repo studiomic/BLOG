@@ -69,7 +69,7 @@ Gatsbyjs Markdown Staticimage でググって4分くらいでもう絵が出て�
 
 インストールが少しだけ特殊なのかも。
 
-```bash:title=bash
+```bash
 yarn add gatsby-plugin-use-dark-mode use-dark-mode
 ```
 
@@ -84,7 +84,7 @@ yarn add gatsby-plugin-use-dark-mode use-dark-mode
 どうやらReactのバージョンが高くて、**--legacy-peer-deps** をオプションでつければ
 **npm i use-dark-mode** でいけるんだろうな...というエラーメッセージ。（長いので転記しませんが）
 
-```bash:title=bash
+```sh
 npm ERR! code ERESOLVE
 npm ERR! ERESOLVE could not resolve
 ```
@@ -105,7 +105,7 @@ legacy-peerなんて言われるとちと不安になりますが、[use-dark-mo
 
 [use-dark-mode - npm](https://www.npmjs.com/package/use-dark-mode?activeTab=readme) の [Dependents (50)](https://www.npmjs.com/package/use-dark-mode?activeTab=dependencies) タブではけっこうな数のGatsby ThemaやStarterが載っていたので、躓いた方に見つけて欲しい。週に13,000て他のReact勢にも使われてますよね。
 
-```bash:title=bash
+```bash
 npm i use-dark-mode --legacy-peer-deps
 ```
 
@@ -126,8 +126,6 @@ MacをLightモードにするのはきついし、ブラウザも同じく。<br
 
 
 <img src="asset/2023-06-19-3.png" alt="ダークモードテーマ+">
-
-
 
 ダークモードでも発色ゼロの漆黒Blackじゃないと目にきびしいという方もいれば、私は逆に「#000000」は、きつすぎてエディターのテーマなどでも敬遠します。<br>
 「濃灰色」止まり。

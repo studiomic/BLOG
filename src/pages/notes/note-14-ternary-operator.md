@@ -29,7 +29,7 @@ featuredImage: "asset/ternary-operator-14.png"
 
 <hr>
 
-```JS
+```js
 String str = 条件式1 ? 条件式2 ? "A" : "B" : "C";
 ```
 
@@ -60,7 +60,7 @@ String str = 条件式1 ? 条件式2 ? "A" : "B" : "C";
 
 <span style="display: block;margin-bottom: 3em;"></span>
 
-```JS
+```js
 String str = 条件式1 ? 条件式2 ? "A" : "B" : "C";
 ```
 
@@ -74,7 +74,7 @@ String str = 条件式1 ? 条件式2 ? "A" : "B" : "C";
 
 しつこく書くと
 
-```JS
+```js
 String str = "";
 if (条件式1) {
     if (条件式2) {
@@ -88,7 +88,7 @@ if (条件式1) {
 ```
 の代替であるのが、並び順が同じなために、書いた人には↑↓が双子に見えている、あるいは鏡映しなわけだ。
 
-```JS
+```js
 String str = 条件式1 ? 条件式2 ? "A" : "B" : "C";
 ```
 
@@ -104,7 +104,7 @@ String str = 条件式1 ? 条件式2 ? "A" : "B" : "C";
 
 一応、対抗馬として元の記事で「より見やすい」とされた例も掲載しておく。<br>
 
-```JS
+```js
 String str = !条件式1 ? "C" : 条件式2 ? "A" : "B";
 ```
 
@@ -160,13 +160,13 @@ pageContextで何を渡すかは、作り手の作り方、好みで構わない
 
 これを例題に落とし込みたかった
 
-```JS
+```js
 String str = 条件式1 ? 条件式2 ? "A" : "B" : "C";
 ```
 
 結果
 
-```JS
+```js
 const previousPage = currentPage !== 1 ? currentPage !== 2 ? `/${currentPage -1}`: `/` : null
 ```
 
@@ -176,7 +176,7 @@ const previousPage = currentPage !== 1 ? currentPage !== 2 ? `/${currentPage -1}
 少しだけ、対抗馬として置いた↓に似てます。（似てねぇけど）
 
 
-```JS
+```js
 String str = !条件式1 ? "C" : 条件式2 ? "A" : "B";
 ```
 
@@ -201,13 +201,13 @@ String str = !条件式1 ? "C" : 条件式2 ? "A" : "B";
 私が人間言葉で考えた<br>
 1ページでもなけりゃ、2ページでもない、3ページ目以降なら**currentPage - 1**<br>
 
-```JS
+```js
 String str = 条件式1 ? 条件式2 ? "A"
 ```
 
 まさにドンピシャではまりました。
 
-```JS
+```js
 currentPage !== 1 ? currentPage !== 2 ? `/${currentPage -1}`
 ```
 あとは1ページの場合と、2ページの場合を: "B" : "C"へ振り分けて書けば良さげですが。
@@ -220,7 +220,7 @@ currentPage !== 1 ? currentPage !== 2 ? `/${currentPage -1}`
 
 1ページでは表示しないのでnullを返す。という野暮ったさは避けられない。「空白文字」を返す、でも良いのだけど「代入しない」「何もしない」を選択できない。これがIF文との違いだったんですね。
 
-```JS
+```js
 if (currentPage >= 3) {
     previousPage = `/${currentPage -1}`;
 } else {
@@ -232,7 +232,7 @@ IF文の場合、そもそもpreviousPageは2ページ目以上にしか登場�
 
 三項演算子に置き換えるに、条件の書き方はいろいろ考えられるけど
 
-```JS
+```js
 const previousPage = currentPage > 1 ? currentPage === 2 ?  `/` : `/${currentPage -1}` : null
 ```
 先に書いたのと似たり寄ったり。まぁ得たい結果が同じ3パターンなので当然か。と思いつつ、色々書き試ししてみました。<br>
@@ -344,7 +344,7 @@ const previousPage =
 
 でも、最初の「1ページでもなけりゃ、2ページでもない」も捨てがたい。
 
-```JS
+```js
 const previousPage = 
     currentPage !== 1 ? currentPage !== 2 ? `/${currentPage -1}`
     : `/`
@@ -366,7 +366,7 @@ const previousPage =
 これが金言だったって、ことと。
 
 
-```JS
+```js
 String str = 条件式1 ? 条件式2 ? "A" : "B" : "C";
 ```
 このコードは使い慣れるか、具体例をおけば、とてもスマートだとわかった話でした。
@@ -382,7 +382,8 @@ String str = 条件式1 ? 条件式2 ? "A" : "B" : "C";
 **nextPage**
 <br>実際の配置は、以下のように使います。
 
-```JSX:title=components/pagination.js
+<!-- ```jsX:title=components/pagination.js -->
+```js
 return (
     <div className={styles.peger}>
     { previousPage ? <Link to={previousPage}>&lsaquo; Prev</Link> : null }

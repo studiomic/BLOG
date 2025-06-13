@@ -129,8 +129,9 @@ MDNの場合は
 
 <hr>
 
-
-````js:title=localStorageから設定キーの値を取り出す
+<!-- :title=localStorageから設定キーの値を取り出す -->
+````js
+// localStorageから設定キーの値を取り出す
 let modeType = localStorage.getItem('mode');
 
 if ( modeType === 'darkmode') {
@@ -154,12 +155,12 @@ if ( modeType === 'darkmode') {
 - <strong>document.body</strong>ではなく<strong>document.documentElement</strong>に施している。bodyではなく htmlにclass付けする場合
 
 
-````css
+```css
 html {
   background-color: var(--background);
   transition: background-color .5s ease;
 }
-````
+```
 
 <strong>body</strong>にbackground-color:は設定せず、<strong>html</strong>に置き換え用変数を設定しておく。
 
@@ -203,7 +204,8 @@ localStorage は、JavaScript を用いて作られたサイトやアプリが�
 OSの設定🟰@media (prefers-color-scheme: dark) で対応する場合、毎度OSに合わせて表示し、後から変更できるトグル、でも十分だが。<br>
 最初に「ユーザーアクション主体」とした名残を残して、一度でもモード変更ボタンを押した場合はOSよりその値を優先、という書き方にした。
 
-```jsx:title=OS設定がダークモードかの判定をし、true;ならchangeDark処理 
+```js
+// OS設定がダークモードかの判定をし、true;ならchangeDark処理 
 const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 const changeDark = darkModeMediaQuery.matches;
 if (changeDark) {
@@ -215,7 +217,8 @@ localStorageから設定キーを参照して、「空」だった場合は上�
 
 <hr>
 
-```jsx:title=localStorage優先で、初回はOS設定を反映するIF文ネスト
+```js
+// localStorage優先で、初回はOS設定を反映するIF文ネスト
 useEffect(() => {
   let modeType = localStorage.getItem('mode');
 
@@ -250,7 +253,7 @@ useEffect(() => {
 工程で、2.Gatsby BuildでlocalStorageの扱いがまずいわ、と叱られ対処　...　と書いた過程。
 
 
-```jsx
+```js
 WebpackError: ReferenceError: localStorage is not defined
 ```
 
@@ -305,7 +308,8 @@ Zenn記事曰くの「useEffectでlocalStorageへの参照のタイミングを�
 
 
 
-```jsx:title=useEffect内でlocalStorageを参照する
+```js
+// useEffect内でlocalStorageを参照する
 useEffect(() => {
 
   let modeType = localStorage.getItem('mode');
@@ -355,7 +359,8 @@ Reactのリロード処理。これを思いつくまで難航した。<br>
 
 ## Buttonアクション
 
-```js:title=onClick={Light}の動作
+```js
+// onClick={Light}の動作
 let modeType;
   const Light = () => {
     document.documentElement.classList.add("lightmode");

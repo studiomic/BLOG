@@ -69,7 +69,7 @@ featuredImage: "asset/outdated0250526.avif"
 
 <hr>
 
-```bash
+```sh
 npm outdated
 ```
 <span style="color: crimson;">前提として、node.js , Gatsby.js , Gatsby CLI , は適宜アップデートしたあと</span>
@@ -94,7 +94,7 @@ npm outdated
 <span style="display: block;margin-bottom: 4em;"></span>
 
 
-```bash
+```sh
 npm install --save-dev
 ```
 量が多すぎたので！<br>
@@ -103,7 +103,7 @@ npm install --save-dev
 
 <span style="display: block;margin-bottom: 3em;"></span>
 
-```bash
+```sh
 npm install --save-dev sass
 ```
 <span style="display: block;margin-bottom: 4em;"></span>
@@ -134,7 +134,7 @@ dependencies 対処として、<br>**update** ではなく **--save-dev** を使
 <strong>^</strong>（キャレット）つきの記載は互換性のあるバージョンということで、
 
 
-```bash
+```sh
 @mdx-js/react    2.3.0    2.3.0   3.1.0
 gh-pages         3.2.3    3.2.3   6.3.0
 ```

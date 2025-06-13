@@ -28,7 +28,7 @@ Deprecation Warningが出る理由は、 <a href="https://zenn.dev/levtech/artic
 node_modules/sass/sass.dart.jsに<br>
 廃止する予定の"legacy-js-api"だと書いてあり
 
-```JS
+```js
 B.Deprecation_F8y = new A.Deprecation0("legacy-js-api", "1.79.0", "Legacy JS API.", "legacyJsApi");
 B.Deprecation_fsU = new A.Deprecation("legacy-js-api", "1.79.0", "legacyJsApi");
 ```
@@ -41,7 +41,7 @@ node_modules/sass/types/deprecations.d.ts には警告文が載っていた。
 ## All of the deprecation types currently used by Sass.
 （Sass で現在使用されているすべての非推奨タイプ。） ー がいつから警告だすか列挙してあった。
 
-```JS
+```js
 /**
    * Deprecation for legacy JS API.
    *
@@ -69,7 +69,9 @@ node_modules/sass/types/deprecations.d.ts には警告文が載っていた。
 
 # gatsby-config.js に sassOptions: を追加
 
-```js:title=gatsby-config.js
+<!-- :title=gatsby-config.js -->
+```js
+:: gatsby-config.js ::
     {
       resolve: `gatsby-plugin-sass`,
       options: {
