@@ -44,20 +44,10 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-prismjs-title',
-          },
-          {
-            resolve: `gatsby-remark-prismjs`,
+            resolve: "gatsby-remark-shiki-twoslash",
             options: {
-              classPrefix: "language-",
-              inlineCodeMarker: null,
-              aliases: {
-                js: 'javascript',
-                sh: 'bash',
-              },
-              showLineNumbers: true, //行数を出したい場合trueに。
-              noInlineHighlight: false,
-            },
+              theme: "vitesse-dark",
+            }
           },
           {
             resolve: `gatsby-remark-images`,

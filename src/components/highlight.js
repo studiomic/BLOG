@@ -1,43 +1,29 @@
-// import React from 'react'
+import React from 'react'
 // import parse from 'html-react-parser';
-import React, { useEffect } from 'react';
+// import React, { useEffect } from 'react';
+// import parse from 'html-react-parser';
+//     const parseed = parse(File);
 
-import parse from 'html-react-parser';
-
-// import hljs from 'highlight.js/lib/core';
-import hljs from 'highlight.js';
-
-// import javascript from 'highlight.js/lib/languages/javascript';
-import 'highlight.js/styles/atom-one-dark.css';
-import 'highlight.js/styles/lioshi.css';
-
-hljs.registerLanguage('javascript', javascript);
-
-const hljsCode = ({ File }) => {
-    const parseed = parse(File);
-    const hljs = File;
+import { codeToHtml } from "shiki";
 
 
 
+const highlight = () => {
 
-    useEffect(() => {
-<pre dangerouslySetInnerHTML={{ __html: File }} />
-        hljs.initHighlighting();
-        // React環境だと初回以降ハイライト処理が入らないため外部からフラグをfalseに
-        hljs.initHighlighting.called = false;
 
-    });
+const html = await codeToHtml('console.log("Hello, World!")', {
+    lang: "javascript",
+    theme: "github-dark",
+});
+
+    
     return (
-        
-        <pre><code>
-            1{parseed}
-            2{hljs}
-        </code></pre>
+        // <div dangerouslySetInnerHTML={{ __html: html }}></div>
 
-
+        <div className="code-block">{html}</div>
     )
 }
-export default hljsCode
+export default highlight
 
 
 // const hljsCode = () => {

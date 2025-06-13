@@ -1,7 +1,7 @@
 ---
 title: "最近のGatsbyでGoogleFontを使う方法"
 date: "2025-05-14 19:00:00"
-slug: 'code-1'
+slug: 'code-2'
 description: "Gatsbyプラグインとかなしで。SEOに書くだけ"
 ---
 
