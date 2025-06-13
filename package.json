@@ -9,7 +9,6 @@
   "dependencies": {
     "@mdx-js/react": "^2.3.0",
     "clipboard": "^2.0.11",
-    "gatsby-plugin-page-progress": "^2.2.1",
     "gatsby-remark-code-buttons": "^2.0.7",
     "gatsby-remark-link-preview": "^1.0.1",
     "gatsby-remark-shiki": "^0.2.1",
