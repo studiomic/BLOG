@@ -14,7 +14,8 @@ Blogの記事がまだ少ないので気づいたのだが、スターターに�
 まずTag機能やNotesコンテンツを後から増やした自分の責任を疑ったがBlogまわりのcreatePageは書き換えていない。<br>
 gatsby-node.jsは、[元ソース](https://github.com/contentful/starter-gatsby-blog/blob/master/gatsby-node.js)と差がないなぁと眺めていて、（んん？）となった。
 
-```js:title=gatsby-node.js
+```js
+// gatsby-node.js
 const posts = result.data.allContentfulBlogPost.nodes
 
 if (posts.length > 0) {
@@ -39,7 +40,8 @@ if (posts.length > 0) {
 
 ここに問題はなさげだが、渡されているデータが
 
-```js:title=gatsby-node.js
+```js
+// gatsby-node.js
 const result = await graphql(
     `
       {
@@ -53,9 +55,12 @@ const result = await graphql(
     `
   )
 ```
+
 この **「allContentfulBlogPost」** はいったいどんな順番で配列化されているんだ？？ となった。<br>
 答えを先に書くと、公開日降順でソートをかければ、新しい記事から配列に収まる。
-```js:title=gatsby-node.js
+
+```js
+// gatsby-node.js
 allContentfulBlogPost(sort: { publishDate: DESC }) {
 	nodes {
 		.....
@@ -64,18 +69,18 @@ allContentfulBlogPost(sort: { publishDate: DESC }) {
 ```
 数が少ないので、実際にgraphQLで見てみると、ソートなしの状態では次のような順番で表示された。
 
-```
-（2）Gatsby Code SyntaxHighlighter（-/4）		：code-syntaxHighlighter
+```html
+（2）Gatsby Code SyntaxHighlighter（-/4）：code-syntaxHighlighter
 
-（4）M2 Mac mini（2/5）		：m2-mac-mini
+（4）M2 Mac mini（2/5）：m2-mac-mini
   
-（5）2022年末の近況（4/6）		：2022
+（5）2022年末の近況（4/6）：2022
 
-（6）決勝リーグ進出（5/1）		：FIFA-WC2022
+（6）決勝リーグ進出（5/1）：FIFA-WC2022
 
-（1）Gatsby Cloud（6/3）		：gatsby-cloud
+（1）Gatsby Cloud（6/3）：gatsby-cloud
 
-（3）Mac mini M2 - 続き（6/-）		：Mac-mini-M2
+（3）Mac mini M2 - 続き（6/-）：Mac-mini-M2
 ```
 いちばん新しい記事が
 （1）Gatsby Cloud（6/3）で、（←previous || next→）リンクは（←6 / 3→）記事を指している<br>
@@ -110,7 +115,8 @@ Blogトップページも同じ順番でPostを並べていたら、矛盾はな
 もっとスマートなやり方があったら知りたい😳
 
 
-```js:title=gatsby-node.js
+```js
+// gatsby-node.js
 const notes = result.data.allMarkdownRemark.edges
 
 if (notes.length > 0) {
@@ -138,7 +144,8 @@ if (notes.length > 0) {
 </section>
 
 
-```js:title=templates/note-post.js
+```js
+// templates/note-post.js
 const pagenav = get(this, 'props.pageContext')
 ```
 テンプレート側で小道具：pageContextを受け取ったのを、まずは地味にStrings状態で見る。<br>
@@ -167,7 +174,8 @@ const pagenav = get(this, 'props.pageContext')
 FlexBoxのUListElementにテキストリンクだったのを先にButtonスタイルをつけていたSCSSなど持ってきて流用。
 
 
-```html:title=templates/note-post.js
+```js
+// templates/note-post.js
 <nav>
 	<ul className={styles.articleNavigation}>
 	{pagenav.previous && (

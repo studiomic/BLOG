@@ -67,13 +67,16 @@ GatsbyのThemaを「複数・同居させられる」という機能とは違う
 
 Jekyll資産だという「frontmatter」は好きなときに好きなだけ増やせる、ということは[BlogにTags機能をつける工程](/note-03/) で使った
 
-```js:title=createPage
+```js
+// createPage
 context: {
 	slug: tag.contentful_id,
 	name: tag.name,
 	},
 ```
-```js:title=ID&name
+
+```js
+// ID&name
 const =	result.data.allContentfulTag.nodes.contentful_id
 const =	result.data.allContentfulTag.nodes.name
 ```
@@ -104,7 +107,8 @@ JSファイルで汎用性のある記事構成は（Pre/Codeを載せる限り�
 
 特に面白かったのが、ファイルシステムの情報取得で、外に見せるものをサクッとつくって終わり・・ではない、じっくりと噛み締めるように進む解説がとても親切で、本当の勉強になりました。
 
-```graphql:title=edge.node.
+```graphql
+# edge.node.
 {data.allFile.edges.map((edge) => (
 	<tr kye={edge.node.ctime}>
 		<td>{edge.node.relativePath}</td>
@@ -141,14 +145,16 @@ Starterに揃える以外で、変えた箇所といえば、frontmatter/date: "
 
 Vs code拡張機能などもあるはずですが、とりあえずMDファイル内でもEmmetを使えるようにだけにした。
 
-```js:title=setting.json
+```js
+// setting.json
 "emmet.excludeLanguages": [],
 "emmet.includeLanguages": {"markdown": "html"},
 ```
 普通はこの書き方で良いらしい。<br>
 .includeLanguages だけでは有効にならないので、.excludeLanguagesも併記するとあったが、うちは先住民がさらにいて　↓こんな感じに。
 
-```js:title=setting.json
+```js
+// setting.json
 "emmet.variables":{
 	"lang": "ja"
 },
@@ -176,7 +182,7 @@ Markdownの弱みは改行コード周りが曖昧、というか「縦スペー
 産業革命以前かもな。
 </blockquote>
 
-```
+```html
 &emsp;<br>
 
 こういうのを書くの、健康を損ねそうな気持ち悪さがあるんすけどっ！
@@ -191,8 +197,9 @@ Markdownの弱みは改行コード周りが曖昧、というか「縦スペー
 
 WordPress：ブロックエディタが、数値代入式でスマートにやっていることを、こちらは人間の手書きで泥臭くインラインCSSで書く部分だけ真似ればよかった。小難しく考えることはなかった。
 
+<!-- WordPress-block-spacer -->
 
-```html:title=WordPress-block-spacer
+```html
 <!-- wp:spacer -->
 <div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
@@ -201,7 +208,8 @@ WordPress：ブロックエディタが、数値代入式でスマートにや�
 <div style="height:3em"></div>
 とかがいいかな。
 
-```html:title=文字サイズem単位で空白をつくる
+```html
+<!-- 文字サイズem単位で空白をつくる -->
 <div style="height:3em"></div>
 ```
 
@@ -209,7 +217,7 @@ WordPress：ブロックエディタが、数値代入式でスマートにや�
 横空白もできるかな<span style="width:3em;display: inline-block;"></span>3文字スペースを開ける
 <br><br>
 
-```text:title=MarkDown
+```html
 空白なしの行
 &thinsp;&nbsp;より狭い空白
 &nbsp;半角スペースと同じサイズの空白
@@ -232,7 +240,8 @@ WordPressのように万人がわかりやすく無料で使う場なら、便�
 まず本来は、Headingのある文章ならHeadingの前に縦空白のあるスタイルを定義しておく<br>
 それでもHeadingなしのファミレスのお喋り的文書を、見やすくするなら
 
-```html:title=margin-bottomスタイルで囲う
+```html
+<!-- margin-bottomスタイルで囲う -->
 <section style="margin-bottom: 4em;">
 
 あとからでも、ボトムマージンをつけて縦スペースを担保する手があったね。

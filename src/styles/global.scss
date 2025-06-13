@@ -276,6 +276,33 @@ tt:after {
   display: none!important;
 }
 
+// pre {
+//   .tab,.space {
+//     background: cadetblue;
+//   }
+
+// }
+
+// pre.shiki .tab,
+// pre.shiki .space {
+//   display: block;
+//   background: cadetblue;
+//   // position: relative;
+// }
+
+// pre.shiki .tab::before {
+//   content: '⇥';
+//   position: absolute;
+//   opacity: 0.3;
+// }
+
+// pre.shiki .space::before {
+//   content: '·';
+//   position: absolute;
+//   opacity: 0.3;
+// }
+
+
 // @container body (max-width: 768px) {
 //   .mno {
 //     display: none;

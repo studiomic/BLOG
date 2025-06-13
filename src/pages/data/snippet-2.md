@@ -5,7 +5,7 @@ slug: 'code-2'
 description: "Gatsbyプラグインとかなしで。SEOに書くだけ"
 ---
 
-```
+```js
 const path = require('path')
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions

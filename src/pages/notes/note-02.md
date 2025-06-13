@@ -55,7 +55,9 @@ Contentful Tagsは、
 ___
 
 Starterで最初についていたTagsは、GraphQLとしては
-```graphql:title=graphql---BlogPost.tags
+<!-- :title=graphql---BlogPost.tags -->
+
+```graphql
 allContentfulBlogPost {
     nodes {
       title
@@ -70,7 +72,8 @@ allContentfulBlogPost {
 
 2つの取り出し方があるので、実装も楽。
 
-```graphql:title=graphql---BlogPost.metadata.tags
+<!-- :title=graphql---BlogPost.metadata.tags -->
+```graphql
 allContentfulBlogPost {
           nodes {
             title
@@ -85,7 +88,9 @@ allContentfulBlogPost {
         }
 ```
 
-```graphql:title=graphql---ContentfulTag.
+<!-- :title=graphql---ContentfulTag. -->
+
+```graphql
 allContentfulTag {
           nodes {
             contentful_id

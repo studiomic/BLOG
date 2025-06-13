@@ -47,7 +47,8 @@ ___
 
 # createPage<a name="createPage"></a>
 
-```graphql:title=gatsby-node.js
+```graphql
+# gatsby-node.js
 tags.forEach((tag) => {
     createPage({
       path: `/tags/${tag.contentful_id}/`,
@@ -64,7 +65,7 @@ Postの場合は、**if (posts.length > 0) {&emsp;}** &emsp; （0でなければ
 
 forEachで置き換え元となる**tags.** は result.のContentful Tag（33行目）
 
-```graphql:title=gatsby-node.js
+```graphql
 const { createPage } = actions
 
 const blogPost = path.resolve('./src/templates/blog-post.js')
@@ -135,7 +136,7 @@ const posts = get(this, 'props.data.allContentfulBlogPost.nodes')
 ```
 渡す側は
 
-```graphql:title=gatsby-node.js
+```graphql
 context: {
 	slug: post.slug,
 	previousPostSlug,
@@ -186,16 +187,19 @@ const tagname = get(this, 'props.pageContext')
 ```
 createPageでつくられる **/tags/$display_tag/** のテンプレートで
 
-```js:title=/src/templates/tags-index.js
+<!-- // templates/tags-index.js -->
+```js
 <h1 className={styles.title}>TAGS : {tagname.name}</h1>
 ```
 ようやく対象のTag名をページのタイトルとして埋められました。
 
 たったこれだけだが、Tagリンクを表示するよりずっと難関だった件。<br>&emsp;<br>
 ___
+<!-- # templates/tags-index.js -->
 
 # TagIndexQueryのソース<a name="TagIndexQuery"></a>
-```graphql:title=/src/templates/tags-index.js
+
+```graphql
 export const pageQuery = graphql`
 query TagIndexQuery ($slug: String!){
 	allContentfulTag {
@@ -233,6 +237,7 @@ query TagIndexQuery ($slug: String!){
 	}
 }
 `
+
 ```
 
 まずTagsリンクから対象となるPostを絞り込むフィルターに、gatsby-node.jsのcreatePageから
@@ -240,9 +245,10 @@ query TagIndexQuery ($slug: String!){
 として渡された **slug: tag.contentful_id,**
 を11行目で使っています。{eq: $slug }
 
-```JS
+```js
 filter: {metadata: {tags: {elemMatch: {contentful_id: {eq: $slug }}}}}
 ```
+
 そのPostが持つTagsの中に **$slug** と同じ文字列の **contentful_id** があるかどうか。
 **elemMatch:** で確認。
 
@@ -256,7 +262,9 @@ ___
 
 # PostページにTags <Link to={ $slug }>をリンクを表示する<a name="Tagslink"></a>
 
-```html:title=/src/templates/blog-post.js
+<!-- :title=/src/templates/blog-post.js -->
+
+```html
 <small className={tagstyles.tags}>
 {post.metadata.tags.map(tag => (
 	<div key={tag} className={tagstyles.tag}>
@@ -289,7 +297,8 @@ Contentful製のこのStarterは、Webで見る見本ソースより小洒落て
 src/pages/blog.js 本体にはごく短くHero-Imageと「BLOG」というページタイトルまで。<br>
 Postを並べているGridは
 
-```html:title=/src/pages/blog.js
+<!-- :title=/src/pages/blog.js -->
+```html
 <ArticlePreview posts={posts} />
 ```
 とcomponentsに渡して任せている。<br>
@@ -301,7 +310,8 @@ Postを並べているGridは
 
 > 対処法：エラーとなっているプロパティ（この場合はhoge）の前に?.を付け、?.hogeとすることで解消
 
-```html:title=/src/components/ArticlePreview.js
+<!-- :title=/src/components/ArticlePreview.js -->
+```html
 <ArticlePreview posts={posts} />
 // で{posts}を渡された先のcomponentsで、metadata?. とオプショナルチェイング演算子を挿入
 
