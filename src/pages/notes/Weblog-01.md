@@ -4,7 +4,8 @@ date: "2025-05-20 10:00:00"
 slug: 'triple-monitor'
 # description: "LGウルトラワイド34とPHILIPS27インチに大満足"
 description: "Silicon Motion - macOS instantView"
-featuredImage: "asset/InstantView.avif"
+# featuredImage: "asset/InstantView.avif"
+featuredImage: "asset/IMG_8798.avif"
 tag: 'Mac mini M2,モニター,Anker,トリプルディスプレイ'
 ---
 

@@ -6,7 +6,7 @@ description: "gatsby-config.jsへオプションを加筆"
 book:
 music:
 # featuredImage: "asset/Gatsbyartdeco.avif"
-featuredImage: "asset/Pattern9.avif"
+featuredImage: "asset/Pattern9.png"
 ---
 
 Gatsby Developで作業しながら、警鐘コメントがiTermにたびたび流れてうるさかったが、長らく放置していた。

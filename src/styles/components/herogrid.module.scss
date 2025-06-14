@@ -1,26 +1,36 @@
 .hero {
-  margin: var(--space-xl) auto 0;
-  // max-width: var(--size-max-width);
-  position: relative;
+  // margin: var(--space-xl) auto 0;
+  margin: var(--space-2xl) auto 0;
+  // position: relative;
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-rows: auto 1fr;  
+  grid-template-rows: auto 1fr;
   gap: 0;
-  // border: 1px solid pink;
+  // border: 1px solid crimson;
+
 }
 
 .image {
   /* Ensure golden ratio for the hero size while limiting it to some extend to
     the viewport width */
-  width: 100%;
-  // border: 1px solid crimson;
-}
+    width: 100%;
+  }
+  
+// .imagefit {
+//   border: 1px solid cyan;
+// }
 
-// .details {
+.details {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+// background: transparent;
+  // border: 1px solid crimson;
+
+  // .details {
 //   background: var(--background);
 //   // width: 95%;
 //   // width: 98%;
-//   // border: 1px solid crimson;
 // }
 
 .title {
@@ -28,11 +38,11 @@
   font-size: var(--text-title);
   font-weight: var(--extrabold);
   line-height: var(--solid);
-  // margin: var(--space-xl) 0 var(--space-xl) var(--size-gutter);
-  // margin: var(--space-xl) 0 var(--space-xl) var(--space-xl);
-  // margin: var(--space-xl) 0  var(--space-xl) var(--size-gutter);
-  // margin: var(--size-gutter);
 }
+// margin: var(--space-xl) 0 var(--space-xl) var(--size-gutter);
+// margin: var(--space-xl) 0 var(--space-xl) var(--space-xl);
+// margin: var(--space-xl) 0  var(--space-xl) var(--size-gutter);
+// margin: var(--size-gutter);
 
 .content {
   font-size: var(--text-lead);
@@ -45,7 +55,7 @@
 .meta {
 	font-size: var(--text-lg);
 	font-style: italic;
-	margin: 1em auto var(--size-gutter);
+	margin: 0.5em auto var(--size-gutter);
 	// padding-left: var(--size-gutter);
 }
 
@@ -95,49 +105,87 @@
   .hero {
     padding-left: var(--size-gutter);
     padding-right: var(--size-gutter);
-    // grid-template-columns: 1fr 6fr 2fr;
     // border: 1px solid cyan;
   }
-  .image {
-    // border: 1px solid tomato;
-    height: 60svh; //62svh; //61.8vh;
-    // grid-column: 2/4;
-    grid-column: 1/-1;
-    grid-row: 1/2;
-    // aspect-ratio: 16 / 9;
-    // aspect-ratio: 21 / 9;
-    img {
-      object-fit: contain;
-      // height: auto;
-      // width: auto;
-      // align-self: center;
-      // margin: 0 0 0 auto;
-      // margin: 0 auto;
-    }
-  }
-  .details {
-    grid-column: 1/-1;
-    grid-row: 2/3;
-    // position: absolute;
-    // bottom: 0;
-    // z-index: 2;
-  }
+}
+
+// grid-template-columns: 1fr 6fr 2fr;
+  // .details {
+  //   grid-column: 1/-1;
+  //   grid-row: 2/3;
+  //   // position: absolute;
+  //   // bottom: 0;
+  //   // z-index: 2;
+  // }
 
   // .title,.content {
   //   margin-left: var(--size-gutter);
   // }
-}
 
 @container main (min-width: 1440px) {
   .hero {
-    max-width: calc(100% - 64px * 4);
-    padding-left: 0;
-    padding-right: 0;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto;
+    column-gap: 2em;
+    margin: var(--size-gutter) auto var(--size-gutter);
+  }
+  .image {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    align-items: center;
+    // height: 60svh; //62svh; //61.8vh;
+    }
+  .details {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    align-self: center;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    // align-items: center;
+    // align-self: end;
+    // border: 1px solid tomato;
+  }
+  .meta {
+    margin: 0 auto 1em;
   }
 }
 
-@container main (min-width: 1920px) {
-  .hero {
-    max-width: calc(100% - 64px * 6);
-  }
-}
+  // .imagefit {
+  //   object-fit: contain;
+  //   width: 100%;
+  //   max-width: 50svw;
+  //   height: auto;
+  //   margin: auto 0 auto;
+  //   align-self: center;
+  //   align-self: stretch;
+  //   border: 1px solid cyan;
+  // }
+
+// @container main (min-width: 1920px) {
+//   .hero {
+//     max-width: calc(100% - 64px * 6);
+//   }
+// }
+  // border: 1px solid pink;
+
+  // grid-column: 1/-1;
+    // border: 1px solid blue;
+    // border: 1px solid rgb(15, 17, 11);
+    // aspect-ratio: 16 / 9;
+    // aspect-ratio: 21 / 9;
+    // img {
+      // object-position: 50% 50%;
+      // object-fit: cover;
+      // object-position:center;
+      // object-fit: cover;
+      // align-self: center;
+      // margin: 0 0 0 auto;
+      // margin: 0 auto;
+      // }
+      // max-width: calc(100% - 64px * 4);
+    // grid-template-columns: 6fr 10fr;
+    // margin-bottom: var(--size-gutter);
+    // padding-bottom: 2em;
+    // border-bottom: 1px solid var(--border);
+    // padding-left: 0;
+    // padding-right: 0;

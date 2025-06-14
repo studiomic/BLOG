@@ -17,9 +17,12 @@ class NotesPostTemplate extends React.Component {
 		return (
 			<Layout>
 				<div className={herostyles.hero}>
-					{featuredImg && (
-						<GatsbyImage className={herostyles.image} alt="featuredImg" image={featuredImg} />
-					)}
+					<div className={herostyles.image}>
+						{featuredImg && (
+							<GatsbyImage className={herostyles.imagefit} alt="featuredImg" image={featuredImg} />
+						)}
+					</div>
+
 					<div className={herostyles.details}>
 						<h1 className={herostyles.title}>{posts.frontmatter.title}</h1>
 						<div className={herostyles.content}>{posts.frontmatter.description}</div>
