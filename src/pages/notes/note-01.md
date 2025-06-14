@@ -4,7 +4,7 @@ title: "Article Style Variables"
 date: "2022-12-01 10:00:00"
 slug: 'note-01-styles'
 description: "HTML Elements Style and Color"
-featuredImage: "asset/cafe.avif"
+featuredImage: "asset/Pattern9.png"
 ---
 <section style="margin-bottom: 4em;">
 このPostはStyleサンプルです。文章は夏目漱石「こころ」より抜粋。

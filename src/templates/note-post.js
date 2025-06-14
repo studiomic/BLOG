@@ -23,14 +23,14 @@ class NotesPostTemplate extends React.Component {
 					<div className={herostyles.details}>
 						<h1 className={herostyles.title}>{posts.frontmatter.title}</h1>
 						<div className={herostyles.content}>{posts.frontmatter.description}</div>
+						<p className={herostyles.meta}>
+								{posts.frontmatter.date}<span> –{' '}
+								{posts.timeToRead} minute read</span>
+						</p>
 					</div>
 				</div>
 
 				<div className={styles.container}>
-					<p className={styles.meta}>
-							{posts.frontmatter.date}<span> –{' '}
-							{posts.timeToRead} minute read</span>
-					</p>
 					<div className={styles.article}>
 						<article className={styles.postBody} dangerouslySetInnerHTML={{ __html: html }} />
 						<nav>
