@@ -106,7 +106,7 @@ query HomeQuery ($limit: Int = 10, $skip: Int = 0){
 	}
 	allMarkdownRemark(
 		sort: {frontmatter: {date: DESC}}
-		filter: {fields: {collection: {eq: "notes"}}}
+		filter: {fileAbsolutePath: {regex: "/src/pages/notes/"}}
 		limit: $limit
 		skip: $skip
 		) {
@@ -125,4 +125,3 @@ query HomeQuery ($limit: Int = 10, $skip: Int = 0){
 	}	
 }	
 `
-

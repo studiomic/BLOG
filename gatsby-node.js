@@ -6,11 +6,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     const parent = getNode(node.parent)
 
     // CONFIG:`gatsby-source-filesystem`,options:name / sourceInstanceName
-    createNodeField({
-      node,
-      name: `collection`,
-      value: parent.sourceInstanceName,
-    })
+    // createNodeField({
+    //   node,
+    //   name: `collection`,
+    //   value: parent.sourceInstanceName,
+    // })
     createNodeField({
       node,
       name: `base`,
