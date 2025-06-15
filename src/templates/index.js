@@ -106,6 +106,7 @@ query HomeQuery ($limit: Int = 10, $skip: Int = 0){
 	}
 	allMarkdownRemark(
 		sort: {frontmatter: {date: DESC}}
+		filter: {fields: {collection: {eq: "notes"}}}
 		limit: $limit
 		skip: $skip
 		) {

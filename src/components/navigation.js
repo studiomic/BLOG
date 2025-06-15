@@ -24,6 +24,9 @@ const Navigation = () => (
         <Link to="/shiki/" activeClassName="active">shiki</Link>
       </li>
       <li className={styles.navigationItem}>
+        <Link to="/blog/" activeClassName="active">blog</Link>
+      </li>
+      <li className={styles.navigationItem}>
         <ModeButton />
       </li>
     </ul>

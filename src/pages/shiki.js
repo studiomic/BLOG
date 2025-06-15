@@ -1,20 +1,59 @@
 import React from 'react'
+import { codeToHtml } from "shiki";
+
 // import Layout from './../components/layout'
 // import { codeToHast } from 'shiki'
-
-import { codeToHtml } from "shiki";
 // import { createHighlighter } from "shiki";
 
-
-
-
 const highlight = () => {
-
 
 const html = codeToHtml('console.log("Hello, World!")', {
     lang: "javascript",
     theme: "github-dark",
 });
+
+return (
+    <div dangerouslySetInnerHTML={{ __html: html }}></div>
+    )
+}
+export default highlight
+
+
+
+
+
+
+
+
+// export const pageQuery = graphql`
+// query CodesPostQuery ($id: String!){
+// allFile(filter: {sourceInstanceName: {eq: "codes"}}) {
+// edges {
+//     node {
+//         name
+//         relativePath
+//         sourceInstanceName
+//         base
+//         ext
+//         extension
+//         absolutePath
+//         dir
+//         internal {
+//                 content
+//             }
+//         }
+//     }
+// }
+// `
+
+
+// const hast = await codeToHast('.text-red { color: red; }', {
+//   lang: 'css',
+//   theme: 'catppuccin-mocha',
+	
+// })
+
+// console.log(hast) // highlighted html string
 
 // const html = codeToHtml ('console.log("Hello, World!")', {
 //     lang: "javascript",
@@ -25,14 +64,6 @@ const html = codeToHtml('console.log("Hello, World!")', {
 //   themes: ["github-dark", "github-light"],
 //   langs: ["javascript", "typescript", "css", "html"],
 // });
-
-
-return (
-      <div dangerouslySetInnerHTML={{ __html: html }}></div>
-    )
-}
-export default highlight
-
 
 // 最もシンプルな使い方
 // const html = await codeToHtml('console.log("Hello, World!")', {
@@ -54,9 +85,6 @@ export default highlight
 //   lang: "typescript",
 //   theme: "nord",
 // });
-
-
-
 
 // import { getHighlighter } from "shiki";
 // import { CODE } from "@/constants";
@@ -96,15 +124,3 @@ export default highlight
 // )
 
 // export default Shiki
-
-
-
-
-// const hast = await codeToHast('.text-red { color: red; }', {
-//   lang: 'css',
-//   theme: 'catppuccin-mocha',
-	
-// })
-
-// console.log(hast) // highlighted html string
-

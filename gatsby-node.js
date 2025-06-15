@@ -1,5 +1,25 @@
 const path = require('path')
 
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNode, createNodeField } = actions
+    if (node && node.internal && node.internal.type === 'MarkdownRemark') {
+    const parent = getNode(node.parent)
+
+    // CONFIG:`gatsby-source-filesystem`,options:name / sourceInstanceName
+    createNodeField({
+      node,
+      name: `collection`,
+      value: parent.sourceInstanceName,
+    })
+    createNodeField({
+      node,
+      name: `base`,
+      value: parent.base,
+    })
+  }
+}
+// exports.onCreateNode
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
   const notePost = path.resolve('./src/templates/note-post.js')
@@ -8,7 +28,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(
     `
       {
-        allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
+        allMarkdownRemark(sort: {frontmatter: {date: DESC}}
+        filter: {fileAbsolutePath: {regex: "/src/pages/notes/"}}
+        ) {
           edges {
             node {
               id

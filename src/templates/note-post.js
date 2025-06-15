@@ -19,7 +19,7 @@ class NotesPostTemplate extends React.Component {
 				<div className={herostyles.hero}>
 					<div className={herostyles.image}>
 						{featuredImg && (
-							<GatsbyImage className={herostyles.imagefit} alt="featuredImg" image={featuredImg} />
+							<GatsbyImage alt="featuredImg" image={featuredImg} placeholder="BLURRED" />
 						)}
 					</div>
 

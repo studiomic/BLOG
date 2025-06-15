@@ -37,6 +37,13 @@ module.exports = {
         path: `${__dirname}/src/pages/notes/asset/`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `codes`,
+        path: `${__dirname}/src/pages/data/`,
+      },
+    },
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     {
