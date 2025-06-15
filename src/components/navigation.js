@@ -18,13 +18,7 @@ const Navigation = () => (
     </Link>
     <ul className={styles.navigation}>
       <li className={styles.navigationItem}>
-        <Link to="/workshop/" activeClassName="active">workshop</Link>
-      </li>
-      <li className={styles.navigationItem}>
         <Link to="/shiki/" activeClassName="active">shiki</Link>
-      </li>
-      <li className={styles.navigationItem}>
-        <Link to="/blog/" activeClassName="active">blog</Link>
       </li>
       <li className={styles.navigationItem}>
         <ModeButton />
@@ -34,6 +28,12 @@ const Navigation = () => (
 )
 export default Navigation
 
+// <li className={styles.navigationItem}>
+//   <Link to="/workshop/" activeClassName="active">workshop</Link>
+// </li>
+// <li className={styles.navigationItem}>
+//   <Link to="/blog/" activeClassName="active">blog</Link>
+// </li>
 // {/* <li className={styles.navigationItem}>
 //   <Link to="/blog/" activeClassName="active">
 //     Blog

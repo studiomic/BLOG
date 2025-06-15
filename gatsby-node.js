@@ -24,6 +24,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
   const notePost = path.resolve('./src/templates/note-post.js')
   const noteList = path.resolve('./src/templates/index.js')
+  const snippet = path.resolve('./src/templates/data-post.js')
   
   const result = await graphql(
     `
@@ -96,6 +97,50 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         })
       })
     }
+  }
+
+
+  const sniresult = await graphql(
+    `
+      {
+        allMarkdownRemark(sort: {frontmatter: {date: DESC}}
+        filter: {fileAbsolutePath: {regex: "/src/pages/data/"}}
+        ) {
+          edges {
+            node {
+              id
+              html
+              frontmatter {
+                slug
+              }
+            }
+          }
+        }
+      }
+    `
+  )
+
+  if (sniresult.errors) {
+    reporter.panicOnBuild(
+      `There was an error loading your CodePosts`,
+      sniresult.errors
+    )
+    return
+  }
+
+  const codes = sniresult.data.allMarkdownRemark.edges
+
+  if (codes.length > 0) {
+    codes.forEach((code, index) => {
+      createPage({
+        path: `/data/${code.node.frontmatter.slug}/`,
+        component: snippet,
+        context: {
+          slug: code.node.frontmatter.slug,
+          id: code.node.id,
+        },
+      })
+    })
   }
 }
 //exports.createPages

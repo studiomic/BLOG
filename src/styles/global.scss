@@ -79,12 +79,13 @@ html {
 }
 html * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 main {
   overflow-x: hidden;
   container: main / inline-size;
-  // border: 1px solid crimson;
+  // border: 10px solid crimson;
   // border: 1px solid orchid;
 }
 
@@ -100,6 +101,7 @@ body {
   -webkit-font-smoothing: antialiased;
   transition: background-color .7s ease-out;
   container: body / inline-size;
+  
   // transition: background-color .5s ease;
   // border: 1px solid Cyan;
 }
