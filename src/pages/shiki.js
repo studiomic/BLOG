@@ -18,6 +18,39 @@ return (
 }
 export default highlight
 
+// const mdcode = get(this, 'props.data.markdownRemark')
+// const html = get(this, 'props.data.markdownRemark.html')
+// const name = get(this, 'props.data.markdownRemark.fields.name')
+
+
+// {mdcode.map((edge) => (
+//     <div key={edge.id}>
+//         {edge.node.html}
+//     </div>
+// ))}
+
+
+
+
+
+// allMarkdownRemark
+
+// edges
+// node
+// html
+// frontmatter
+// title
+// date(formatString: "YYYY/MM/DD")
+// slug
+// type
+
+// fields
+// base
+// name
+// base
+
+
+
 
 
 

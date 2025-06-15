@@ -19,7 +19,7 @@ class NotesPostTemplate extends React.Component {
 				<div className={herostyles.hero}>
 					<div className={herostyles.image}>
 						{featuredImg && (
-							<GatsbyImage alt="featuredImg" image={featuredImg} />
+							<GatsbyImage alt="featuredImg" image={featuredImg} placeholder="BLURRED" />
 						)}
 					</div>
 
@@ -84,7 +84,7 @@ query NotesPostQuery ($id: String!){
 			slug
 			featuredImage {
 				childImageSharp {
-					gatsbyImageData(width: 1000, placeholder: BLURRED)
+					gatsbyImageData(width: 2000, placeholder: BLURRED)
 				}
 			}
 		}

@@ -1,42 +1,15 @@
 import React from 'react'
-// import get from 'lodash/get'
-// import React, { useState, useEffect } from 'react';
-// import React, { useEffect } from 'react';
+import get from 'lodash/get'
 import { graphql } from 'gatsby';
 import Layout from './../components/layout'
 import Seo from './../components/seo'
-
-// import hljs from 'highlight.js/lib/core';
-// import javascript from 'highlight.js/lib/languages/javascript';
-
-// import './../styles/css/dracula-prism.css' //CSS
-// import './../styles/css/init.css' //CSS
-
-
-
 import * as styles from './../styles/pages/workshop.module.scss'
-// import File from './../pages/data/snippet-1.md'
 
-
-// import logo from "./logo.png" // Tell webpack this JS file uses this image
-// 
-
-
-// export default function Workshop() {
 class Workshop extends React.Component {
 	render() {
-		// const html = get(this, 'props.data.markdownRemark.html')
-		const html = `
-	<h3>parse1234</h3>
-	console.log(logo) // /logo.84287d09.png	
-		`
-		const htmlp = `<p>parse1234</p>`
-
-		
-		// const readFile = {__html: "File"};
-		// const readFile ='<div dangerouslySetInnerHTML={{ __html: File }} />'
-
-		// const csv = get(this, "readFileAsText")
+		const post = get(this, 'props.data.markdownRemark')
+		const html = get(this, 'props.data.markdownRemark.html')
+		const name = get(this, 'props.data.markdownRemark.fields.name')
 
 
 
@@ -50,30 +23,19 @@ class Workshop extends React.Component {
 						</nav>
 						<article className={styles.container}>
 							<h1>Basic 9 Grid</h1>
-							<p>どこでsnippetを渡すか</p>
 
-<hljscode File={html} />
+<iframe src="/notes/code-syntaxHighlighter/" frameborder="0"></iframe>
 
-<h1>koko</h1>
+<div>
+</div>
 
-<pre>
-	<code>
-		{html}
-	</code>
-</pre>
+{/* {md.map((edge) => (
+    <div key={edge.id}>
+        {edge.node.html}
+    </div>
+))} */}
 
-<article dangerouslySetInnerHTML={{ __html: html }} />
-
-<article dangerouslySetInnerHTML={{ __html: htmlp }} />
-{/* <div dangerouslySetInnerHTML={readFile} /> */}
-
-{/* <article dangerouslySetInnerHTML={{ __html: csv }} /> */}
-
-
-
-<hljs />
-
-
+{/* <article dangerouslySetInnerHTML={{ __html: test }} /> */}
 
 
 
@@ -92,7 +54,6 @@ export default Workshop
 
 
 
-
 export const Head = ({ data }) => {
 	return (
 		<Seo
@@ -102,49 +63,32 @@ export const Head = ({ data }) => {
 	)
 }
 
-
 export const pageQuery = graphql`
 query WorkshopQuery {
-		site {
-			siteMetadata {
-				title
-				description
-			}
+	site {
+		siteMetadata {
+			title
+			description
 		}
-	allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
-		edges {
-			node {
-				html
-				timeToRead
-				frontmatter {
-					title
-					date(formatString: "YYYY/MM/DD")
-					description
-					slug
-				}
-			}
-		}
-	}	
+	}
+
+	allMarkdownRemark(
+		filter: {fields: {collection: {eq: "codes"}, base: {name: {eq: "snippet-1"}}}}
+  ) {
+    edges {
+      node {
+        html
+				fields {
+          base {
+            name
+          }
+        }
+      }
+    }
+  }
+
+
+
+
 }	
 `
-
-
-// import '../styles/css/dracula-prism.css' //CSS
-// import '../styles/css/init.css' //CSS
-
-// import snippet from '../pages/data/snippet-1.txt'
-
-// import snippet1 from '../pages/data/snippet-1.txt'
-// import hljs from 'highlight.js/lib/core';
-// import 'highlight.js/styles/lioshi.css';
-// import '../styles/css/dracula-prism.css' //CSS
-// import '../styles/css/init.css' //CSS
-
-/**
-highlight.js を import する
-*/
-// import javascript from 'highlight.js/lib/languages/javascript';
-// import 'highlight.js/styles/lioshi.css';
-// hljs.registerLanguage('js', javascript);
-// import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-// import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism';
