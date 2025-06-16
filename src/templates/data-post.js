@@ -18,6 +18,10 @@ class NotesPostTemplate extends React.Component {
 					</aside>
 					<article className={styles.postmain} dangerouslySetInnerHTML={{ __html: html }} />
 				</section>
+
+
+
+
 			</Layout>
 		)
 	}

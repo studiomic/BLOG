@@ -47,8 +47,6 @@
 .content {
   font-size: var(--text-lead);
   font-weight: var(--semibold);
-  // margin: 0 0 0 var(--size-gutter);
-  // margin: 0 0 0 var(--size-gutter);
   line-height: var(--loose);
 }
 
@@ -56,13 +54,11 @@
 	font-size: var(--text-lg);
 	font-style: italic;
 	margin: 0.5em auto var(--size-gutter);
-	// padding-left: var(--size-gutter);
 }
 
 
-// @container main (min-width: 480px) {
-// }
-// @container (10em <= width <= 20em) {
+
+
 
 @container main (width < 768px) {
   .hero {
@@ -78,7 +74,6 @@
   }
 }
 
-// @container main (width < 1024px) {
 //   .hero {
 //     // grid-template-rows: 3fr 1fr;
 //     grid-template-rows: auto 1fr;
@@ -172,7 +167,7 @@
   //   border: 1px solid cyan;
   // }
 
-// @container main (min-width: 1920px) {
+
 //   .hero {
 //     max-width: calc(100% - 64px * 6);
 //   }

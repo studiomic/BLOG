@@ -5,45 +5,92 @@ slug: 'code-1'
 type: ""
 ---
 
+<section class="widthFull">
+
 # Basic 9 Grid
 
-<div class="twoColumn">
 
-<div class="left">
 <div class="samplelayoutGrid">
-  <div class="grid"></div>
-  <div class="grid"></div>
-  <div class="grid"></div>
-  <div class="grid"></div>
-  <div class="grid"></div>
-  <div class="grid"></div>
-  <div class="grid"></div>
-  <div class="grid"></div>
-  <div class="grid"></div>
-</div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
 </div>
 
-<div class="right">
+</section>
 
-```css
-<div class="samplelayoutGrid">
-  <div class="grid"></div>
-  <div class="grid"></div>
-  <div class="grid"></div>
-  <div class="grid"></div>
-  <div class="grid"></div>
-  <div class="grid"></div>
-  <div class="grid"></div>
-  <div class="grid"></div>
-  <div class="grid"></div>
+
+<section>
+
+### html
+
+```html
+<div class="layoutGrid">
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
 </div>
 ```
 
-</div>
-</div>
+</section>
+
+
+<section>
+
+### Parent : layoutGrid / Grid Items : cell
+
+```css
+.layoutGrid {
+	display: grid;
+	grid-template-columns: 3fr 3fr 3fr;
+	grid-template-rows: 3fr 3fr 3fr;
+	column-gap: 1em;
+	row-gap: 1em;
+	margin: 0 auto;
+	width: 450px;
+	height: 450px;
+}
+
+.cell {
+	border: 1px solid tomato;
+}
+```
+
+</section>
+
+
+<section class="widthFull">
+
+<span class="line"></span>
+
+
+# Empty 9 Grid
+
+</section>
+
+<!-- <section></section> -->
+
+
+<!-- ## Parent -->
 
 
 
+
+
+
+
+<!-- 
 
 ## Basic 9 Grid
 
@@ -57,22 +104,7 @@ type: ""
 ```css
 
 
-```
+``` -->
 
 
 
-```css
-<div class="container">
-  <div class="item">A</div>
-  <div class="item">B</div>
-  <div class="item">C</div>
-  <div class="item">D</div>
-  <div class="item">E</div>
-  <div class="item">F</div>
-  <div class="item">G</div>
-  <div class="item">H</div>
-  <div class="item">I</div>
-  <div class="item">J</div>
-  <div class="item">K</div>
-</div>
-```
