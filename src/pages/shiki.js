@@ -1,159 +1,115 @@
 import React from 'react'
-import { codeToHtml } from "shiki";
+// import get from 'lodash/get'
+import { graphql } from 'gatsby';
+import Layout from './../components/layout'
+import Seo from '../components/seo'
+import * as iop from '../styles/components/iop.module.scss'
 
-// import Layout from './../components/layout'
-// import { codeToHast } from 'shiki'
-// import { createHighlighter } from "shiki";
+class RootIndex extends React.Component {
+	render() {
+		// const notes = get(this, 'props.data.allMarkdownRemark.edges')
+		// const pageContext = get(this, 'props.pageContext')
 
-const highlight = () => {
+		return (
+		<Layout>
+            <section className={iop.container}>
+                <article className={iop.layoutGrid}>
+                    <header>
+                        <h1>Design Deeply</h1>
+                    </header>
+                    
+                    
+                    <section className={iop.desc}>
+                        <h2>Web designer.</h2>
+                        <p>Development 26th</p>
+                    </section>
+                    
+                    <section className={iop.dev}>
+                        <h3>©Studio Mic</h3>
+                        <p>スタジオミック</p>
+                    </section>
 
-const html = codeToHtml('console.log("Hello, World!")', {
-    lang: "javascript",
-    theme: "github-dark",
-});
+                    
+                    <div className={iop.rowline1}></div>
+                    <div className={iop.rowline2}></div>
+                    <div className={iop.rowline3}></div>
+                    
+                    <div className="grid"></div>
+                    <div className="grid"></div>
+                    <div className="grid"></div>
+                    <div className="grid"></div>
+                </article>
 
-return (
-    <div dangerouslySetInnerHTML={{ __html: html }}></div>
-    )
+<br /><br /><br /><br /><br /><br />
+
+                {/* <article className={styles.about}>
+                    <details>
+                        <summary>
+                            <span></span>
+                            <h2>Blog et Gatsby Pages de Cerise</h2>
+                        </summary>
+                        <div>
+                            <p>
+                                <span className={styles.rows1}>このブログ的な「Stylo de Cerise」は、長年Web屋を営むわたくし桜が、私的な記録ノートとして運営しているドメスティックなWebサイトです。</span><br />
+                                <span className={styles.rows2}>Webデザイナーのサガで、たまに新しいワイヤーフレームを試したくなると、このサイトの外観がしばしば変化します。</span>
+                            </p>
+                            <p>
+                                <span className={styles.rows3}>屋台としては、React のフレームワークの一つである Gatsby.js でつくっています。</span><br />
+                                <span className={styles.rows4}>CGIのインタラクティブ大好きから始まったWeb屋稼業の、たぶん最後にはまった好きなオモチャが <strong>The Great Gatsby！</strong> だったかと。</span>
+                            </p>
+                            <p>
+                                <span className={styles.rows5}>好きなら「1銭にもならないことに血道を上げるタイプ」「買うより高いDIY」</span><br />
+                                <span className={styles.rows6}>この2つが主なる私の悪口（主観）ですが、急ぎ50枚のWebページをつくるとかに、Gatsbyはマジで便利で速くて楽しい三拍子。</span>
+                            </p>
+                            <p>
+                                <span className={styles.rows7}>と、手段が目的と化した「Stylo de Cerise」ですが、コンテンツは文才もなく努力家でもなく目も当てられないのを、徐々にJOJOに改善できたらと想う、今日この頃のジョジョラーです。</span>
+                            </p>
+                        </div>
+                    </details>
+                </article> */}
+
+            </section>
+		</Layout>
+	    )
+	}
 }
-export default highlight
 
-// const mdcode = get(this, 'props.data.markdownRemark')
-// const html = get(this, 'props.data.markdownRemark.html')
-// const name = get(this, 'props.data.markdownRemark.fields.name')
+export const Head = ({ data }) => {
+  return (
+    <Seo
+			title={data.site.siteMetadata.title}
+      description={data.site.siteMetadata.description}
+    />
+  )
+}
+export default RootIndex
 
-
-// {mdcode.map((edge) => (
-//     <div key={edge.id}>
-//         {edge.node.html}
-//     </div>
-// ))}
-
-
-
-
-
-// allMarkdownRemark
-
-// edges
-// node
-// html
-// frontmatter
-// title
-// date(formatString: "YYYY/MM/DD")
-// slug
-// type
-
-// fields
-// base
-// name
-// base
-
-
-
-
-
-
-
-
-
-
-// export const pageQuery = graphql`
-// query CodesPostQuery ($id: String!){
-// allFile(filter: {sourceInstanceName: {eq: "codes"}}) {
-// edges {
-//     node {
-//         name
-//         relativePath
-//         sourceInstanceName
-//         base
-//         ext
-//         extension
-//         absolutePath
-//         dir
-//         internal {
-//                 content
-//             }
-//         }
-//     }
-// }
-// `
-
-
-// const hast = await codeToHast('.text-red { color: red; }', {
-//   lang: 'css',
-//   theme: 'catppuccin-mocha',
-	
-// })
-
-// console.log(hast) // highlighted html string
-
-// const html = codeToHtml ('console.log("Hello, World!")', {
-//     lang: "javascript",
-//     theme: "github-dark",
-// });
-// const highlighter = createHighlighter({
-//   // 必要な言語とテーマのみを指定することでバンドルサイズを最適化
-//   themes: ["github-dark", "github-light"],
-//   langs: ["javascript", "typescript", "css", "html"],
-// });
-
-// 最もシンプルな使い方
-// const html = await codeToHtml('console.log("Hello, World!")', {
-//   lang: "javascript",
-//   theme: "github-dark",
-// });
-// export default html
-
-
-
-// より高度な使い方
-// const highlighter = await createHighlighter({
-//   themes: ["nord"],
-//   langs: ["javascript", "typescript"],
-// });
-
-// 同期的に使用可能
-// const code = highlighter.codeToHtml('const greeting: string = "Hello"', {
-//   lang: "typescript",
-//   theme: "nord",
-// });
-
-// import { getHighlighter } from "shiki";
-// import { CODE } from "@/constants";
-
-// export default async function HighlighterPage() {
-//   const highlighter = await getHighlighter({
-//     themes: ["github-light"],
-//     langs: ["tsx"],
-//   });
-
-//   const html = highlighter.codeToHtml(CODE, {
-//     lang: "tsx",
-//     theme: "github-light",
-//   });
-
-//   return <div dangerouslySetInnerHTML={{ __html: html }}></div>;
-// }
-
-
-// '<pre class="shiki light-plus" style="background-color:#FFFFFF;color:#000000" tabindex="0"><code><span class="line"><span style="color:#0000FF">const</span><span style="color:#0070C1"> foo</span><span style="color:#000000"> = </span><span style="color:#001080">document</span><span style="color:#000000">.</span><span style="color:#795E26">createElement</span><span style="color:#000000">(</span><span style="color:#A31515">"div"</span><span style="color:#000000">)</span></span></code></pre>'
-
-// const Shiki = () => (
-//   <Layout>
-//     <div
-//       style={{
-//         display: 'flex',
-//         flexDirection: 'column',
-//         justifyContent: 'center',
-//         alignItems: 'center',
-//         height: '70svh',
-//       }}
-//     >
-//       <h2>404: Not Found</h2>
-//       <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-//     </div>
-//   </Layout>
-// )
-
-// export default Shiki
+export const pageQuery = graphql`
+query HomeQuery ($limit: Int = 10, $skip: Int = 0){
+	site {
+		siteMetadata {
+			title
+			description
+		}
+	}
+	allMarkdownRemark(
+		sort: {frontmatter: {date: DESC}}
+		filter: {fileAbsolutePath: {regex: "/src/pages/notes/"}}
+		limit: $limit
+		skip: $skip
+		) {
+		edges {
+			node {
+				html
+				timeToRead
+				frontmatter {
+					title
+					date(formatString: "YYYY/MM/DD")
+					description
+					slug
+				}
+			}
+		}
+	}	
+}	
+`

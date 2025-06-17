@@ -21,6 +21,7 @@
     width: 100%;
   }
 }
+
 .navcontainer {
   display: flex;
   justify-content: space-between;
@@ -47,6 +48,7 @@
   &:last-of-type{
     margin-left: var(--space-lg);
   }
+  // border: 1px solid pink;
 }
 
 .navigationItem a {
