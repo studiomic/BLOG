@@ -63,7 +63,7 @@ img {
 	}
 }
 
-.post-body {
+.postBody {
 	font-size: var(--text-xl);
 	a {
 		border-bottom: 1px solid currentColor;
@@ -95,6 +95,7 @@ img {
 	}
 	p {
 		font-feature-settings: "palt";
+		line-height: 2.1;
 	}
 }
 

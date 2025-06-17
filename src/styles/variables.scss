@@ -1,5 +1,6 @@
 :root {
-  --font-sans: "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic Pro", "BIZ UDPGothic", sans-serif;
+  // --font-sans: "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic Pro", "BIZ UDPGothic", sans-serif;
+  --font-sans: Inter, GenJyuuGothicL, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", Meiryo, sans-serif;
   --font-sansLINE: "LINE Speed JP", sans-serif;
   --font-Roboto: "Roboto", sans-serif;
   --font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
@@ -7,7 +8,8 @@
   --font-serif: 'Times New Roman', Times, serif;
   --font-serif-JP: 'Noto Serif JP', Times, serif;
   --font-serif-Yu:  游明朝, "Yu Mincho", YuMincho, serif;
-  
+// ui-sans-serif,
+
   /* palette */
   --white: #fff;
   --black: #000;

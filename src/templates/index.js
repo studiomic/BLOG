@@ -4,6 +4,7 @@ import { graphql, Link } from 'gatsby';
 import Layout from './../components/layout'
 import Seo from '../components/seo'
 import Pagination from '../components/pagination'
+import * as iop from '../styles/components/iop.module.scss'
 import * as styles from '../styles/pages/index.module.scss'
 
 class RootIndex extends React.Component {
@@ -13,24 +14,24 @@ class RootIndex extends React.Component {
 
 		return (
 		<Layout>
-				<section className={styles.container}>
-					<div className={styles.layoutGrid}>
-						<article className={styles.headers}>
+				<section className={iop.container}>
+					<article className={iop.layoutGrid}>
 							<header>
-								<h1>Design Deeply</h1>
-								<h2>Web designer.</h2>
-								<p>Development 26th</p>
+									<h1>Design Deeply</h1>
 							</header>
-							<section>
-								<h3>©Studio Mic</h3>
-								<p>スタジオミック</p>
+							<section className={iop.desc}>
+									<h2>Web designer.</h2>
+									<p>Development 26th</p>
 							</section>
-						</article>
-						<div className={styles.rowline1}></div>
-						<div className={styles.rowline2}></div>
-						<div className={styles.rowline3}></div>
-					</div>
-
+							
+							<section className={iop.dev}>
+									<h3>©Studio Mic</h3>
+									<p>スタジオミック</p>
+							</section>
+							<div className={iop.rowline1}></div>
+							<div className={iop.rowline2}></div>
+							<div className={iop.rowline3}></div>
+					</article>
 					<article className={styles.about}>
 						<details>
 							<summary>

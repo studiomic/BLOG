@@ -17,8 +17,6 @@ class RootIndex extends React.Component {
                     <header>
                         <h1>Design Deeply</h1>
                     </header>
-                    
-                    
                     <section className={iop.desc}>
                         <h2>Web designer.</h2>
                         <p>Development 26th</p>
@@ -28,16 +26,9 @@ class RootIndex extends React.Component {
                         <h3>©Studio Mic</h3>
                         <p>スタジオミック</p>
                     </section>
-
-                    
                     <div className={iop.rowline1}></div>
                     <div className={iop.rowline2}></div>
                     <div className={iop.rowline3}></div>
-                    
-                    <div className="grid"></div>
-                    <div className="grid"></div>
-                    <div className="grid"></div>
-                    <div className="grid"></div>
                 </article>
 
 <br /><br /><br /><br /><br /><br />
