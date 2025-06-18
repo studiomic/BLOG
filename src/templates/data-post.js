@@ -16,7 +16,9 @@ class NotesPostTemplate extends React.Component {
 					<aside className={styles.navigation}>
 						<Navigation />
 					</aside>
-					<article className={styles.postmain} dangerouslySetInnerHTML={{ __html: html }} />
+					<article className={styles.postWrap}>
+						<div className={styles.postmain} dangerouslySetInnerHTML={{ __html: html }} />
+					</article>
 				</section>
 
 

@@ -1,7 +1,7 @@
 ---
 title: "CODE3"
 date: "2025-06-09 19:00:00"
-slug: 'code-3'
+slug: 'cssGrid-3'
 type: "Gatsbyプラグインとかなしで。SEOに書くだけ"
 ---
 ```js
