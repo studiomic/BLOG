@@ -18,7 +18,7 @@ const Navigation = () => (
     </Link>
     <ul className={styles.navigation}>
       <li className={styles.navigationItem}>
-        <Link to="/shiki/" activeClassName="active">shiki</Link>
+        <Link to="/data/cssGrid/" activeClassName="active">WORKSHOP</Link>
       </li>
       <li className={styles.navigationItem}>
         <ModeButton />

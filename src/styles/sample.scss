@@ -1,6 +1,8 @@
 .samplelayoutGrid {
 	display: grid;
-	grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+	grid-template: repeat(3, 1fr) / repeat(3, 33%);//148
+	grid-template: repeat(3, 1fr) / repeat(3, 30%);//135
+	grid-template: repeat(3, 1fr) / repeat(3, 1fr);//138
 	gap: 1em;
 	margin: 0 auto;
 	width: 450px;
@@ -14,7 +16,6 @@
 	outline: 1px solid crimson;
 	align-items: center;
 }
-
 
 .samplelayoutGrid-fill {
 	display: grid;
@@ -100,7 +101,15 @@
 .widthFull {
 	grid-column: 1/-1;
 	width: 100%;
+	article {
+		padding: var(--size-gutter) calc(var(--size-gutter)*2);
+		line-height: 2.1;
+		font-size: var(--text-xl);
+		
+	}
 }
+
+
 
 // .cell-Odd {
 // 	grid-column: 1/2;
