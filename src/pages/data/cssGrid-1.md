@@ -167,7 +167,7 @@ type: ""
 
 # Auto Track List
 
-# auto-fill &nbsp;  &nbsp; ( cell:6
+# auto-fill
 
 <!-- sample -->
 <div class="samplelayoutGrid-fill">
@@ -179,7 +179,7 @@ type: ""
   <div class="cell atl"></div>
 </div>
 
-# auto-fit &nbsp;  &nbsp; ( cell:6
+# auto-fit
 
 <!-- sample -->
 <div class="samplelayoutGrid-fit">
@@ -191,7 +191,7 @@ type: ""
   <div class="cell atl"></div>
 </div>
 
-# auto-fit &nbsp;  &nbsp; ( cell:15
+# auto-fill : auto-fit &nbsp;  &nbsp; ( cell:15
 
 <!-- sample -->
 <div class="samplelayoutGrid-fit">
@@ -211,6 +211,10 @@ type: ""
   <div class="cell atl"></div>
   <div class="cell atl"></div>
 </div>
+
+
+
+
 <span style="display: block;margin-bottom: 2em;"></span>
 
 # auto-fill
@@ -260,18 +264,10 @@ type: ""
 
 
 <div class="samplelayoutSelf">
-	<div class="cell">
-		<span style="align-self:end;display: block;">AAA</span>
-	</div>
-  <div class="cell">
-		<div class="align-start">start</div>
-	</div>
-  <div class="cell">
-		<div class="align-end">end</div>
-	</div>
-  <div class="cell">
-		<div class="align-center">center</div>
-	</div>
+	<div class="cell align-stretch">stretch</div>
+  <div class="cell align-start">start</div>
+  <div class="cell align-end">end</div>
+  <div class="cell align-center">center</div>
 </div>
 </section>
 
