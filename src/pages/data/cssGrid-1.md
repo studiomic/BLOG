@@ -9,6 +9,9 @@ type: ""
 
 # Basic 9 Grid
 
+<span style="display:block;margin-bottom:4em;"></span>
+
+
 <div class="samplelayoutGrid">
   <div class="cell"></div>
   <div class="cell"></div>
@@ -20,7 +23,9 @@ type: ""
   <div class="cell"></div>
   <div class="cell"></div>
 </div>
+<span style="display:block;margin-bottom:4em;"></span>
 </section>
+
 
 
 <section><!-- CODE -->
@@ -228,27 +233,247 @@ fr単位は重宝します。
 Gridも定義テンプレートのままなら横に3つ並ぶ。
 <span style="display: block;margin-bottom: 2em;"></span>
 
-ここで初心に戻りたいのが、グリッドレイアウトはその中に
+ここで初心に戻りたいのが、グリッドレイアウトは親コンテナの中に、単に子である
 **item**
 を置いていくのだという思い込みを払拭して、グリッドレイアウトは行と列の
 **トラック**
 を先に定義し、透明な方眼紙が在る上に、置きたい要素
 **item**
-を配置していく。
+を配置していくということ。
 <span style="display: block;margin-bottom: 2em;"></span>
 
-配置は子である
+まるで新説のように当然のありきたりな説明をしているが。私があたってきた日本語チュートリアル、親切なHowToサイト、グリッドレイアウトを理解するにはまず「用語」が大切です、というその何処にも、
+**トラック**
+の連呼がなかった。
+<span style="display: block;margin-bottom: 2em;"></span>
+
+お世話になったHowToページ各位、ほぼすべてに感謝している。苦情を云うものではない。<br>
+MDNの原典にあたれば、トラックというフレーズだらけだったし、そこに気づかないヌケサクは手を抜いて理解を深めないまま銭に変えた。<br>
+他人の翻訳で解釈なって、銭にもなってローコスト。
+<span style="display: block;margin-bottom: 2em;"></span>
+
+いや、まさか手は抜いていないので、頭を使わなかった、他人の知見で済ませた。が正しい。文句を言う筋合いはまったくないが、**トラック**
+のありやなしやを理解していないと、FlexBoxとの差異が説明つかんだろ・・・。
+<span style="display: block;margin-bottom: 2em;"></span>
+
+その辺が曖昧でも、なんとなく便利に使えてしまう、レスポンシブしやすーい。その魅力で十分かも知れないが、透明な方眼紙すなわち「トラック」がすでに在ることを理解していないと、CSS GRID, イッツ・ア・ミラクル・ワールド！感が薄れる。
+
+<span style="display: block;margin-bottom: 3em;"></span>
+
+カンの良い人は、グリッドレイアウトはまるで表計算のようだ、と確かZenに書いている投稿を見た。<br>
+カンの良い人は、今トラックというカタカナから
+<code>　&lt;table&gt;　</code>
+タグの
+<code>　&lt;tr&gt;　</code>
+を連想してくれているかも知れない。
+<span style="display: block;margin-bottom: 3em;"></span>
+
+非常に似ているが
+<code>　&lt;table&gt;　</code>
+はいわば現在進行形のマラソンで、テーブル・レコード（TR）という行をつくり、その中に、横方向配置のセルを複数列書き、（TR）を完了し、次行の（TR）を用意して、列（TD）数の計算をミスらず走る、地獄のタイピング・マラソンだった。<br>
+ある意味、道なき道を整えながら進む工兵のようでもある。
+<span style="display: block;margin-bottom: 2em;"></span>
+
+一方でグリッドレイアウトは行と列をトラックとして、先に用意してしまう。
+
+```css
+grid-template-columns: repeat(7, 1fr);
+grid-template-rows: repeat(22, 1fr);
+```
+<span style="display: block;margin-bottom: 2em;"></span>
+
+なかなかWebで使い勝手が悪そうなこの例は、手許のApple - Numbersで新規書類を作成してみた列と行数だ。<br>
+帳票を書くには妥当な開始数なのだろうか。A4用紙との相性だろうか。
+<span style="display: block;margin-bottom: 2em;"></span>
+
+もちろんグリッドレイアウトの場合、
+
+```css
+grid-template-columns: repeat(4, 1fr);
+(または)
+grid-template-columns: 1fr auto 1fr;
+```
+と横幅だけ制御して、行は勝手に増やしていくもよし、このグリッドコンテナの後に、
+
+<code>　&lt;H3&gt;　</code>
+タイトルを挿入して<code>　grid-template-columns: repeat(3, 1fr);　</code><br>
+とまた別のグリッドコンテナを配置してもよし。（・・・そんなことは表計算アプリにもできる・・・）
+<span style="display: block;margin-bottom: 5em;"></span>
+
+
+# 透明な方眼紙
+
+行と列のトラック数が定義されたテンプレートの「どの位置」に配置するかは
+
+子である
 **item**
 が
 **grid-area**
 で指定する。
 
+
+<span style="display: block;margin-bottom: 2em;"></span>
+
+
 ```css
-grid-area: 1 / 2 / 1 / 2;
+grid-area: 1 / 1 / 2 / 2;
+```
+<span style="display: block;margin-bottom: 1em;"></span>
+
+上の
+**Empty 9 Grid**
+サンプル
+
+<span style="display: block;margin-bottom: 1em;"></span>
+
+```css
+■　・　・
+・　■　・
+・　・　■
+```
+<span style="display: block;margin-bottom: 1em;"></span>
+
+左上端の ■
+
+```css
+.tr1 {
+	grid-column: 1/2;
+	grid-row: 1/2;
+}
+(またはショートハンドで：row.start / column.start / row.end / column.end)
+.tr1 {
+	grid-aria: 1 / 1 / 2 / 2;
+}
+```
+<span style="display: block;margin-bottom: 2em;"></span>
+
+親であるグリッドコンテナが定義する場合、子に名前をつける。
+
+<span style="display: block;margin-bottom: 1em;"></span>
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr auto;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "header header header header"
+    "sidebar . main main"
+    "footer footer footer footer";
+}
+```
+<span style="display: block;margin-bottom: 1em;"></span>
+
+よく見かける例なので説明を省くが、「空」のトラック、ではなく<br>
+トラックは用意されたが「空白」セルはピリオド　.　で表現される。
+
+<span style="display: block;margin-bottom: 2em;"></span>
+
+一方で、子
+**item**
+側で自分が入る（areas）セル位置を定める場合<br>
+↓中黒「・」にした空白セルは、width: 1fr / height: 1fr　だった ■ サイズから<br>
+width: 0 / height: 0　の透明な点に縮小している。0：0だけど「在る」
+<span style="display: block;margin-bottom: 2em;"></span>
+
+空の
+<code>　&lt;div&gt;　</code>も
+<code>　&lt;span&gt;　</code>も書く必要がない。
+
+<span style="display: block;margin-bottom: 2em;"></span>
+
+```css
+■　・　・
+・　■　・
+・　・　■
 ```
 
 <span style="display: block;margin-bottom: 2em;"></span>
-順番は緯度経度と同じで縦 / 横　eq　行 / 列、すなわち　row / 列 
+
+## 昔なつかしいスペーサーGIF（spacer.gif）をご存知だろうか。
+
+<span style="display: block;margin-bottom: 2em;"></span>
+まぁ簡単に、透明な如意棒を、伸縮自在なつっかえ棒として使用していた。主にテーブルデザインが主流だった時代に。<br>
+透明で見えないけれど、サイズは「在る」ことを利用したブラウザ対処術でした。
+
+<span style="display: block;margin-bottom: 2em;"></span>
+それが、0かける0サイズでも、あるものは在る。まで進化してしまった。イッツ・ア・ミラクル・ワールド！
+
+<span style="display: block;margin-bottom: 4em;"></span>
+グリッドレイアウトを学習しようと海外サイトなどを覗くと、なんでか、テーブル、フロート、FlexBox・・・と昔語りからはじまるのは何故？　と感じなかったでしょうか。
+
+<span style="display: block;margin-bottom: 1em;"></span>
+たぶん皆、正直にコツコツと真面目に生きてきたら、いつのまにか泉に落とした安い斧のオマケに、金の斧・銀の斧まで女神から渡されちまって・・・状態だから。
+
+<span style="display: block;margin-bottom: 1em;"></span>
+ということに
+
+**トラック**
+に気づくまで、気づかなかった、鈍い私のための文書です。
+
+<span style="display: block;margin-bottom: 2em;"></span>
+
+音楽の「トラック」を連想して、あぁアレか。ボーナストラックとか「隠しトラック」というやつ。と即座に腑に落ちた。<br>
+CDプレーヤーで音楽を聴いていた時代に、かならず「隠しトラック」を入れるバンドのアルバムで、4つ「飛ばす」を押して「隠しトラック」も飛ばさないと、2巡ループ再生ができなかった。
+<span style="display: block;margin-bottom: 2em;"></span>
+
+初めから聴きなおす手順を踏んだ。音は「空」でもトラックは存在する、それをよく憶えてたんですね。<br>
+と書こうとして、結局書いているうちに、これって「テーブルデザイン」レガシーの
+**プラチナ斧**
+をもらった仕様じゃないか！という結論に至る。
+<span style="display: block;margin-bottom: 2em;"></span>
+
+数年、無邪気に（便利ぃ。CSS Grid まじ便利ぃ）と何も気づかず活用していた。
+
+<!-- **grid-row**
+**grid-column** -->
+
+
+<span style="display: block;margin-bottom: 20em;"></span>
+
+
+### grid-column-start/end　grid-row-start/end
+
+
+
+
+<span style="display: block;margin-bottom: 2em;"></span>
+順番は行 / 列、すなわち　row / column<br>
+ただし緯度経度は交差する点をx,y座標でとると
+
+
+
+
+
+
+<br><br><br><br><br><br><br>
+
+
+
+```css
+grid-template-columns: repeat(3, 1fr);
+```
+
+
+
+
+
+<code></code>
+
+
+
+<span style="display: block;margin-bottom: 2em;"></span>
+
+
+
+
+
+undefined
+
+
+<span style="display: block;margin-bottom: 20em;"></span>
+
+
 
 
 
