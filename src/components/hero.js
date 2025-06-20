@@ -16,5 +16,4 @@ const Hero = ({ image, title, content }) => (
     </div>
   </div>
 )
-
 export default Hero

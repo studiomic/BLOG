@@ -5,6 +5,201 @@ slug: 'cssGrid'
 type: ""
 ---
 <!-- sample -->
+<section class="widthFull" id="">
+
+
+# Aspect Ratio 16 : 9
+
+
+<!-- <div class="grid-container"> -->
+<div style="display: grid;grid-template-columns: repeat(16, 1fr);grid-template-rows: repeat(9, 1fr);gap:.5em;margin: 5em auto;width: 90%;background: #89ddff70;">
+
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+<div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 2.4em;"></div>
+
+</div>
+</section>
+
+
+
 <section class="widthFull" id="Basic-9Grid">
 
 # Basic 9 Grid
@@ -13,15 +208,15 @@ type: ""
 
 
 <div class="samplelayoutGrid">
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
+  <div class="cell smallem"></div>
+  <div class="cell smallem"></div>
+  <div class="cell smallem"></div>
+  <div class="cell smallem"></div>
+  <div class="cell smallem"></div>
+  <div class="cell smallem"></div>
+  <div class="cell smallem"></div>
+  <div class="cell smallem"></div>
+  <div class="cell smallem"></div>
 </div>
 <span style="display:block;margin-bottom:4em;"></span>
 </section>
@@ -34,15 +229,15 @@ type: ""
 
 ```html
 <div class="layoutGrid">
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
+  <div class="cell smallem"></div>
+  <div class="cell smallem"></div>
+  <div class="cell smallem"></div>
+  <div class="cell smallem"></div>
+  <div class="cell smallem"></div>
+  <div class="cell smallem"></div>
+  <div class="cell smallem"></div>
+  <div class="cell smallem"></div>
+  <div class="cell smallem"></div>
 </div>
 ```
 </section>

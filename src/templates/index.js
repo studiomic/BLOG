@@ -4,8 +4,8 @@ import { graphql, Link } from 'gatsby';
 import Layout from './../components/layout'
 import Seo from '../components/seo'
 import Pagination from '../components/pagination'
-import * as iop from '../styles/components/iop.module.scss'
 import * as styles from '../styles/pages/index.module.scss'
+import * as iop from '../styles/components/iop.module.scss'
 
 class RootIndex extends React.Component {
 	render() {

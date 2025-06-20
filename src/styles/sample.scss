@@ -1,7 +1,8 @@
+
+
+
 .samplelayoutGrid {
 	display: grid;
-	grid-template: repeat(3, 1fr) / repeat(3, 33%);//148
-	grid-template: repeat(3, 1fr) / repeat(3, 30%);//135
 	grid-template: repeat(3, 1fr) / repeat(3, 1fr);//138
 	gap: 1em;
 	margin: 0 auto;
@@ -34,10 +35,7 @@
 	height: 6svw;
 }
 
-.cell {
-	border: 1px solid var(--text-color);
-	background: var(--hslborder);
-}
+
 
 .tr1 {
 	grid-column: 1/2;
@@ -56,9 +54,6 @@
 	background: var(--text-color);
 	color: var(--background);
 	padding: 0 .5em;
-	// border: 1px solid var(--text-color);
-	// --background: var(--white);
-  // --text-color: var(--black);
 }
 
 .start {
@@ -91,31 +86,3 @@
 .align-items {
 	align-items: stretch;
 }
-
-
-
-	// width: 150px;
-	// height: 150px;
-	// border: 1px solid var(--primary);
-	// border: 1px solid #1B1E28;
-
-.widthFull {
-	grid-column: 1/-1;
-	width: 100%;
-	article {
-		padding: var(--size-gutter) calc(var(--size-gutter)*2);
-		line-height: 2.1;
-		font-size: var(--text-xl);
-		
-	}
-}
-
-
-
-// .cell-Odd {
-// 	grid-column: 1/2;
-// }
-
-// .cell-Even {
-// 	grid-column: 2/3;
-// }

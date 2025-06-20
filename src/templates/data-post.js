@@ -3,6 +3,7 @@ import get from 'lodash/get'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Navigation from '../components/workshop-nav'
+import Mdn from '../components/workshop-mdn'
 import * as styles from '../styles/layout/workshop-grid.module.scss'
 
 class NotesPostTemplate extends React.Component {
@@ -17,6 +18,7 @@ class NotesPostTemplate extends React.Component {
 						</section>
 					<aside className={styles.navigation}>
 						<Navigation />
+						<Mdn />
 					</aside>
 					<article className={styles.postWrap}>
 						<div className={styles.postmain} dangerouslySetInnerHTML={{ __html: html }} />
