@@ -20,9 +20,7 @@ class NotesPostTemplate extends React.Component {
 						<Navigation />
 						<Mdn />
 					</aside>
-					<article className={styles.postWrap}>
-						<div className={styles.postmain} dangerouslySetInnerHTML={{ __html: html }} />
-					</article>
+					<article className={styles.postmain} dangerouslySetInnerHTML={{ __html: html }} />
 				</section>
 			</Layout>
 		)

@@ -8,8 +8,19 @@ const wsNavigation = () => (
 <>
   <nav role="navigation" aria-label="Main" className={styles.wsNav}>
     <h3>もくじ</h3>
+    <ul>
+      <li>Aspect Ratio 16 : 9</li>
+      <li>まずここがFlexBoxと決定的に違うところ。</li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
 
-CSS Grid Layout - Aspect Ratio 16 : 9<br />
+<br />
+
+
+
 Basic 9 Grid<br />
 fr 単位が優秀な件<br />
 Empty 9 Grid<br />

@@ -5,15 +5,11 @@ slug: 'cssGrid'
 type: ""
 ---
 <style>
-  .widthFull {
-    grid-column: 1/-1;
-    width: 100%;
-    article {
-      padding-left: calc(var(--size-gutter)*2);
-      padding-right: calc(var(--size-gutter)*2);
-      line-height: 2.1;
-      font-size: var(--text-xl);
-    }
+  article {
+    padding-left: calc(var(--size-gutter)*2);
+    padding-right: calc(var(--size-gutter)*2);
+    line-height: 2.1;
+    font-size: var(--text-xl);
   }
   .half {
     width: 50%;
@@ -31,8 +27,6 @@ type: ""
   }
 </style>
 
-<!-- widthFull -->
-<section class="widthFull" id="">
 
 # CSS Grid Layout - Aspect Ratio 16 : 9
 
@@ -192,32 +186,26 @@ type: ""
 
 
 <article id="AspectRatio-article" style="padding-top:var(--size-gutter);">
+
 グリッドコンテナのトラックは単調に
 <code>　1fr　</code>を16列、9行、repeatと定義した。<br>
 トラックリストをわかりやすくするために、gap と背景色をつけている。<br>
 中に置いた144個の <strong>item</strong> にも、Grid Cell（セル）サイズを可視化するために枠と背景色、高さを指定した。
 
-<span style="display: block;margin-bottom: 1em;"></span>
 
 ```css
 .layoutGrid {
-	display: grid;
+  display: grid;
 	grid-template-columns: repeat(16, 1fr);
 	grid-template-rows: repeat(9, 1fr);
 	gap: .5em;
   background:rgba(137,221,255,.3);
 }
 ```
-
-<span style="display: block;margin-bottom: 2em;"></span>
-
-
-<span style="display: block;margin-bottom: 2em;"></span>
-
+<span style="display: block;margin-bottom: 1em;"></span>
 このショートハンドは、
 **fr = fraction（分数）**
 であることが、いちばんわかりやすい。
-
 
 <span style="font-size: 1.5em;margin: 0 .8em;">
 <math>
@@ -240,14 +228,11 @@ type: ""
 
 <span style="display: block;margin-bottom: 1em;"></span>
 
-声に出して、九分の一や十六分の一と云う順番で書けば済む。
-
-そろばん塾風に「リピートすることのォ、九分の一」
-
+声に出して、九分の一や十六分の一と云う順番で書けば済む。<br>
+そろばん塾風に「リピートすることのォ、九分の一」<br>
 と分数表記にあまり凝るのは辛いので、以下「1/9」「1/16」等々とスラッシュ書きする。
 
-<span style="display:block;margin-bottom:3em;"></span>
-
+<span style="display:block;margin-bottom:2em;"></span>
 簡単な例題で
 
 ```css
@@ -261,7 +246,6 @@ type: ""
 ```
 は、
 
-
 ```css
 .container {
   display: grid;
@@ -273,45 +257,30 @@ type: ""
 ```
 と書くのと結果は同じ描画になる。
 
-<span style="display: block;margin-bottom: 1em;"></span>
+
 **1fr**
 も
 **3fr**
 も、固定幅の中に3つあるなら、どちらも幅「1/3」だからだ。
 
-<span style="display: block;margin-bottom: 2em;"></span>
 
 ## まずここがFlexBoxと決定的に違うところ。
 
-<span style="display: block;margin-bottom: 2em;"></span>
 
 横へ進むトラック（グリッド列）は3つと親（Grid）が定義したら、子であるセルは行儀よく3列目で折り返す。
 
-FlexBoxは一種の配列、いわば充填式の配列なので、item の数が増え、表示幅が足りなくなったら
+FlexBoxは一種の配列、充填式の配列なので、基本は横一列に並び、
+**flex-wrap**
+で「折り返す」と指定した場合も「どこで」と位置は決められず、あくまで表示幅が足りなくなったら（自然な解釈で）折り返す。
 
+ふだん3列目や4列目できれいに折り返す、item サイズを調節した「整形済みFlexBox」ばかり見ていると混同しやすい。
 
+Gridは親の指示した位置で折り返す。トラックの数、トラックリストが肝心なのだ。
 
+<!-- hr -->
+<span style="display: block;margin-top: 1em;height: 1em;border-top: 1px solid var(--border2);"></span>
 
-（自然な解釈で）折り返す。Gridは親の指示した位置で折り返す。
-
-<span style="display: block;margin-bottom: 1em;"></span>
-
-・・・このあたり、item サイズをきれいに整形し、うまく3列目で折り返すように人加工の入った
-FlexBox
-ばかり見ていると
-
-item サイズの指定によって、
-
-<span style="display: block;margin-bottom: 12em;"></span>
-
-
-
-
-
-
-普通は書いた順番にAtoZと昇順で並んでいくが、降順Z ... Aとリバース表示は簡単にできる。
-
-<span style="display: block;margin-bottom: 1em;"></span>
+FlexBoxは配列らしく、普通は書いた順番にAtoZと昇順で並んでいくが、降順Z ... Aとリバース表示は簡単にできる。
 
 が、グリッドコンテナの中に置かれた
 **item**
@@ -326,23 +295,18 @@ item サイズの指定によって、
 が思いがけない場所に描画されても良い。
 
 <span style="display: block;margin-bottom: 1em;"></span>
-
 うーん。例えばウルトラワイドモニターで見る来訪者には目立たせておきたい「Vキャッチー」も、狭いスマホ画面では C _ D 間を遮ってまで表示すべきではない、ごく後方Vらしき位置で表示せよ、とかだろうか。
 
-<span style="display: block;margin-bottom: 2em;"></span>
 とりあえずすぐ想像できるのは、
 <code>　&lt;main&gt;　</code>
 <code>　&lt;nav&gt;　</code>
 <code>　&lt;aside&gt;　</code>
 などを、書いた順番にかかわらず好ましい位置に配置しやすいこと。
 
-<span style="display: block;margin-bottom: 1em;"></span>
-
-FlexBoxが単純な配列なら、Gridは配列かつハッシュにもなれる。
+FlexBoxが単純な配列なら、Gridは配列にもハッシュにもなれる。
 
 <!-- hr -->
-<span style="display: block;margin:2em 0 1em;height: 1em;border-top: 1px solid var(--border2);"></span>
-
+<span style="display: block;margin:1em 0 1em;height: 1em;border-top: 1px solid var(--border2);"></span>
 トラックリストは「透明な方眼紙」を準備する罫線テンプレートというイメージだが、ここで、Grid Axis (グリッド軸)
 Grid Line (グリッド線)
 の違いをしっかり憶えてしまおう。
@@ -362,12 +326,64 @@ Grid Line (グリッド線)
 16 : 9 のサンプルが視界から消えたので、3 : 3 ミニチュアで数える。
 
 **Grid Axis (グリッド軸)**
-は
+は列トラック数 - 1本<br>
+行トラック数 - 1本<br>
+上サンプルで gap により青い線に見えているのが「column軸」と「row軸」だ。<br>
+えーと。豆腐を切り分けるときに包丁が入る位置が、縦横軸。<br>
+「軸」は外側にはないものですもんね。3 : 3 Grid は2本の縦軸・2本の横軸が内側にある。
+
+<span style="display: block;margin-bottom: 1em;"></span>
+
+**Grid Line (グリッド線)**
+は列トラック数 + 1本<br>
+行トラック数 + 1本<br>
+縦、横の罫線は1本目からはじまり、トラックが終わったあとの線で終わる。
+
+<div style="display: grid;grid-template:repeat(3, 1fr) / repeat(3, 1fr);gap:0;margin: 1em auto;width:150px;height:150px;border: 1px solid var(--text-color);">
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
+</div>
+
+黒線の交差でつくられたマス目ブロックが、Gridの最小単位セル。<br>
+「表におけるセルと考え方はほぼ同じ」だが、中身itemが入らなかった空のセルは、0pxかける0pxのサイズまで縮小する。<br>
+例えば2行目・2列目つまり中央のセルが空白であってもレイアウトが崩れないのは、見えない軸をトラックリストが先につくってあるから。
+
+<!-- hr -->
+<span style="display: block;margin:1em 0 1em;height: 1em;border-top: 1px solid var(--border2);"></span>
+実に話がくどいけれど、Gridプロパティのあれこれ書き方いろいろ、よりもトラックリストが描く構造を知った方が、初心者を脱するには近道だと思う。
+
+# Basic 9 Grid
 
 
-<span style="display: block;margin-bottom: 9em;"></span>
+<div style="display: grid;grid-template: repeat(3, 1fr) / repeat(3, 1fr);gap: 1em;margin: 0 auto;width: 300px;height: 300px;">
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);grid-column: 1/2;grid-row: 1/2;"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);grid-column: 2/3;grid-row: 1/2;"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);grid-column: 3/4;grid-row: 1/2;"></div>
+
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);grid-column: 1/2;grid-row: 2/3;"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);grid-column: 3/4;grid-row: 2/3;"></div>
+
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);grid-column: 1/2;grid-row: 3/4;"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);grid-column: 3/4;grid-row: 3/4;"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);grid-column: 2/3;grid-row: 3/4;"></div>
+</div>
 
 
+
+<span style="display: block;margin-bottom: 5em;"></span>
+
+
+
+
+
+<span style="display: block;margin-bottom: 5em;"></span>
 
 Grid Track (グリッドトラック)
 
@@ -407,129 +423,6 @@ grid-row: 2/2;
 - align-items
 - place-items
 
-
-
-<span style="display: block;margin-bottom: 6em;"></span>
-
-
-四角形ブロックなら正方形から長方形までメディアサイズに合わせた自在変化ができる。
-
-<span style="display: block;margin-bottom: 2em;"></span>
-
-
-
-
-<!-- hr -->
-<span style="display: block;margin-top: 4em;height: 1em;border-top: 1px solid var(--border2);"></span>
-
-
-# Basic 9 Grid
-
-<span style="display:block;margin-bottom:2em;"></span>
-
-<div style="display: grid;grid-template: repeat(3, 1fr) / repeat(3, 1fr);gap: 1em;margin: 0 auto;width: 300px;height: 300px;">
-  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
-  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
-  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
-  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
-  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
-  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
-  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
-  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
-  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
-</div>
-<span style="display:block;margin-bottom:4em;"></span>
-
-## fr 単位が優秀な件
-
-
-<span style="display: block;margin-bottom: 2em;"></span>
-いきなり白々しく
-<code>　grid-template-columns: 3fr 3fr 3fr;　</code>
-などと書いてますが、外箱のサイズを
-**縦横：300px**
-と固定している中で、
-
-<code>　grid-template-columns: 1fr 1fr 1fr;　</code>と書くのも<br>
-<code>　grid-template-columns: 4fr 4fr 4fr;　</code>と書くのも、すべて結果は同じ。<br>
-「均等な3つの値」という分数だからだ。
-
-<span style="display: block;margin-bottom: 2em;"></span>
-
-
-分数、割り算、割合、パーセンテージ。全体幅がいくつであれ、100の「1/3」は33.33333...<br>
-10割に対する約3割ちょぃ、を電卓を叩かずに計算してくれる、素晴らしさ。
-
-<span style="display: block;margin-bottom: 1em;"></span>
-
-分数は「1/2」も「2/4」も「8/16」も同じ大きさ。<br>
-ディスプレイ・アスペクト比に多い
-**16:9**
-で考えるのに、この一見アバウトで、しかし計算は正確に返してくれる
-fr単位は重宝します。
-
-
-
-<!-- hr -->
-<span style="display: block;margin-top: 1em;height: 1em;border-top: 1px solid var(--border2);"></span>
-
-たとえば1200px幅をベースにサイトをデザインするとして<br>
-横3分割するセクションでは
-<code>　grid-template-columns: 4fr 4fr 4fr;　</code><br>
-横4分割するセクションでは
-<code>　grid-template-columns: 3fr 3fr 3fr 3fr;　</code><br>
-という感覚は、12：4：3　の公倍数、1200の公約数という解りやすさで頭がすっきりする。
-
-<span style="display:block;margin-bottom:2em;"></span>
-おまけに余白ではなく「間隙」
-**gap**
-指定で面倒な暗算はブラウザがしてくれる。
-
-<span style="display:block;margin-bottom:2em;"></span>
-
-私の場合は画面サイズを考えながらデザインするとき、頭の中に
-<code>　grid-template-columns: repeat(16, 1fr);　</code>
-がある。
-
-というより、ラフすぎるポンチ絵を描きながら、横2分割なら
-**8fr：8fr**
-その半分なら
-**4fr**
-と記入してしまう癖がついた。
-
-<!-- hr -->
-<span style="display: block;margin-top: 1em;height: 1em;border-top: 1px solid var(--border2);"></span>
-
-先に書いた
-<code>　12fr　</code>
-を想定した考え方も<br>
-10割に対して1/3は、まぁザックリ
-<code>　3fr 3fr 3fr;　</code>という考え方も、<br>
-（テキトー、テキトー）と独り言しながら、CSS Gridが「適当」で妥当な数値を返してくれるのに完全お任せするスタイルである。
-
-<span style="display:block;margin-bottom:2em;"></span>
-**ものは言いよう**
-みたいな話が長引いたが、筆者は「ものは捉えよう」な説明をしているつもりだ。算数は処世術、
-
-単位
-**fr**
-は、とりあえずピクセル単位に拘泥することなく、バランスのとれたデザイン（設計）がしやすい。CSS Gridは便利かつ手堅い手法とアピールするノウハウよりも、まずは（理にかなっているよね）と頷きたい。
-
-<span style="display:block;margin-bottom:2em;"></span>
-次は、グリッドレイアウトには「空」が置けるという話。
-
-<!-- hr -->
-<span style="display: block;margin-top: 2em;height: 1em;border-top: 1px solid var(--border2);"></span>
-
-
-# Empty 9 Grid
-
-<div style="display: grid;grid-template: repeat(3, 1fr) / repeat(3, 1fr);gap: 1em;margin: 0 auto;width: 300px;height: 300px;">
-  <div style="border: 1px solid var(--text-color);background: var(--hslborder);grid-column: 1/2;grid-row: 1/2;"></div>
-  <div style="border: 1px solid var(--text-color);background: var(--hslborder);grid-column: 2/3;grid-row: 2/3;"></div>
-  <div style="border: 1px solid var(--text-color);background: var(--hslborder);grid-column: 3/4;grid-row: 3/4;"></div>
-</div>
-<span style="display:block;margin-bottom:4em;"></span>
 
 
 ## Grid 親コンテナは、トラックリストをつくる
@@ -766,6 +659,125 @@ CDプレーヤーで音楽を聴いていた時代に、かならず「隠しト
 
 
 
+
+
+
+
+
+<span style="display: block;margin-bottom: 6em;"></span>
+
+
+四角形ブロックなら正方形から長方形までメディアサイズに合わせた自在変化ができる。
+
+<span style="display: block;margin-bottom: 2em;"></span>
+
+
+
+
+<!-- hr -->
+<span style="display: block;margin-top: 4em;height: 1em;border-top: 1px solid var(--border2);"></span>
+
+
+# Basic 9 Grid
+
+<span style="display:block;margin-bottom:2em;"></span>
+
+
+<span style="display:block;margin-bottom:4em;"></span>
+
+## fr 単位が優秀な件
+
+
+<span style="display: block;margin-bottom: 2em;"></span>
+いきなり白々しく
+<code>　grid-template-columns: 3fr 3fr 3fr;　</code>
+などと書いてますが、外箱のサイズを
+**縦横：300px**
+と固定している中で、
+
+<code>　grid-template-columns: 1fr 1fr 1fr;　</code>と書くのも<br>
+<code>　grid-template-columns: 4fr 4fr 4fr;　</code>と書くのも、すべて結果は同じ。<br>
+「均等な3つの値」という分数だからだ。
+
+<span style="display: block;margin-bottom: 2em;"></span>
+
+
+分数、割り算、割合、パーセンテージ。全体幅がいくつであれ、100の「1/3」は33.33333...<br>
+10割に対する約3割ちょぃ、を電卓を叩かずに計算してくれる、素晴らしさ。
+
+<span style="display: block;margin-bottom: 1em;"></span>
+
+分数は「1/2」も「2/4」も「8/16」も同じ大きさ。<br>
+ディスプレイ・アスペクト比に多い
+**16:9**
+で考えるのに、この一見アバウトで、しかし計算は正確に返してくれる
+fr単位は重宝します。
+
+
+
+<!-- hr -->
+<span style="display: block;margin-top: 1em;height: 1em;border-top: 1px solid var(--border2);"></span>
+
+たとえば1200px幅をベースにサイトをデザインするとして<br>
+横3分割するセクションでは
+<code>　grid-template-columns: 4fr 4fr 4fr;　</code><br>
+横4分割するセクションでは
+<code>　grid-template-columns: 3fr 3fr 3fr 3fr;　</code><br>
+という感覚は、12：4：3　の公倍数、1200の公約数という解りやすさで頭がすっきりする。
+
+<span style="display:block;margin-bottom:2em;"></span>
+おまけに余白ではなく「間隙」
+**gap**
+指定で面倒な暗算はブラウザがしてくれる。
+
+<span style="display:block;margin-bottom:2em;"></span>
+
+私の場合は画面サイズを考えながらデザインするとき、頭の中に
+<code>　grid-template-columns: repeat(16, 1fr);　</code>
+がある。
+
+というより、ラフすぎるポンチ絵を描きながら、横2分割なら
+**8fr：8fr**
+その半分なら
+**4fr**
+と記入してしまう癖がついた。
+
+<!-- hr -->
+<span style="display: block;margin-top: 1em;height: 1em;border-top: 1px solid var(--border2);"></span>
+
+先に書いた
+<code>　12fr　</code>
+を想定した考え方も<br>
+10割に対して1/3は、まぁザックリ
+<code>　3fr 3fr 3fr;　</code>という考え方も、<br>
+（テキトー、テキトー）と独り言しながら、CSS Gridが「適当」で妥当な数値を返してくれるのに完全お任せするスタイルである。
+
+<span style="display:block;margin-bottom:2em;"></span>
+**ものは言いよう**
+みたいな話が長引いたが、筆者は「ものは捉えよう」な説明をしているつもりだ。算数は処世術、
+
+単位
+**fr**
+は、とりあえずピクセル単位に拘泥することなく、バランスのとれたデザイン（設計）がしやすい。CSS Gridは便利かつ手堅い手法とアピールするノウハウよりも、まずは（理にかなっているよね）と頷きたい。
+
+<span style="display:block;margin-bottom:2em;"></span>
+次は、グリッドレイアウトには「空」が置けるという話。
+
+<!-- hr -->
+<span style="display: block;margin-top: 2em;height: 1em;border-top: 1px solid var(--border2);"></span>
+
+
+# Empty 9 Grid
+
+<div style="display: grid;grid-template: repeat(3, 1fr) / repeat(3, 1fr);gap: 1em;margin: 0 auto;width: 300px;height: 300px;">
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);grid-column: 1/2;grid-row: 1/2;"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);grid-column: 2/3;grid-row: 2/3;"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);grid-column: 3/4;grid-row: 3/4;"></div>
+</div>
+<span style="display:block;margin-bottom:4em;"></span>
+
+
+
 <span style="display:block;margin-bottom:4em;"></span>
 
 
@@ -871,19 +883,15 @@ grid-template-columns: repeat(3, 1fr);
 </article>
 
 
-</section>
-<!-- /widthFull -->
 
 
-<section class="widthFull" id="Basic-9Grid">
 
 
 <span style="display:block;margin-bottom:4em;"></span>
-</section>
 
 
 
-<section><!-- CODE -->
+
 
 ### HTML
 
@@ -900,10 +908,7 @@ grid-template-columns: repeat(3, 1fr);
   <div class="cell smallem"></div>
 </div>
 ```
-</section>
 
-
-<section><!-- style -->
 
 ### Parent : layoutGrid / Grid Items : cell
 
@@ -924,9 +929,8 @@ grid-template-columns: repeat(3, 1fr);
 	background: var(--hslborder);
 }
 ```
-</section>
 
-<section class="widthFull">
+
 <span style="display: block;height: 1em;border-top: 1px solid var(--border);"></span>
 
 <article>
@@ -952,18 +956,12 @@ grid-template-columns: repeat(3, 1fr);
 
 </article>
 <span style="display: block;height: 1em;border-top: 1px solid var(--border);"></span>
-</section>
 
 
 <!-- sample -->
-<section class="widthFull" id="Empty-9Grid">
 
 
 
-</section>
-
-
-<section>
 
 ### HTML
 
@@ -988,10 +986,6 @@ grid-template-columns: repeat(3, 1fr);
 }
 ```
 
-</section>
-
-
-<section>
 
 ### grid-column-start/end　grid-row-start/end
 
@@ -1009,9 +1003,8 @@ grid-template-columns: repeat(3, 1fr);
 	grid-row: 3/4;
 }
 ```
-</section>
 
-<section class="widthFull">
+
 <span style="display: block;height: 1em;border-top: 1px solid var(--border);"></span>
 
 <article>
@@ -1077,10 +1070,9 @@ undefined
 ```
 
 </article>
-</section>
 
 <!-- sample -->
-<section class="widthFull">
+
 
 # Auto Track List
 
@@ -1154,15 +1146,15 @@ undefined
 }
 ```
 
-</section>
 
 
-<section class="widthFull">
+
 
 # justify-self
 
 <!-- sample -->
-<div class="samplelayoutSelf">
+<div style="display: grid;grid-template: 6em / repeat(4, 1fr);gap: 1em;outline: 1px solid crimson;align-items: center;"
+class="samplelayoutSelf">
   <div class="cell">
 		<div class="stretch">stretch</div>
 	</div>
@@ -1186,20 +1178,19 @@ undefined
   <div class="cell align-end">end</div>
   <div class="cell align-center">center</div>
 </div>
-</section>
 
 
 
 
 
 
-<section class="widthFull"></section>
 
 
 
 
 
-<section class="widthFull">
+
+
 
 
 justify-self: start;
@@ -1227,10 +1218,10 @@ align-self: stretch;
 
 
 
-</section>
 
 
-<section class="widthFull"><span style="display: block;height: 1em;border-top: 1px solid var(--border);"></span></section>
+<!-- hr -->
+<span style="display: block;height: 1em;border-top: 1px solid var(--border);"></span>
 
 ## 明示的で中身(item)のないGridコンテナ
 
@@ -1248,3 +1239,25 @@ KOKO-MADE
 
 
 
+<span style="display: block;margin-bottom: 1em;"></span>
+<span style="display: block;margin-bottom: 2em;"></span>
+<span style="display: block;margin-bottom: 2em;"></span>
+<span style="display: block;margin-bottom: 2em;"></span>
+<span style="display: block;margin-bottom: 2em;"></span>
+
+
+Gridで充填式のFlexBoxと似たことをする場合は、<br>
+列数のみ<code>　grid-template-columns:repeat(4, 1fr);　</code>
+
+
+<div style="display: grid;grid-template-columns:repeat(4, 1fr);gap: 1em;margin: 0 auto;width: 50%;height: 200px;">
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
+</div>

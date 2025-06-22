@@ -12,15 +12,15 @@
 // 	// padding: ;
 // }
 
-.samplelayoutSelf {
-	display: grid;
-	grid-template: 6em / repeat(4, 1fr);
-	gap: 1em;
-	outline: 1px solid crimson;
-	align-items: center;
-	border-radius: 0;
+// .samplelayoutSelf {
+// 	display: grid;
+// 	grid-template: 6em / repeat(4, 1fr);
+// 	gap: 1em;
+// 	outline: 1px solid crimson;
+// 	align-items: center;
+// 	border-radius: 0;
 	
-}
+// }
 
 
 
@@ -59,6 +59,8 @@ grid-column: 2/3;grid-row: 2/3;
 }
 .tr3 {
 grid-column: 3/4;grid-row: 3/4;
+grid-column: 2/3;grid-row: 3/4;
+
 }
 
 .start,.end,.justifycenter,.stretch,.align-start,.align-end,.align-center,.align-stretch {
