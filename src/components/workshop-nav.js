@@ -8,6 +8,12 @@ const wsNavigation = () => (
 <>
   <nav role="navigation" aria-label="Main" className={styles.wsNav}>
     <h3>もくじ</h3>
+
+CSS Grid Layout - Aspect Ratio 16 : 9<br />
+Basic 9 Grid<br />
+fr 単位が優秀な件<br />
+Empty 9 Grid<br />
+
     <ul>
       <li><Link to='/data/cssGrid#Basic-9Grid'>Basic 9 Grid</Link></li>
       <li><Link to='/data/cssGrid#Empty-9Grid'>Empty 9 Grid</Link></li>

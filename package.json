@@ -50,6 +50,7 @@
   },
   "scripts": {
     "dev": "gatsby develop",
+    "dev-n": "gatsby develop -H 192.168.11.9 -p 8000",
     "build": "gatsby build",
     "deploy": "npm run build && gh-pages -d BLOG -b gh-pages",
     "heroku-postbuild": "gatsby build",

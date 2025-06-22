@@ -1,12 +1,17 @@
-.widthFull {
-	grid-column: 1/-1;
-	width: 100%;
-	// text-align: center;
-	article {
-		padding: var(--size-gutter) calc(var(--size-gutter)*2);
-		line-height: 2.1;
-		font-size: var(--text-xl);
-	}
+
+// .point {
+// 	font-size: .9em;
+// 	color: var(--crimson);
+// 	color:#944970;
+// 	color:#824063;
+// 	color:#cc6698;//sass
+// 	font-style: italic;
+// }
+
+.flex {
+	display: flex;
+	margin-top: 2em;
+	margin-bottom:2em;
 }
 
 // .grid-container {
@@ -18,6 +23,8 @@
 // 	width: 90%;
 // 	background: rgb(166 177 181 / 0.5);
 // 	background: #89ddff70;
+// hsl(195, 100%, 44%)
+// background: rgba(#00a9e0, .4)
 // }
 
 // .cell {
