@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-// import { StaticImage } from 'gatsby-plugin-image'
 import * as styles from '../styles/components/ws-nav.module.scss'
-// import ModeButton from './mode'
 
 const wsNavigation = () => (
 <>
@@ -11,12 +9,17 @@ const wsNavigation = () => (
     <ul>
       <li>Aspect Ratio 16 : 9</li>
       <li>まずここがFlexBoxと決定的に違うところ。</li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li>
+        <Link to="/data/cssGrid/" activeClassName="active">cssGrid</Link>
+      </li>
+      <li>
+        <Link to="/data/cssGrid-2/" activeClassName="active">cssGrid-2</Link>
+      </li>
+      <li>
+        <Link to="/data/cssGrid-3/" activeClassName="active">cssGrid-3</Link>
+      </li>
       <li></li>
     </ul>
-
 <br />
 
 
