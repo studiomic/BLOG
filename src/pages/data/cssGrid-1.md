@@ -11,20 +11,93 @@ type: ""
     line-height: 2.1;
     font-size: var(--text-xl);
   }
-  .half {
-    width: 50%;
-    /* border-top: 4px solid tomato; */
-  }
   .samplelayoutGrid-fill {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(6svw, 1fr));
-	gap: 1em;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(6svw, 1fr));
+    gap: 1em;
   }
   .samplelayoutGrid-fit {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(6svw, 1fr));
     gap: 1em;
   }
+  .cell {
+    border: 1px solid var(--text-color);
+	  background: var(--hslborder);
+    padding: .5em;
+  }
+  .grid4c {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:4px;
+  }
+  .grid4cr {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 6em;
+    gap:4px;
+  }
+  .border-primary {
+    border: 1px solid var(--primary);
+  }
+  .width100 {
+    width: 100%;
+  }
+  .width50 {
+    width: 50%;
+  }
+  .outline {
+    outline: 1px solid crimson;
+  }
+  .jistretch {
+    justify-items: stretch;
+  }
+  .jistart {
+    justify-items: start;
+  }
+  .jiend {
+    justify-items: end;
+  }
+  .jicenter {
+    justify-items: center;
+  }
+  .jsstretch {
+    justify-self: stretch;
+  }
+  .jsstart {
+    justify-self: start;
+  }
+  .jsend {
+    justify-self: end;
+  }
+  .jscenter {
+    justify-self: center;
+  }
+  .align-stretch {
+    align-items: stretch;
+  }
+  .align-start {
+    align-items: start;
+  }
+  .align-end {
+    align-items: end;
+  }
+  .align-center {
+    align-items: center;
+  }
+  .as-stretch {
+    align-self: stretch;
+  }
+  .as-start {
+    align-self: start;
+  }
+  .as-end {
+    align-self: end;
+  }
+  .as-center {
+    align-self: center;
+  }
+
 </style>
 
 
@@ -35,9 +108,10 @@ type: ""
 <span style="font-size:.9em;color:#cc6698;font-style:italic;">Gridは黙してトラックリストを設計する
 <a href="#AspectRatio-article">( Jump Scroll )</a></span>
 
+<span id="Basic9Grid"></span>
+
 <!-- heading -->
 # Basic 9 Grid
-
 <div style="display: grid;grid-template: repeat(3, 1fr) / repeat(3, 1fr);gap: 1em;margin: 0 auto;width: 300px;height: 300px;">
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
@@ -50,18 +124,20 @@ type: ""
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
 </div>
 
+<span id="Empty9Grid3"></span>
+
 <!-- heading -->
 # Empty 9 Grid : in 3 item
-
 <div style="display: grid;grid-template: repeat(3, 1fr) / repeat(3, 1fr);gap: 1em;margin: 0 auto;width: 300px;height: 300px;">
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);grid-column: 1/2;grid-row: 1/2;"></div>
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);grid-column: 2/3;grid-row: 2/3;"></div>
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);grid-column: 3/4;grid-row: 3/4;"></div>
 </div>
 
-<!-- heading -->
-# Empty 9 Grid  : in 8 item
+<span id="Empty9Grid8"></span>
 
+<!-- heading -->
+# Empty 9 Grid : in 8 item
 <div style="display: grid;grid-template: repeat(3, 1fr) / repeat(3, 1fr);gap: 1em;margin: 0 auto;width: 300px;height: 300px;">
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);grid-column: 1/2;grid-row: 1/2;"></div>
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);grid-column: 2/3;grid-row: 1/2;"></div>
@@ -73,9 +149,7 @@ type: ""
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);grid-column: 2/3;grid-row: 3/4;"></div>
 </div>
 
-
-
-
+<span id="GridAxis"></span>
 <!-- heading -->
 # Grid Axis (グリッド軸)
 
@@ -91,9 +165,10 @@ type: ""
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
 </div>
 
+<span id="GridLine"></span>
+
 <!-- heading -->
 # Grid Line (グリッド線)
-
 <div style="display: grid;grid-template:repeat(3, 1fr) / repeat(3, 1fr);gap:0;margin: 1em auto;width:150px;height:150px;border: 1px solid var(--text-color);">
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
@@ -106,9 +181,10 @@ type: ""
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
 </div>
 
+<span id="auto-fill"></span>
+
 <!-- heading -->
 # auto-fill
-
 <div class="samplelayoutGrid-fill">
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 6svw;"></div>
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 6svw;"></div>
@@ -118,9 +194,10 @@ type: ""
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 6svw;"></div>
 </div>
 
+<span id="auto-fit"></span>
+
 <!-- heading -->
 # auto-fit
-
 <div class="samplelayoutGrid-fit">
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 6svw;"></div>
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 6svw;"></div>
@@ -130,10 +207,10 @@ type: ""
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 6svw;"></div>
 </div>
 
+<span id="auto-over"></span>
+
 <!-- heading -->
 # auto-fill and auto-fit : in 15 item
-
-<!-- sample -->
 <div class="samplelayoutGrid-fit">
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 6svw;"></div>
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 6svw;"></div>
@@ -150,12 +227,110 @@ type: ""
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 6svw;"></div>
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 6svw;"></div>
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 6svw;"></div>
+</div>
+
+<!-- hr -->
+<span style="display: block;margin-top:2em;height:2em;border-top: 1px solid var(--border2);"></span>
+
+<!-- heading -->
+# justify-items: stretch
+<div class="grid4c jistretch">
+  <div class="cell">stretch</div>
+  <div class="cell">stretch.length</div>
+  <div class="cell">stretch</div>
+  <div class="cell">stretch.length</div>
+</div>
+
+<!-- heading -->
+# justify-items: start
+<div class="grid4c jistart border-primary">
+  <div class="cell">start</div>
+  <div class="cell">start.length</div>
+  <div class="cell">start</div>
+  <div class="cell">start.length</div>
+</div>
+
+<!-- heading -->
+# justify-items: center
+<div class="grid4c jicenter border-primary">
+  <div class="cell">center</div>
+  <div class="cell">center.length</div>
+  <div class="cell">center</div>
+  <div class="cell">center.length</div>
+</div>
+
+<!-- heading -->
+# justify-items: end
+<div class="grid4c jiend border-primary">
+  <div class="cell">end</div>
+  <div class="cell">end.length</div>
+  <div class="cell">end</div>
+  <div class="cell">end.length</div>
+</div>
+
+<!-- hr -->
+<span style="display: block;margin-top:2em;height:1em;border-top: 1px solid var(--border2);"></span>
+
+<!-- heading -->
+# justify-self
+<div class="grid4c border-primary">
+  <div class="cell jsstretch">stretch</div>
+  <div class="cell jsstart">start</div>
+  <div class="cell jscenter">center</div>
+  <div class="cell jsend">end</div>
+</div>
+
+<!-- hr -->
+<span style="display:block;margin-top:2em;height:1em;border-top:1px solid var(--border2);"></span>
+
+<!-- heading -->
+# align-items: stretch
+<div class="grid4cr align-stretch">
+  <div class="cell">stretch</div>
+  <div class="cell">stretch</div>
+  <div class="cell">stretch</div>
+  <div class="cell">stretch</div>
+</div>
+
+<!-- heading -->
+# align-items: start
+<div class="grid4cr align-start border-primary">
+  <div class="cell">start</div>
+  <div class="cell">start</div>
+  <div class="cell">start</div>
+  <div class="cell">start</div>
+</div>
+
+<!-- heading -->
+# align-items: center
+<div class="grid4cr align-center border-primary">
+  <div class="cell">center</div>
+  <div class="cell">center</div>
+  <div class="cell">center</div>
+  <div class="cell">center</div>
+</div>
+
+<!-- heading -->
+# align-items: end
+<div class="grid4cr align-end border-primary">
+  <div class="cell">end</div>
+  <div class="cell">end</div>
+  <div class="cell">end</div>
+  <div class="cell">end</div>
+</div>
+
+<!-- heading -->
+# align-self
+<div class="grid4cr border-primary">
+	<div class="cell as-stretch">stretch</div>
+  <div class="cell as-start">start</div>
+  <div class="cell as-center">center</div>
+  <div class="cell as-end">end</div>
 </div>
 
 <!-- heading -->
 # Basic 9 Grid in Over 2
-
-<div style="display: grid;grid-template: repeat(3, 1fr) / repeat(3, 1fr);gap: 1em;margin: 0 auto;width: 300px;height: 300px;">
+<div style="display: grid;grid-template-columns:repeat(3, 1fr);gap: 1em;margin: 0 auto;width: 300px;height: 300px;">
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
@@ -168,6 +343,27 @@ type: ""
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
 </div>
+
+
+
+<!-- heading -->
+# Basic 9 Grid in Over 2 + grid-auto-rows
+<div style="display:grid;grid-template-columns:repeat(3, 1fr);grid-template-rows:repeat(3, 1fr);
+gap: 1em;margin: 0 auto;width:300px;height:300px;grid-auto-rows: minmax(40px, auto);">
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
+  <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
+</div>
+
+
 
 
 
@@ -331,20 +527,6 @@ type: ""
 
 
 
-<span style="display:block;margin-bottom:4em;"></span>
-<span style="display:block;margin-bottom:4em;"></span>
-<span style="display:block;margin-bottom:20em;"></span>
-<span style="display:block;margin-bottom:2em;"></span>
-<span style="display:block;margin-bottom:2em;"></span>
-<span style="display:block;margin-bottom:3em;"></span>
-<span style="display:block;margin-bottom:1em;"></span>
-<span style="display:block;margin-bottom:1em;"></span>
-<span style="display:block;margin-bottom:1em;"></span>
-<span style="display:block;margin-bottom:1em;"></span>
-<span style="display:block;margin-bottom:2em;"></span>
-<span style="display:block;margin-bottom:4em;"></span>
-
-<span style="font-size: 1.5em;margin-left: .8em;"></span>
 
 
 
@@ -355,59 +537,6 @@ type: ""
 
 
 
-# justify-self
-
-<!-- sample -->
-<div style="display: grid;grid-template: 6em / repeat(4, 1fr);gap: 1em;outline: 1px solid crimson;align-items: center;"
-class="samplelayoutSelf">
-  <div class="cell">
-		<div class="stretch">stretch</div>
-	</div>
-  <div class="cell">
-		<div class="start">start</div>
-	</div>
-  <div class="cell">
-		<div class="end">end</div>
-	</div>
-  <div class="cell">
-		<div class="justifycenter">center</div>
-	</div>
-</div>
-
-# align-self
-
-
-<div class="samplelayoutSelf">
-	<div class="cell align-stretch">stretch</div>
-  <div class="cell align-start">start</div>
-  <div class="cell align-end">end</div>
-  <div class="cell align-center">center</div>
-</div>
-
-
-
-
-
-justify-self: start;
-
-justify-self: end;
-
-justify-self: center;
-
-justify-self: stretch;
-
-
-# align-self
-
-align-self: start;
-
-align-self: end;
-
-align-self: center;
-
-align-self: stretch;
-
-# place-self
 
 
 
@@ -424,8 +553,7 @@ align-self: stretch;
 <span style="display: block;margin-bottom: 5em;"></span>
 <span style="display: block;margin-bottom: 5em;"></span>
 
-<!-- hr -->
-<span style="display: block;margin-top:2em;height:2em;border-top: 1px solid var(--border2);"></span>
+
 
 <!-- hr -->
 <span style="display: block;margin:1em 0 1em;height: 1em;border-top: 1px solid var(--border2);"></span>

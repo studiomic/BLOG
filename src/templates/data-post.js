@@ -6,6 +6,7 @@ import Navigation from '../components/workshop-nav'
 import MdnGolden from '../components/workshop-mdnGolden'
 import Mdn from '../components/workshop-mdn'
 import MdnCd from '../components/workshop-mdn-cd'
+import Reclink from '../components/workshop-link'
 import * as styles from '../styles/layout/workshop-grid.module.scss'
 
 class NotesPostTemplate extends React.Component {
@@ -20,12 +21,10 @@ class NotesPostTemplate extends React.Component {
 						</section>
 					<aside className={styles.navigation}>
 						<Navigation />
-						<hr />
 						<MdnGolden />
-						<hr />
 						<Mdn />
-						<hr />
 						<MdnCd />
+						<Reclink />
 					</aside>
 					<article className={styles.postmain} dangerouslySetInnerHTML={{ __html: html }} />
 				</section>
