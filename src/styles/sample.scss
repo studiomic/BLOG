@@ -16,9 +16,18 @@
 	display: grid;
 	grid-template: 6em / repeat(4, 1fr);
 	gap: 1em;
-	outline: 1px solid crimson;
+	outline: 1px solid palevioletred;
 	align-items: center;
+	border-width: 1px;
 	border-radius: 0;
+	text-align: center;
+	position: relative;
+	z-index: 2;
+	opacity: .5;
+	text-align: right;
+	padding: 10px;
+	margin: 0 auto;
+	text-align: center;
 }
 
 

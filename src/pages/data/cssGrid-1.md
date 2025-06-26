@@ -11,6 +11,22 @@ type: ""
     line-height: 2.1;
     font-size: var(--text-xl);
   }
+  .btn {
+    text-align: center;
+    padding-top: 2em;
+    
+    a {
+      background-color: #cc6698;
+      /* border: solid #cc6698; */
+      border-radius: 2em;
+      padding: .8em 2em;
+      text-transform: uppercase;
+      font-size: .8em;
+      color: var(--white);
+      /* color: #cc6698; */
+      line-height: 1;
+    }
+  }
   .samplelayoutGrid-fill {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(6svw, 1fr));
@@ -97,6 +113,28 @@ type: ""
   .as-center {
     align-self: center;
   }
+  .box {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+}
+
+.box:nth-child(even) {
+  background-color: #ccc;
+  color: #000;
+}
+
+.wrapper {
+  width: 600px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(6, 100px);
+  grid-template-rows: 90px 90px 90px;
+  grid-auto-flow: column;
+}
+
 
 </style>
 
@@ -123,6 +161,13 @@ type: ""
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
 </div>
+
+
+
+
+<div class="btn"><a href="#" style="">learn more</a></div>
+
+
 
 <span id="Empty9Grid3"></span>
 
@@ -344,8 +389,6 @@ type: ""
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
 </div>
 
-
-
 <!-- heading -->
 # Basic 9 Grid in Over 2 + grid-auto-rows
 <div style="display:grid;grid-template-columns:repeat(3, 1fr);grid-template-rows:repeat(3, 1fr);
@@ -363,10 +406,32 @@ gap: 1em;margin: 0 auto;width:300px;height:300px;grid-auto-rows: minmax(40px, au
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);"></div>
 </div>
 
+# grid-auto-flow: column;
 
+<div style="display:grid;grid-template-columns:repeat(3, 1fr);grid-template-rows:repeat(4, 1fr);
+gap: 1em;margin: 0 auto;width:300px;grid-auto-flow: column;">
+  <div style="text-align: center;padding:1em .5em;border: 1px solid var(--text-color);background: var(--hslborder);">1</div>
+  <div style="text-align: center;padding:1em .5em;border: 1px solid var(--text-color);background: var(--hslborder);">2</div>
+  <div style="text-align: center;padding:1em .5em;border: 1px solid var(--text-color);background: var(--hslborder);">3</div>
+  <div style="text-align: center;padding:1em .5em;border: 1px solid var(--text-color);background: var(--hslborder);">4</div>
+  <div style="text-align: center;padding:1em .5em;border: 1px solid var(--text-color);background: var(--hslborder);">5</div>
+  <div style="text-align: center;padding:1em .5em;border: 1px solid var(--text-color);background: var(--hslborder);">6</div>
+  <div style="text-align: center;padding:1em .5em;border: 1px solid var(--text-color);background: var(--hslborder);">7</div>
+  <div style="text-align: center;padding:1em .5em;border: 1px solid var(--text-color);background: var(--hslborder);">8</div>
+  <div style="text-align: center;padding:1em .5em;border: 1px solid var(--text-color);background: var(--hslborder);">9</div>
+  <div style="text-align: center;padding:1em .5em;border: 1px solid var(--text-color);background: var(--hslborder);">10</div>
+  <div style="text-align: center;padding:1em .5em;border: 1px solid var(--text-color);background: var(--hslborder);">11</div>
+</div>
 
-
-
+<!-- heading -->
+# Empty 9 Grid : Layering items
+<div style="display: grid;grid-template: repeat(3, 1fr) / repeat(3, 1fr);gap: 1em;margin: 0 auto;width: 300px;height: 300px;position: relative;">
+  <div style="padding: 1em;border: 1px solid var(--text-color);background: palevioletred;grid-column: 1/3;grid-row: 1/3;">1</div>
+  <div style="padding: 1em;border: 1px solid var(--text-color);background: cyan;grid-column: 2/3;grid-row: 2/3;z-index: 2;opacity:.5;text-align: right;">2</div>
+  <div style="padding: 1em;border: 1px solid var(--text-color);background: var(--hslborder);">3</div>
+  <div style="padding: 1em;border: 1px solid var(--text-color);background: var(--primary);grid-column: 2/4;grid-row: 2/4;opacity: .5;text-align: right;">4</div>
+  <div style="padding: 1em;border: 1px solid var(--text-color);background: var(--hslborder);">5</div>
+</div>
 
 
 
@@ -521,48 +586,3 @@ gap: 1em;margin: 0 auto;width:300px;height:300px;grid-auto-rows: minmax(40px, au
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 5svh;"></div>
   <div style="border: 1px solid var(--text-color);background: var(--hslborder);height: 5svh;"></div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<span style="display: block;margin-bottom: 1em;"></span>
-<span style="display: block;margin-bottom: 2em;"></span>
-<span style="display: block;margin-bottom: 2em;"></span>
-<span style="display: block;margin-bottom: 2em;"></span>
-<span style="display: block;margin-bottom: 5em;"></span>
-<span style="display: block;margin-bottom: 5em;"></span>
-
-
-
-<!-- hr -->
-<span style="display: block;margin:1em 0 1em;height: 1em;border-top: 1px solid var(--border2);"></span>
-
-<!-- hr -->
-<span style="display: block;margin:1em 0 1em;height: 1em;border-top: 1px solid var(--border2);"></span>
-
-<!-- hr -->
-<span style="display: block;height: 1em;border-top: 1px solid var(--border);"></span>
-<span style="display: block;height: 1em;border-top: 1px solid var(--border);"></span>
-
-<article id="AspectRatio-article" style="padding-top:var(--size-gutter);"></article>

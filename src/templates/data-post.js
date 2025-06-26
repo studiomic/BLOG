@@ -19,7 +19,7 @@ class NotesPostTemplate extends React.Component {
 						<h1>WORKSHOP : CSS Grid, Easy to confuse.</h1>
 						<p>間違いやすいプロパティ集</p>
 						</section>
-					<aside className={styles.navigation}>
+					<aside className={styles.wsnavigation}>
 						<Navigation />
 						<MdnGolden />
 						<Mdn />

@@ -699,3 +699,21 @@ KOKO-MADE
 <span style="display: block;margin-bottom: 2em;"></span>
 <span style="display: block;margin-bottom: 2em;"></span>
 
+<!-- hr -->
+<span style="display: block;margin:1em 0 1em;height: 1em;border-top: 1px solid var(--border2);"></span>
+
+<!-- hr -->
+<span style="display: block;margin:1em 0 1em;height: 1em;border-top: 1px solid var(--border2);"></span>
+
+<!-- hr -->
+<span style="display: block;height: 1em;border-top: 1px solid var(--border);"></span>
+<span style="display: block;height: 1em;border-top: 1px solid var(--border);"></span>
+
+<article id="AspectRatio-article" style="padding-top:var(--size-gutter);"></article>
+
+<span style="display: block;margin-bottom: 1em;"></span>
+<span style="display: block;margin-bottom: 2em;"></span>
+<span style="display: block;margin-bottom: 2em;"></span>
+<span style="display: block;margin-bottom: 2em;"></span>
+<span style="display: block;margin-bottom: 5em;"></span>
+<span style="display: block;margin-bottom: 5em;"></span>

@@ -11,11 +11,15 @@ const wsMdnChildren = () => (
       <li><Link to='https://developer.mozilla.org/ja/docs/Web/CSS/grid-column-end'> - grid-column-end</Link></li>
       <li><Link to='https://developer.mozilla.org/ja/docs/Web/CSS/grid-row-start'> - grid-row-start</Link></li>
       <li><Link to='https://developer.mozilla.org/ja/docs/Web/CSS/grid-row-end'> - grid-row-end</Link></li>
+    </ul>
+    <ul>
       <li><Link to='https://developer.mozilla.org/ja/docs/Web/CSS/grid-column'> - grid-column</Link></li>
       <li><Link to='https://developer.mozilla.org/ja/docs/Web/CSS/grid-row'> - grid-row</Link></li>
       <li><Link to='https://developer.mozilla.org/ja/docs/Web/CSS/grid-area'> - grid-area</Link></li>
+    </ul>
+    <ul>
       <li><Link to='https://developer.mozilla.org/ja/docs/Web/CSS/justify-self'> - justify-self</Link></li>
-      <li><Link to='https://developer.mozilla.org/ja/docs/Web/CSS/align-self'> - align-self(align-items)</Link></li>
+      <li><Link to='https://developer.mozilla.org/ja/docs/Web/CSS/align-self'> - align-self</Link></li>
       <li><Link to='https://developer.mozilla.org/ja/docs/Web/CSS/place-self'> - place-self</Link></li>
     </ul>
   </nav>

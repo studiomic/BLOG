@@ -5,6 +5,7 @@ import * as styles from '../styles/components/ws-nav.module.scss'
 const wsMdnGolden = () => (
 <>
   <nav role="navigation" aria-label="Main" className={styles.wsNav}>
+    <h3>About Grid</h3>
     <ul>
       <li><Link to='https://developer.mozilla.org/ja/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout'>グリッドレイアウトの基本概念</Link></li>
       <li><Link to='https://developer.mozilla.org/ja/docs/Glossary/Grid'>Grid (グリッド)</Link></li>

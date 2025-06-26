@@ -3,7 +3,6 @@ import { Link } from 'gatsby'
 import * as styles from '../styles/components/ws-nav.module.scss'
 
 const wsNavigation = () => (
-<>
   <nav role="navigation" aria-label="Main" className={styles.wsNav}>
     <h3>もくじ</h3>
     <ul>
@@ -18,14 +17,9 @@ const wsNavigation = () => (
       <li><Link to='/data/cssGrid#'></Link></li>
       <li><Link to='/data/cssGrid#'></Link></li>
     </ul>
-<br />
-
-
-
 Basic 9 Grid<br />
 fr 単位が優秀な件<br />
 Empty 9 Grid<br />
-
     <ul>
       <li><Link to='/data/cssGrid#Empty-9Grid'>Empty 9 Grid</Link></li>
       <li>
@@ -52,6 +46,5 @@ Empty 9 Grid<br />
       <li>Column</li>
     </ul>
   </nav>
-</>
 )
 export default wsNavigation
